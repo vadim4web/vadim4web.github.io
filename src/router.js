@@ -48,12 +48,7 @@ const routes = [
   {
     path: '/mediaoffice-com-ua/:path(.*)',
     // This route does nothing; it will not catch 404 errors
-    beforeEnter: () => {},
-  },
-  {
-    path: '/abcd-sign/:path(.*)',
-    // This route does nothing; it will not catch 404 errors
-    beforeEnter: () => {},
+    beforeEnter: (_, __, next) => { next() },
   },
   {
     // Catch all routes that don't match the previous ones
