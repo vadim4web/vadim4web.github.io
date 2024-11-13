@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://bit.ly/1abcdesign"
+    href="https://bit.ly/CV__open"
     class="logo-link"
     title="My CV .pdf"
     :class="logoClass"

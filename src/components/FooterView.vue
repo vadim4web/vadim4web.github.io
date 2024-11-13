@@ -110,27 +110,22 @@ footer {
 
   .grid {
     display: grid;
-    grid-template-columns: 2.5fr 3.5fr 2.5fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     padding-bottom: 2.5rem;
     width: 100%;
     height: 8rem;
 
+    address {
+      text-align: center;
+      justify-self: center;
+      justify-content: center;
+    }
+
     .contacts {
       justify-self: end;
       justify-content: end;
     }
-  }
-}
-
-address {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  & > h4 {
-    text-align: left !important;
   }
 }
 
