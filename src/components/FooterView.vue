@@ -42,13 +42,13 @@
 
         <div class="links">
           <h4 class="h4">
-            <a href="https://github.com/abcdesign1" title="My Git-hub account">
+            <a href="https://github.com/1abcdesign" title="My Git-hub account">
               <img src="/github.svg" alt="github logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="https://t.me/abcdesign1" title="My Telegram direct link">
+            <a href="https://t.me/1abcdesign" title="My Telegram direct link">
               <img src="/telegram.png" alt="telegram logo" />&nbsp;
             </a>
           </h4>

@@ -69,7 +69,7 @@
           style="padding: 0.5rem; margin: -0.5rem"
           title="Contact me via Telegram or any other social media"
         >
-          @abcdesign1
+          @1abcdesign
         </a>
       </h4>
 

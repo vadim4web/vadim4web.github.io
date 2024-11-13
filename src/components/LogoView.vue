@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://bit.ly/abcdesign1"
+    href="https://bit.ly/1abcdesign"
     class="logo-link"
     title="My CV .pdf"
     :class="logoClass"
@@ -23,7 +23,16 @@
       </svg>
     </span>
     <span class="logo-span logo">
-      ABCDΞSIGN1
+      <span class="logo-letter">A</span>
+      <span class="logo-letter">B</span>
+      <span class="logo-letter">C</span>
+      <span class="logo-letter">D</span>
+      <span class="logo-letter">Ξ</span>
+      <span class="logo-letter">S</span>
+      <span class="logo-letter">I</span>
+      <span class="logo-letter">G</span>
+      <span class="logo-letter">N</span>
+      <span class="logo-letter">1</span>
     </span>
   </a>
 </template>
@@ -44,16 +53,20 @@ const txtSize = parseFloat(size) * 0.18 + 'rem'
   justify-content: center;
   box-sizing: content-box;
   font-family: 'Victor Mono', monospace;
-  letter-spacing: -0.21ch;
-  padding: 0.05rem 0.33rem 0.15rem 0.1rem;
   font-weight: 700;
   z-index: 1;
 
   .logo-span {
-    padding-right: 0.18rem;
+    top: 0;
     background: var(--color-op);
     border: 2px solid var(--color0);
     position: relative;
+    z-index: -1;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    align-content: center;
+    justify-items: center;
   }
 
   &:hover {
@@ -76,7 +89,7 @@ const txtSize = parseFloat(size) * 0.18 + 'rem'
 
   .logo-image {
     position: relative;
-    z-index: -2;
+    z-index: 1;
 
     border-radius: 50%;
     border: 2px solid var(--bg0);
