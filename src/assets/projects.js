@@ -63,23 +63,6 @@ const vertical = [
     deps: [],
     white_bg: true,
   },
-  // {
-  //   title: 'React dynamic goods list',
-  //   name: 'react_dynamic-list-of-goods',
-  //   stack: ['react', 'css', 'fetch', 'bulma'],
-  //   tags: ['UI', 'FE', 'API'],
-  //   desc: 'Dynamic List of Goods is a React web application designed to dynamically load and display a list of goods.\n\nThe user can utilize different buttons to load various sets of goods, such as all goods, the first five goods, and goods with a specific attribute, like red goods.\n\nThis project showcases React component rendering, dynamic data loading, and error handling. It is crafted using React, Bulma CSS for a clean aesthetic, and Font Awesome icons for additional visual appeal.\n\nAnimating the fetched data to achieve smooth displays was an enjoyable aspect of the project. The simplicity and aesthetics of Bulma further contributed to my positive experience with this project.',
-  //   path: 'react_dynamic-list-of-goods',
-  //   orientation: '|',
-  //   deps: [
-  //     "@cypress/react ^5.12.4",
-  //     "bulma ^0.9.3",
-  //     "postcss ^8.4.12",
-  //     "react ^17.0.2",
-  //     "react-dom ^17.0.2",
-  //   ],
-  //   white_bg: true,
-  // },
   {
     title: 'Rainbow divs toggler app',
     name: 'div-toggle-colorizer',
@@ -151,22 +134,6 @@ const vertical = [
       "sass ^1.55.0",
     ],
   },
-  // {
-  //   title: 'React livecoding app',
-  //   name: 'react_live_coding_cars_table_task',
-  //   stack: ['css', 'react', 'js'],
-  //   tags: ['UI', 'FE', 'API'],
-  //   desc: 'This live-coding demonstration showcases the quick and simple creation of a car table with functional lazy search and color filtering. Witness the efficient implementation in just an hour!',
-  //   path: 'react_live_coding_cars_table_task',
-  //   orientation: '|',
-  //   deps: [
-  //     "bulma ^0.9.3",
-  //     "react ^17.0.2",
-  //     "react-dom ^17.0.2",
-  //     "react-scripts ^4.0.3"
-  //   ],
-  //   white_bg: true,
-  // },
   {
     title: 'JSON -> list transformer',
     name: 'json-list',
@@ -194,40 +161,6 @@ const vertical = [
       "stylelint ^13.5.0",
     ],
   },
-  // {
-  //   title: 'React node todos with API',
-  //   name: 'react_todo-app-with-api',
-  //   stack: ['html' ,'css', 'js', 'react'],
-  //   tags: ['UI', 'FE', 'BE', 'API'],
-  //   desc: 'This is a simple React-based Todo App that allows you to manage your tasks efficiently. You can add, update, and delete tasks, filter them by status (All, Active, Completed), and perform bulk operations like marking all as completed or clearing completed tasks.\n\nKey features:\n\n1. Todo List Management::\n  + Add new todos with titles.\n  + Delete individual todos.\n  + Toggle the completion status of todos.\n\n2. Filtering and Sorting::\n  + Filter todos by status (All, Active, Completed).\n  + Sort todos based on completion status.\n\n3. User Interface::\n  + Toggle all todos between completed and active states.\n  + Clear all completed todos.\n  + Real-time updates and transitions for todos.\n\n4. Error Handling::\n  + Display error messages when adding, updating, or deleting todos.\n\n5. User Feedback::\n  + Provide feedback on processing with loaders and notifications.\n\n6. API Integration::\n  + Fetch todos from an API endpoint.\n  + Send requests to add, update, and delete todos.\n\n7. Routing::\n  + Use hash-based routing to filter todos by status (All, Active, Completed).\n\n8. Default Values::\n  + Utilize default values for new todos.\n\n9. Responsive Design::\n  + The application has a responsive design and styles for various screen sizes.',
-  //   path: 'react_todo-app-with-api',
-  //   orientation: '|',
-  //   deps: [
-  //     "@fortawesome/fontawesome-free ^6.1.2",
-  //     "bulma ^0.9.4",
-  //     "classnames ^2.3.1",
-  //     "react ^18.2.0",
-  //     "react-dom ^18.2.0",
-  //     "react-scripts 5.0.1",
-  //     "react-transition-group ^4.4.5",
-  //     "@cypress/react ^5.12.4",
-  //     "@cypress/webpack-dev-server ^1.8.4",
-  //     "@types/node ^17.0.45",
-  //     "@types/react ^18.0.15",
-  //     "@types/react-dom ^18.0.6",
-  //     "@types/react-transition-group ^4.4.5",
-  //     "cypress ^9.5.3",
-  //     "eslint ^7.32.0",
-  //     "eslint-plugin-cypress ^2.11.2",
-  //     "gh-pages ^3.2.3",
-  //     "mochawesome ^7.1.3",
-  //     "mochawesome-merge ^4.2.0",
-  //     "mochawesome-report-generator ^6.2.0",
-  //     "node-sass ^7.0.1",
-  //     "stylelint ^13.13.1",
-  //     "typescript ^4.6.3"
-  //   ],
-  // },
   {
     title: 'Fire\'S\'Now - SCSS bg',
     name: 'fireSnow',
@@ -258,6 +191,9 @@ const vertical = [
     ],
     white_bg: true,
   },
+]
+
+const horizontal = [
   {
     title: 'A💞B',
     name: 'AIB',
@@ -265,12 +201,9 @@ const vertical = [
     tags: ['FE', 'JS'],
     desc: 'The AIB project is a web-based application that showcases a myriad of HTML, CSS, and JavaScript techniques, aiming to deliver an engaging and visually pleasing web experience.\n\nThe development journey began with a clear intent to implement an animated, shining logo.\n\nFor better interactiveness, - a single square element changes its color to white after the first click and to green after the second click, adding a dynamic touch for development purposes.',
     path: 'AIB',
-    orientation: '|',
+    orientation: '-',
     deps: [],
   },
-]
-
-const horizontal = [
   {
     title: 'Your Coctails',
     name: 'your-cocktail.vercel.app',
@@ -402,43 +335,6 @@ const horizontal = [
       "vite ^5.1.4"
     ],
   },
-  // {
-  //   title: 'React task-manager',
-  //   name: 'react_dynamic-list-of-todos',
-  //   stack: ['html' ,'css', 'js', 'react'],
-  //   tags: ['UI', 'FE', 'API'],
-  //   desc: 'This is a React.js application that allows you to manage a dynamic list of todos. You can filter and search for todos based on their status and title. Additionally, it supports viewing individual todo details.\n\nFeatures:\n+ Display a list of todos.\n+ Filter todos by status (All, Active, Completed).\n+ Search for todos by title.\n+ View individual todo details in a modal.\n+ Error handling for failed data loading.',
-  //   path: 'react_dynamic-list-of-todos',
-  //   orientation: '-',
-  //   deps: [
-  //     "@cypress/react ^5.12.4",
-  //     "@fortawesome/fontawesome-free ^6.1.1",
-  //     "bulma ^0.9.4",
-  //     "classnames ^2.3.1",
-  //     "postcss ^8.4.12",
-  //     "react ^17.0.2",
-  //     "react-dom ^17.0.2",
-  //     "react-scripts ^4.0.3"
-  //   ],
-  // },
-  // {
-  //   title: 'React router CRM-table',
-  //   name: 'react_people-table-basics',
-  //   stack: ['CSS', 'JS', 'React', 'Router'],
-  //   tags: ['UI', 'FE', 'API'],
-  //   desc: 'This is a React.js application that displays a table of people and allows users to browse details of each person.\n\nIt uses a React Router for navigation and displays information in a user-friendly manner.\n\nThere are real people tables displayed with interesting heritage relationships, which are highlighted interactively.',
-  //   path: 'react_people-table-basics/#/people',
-  //   orientation: '-',
-  //   deps: [
-  //     "@fortawesome/fontawesome-free ^6.1.2",
-  //     "bulma ^0.9.4",
-  //     "classnames ^2.3.1",
-  //     "react ^18.2.0",
-  //     "react-dom ^18.2.0",
-  //     "react-router-dom ^6.3.0",
-  //     "react-scripts 4.0.3"
-  //   ],
-  // },
   {
     title: 'Vue router travel app',
     name: 'travel-app-vue',
@@ -476,24 +372,6 @@ const horizontal = [
       "@heroicons/vue ^2.0.16"
     ],
   },
-  // {
-  //   title: 'React movies form validation',
-  //   name: 'react_movies-list-add-form',
-  //   stack: ['html' ,'css', 'js', 'react'],
-  //   tags: ['UI', 'FE', 'API'],
-  //   desc: 'Explore the React Movies List & Add Form project!\n\nThis web application, built with React, empowers you to manage a movie list effortlessly.\n\nExperience dynamic form validation using React stateful functional components, ensuring a smooth and error-free user interaction.\n\nDive into the world of movies with a user-friendly interface, because who doesn\'t love movies?',
-  //   path: 'react_movies-list-add-form',
-  //   orientation: '-',
-  //   deps: [
-  //     "@cypress/react ^5.12.4",
-  //     "bulma ^0.9.3",
-  //     "classnames ^2.3.1",
-  //     "postcss ^8.4.12",
-  //     "react ^17.0.2",
-  //     "react-dom ^17.0.2",
-  //     "react-scripts ^4.0.3"
-  //   ],
-  // },
   {
     title: 'Custom shaped loading',
     name: 'my-server-io',
@@ -541,8 +419,8 @@ Array.prototype.shuffle = function () {
   return this.sort(() => Math.random() - 0.5)
 }
 
-vertical.shuffle()
-horizontal.shuffle()
+vertical.shuffle() // 13
+horizontal.shuffle() // 14
 
 const projects = [
   vertical[0],
@@ -550,44 +428,36 @@ const projects = [
   horizontal[1],
 
   vertical[1],
-  vertical[2],
-  vertical[3],
-
-  vertical[4],
   horizontal[2],
   horizontal[3],
 
   horizontal[4],
   horizontal[5],
-  vertical[5],
+  vertical[2],
 
   horizontal[6],
   horizontal[7],
-  vertical[6],
+  vertical[3],
 
-  vertical[7],
+  vertical[4],
   horizontal[8],
   horizontal[9],
 
-  vertical[8],
-  vertical[9],
-  vertical[10],
+  vertical[5],
+  vertical[6],
+  vertical[7],
 
+  vertical[8],
+  horizontal[10],
+  horizontal[11],
+
+  horizontal[12],
+  horizontal[13],
+  vertical[9],
+
+  vertical[10],
   vertical[11],
   vertical[12],
-  vertical[13],
-
-  // vertical[14],
-  // horizontal[10],
-  // horizontal[11],
-
-  // horizontal[12],
-  // horizontal[13],
-  // vertical[15],
-
-  // horizontal[14],
-  // horizontal[15],
-  // vertical[16],
 ]
 
 const chunkArray = (arr, chunkSize) => {
@@ -598,6 +468,7 @@ const chunkArray = (arr, chunkSize) => {
     chunkedArray.push(chunk)
   }
 
+  console.log(chunkedArray)
   return chunkedArray
 }
 
