@@ -8,7 +8,7 @@ As individuals, we are all born developers, constantly shaping our neural networ
 We each have our own unique story to tell, and through the language of technology, we code our autobiographies, breathing life into our ideas on the digital canvas. I am deeply dedicated to creating user-friendly web applications and continually enhancing my skills to stay ahead in this ever-evolving industry.
 
 <p align="center">
-  <a href="https://1abcdesign.github.io"><img src="https://github.com/1abcdesign/1abcdesign.github.io/blob/main/public/favicon.ico" alt="auto-biography-coding sign" /></a><br />
+  <a href="https://1abcdesign.github.io"><img src="https://github.com/1abcdesign/1abcdesign.github.io/blob/main/public/logo.png" alt="auto-biography-coding sign" /></a><br />
   <br />
   <i>I've earned my own very first PC</i><br />  
   <i>By working summer holidays in 2003</i><br />  
