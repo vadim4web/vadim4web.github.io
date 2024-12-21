@@ -6,29 +6,29 @@
         class="link"
         style="padding: 1rem; margin: -1rem; border-radius: 4rem;"
       >
-        Get in Touch With Me
+        {{ $t('footerGIT') }}
       </router-link>
     </h4>
 
     <h2 class="h1 mail">
       <a
-        href="mailto:one.abcdesign@gmail.com"
+        href="mailto:vadim4web@gmail.com"
         class="link"
         style="padding: 1rem; margin: -1rem; border-radius: 4rem"
-        >one.abcdesign@gmail.com</a
+        >vadim4web@gmail.com</a
       >
     </h2>
 
     <div class="grid info">
-      <logo-view size="7rem" />
+      <logo-view />
 
       <address>
         <h4
           class="h4"
           title="Location of my integrated home-office web development studio"
         >
-          Ivana Franka St, 175/14,<br />
-          Boiarka, Kyivs'ka oblast,<br />
+          {{ $t('footerA1') }}, 175/14,<br />
+          {{ $t('footerA2') }},<br />
           08150
         </h4>
       </address>
@@ -42,19 +42,19 @@
 
         <div class="links">
           <h4 class="h4">
-            <a href="https://github.com/1abcdesign" title="My Git-hub account">
+            <a href="https://github.com/vadim4web" title="My Git-hub account">
               <img src="/github.svg" alt="github logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="https://t.me/1abcdesign" title="My Telegram direct link">
+            <a href="https://t.me/vadim4web" title="My Telegram direct link">
               <img src="/telegram.png" alt="telegram logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="mailto:one.abcdesign@gmail.com" title="My Gmail box">
+            <a href="mailto:vadim4web@gmail.com" title="My Gmail box">
               <img src="/mail.png" alt="mail logo" />&nbsp;
             </a>
           </h4>
@@ -63,7 +63,7 @@
     </div>
 
     <h4 class="h4 hr-above">
-      &copy; 2021-{{ new Date().getFullYear() }}. 1abcdesign. All rights reserved.
+      &copy; 2021-{{ new Date().getFullYear() }}. VADIM4WEB. {{ $t('copyright') }}.
     </h4>
   </footer>
 </template>
@@ -110,7 +110,7 @@ footer {
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     gap: 2rem;
     padding-bottom: 2.5rem;
     width: 100%;

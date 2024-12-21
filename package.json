@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "homepage": "http://1abcdesign.github.io/web",
+  "homepage": "http://vadim4web.github.io/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,10 +12,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@vueuse/core": "^10.7.0",
+    "axios": "^1.7.9",
     "emailjs-com": "^3.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
+    "vue-i18n": "^10.0.5",
     "vue-router": "^4.2.5",
     "vueperslides": "^3.5.1"
   },

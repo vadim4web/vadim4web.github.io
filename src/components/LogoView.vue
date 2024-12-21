@@ -1,121 +1,101 @@
 <template>
   <a
-    href="https://bit.ly/CV__open"
+    href="https://bit.ly/cv_view"
     class="logo-link"
     title="My CV .pdf"
-    :class="logoClass"
-    :style="{ fontSize: txtSize, lineHeight: txtSize }"
   >
-    <span class="logo-image logo" :style="{ width: imgSize, height: imgSize }">
-      <svg
-        id="logoImage"
-        ref="logoImage"
-        class="icon"
-        stroke-width="28"
-        viewBox="0 0 400 400"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <line x1="200" y1="400" x2="200" y2="0" />
-        <line x1="200" y1="0" x2="0" y2="200" />
-        <line x1="0" y1="200" x2="200" y2="200" />
-        <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
-        <circle cx="200" cy="200" r="186" fill="none" />
-      </svg>
-    </span>
-    <span class="logo-span logo">
-      <span class="logo-letter">A</span>
-      <span class="logo-letter">B</span>
-      <span class="logo-letter">C</span>
-      <span class="logo-letter">D</span>
-      <span class="logo-letter">Ξ</span>
-      <span class="logo-letter">S</span>
-      <span class="logo-letter">I</span>
-      <span class="logo-letter">G</span>
-      <span class="logo-letter">N</span>
-      <span class="logo-letter">1</span>
+    <span class="logo-span">
+      <span class="logo-letter flex-center">V</span>
+      <span class="logo-letter flex-center">A</span>
+      <span class="logo-letter flex-center">D</span>
+      <span class="logo-letter flex-center">I</span>
+      <span class="logo-letter flex-center">M</span>
+      <span class="logo-letter flex-center">
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="var(--color0)"
+          class="logo-image"
+        >
+          <!-- Vertical line -->
+          <line x1="50" y1="96.5" x2="50" y2="3.5" />
+          <!-- Diagonal line from center to top-left -->
+          <line x1="50" y1="3.5" x2="3.5" y2="50" />
+          <!-- Horizontal line from left to center -->
+          <line x1="3.5" y1="50" x2="50" y2="50" />
+          <!-- Arc from top-center to center -->
+          <path d="M 50,3.5 A 23.25,23.25,0,1,1,50,50" fill="none" />
+          <!-- Outer circle -->
+          <circle cx="50" cy="50" r="45.5" fill="none" />
+        </svg>
+      </span>
+      <span class="logo-letter flex-center">W</span>
+      <span class="logo-letter flex-center">E</span>
+      <span class="logo-letter flex-center">B</span>
     </span>
   </a>
 </template>
 
-<script setup>
-const { size, logoClass } = defineProps(['size', 'logoClass'])
-const imgSize = parseFloat(size) * 0.85 + 'rem'
-const txtSize = parseFloat(size) * 0.18 + 'rem'
-</script>
-
 <style lang="scss">
 .logo-link {
-  justify-self: start;
-  align-self: start;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: content-box;
   font-family: 'Victor Mono', monospace;
   font-weight: 700;
   z-index: 1;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  height: 3.5rem;
+  width: 13rem;
+  display: block;
+
+  & * {
+    cursor: pointer !important;
+  }
 
   .logo-span {
     top: 0;
     background: var(--color-op);
-    border: 2px solid var(--color0);
+    border: 1px dashed var(--color0);
     position: relative;
     z-index: -1;
-
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: 0.75fr repeat(8, 1fr);
     align-content: center;
     justify-items: center;
-  }
+    padding: 0 0.5rem 0 0.05rem;
 
-  &:hover {
-    .logo-span {
-      background: var(--color0);
-      color: var(--bg0);
-      border: 2px solid var(--bg0);
+    .logo-letter:first-child {
+      position: relative;
+      left: 0.1rem;
+      margin-right: -0.2rem;
+    }
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: -4px;
-        left: -4px;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        border: 2px solid var(--color0);
+    .logo-letter:not(:has(.logo-image)) {
+      width: 0.75rem;
+    }
+
+    .logo-letter:has(.logo-image) {
+      width: 2.25rem;
+      height: 3.5rem;
+
+      & .logo-image {
+        position: relative;
+        height: 2.15rem;
+        width: 2.15rem;
+        stroke-width: max(0.25rem, 11px);
+        margin: auto 0;
       }
     }
-  }
 
-  .logo-image {
-    position: relative;
-    z-index: 1;
+    &:hover {
+      color: var(--bg0);
+      background: var(--color0);
+      border-color: var(--accent0);
 
-    border-radius: 50%;
-    border: 2px solid var(--bg0);
-
-    svg {
-      stroke: var(--color0);
+      & .logo-image {
+        stroke: var(--bg0);
+      }
     }
 
-    &:before, &:after {
-      position: absolute;
-      content: '';
-      top: 0;
-      left: 0.015em;
-      width: 100%;
-      height: 100%;
-      padding-right: 0.15rem;
-    }
-  }
-
-  &:hover .logo-image {
-    background: var(--color0);
-    color: var(--bg0);
-    border: 2px solid var(--color0);
-    & svg {
-      stroke: var(--bg0);
-    }
   }
 }
 </style>

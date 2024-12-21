@@ -1,32 +1,38 @@
 <template>
   <header class="header">
-    <logo-view size="9rem" logoClass="logo-view" />
-
     <menu>
       <li class="menu-item">
-        <router-link to="/home" class="link">Home</router-link>
+        <logo-view logoClass="logo-view" />
       </li>
 
       <li class="menu-item">
-        <router-link to="/about" class="link">About Me</router-link>
+        <router-link to="/home" class="link">{{ $t('Home') }}</router-link>
       </li>
 
       <li class="menu-item">
-        <router-link to="/projects" class="link">My Works</router-link>
+        <router-link to="/about" class="link">{{ $t('AboutMe') }}</router-link>
       </li>
 
       <li class="menu-item">
-        <router-link to="/contact" class="link">Contact</router-link>
+        <router-link to="/projects" class="link">{{ $t('MyWorks') }}</router-link>
+      </li>
+
+      <li class="menu-item">
+        <router-link to="/contact" class="link">{{ $t('Contact') }}</router-link>
+      </li>
+
+      <li class="menu-item flex-col-center global-view">
+        <theme-toggler />
+        <lang-toggler />
       </li>
     </menu>
-
-    <theme-toggler />
   </header>
 </template>
 
 <script setup>
 import LogoView from '@/components/LogoView.vue'
 import ThemeToggler from '@/components/ThemeToggler.vue'
+import LangToggler from '@/components/LangToggler.vue'
 </script>
 
 <style lang="scss">
@@ -38,23 +44,17 @@ import ThemeToggler from '@/components/ThemeToggler.vue'
   height: 10.5rem;
   width: 100dvw;
   background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
+  backdrop-filter: blur(0.5rem);
   display: flex;
-  padding: 0 2rem;
-}
-
-.logo-view {
-  margin: 0 0.5rem;
-  z-index: 1;
-  box-shadow: 0 0 1rem var(--bg50);
 }
 
 menu {
   width: 100%;
   position: relative;
   list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr);
+  place-items: center;
   font-weight: 500;
   height: 10.5rem;
   gap: 0.5rem;
@@ -65,16 +65,16 @@ menu {
     }
   }
 
-  a {
+  a:not(.logo-link) {
     box-sizing: border-box;
     font-size: 1.5rem;
-    padding: 1rem 2rem;
+    padding: 1rem;
     opacity: 0.75;
     font-variant: small-caps;
     text-transform: uppercase;
     text-wrap: nowrap;
     border: 0.125rem solid transparent;
-    width: fit-content;
+    font-weight: bold;
     color: var(--color50);
 
     &.router-link-active {
@@ -83,8 +83,6 @@ menu {
       border-radius: 2rem;
       opacity: 0.8;
       color: var(--color0);
-      font-weight: bold;
-      letter-spacing: -0.022ch;
 
       &:hover {
         color: var(--color0);
@@ -94,10 +92,6 @@ menu {
           box-shadow: none;
         }
       }
-    }
-
-    &:active {
-      letter-spacing: -0.025ch;
     }
 
     &:not(.router-link-active, .logo-link) {
@@ -112,9 +106,9 @@ menu {
   background: radial-gradient(var(--bg50), transparent, transparent);
 }
 
-.logo-image {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 0.125rem;
+.global-view {
+  padding: 0.125rem 0;
+  gap: 0.125rem;
+  height: 10.5rem;
 }
 </style>

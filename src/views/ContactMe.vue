@@ -13,7 +13,11 @@
       <div class="grid-text-form">
         <h2 class="h2">Get in<br />Touch With<br />Me</h2>
 
-        <form @submit.prevent="submitForm" class="flex-col-start form">
+        <form
+          ref="form"
+          @submit.prevent="submitForm"
+          class="flex-col-start form"
+        >
           <label data-text="NAME">
             <input
               type="text"
@@ -69,7 +73,7 @@
           style="padding: 0.5rem; margin: -0.5rem"
           title="Contact me via Telegram or any other social media"
         >
-          @1abcdesign
+          @vadim4web
         </a>
       </h4>
 
@@ -86,12 +90,12 @@
 
       <h4 class="h4">
         <a
-          href="mailto:one.abcdesign@gmail.com"
+          href="mailto:vadim4web@gmail.com"
           class="link"
           style="padding: 0.5rem; margin: -0.5rem"
           title="Contact me via e-mail"
         >
-          one.abcdesign@gmail.com
+          vadim4web@gmail.com
         </a>
       </h4>
     </div>
@@ -102,16 +106,16 @@
 import { ref, onMounted } from 'vue'
 import HighLight from '@/components/HighLight.vue'
 import ActiveElement from '@/components/ActiveElement.vue'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 const name = ref('')
 const email = ref('')
 const subject = ref('')
 const message = ref('')
 
-const SERVICE_ID = import.meta.env.VITE_EMAILER_SERVICE_ID
-const TEMPLATE_ID = import.meta.env.VITE_EMAILER_TEMPLATE_ID
-const USER_KEY = import.meta.env.VITE_EMAILER_USER_KEY
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const USER_KEY = import.meta.env.VITE_EMAILJS_USER_KEY
 
 const submitForm = async () => {
   const text = `
@@ -133,7 +137,9 @@ const submitForm = async () => {
       SERVICE_ID,
       TEMPLATE_ID,
       templateParams,
-      USER_KEY
+      {
+          publicKey: USER_KEY,
+      }
     )
     console.log('Email sent successfully!', response)
   } catch (error) {

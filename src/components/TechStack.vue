@@ -1,11 +1,12 @@
 <template>
   <section class="flex-col-center tech-stack">
     <h2 class="h2 text-center">
-      Technologies I like to use and keep diving in deeper
+      {{ $t('homeH23') }}
     </h2>
 
     <vueper-slides
       :fixed-height="true"
+      :bullets="false"
       class="no-shadow"
       ref="slider"
       autoplay

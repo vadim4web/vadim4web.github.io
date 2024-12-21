@@ -1,7 +1,8 @@
 <template>
   <section class="head content flex-col-center">
     <h1 class="h1">
-      Crafting Digital Solutions<br />End-to-End.
+      {{ $t('homeH11') }}<br />{{ $t('homeH12') }}.
+
       <high-light />
     </h1>
 
@@ -12,7 +13,8 @@
       :borderRadius="'2.3125rem'"
       :bg="'var(--accent0)'"
     >
-      EXPLORE WORKS&nbsp;
+      {{ $t('homeB1') }}&nbsp;
+
       <arrow-right height="1.625rem"/>
     </active-element>
   </section>
@@ -22,14 +24,12 @@
       <div class="text">
         <h2 class="h2">
           <high-light />
-          Let’s get to<br />know me<br />closer
+
+          {{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{ $t('homeH213') }}
         </h2>
 
         <p class="t2">
-          Hello, I am Vadim Chervoniak-Bogdanov, a Full-stack developer based in Ukraine.
-          My expertise includes HTML, CSS, JavaScript, React, Vue, Node.js,
-          various databases, cloud computing, and integrating with different
-          APIs, helping me to deliver complex web development solutions.
+          {{ $t('homeP1') }}
         </p>
       </div>
 
@@ -41,7 +41,7 @@
         :bg="'var(--accent0)'"
         class="font-variant"
       >
-        Discover More About Me
+        {{ $t('homeB2') }}
       </active-element>
     </div>
 
@@ -50,7 +50,7 @@
 
   <section class="projects flex-col-center">
     <h2 class="h2">
-      My Projects Highlight
+      {{ $t('homeH22') }}
       <high-light />
     </h2>
 
@@ -61,7 +61,7 @@
       :borderRadius="'2.166rem'"
       :bg="'var(--bg50)'"
     >
-      EXPLORE MORE&nbsp;
+      {{ $t('homeB3') }}&nbsp;
       <arrow-right height="1.33rem" />
     </active-element>
 
@@ -93,14 +93,14 @@ onMounted(() => window.scrollTo(0, 0))
 
   .h1 {
     position: relative;
-    width: 18ch;
+    width: 22ch;
     height: 10rem;
   }
 
   & .highlight {
     position: absolute;
     top: -7.5rem;
-    right: -5rem;
+    right: 0;
   }
 }
 
@@ -137,7 +137,7 @@ onMounted(() => window.scrollTo(0, 0))
   .right {
     width: 100%;
     aspect-ratio: 9 / 10;
-    background: url('@/assets/photo1.webp');
+    background: url('@/assets/photo.jpg');
     background-position: 50% 25%;
     background-size: cover;
     background-repeat: no-repeat;

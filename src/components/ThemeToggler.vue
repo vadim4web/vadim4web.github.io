@@ -2,7 +2,7 @@
   <button
     @click="toggleTheme"
     class="theme-toggler"
-    :title="`Toggle theme to ${theme === 'light' ? 'dark' : 'light'}`"
+    :title="$t(`toggleTheme${'_' + theme}`)"
   >
     <span
       id="spot"
@@ -66,10 +66,9 @@ watch(theme, newTheme => setTheme(newTheme))
   transition: transform 0.5s;
   cursor: pointer;
   opacity: 0.75;
-  height: 10.5rem;
+  height: 5rem;
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
 
   #spot {
     display: flex;

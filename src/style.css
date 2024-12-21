@@ -2,7 +2,7 @@
   --is-dark: 1;
   --is-white: 0;
   --bg0: #131313;
-  --bg50: #13131388;
+  --bg50: #13131380;
   --bg33: rgba(19, 19, 19, 0.33);
   --bg2: #1a1a1a;
 
@@ -16,7 +16,7 @@
   --color3: #949494;
 
   --accent0: #ffcc00;
-  --accent50: #ffcc0088;
+  --accent50: #ffcc0080;
   --accent1: #0066cc;
   --accent2: hsl(48, 100%, 71%);
 
@@ -32,13 +32,13 @@
   --is-dark: 0;
   --is-white: 1;
   --bg0: #ececec;
-  --bg50: #ececec88;
+  --bg50: #ececec80;
   --bg33: rgba(236, 236, 236, 0.33);
   --bg2: #dbdbdb;
 
   --color-op: #ffffff;
   --color0: #000000;
-  --color50: #00000088;
+  --color50: #00000080;
   --color33: rgba(0, 0, 0, 0.33);
 
   --color1: #0b0805;
@@ -137,7 +137,19 @@ a:not(.link):active {
   color: var(--color0);
 }
 
-h1, h2, h3, h4, h5, h6, p, menu, ul, ol, li, label, span:not(.logo, #spot) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+menu,
+ul,
+ol,
+li,
+label,
+span:not(.logo, #spot) {
   margin: 0;
   padding: 0;
   cursor: text;
@@ -269,7 +281,6 @@ a.link:active {
   box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem var(--color50);
   color: var(--color0);
   text-shadow: 0 0 0.5rem var(--bg0);
-  font-weight: bold;
 }
 
 a.link:active::after {
@@ -405,6 +416,12 @@ a.link:active::after {
   letter-spacing: 0.1rem;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flex-col-center {
   display: flex;
   flex-direction: column;
@@ -427,10 +444,6 @@ a.link:active::after {
 .section {
   position: relative;
 }
-
-/* section {
-  border: 1px solid var(--accent0);
-} */
 
 @media (orientation: portrait) {
   section {

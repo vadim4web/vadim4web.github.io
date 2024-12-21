@@ -116,15 +116,11 @@ onUpdated(() => handleScroll())
     gap: 1.5rem;
 
     @media (orientation: landscape) {
-      & {
-        width: calc(50% - 1.5rem);
-      }
+      width: calc(50% - 1.5rem);
     }
 
     @media (orientation: portrait) {
-      & {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
 
@@ -133,34 +129,33 @@ onUpdated(() => handleScroll())
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 0.5rem;
+    flex-shrink: 1;
+    flex-grow: 0;
+    height: auto;
+    overflow: hidden;
+    background: var(--bg50);
+    border-radius: 1rem;
+    text-align: center;
 
     &:has(.vertical) {
       @media (orientation: landscape) {
-        & {
-          width: calc((40dvw - 1.5rem) * 0.333 - 1rem);
-          height: calc(40dvw * 0.666 * 1.2);
-        }
+        width: calc((40dvw - 1.5rem) * 0.333 - 1rem);
+        height: calc(40dvw * 0.666 * 1.2);
       }
       @media (orientation: portrait) {
-        & {
-          width: calc(80dvw * 0.333 - 1rem);
-          height: calc(80dvw * 0.666 * 1.2);
-        }
+        width: calc(80dvw * 0.333 - 1rem);
+        height: calc(80dvw * 0.666 * 1.2);
       }
     }
 
     &:has(.horizontal) {
       @media (orientation: landscape) {
-        & {
-          width: calc((((40dvw - 1.5rem) * 0.333 - 1rem) * 2) + 1.5rem);
-          height: calc((40dvw * 0.666 * 1.2 - 1.5rem) / 2);
-        }
+        width: calc((((40dvw - 1.5rem) * 0.333 - 1rem) * 2) + 1.5rem);
+        height: calc((40dvw * 0.666 * 1.2 - 1.5rem) / 2);
       }
       @media (orientation: portrait) {
-        & {
-          width: calc(80dvw - (80dvw * 0.333 - 1rem) - 1.5rem);
-          height: calc(((80dvw * 0.666 * 1.2) - 1.5rem) / 2);
-        }
+        width: calc(80dvw - (80dvw * 0.333 - 1rem) - 1.5rem);
+        height: calc(((80dvw * 0.666 * 1.2) - 1.5rem) / 2);
       }
     }
 
@@ -191,14 +186,6 @@ onUpdated(() => handleScroll())
     .vertical {
       aspect-ratio: 1 / 2;
     }
-
-    flex-shrink: 1;
-    flex-grow: 0;
-    height: auto;
-    overflow: hidden;
-    background: var(--bg50);
-    border-radius: 1rem;
-    text-align: center;
 
     .iframe {
       border-radius: 1rem;
