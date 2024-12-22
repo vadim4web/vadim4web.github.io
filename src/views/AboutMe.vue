@@ -2,40 +2,33 @@
   <div class="flex-col-start">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2">
-        About Me
+        {{ $t('aboutH21') }}
         <high-light />
       </h2>
 
-      <p class="t2">Little Brief About Myself</p>
+      <p class="t2">
+        {{ $t('aboutT1') }}
+      </p>
     </div>
 
     <div class="mission flex-col-start">
       <div class="mission-header">
         <h2 class="h2">
-          My mission is
+          {{ $t('aboutH221') }}
           <br />
-          to make
+          {{ $t('aboutH222') }}
           <br />
-          development
+          {{ $t('aboutH223') }}
           <br />
-          easier.
+          {{ $t('aboutH224') }}
         </h2>
 
-        <p class="t3">
-          As individuals, we are all born developers, constantly shaping our
-          neural networks as we journey through life. Some of us, including
-          myself, have chosen to transform this passion for development into a
-          fulfilling career in web development. For me, it's not just a job but
-          a calling that allows me to express my creativity and make a
-          meaningful impact through technology.
-          <br />
-          <br />
-          <br />
-          We each have our own unique story to tell, and through the language of
-          technology, we code our autobiographies, breathing life into our ideas
-          on the digital canvas. I am deeply dedicated to creating user-friendly
-          web applications and continually enhancing my skills to stay ahead in
-          this ever-evolving industry.
+        <p class="t3 text1">
+          {{ $t('aboutT21') }}
+        </p>
+
+        <p class="t3 text2">
+          {{ $t('aboutT21') }}
         </p>
       </div>
 
@@ -68,7 +61,25 @@ onMounted(() => window.scrollTo(0, 0))
 .mission-header {
   padding: 5.5rem 0 6.25rem 1.5rem;
   display: flex;
-  gap: 2.2rem;
+  display: grid;
+  grid-gap: 2.2rem;
+
+  .h2 {
+    min-width: 10ch;
+    grid-area: mission;
+  }
+
+  @media (orientation: portrait) {
+    grid-template-areas:
+      "mission text1"
+      "text2 text2";
+  }
+
+  @media (orientation: landscape) {
+    grid-template-areas:
+      "mission text1"
+      "mission text2";
+  }
 }
 
 .rhymes {
@@ -88,13 +99,25 @@ onMounted(() => window.scrollTo(0, 0))
 }
 
 .t3 {
-  margin: auto;
+  @media (orientation: portrait) {
+    font-size: 140%;
+  }
+
+  &.text1 {
+    grid-area: text1;
+  }
+
+  &.text2 {
+    grid-area: text2;
+
+    @media (orientation: portrait) {
+      min-width: 100%;
+    }
+  }
 
   @media (orientation: landscape) {
-    & {
-      font-size: 166%;
-      line-height: normal;
-    }
+    font-size: 166%;
+    line-height: normal;
   }
 }
 

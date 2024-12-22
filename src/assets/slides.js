@@ -1,6 +1,7 @@
 const slidesArray = [
   {
-    title: 'Exploring System & Environments',
+    title_en: 'Exploring System & Environments',
+    title_uk: 'Дослідження Систем і Середовищ',
     content: [
       { name: 'Windows', path: 'windows.webp' },
       { name: 'Linux', path: 'linux.webp' },
@@ -8,7 +9,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Navigating Command Line Interfaces',
+    title_en: 'Navigating Command Line Interfaces',
+    title_uk: 'Навігація в Інтерфейсах Командного Рядка',
     content: [
       { name: 'PowerShell', path: 'powershell.webp' },
       { name: 'Bash', path: 'bash.webp' },
@@ -16,7 +18,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Crafting Development Software Tools',
+    title_en: 'Crafting via Development Software Tools',
+    title_uk: 'Створення з Інструментами для Розробки',
     content: [
       { name: 'Figma', path: 'figma.webp' },
       { name: 'VSCode', path: 'code.webp' },
@@ -24,7 +27,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Mastering Programming Languages',
+    title_en: 'Mastering Programming Languages',
+    title_uk: 'Оволодіння Мовами Програмування',
     content: [
       { name: 'PHP', path: 'php.webp' },
       { name: 'JavaScript', path: 'js6.webp' },
@@ -32,7 +36,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Following World-Wide-Web Standards',
+    title_en: 'Following World-Wide-Web Standards',
+    title_uk: 'Дотримання Стандартів Всесвітньої Павутини',
     content: [
       { name: 'HTML5', path: 'html5.webp' },
       { name: 'CSS3', path: 'css3.webp' },
@@ -40,7 +45,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Embracing the Processing Toolkit',
+    title_en: 'Embracing the Processing Toolkit',
+    title_uk: 'Використання Інструментарію Обробки',
     content: [
       { name: 'Sass', path: 'sass.webp' },
       { name: 'Vite', path: 'vite.webp' },
@@ -48,7 +54,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Designing with CSS and UI Frameworks',
+    title_en: 'Designing with CSS and UI Frameworks',
+    title_uk: 'Дизайн з CSS і UI Фреймворками',
     content: [
       { name: 'Material UI', path: 'mui.webp' },
       { name: 'Vutify', path: 'vuetify.webp' },
@@ -56,7 +63,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Visualizing Advanced Graphics Concepts',
+    title_en: 'Visualizing Advanced Graphics Concepts',
+    title_uk: 'Візуалізація Концепцій Складної Графіки',
     content: [
       { name: 'SVG, Canvas', path: 'favicon.ico' },
       { name: 'WebGL', path: 'webgl.webp' },
@@ -64,7 +72,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Adopting JavaScript Frameworks',
+    title_en: 'Adopting JavaScript Frameworks',
+    title_uk: 'Застосування JavaScript Фреймворків',
     content: [
       { name: 'Vue.js', path: 'vue.webp' },
       { name: 'Nuxt.js', path: 'nuxt.webp' },
@@ -72,7 +81,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Advancing in Backend Development',
+    title_en: 'Advancing in Backend Development',
+    title_uk: 'Просування у Серверній Розробці',
     content: [
       { name: 'Django', path: 'django.webp' },
       { name: 'Node.js', path: 'node.webp' },
@@ -80,7 +90,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Using Package Managers Effectively',
+    title_en: 'Using Package Managers Effectively',
+    title_uk: 'Ефективне Використання Менеджерів Пакетів',
     content: [
       { name: 'PyPI', path: 'pypi.webp' },
       { name: 'NPM', path: 'npm.webp' },
@@ -88,7 +99,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Connecting with APIs and Networking',
+    title_en: 'Connecting with APIs and Networking',
+    title_uk: 'Робота з API та Мережевими Технологіями',
     content: [
       { name: 'JSON', path: 'json.webp' },
       { name: 'REST', path: 'rest.webp' },
@@ -96,7 +108,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Managing Databases Effectively',
+    title_en: 'Managing Databases Effectively',
+    title_uk: 'Ефективне Управління Базами Даних',
     content: [
       { name: 'MongoDB', path: 'mongodb.webp' },
       { name: 'PostgreSQL', path: 'postgresql.webp' },
@@ -104,7 +117,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Extending Platforms Acquaintance',
+    title_en: 'Extending Platforms Acquaintance',
+    title_uk: 'Розширення Знань про Платформи',
     content: [
       { name: 'AWS', path: 'aws.webp' },
       { name: 'GCP', path: 'gcp.webp' },
@@ -112,7 +126,8 @@ const slidesArray = [
     ],
   },
   {
-    title: 'Versioning with Version Control Systems',
+    title_en: 'Versioning with Version Control Systems',
+    title_uk: 'Версіонування з Системами Контролю Версій',
     content: [
       { name: 'Git', path: 'git.webp' },
       { name: 'GitHub', path: 'github.webp' },
@@ -120,7 +135,6 @@ const slidesArray = [
     ],
   },
 ];
-
 
 const arrayToHTML = content => content.map(item => `
   <div class="content" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
@@ -131,7 +145,8 @@ const arrayToHTML = content => content.map(item => `
 
 const slides = slidesArray.map(item => {
   return {
-    title: item.title,
+    title_en: item.title_en,
+    title_uk: item.title_uk,
     content: arrayToHTML(item.content)
   }
 })

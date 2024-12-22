@@ -41,8 +41,16 @@
 import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
-const { path, type, action, fontSize, padding, borderRadius, classes, bg } =
-  defineProps([
+const {
+  path,
+  type,
+  action,
+  fontSize,
+  padding,
+  borderRadius,
+  classes,
+  bg
+} = defineProps([
     'path',
     'type',
     'action',
@@ -68,6 +76,7 @@ const handleClick = () => {
 .active-element {
   position: relative;
   display: inline-flex;
+  width: max-content;
   align-items: center;
   justify-content: center;
   color: var(--color0);

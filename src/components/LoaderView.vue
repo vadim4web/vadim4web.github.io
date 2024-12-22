@@ -1,5 +1,6 @@
 <template>
   <div
+    :data-loading="$t('loading')"
     class="loader flex-col-center"
     :class="{
       vertical: classes?.vertical,
@@ -19,19 +20,19 @@ const { classes, three } = defineProps(['classes', 'three'])
 <style lang="scss" scoped>
 @keyframes loading {
   0% {
-    content: 'Loading...';
+    content: attr(data-loading)'...';
   }
   25% {
-    content: 'Loading';
+    content: attr(data-loading);
   }
   50% {
-    content: 'Loading.';
+    content: attr(data-loading)'.';
   }
   75% {
-    content: 'Loading..';
+    content: attr(data-loading)'..';
   }
   100% {
-    content: 'Loading...';
+    content: attr(data-loading)'...';
   }
 }
 

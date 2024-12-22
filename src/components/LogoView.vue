@@ -2,7 +2,7 @@
   <a
     href="https://bit.ly/cv_view"
     class="logo-link"
-    title="My CV .pdf"
+    :title="$t('myCV')"
   >
     <span class="logo-span">
       <span class="logo-letter flex-center">V</span>
@@ -41,27 +41,49 @@
   font-family: 'Victor Mono', monospace;
   font-weight: 700;
   z-index: 1;
-  font-size: 2.5rem;
-  line-height: 3.5rem;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
   height: 3.5rem;
   width: 13rem;
   display: block;
+  padding: 0 0.5rem;
+  background: var(--color-op);
+  border: 1px dashed var(--color0);
 
-  & * {
-    cursor: pointer !important;
+  .logo-letter:has(.logo-image) {
+    width: 2rem;
+    height: 3.5rem;
+
+    & .logo-image {
+      position: relative;
+      height: 2rem;
+      width: 2rem;
+      stroke-width: max(0.2rem, 9px);
+    }
+  }
+
+  &:hover {
+    color: var(--bg0) !important;
+    background: var(--color0);
+    border-color: var(--accent0);
+
+    & .logo-image {
+      stroke: var(--bg0);
+    }
   }
 
   .logo-span {
     top: 0;
-    background: var(--color-op);
-    border: 1px dashed var(--color0);
     position: relative;
     z-index: -1;
     display: grid;
     grid-template-columns: 0.75fr repeat(8, 1fr);
     align-content: center;
     justify-items: center;
-    padding: 0 0.5rem 0 0.05rem;
+
+    .logo-letter {
+      padding: 0.5rem 0;
+    }
 
     .logo-letter:first-child {
       position: relative;
@@ -72,30 +94,6 @@
     .logo-letter:not(:has(.logo-image)) {
       width: 0.75rem;
     }
-
-    .logo-letter:has(.logo-image) {
-      width: 2.25rem;
-      height: 3.5rem;
-
-      & .logo-image {
-        position: relative;
-        height: 2.15rem;
-        width: 2.15rem;
-        stroke-width: max(0.25rem, 11px);
-        margin: auto 0;
-      }
-    }
-
-    &:hover {
-      color: var(--bg0);
-      background: var(--color0);
-      border-color: var(--accent0);
-
-      & .logo-image {
-        stroke: var(--bg0);
-      }
-    }
-
   }
 }
 </style>

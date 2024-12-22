@@ -14,7 +14,7 @@
       <vueper-slide
         v-for="(slide, i) in slides"
         :key="slide.id"
-        :title="slide.title"
+        :title="slide[`title_${$i18n.locale}`]"
         :content="slide.content"
         :style="'font-size: 3rem'"
       />

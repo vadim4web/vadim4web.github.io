@@ -2,23 +2,26 @@
   <div class="flex-col-start">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2" style="left: -0.2rem">
-        Contact Me
+        {{ $t('contactH21') }}
         <high-light />
       </h2>
 
-      <p class="t2">Hire Me For Your Awesome Project</p>
+      <p class="t2">{{ $t('contactT1') }}</p>
     </div>
 
     <div class="flex-col-start">
       <div class="grid-text-form">
-        <h2 class="h2">Get in<br />Touch With<br />Me</h2>
+        <h2 class="h2">
+          {{ $t('contactH221') }}<br />
+          {{ $t('contactH222') }}<br />
+          {{ $t('contactH223') }}
+        </h2>
 
         <form
-          ref="form"
           @submit.prevent="submitForm"
           class="flex-col-start form"
         >
-          <label data-text="NAME">
+          <label :data-text="$t('name')">
             <input
               type="text"
               v-model="name"
@@ -28,7 +31,7 @@
             />
           </label>
 
-          <label data-text="EMAIL">
+          <label :data-text="$t('email')">
             <input
               type="email"
               v-model="email"
@@ -37,7 +40,7 @@
             />
           </label>
 
-          <label data-text="SUBJECT">
+          <label :data-text="$t('project')">
             <input
               type="text"
               v-model="subject"
@@ -46,7 +49,7 @@
             />
           </label>
 
-          <label data-text="MESSAGE">
+          <label :data-text="$t('comment')">
             <textarea v-model="message"></textarea>
           </label>
 
@@ -57,7 +60,7 @@
             :bg="'var(--accent0)'"
             class="font-variant"
           >
-            send
+            {{ $t('send') }}
           </active-element>
         </form>
       </div>
@@ -232,7 +235,7 @@ onMounted(() => window.scrollTo(0, 0))
 
 input[type='submit'],
 button {
-  width: 11rem;
+  width: 14rem;
   height: 3.5rem;
   background: var(--accent0);
   border-color: transparent;

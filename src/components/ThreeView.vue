@@ -12,6 +12,7 @@
             white_bg: white_bg,
             iframe: true,
           }"
+          :iframeStyle="{ zoom: '0.125' }"
           :three="true"
         />
       </div>

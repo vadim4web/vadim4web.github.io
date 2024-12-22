@@ -199,6 +199,20 @@ onMounted(async () => {
     width: 3.75rem;
     height: 3.75rem;
 
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 3.75rem;
+      height: 3.75rem;
+      border-radius: 1.875rem;
+      box-shadow: inset 0 0 1.5rem #80808080;
+      z-index: 1;
+    }
+
     &-img {
       border-radius: 50%;
       width: 3.75rem;

@@ -25,7 +25,7 @@
       <address>
         <h4
           class="h4"
-          title="Location of my integrated home-office web development studio"
+          :title="$t('location')"
         >
           {{ $t('footerA1') }}, 175/14,<br />
           {{ $t('footerA2') }},<br />
@@ -35,26 +35,26 @@
 
       <div class="contacts">
         <h4 class="h4">
-          <a href="tel:+380933789883" title="My cellphone number">
+          <a href="tel:+380933789883" :title="$t('callMe')">
             +380-933-789-883
           </a>
         </h4>
 
         <div class="links">
           <h4 class="h4">
-            <a href="https://github.com/vadim4web" title="My Git-hub account">
+            <a href="https://github.com/vadim4web" :title="$t('gitHub')">
               <img src="/github.svg" alt="github logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="https://t.me/vadim4web" title="My Telegram direct link">
+            <a href="https://t.me/vadim4web" :title="$t('chatMe')">
               <img src="/telegram.png" alt="telegram logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="mailto:vadim4web@gmail.com" title="My Gmail box">
+            <a href="mailto:vadim4web@gmail.com" :title="$t('emailMe')">
               <img src="/mail.png" alt="mail logo" />&nbsp;
             </a>
           </h4>

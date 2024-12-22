@@ -4,7 +4,6 @@
     :src="iframeSrc"
     :class="iframeClass"
     :style="iframeStyle"
-    style="zoom: 0.2; overflow-x: hidden !important;"
     frameborder="0"
     @load="setLoaded"
   ></iframe>

@@ -2,11 +2,13 @@
   <div class="flex-col-start projects-page">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2" style="left: -0.2rem">
-        My Works
+        {{ $t('worksH2') }}
         <high-light />
       </h2>
 
-      <p class="t2">Showcase About Works</p>
+      <p class="t2">
+        {{ $t('worksT1') }}
+      </p>
     </div>
 
     <div class="projects-container">
@@ -52,7 +54,7 @@
         class="font-variant load-more"
         :action="handleLoadMore"
       >
-        load more works
+        {{ $t('worksMore') }}
       </active-element>
     </div>
   </div>
@@ -189,6 +191,14 @@ onUpdated(() => handleScroll())
 
     .iframe {
       border-radius: 1rem;
+
+      @media (orientation: portrait) {
+        zoom: 0.175;
+      }
+
+      @media (orientation: landscape) {
+        zoom: 0.33;
+      }
     }
   }
 

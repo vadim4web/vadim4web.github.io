@@ -15,6 +15,7 @@
       <async-frame
         :iframeSrc="demo"
         :iframeClass="{ white_bg: project.white_bg, preview: true }"
+        :iframeStyle="{ zoom: '0.75' }"
       />
 
       <div class="text flex-col-start">
@@ -48,7 +49,7 @@
           <a :href="demo" target="_blank" class="demo" title="Live Demo">{{ demo }}</a>
         </p>
 
-        <p class="p4" v-if="project.deps.length">
+        <div class="p4" v-if="project.deps.length">
           <b>Libraries usage:</b>
 
           <br />
@@ -56,7 +57,7 @@
           <ul>
             <li v-for="d, i in project.deps" :key="i">{{ d }}</li>
           </ul>
-        </p>
+        </div>
 
         <p class="p4" v-else>
           The project does not utilize any external libraries and relies solely on
@@ -114,6 +115,7 @@
             <async-frame
               :iframeSrc="getPath(p.path)"
               :iframeClass="{ white_bg: p.white_bg, other: true }"
+              :iframeStyle="{ zoom: '0.25' }"
             />
 
             <div class="other-text flex-col-start">
@@ -186,12 +188,19 @@ onMounted(() => window.scrollTo(0, 0))
 <style lang="scss">
 .project-page {
   .preview {
-    width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
 
     &:not(.white_bg) {
       background-color: var(--bg50);
+    }
+
+    @media (orientation: portrait) {
+      width: 100%;
+    }
+
+    @media (orientation: landscape) {
+      width: 65%;
     }
   }
 
