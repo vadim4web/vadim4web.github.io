@@ -27,10 +27,6 @@
 
           <span class="gap2">
             {{ title.split(' ').slice(-1).join(' ') }}
-
-            <span class="after">
-              ------
-            </span>
           </span>
         </router-link>
       </h4>
@@ -135,12 +131,15 @@ const three = getThreeRandom(projects)
     .h4 {
       text-align: left;
       width: 100%;
+      position: relative;
 
       & .after {
-        width: 3rem;
+        position: absolute;
+        right: 0;
+        width: 5rem;
         font-size: inherit;
         line-height: inherit;
-        letter-spacing: -0.25ch;
+        letter-spacing: -0.33ch;
         color: var(--accent0);
         text-align: right;
         display: inline-flex;
@@ -148,7 +147,22 @@ const three = getThreeRandom(projects)
       }
 
       & .gap2 {
+        width: 100%;
         word-spacing: 2rem;
+      }
+
+      &::after {
+        position: absolute;
+        height: 2px;
+        content: '-------------------';
+        right: 0;
+        bottom: 0;
+        width: fit-content;
+        font-size: inherit;
+        line-height: inherit;
+        letter-spacing: -0.33ch;
+        color: var(--accent0);
+        text-align: right;
       }
     }
   }
