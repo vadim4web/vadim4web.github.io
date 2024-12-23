@@ -2,12 +2,12 @@
   <div class="flex-col-start project-page">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2">
-        Project Detail
+        {{ $t('projectH21') }}
         <high-light />
       </h2>
 
       <p class="t2">
-        Details About The Project
+        {{ $t('projectT1') }}
       </p>
     </div>
 
@@ -23,34 +23,34 @@
 
         <p class="p4">
           <b>
-            Tech area:&nbsp;
+            {{ $t('projectP1') }}:&nbsp;
           </b>
           {{ project.tags.join(' | ') }}
         </p>
 
         <p class="p4">
           <b>
-            Tech stack:&nbsp;
+            {{ $t('projectP2') }}:&nbsp;
           </b>
           {{ project.stack.join(', ') }}
         </p>
 
         <p class="p4">
           <b>
-            Source:&nbsp;
+            {{ $t('projectP3') }}:&nbsp;
           </b>
           <a :href="source" target="_blank" class="source" title="GitHub Repository">{{ source }}</a>
         </p>
 
         <p class="p4">
           <b>
-            Demo:&nbsp;
+            {{ $t('projectP4') }}:&nbsp;
           </b>
           <a :href="demo" target="_blank" class="demo" title="Live Demo">{{ demo }}</a>
         </p>
 
         <div class="p4" v-if="project.deps.length">
-          <b>Libraries usage:</b>
+          <b>{{ $t('projectP5') }}:</b>
 
           <br />
 
@@ -60,26 +60,22 @@
         </div>
 
         <p class="p4" v-else>
-          The project does not utilize any external libraries and relies solely on
-          the standard built-in HTML, CSS, and JavaScript processing capabilities
-          of modern browsers.
+          {{ $t('projectP5_default') }}
         </p>
 
         <p class="p4">
           <b>
-            Description:
+            {{ $t('projectP6') }}:
           </b>
 
           <br />
 
-          <pre v-if="project.desc">
-{{ project.desc }}
+          <pre v-if="project['desc_' + $i18n.locale]">
+{{ project['desc_' + $i18n.locale] }}
           </pre>
 
           <p class="p4" v-else>
-            It seems that there is no description attached, so let's suppose that
-            this project is self-descriptive and needs no explicit descriptional
-            words.
+            {{ $t('projectP6_default') }}
           </p>
         </p>
       </div>
@@ -91,26 +87,28 @@
         class="nav-button prev"
       >
         <arrow-navigation />
-        PREVIOUS WORK
+        {{ $t('projectPrev') }}
       </router-link>
 
       <router-link
         :to="{ name: 'project', params: { projectName: next.name } }"
         class="nav-button next"
       >
-        NEXT WORK
+        {{ $t('projectNext') }}
         <arrow-navigation />
       </router-link>
     </div>
 
     <div class="others flex-col-start">
-      <h2 class="h1">Other Projects</h2>
+      <h2 class="h1">
+        {{ $t('projectH22') }}
+      </h2>
 
       <div class="cards">
         <div class="card" v-for="p, i in others" :key="i">
           <router-link
             :to="{ name: 'project', params: { projectName: p.name } }"
-            :title="'View more details about `' + p.title + '`'"
+            :title="$t('worksDetails') + ' `' + p.title + '`'"
           >
             <async-frame
               :iframeSrc="getPath(p.path)"

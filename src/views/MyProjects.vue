@@ -37,7 +37,7 @@
             <router-link
               class="t2"
               :to="{ name: 'project', params: { projectName: p.name } }"
-              :title="'View more details about `' + p.title + '`'"
+              :title="$t('worksDetails') + ' `' + p.title + '`'"
             >
               {{ p.title }}
             </router-link>
