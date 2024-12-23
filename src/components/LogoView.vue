@@ -36,14 +36,17 @@
   </a>
 </template>
 
+<script></script>
+
 <style lang="scss">
 .logo-link {
   font-weight: 700;
   z-index: 1;
-  font-size: 2.25rem;
-  line-height: 2.25rem;
-  height: 3.5rem;
-  width: 13rem;
+  font-size: 2.5rem;
+  line-height: 4.1rem;
+  height: 4.25rem;
+  width: 14.5rem;
+  min-width: 14.5rem;
   display: block;
   padding: 0 0.5rem;
   background: var(--color-op);
@@ -51,13 +54,13 @@
 
   .logo-letter:has(.logo-image) {
     width: 2rem;
-    height: 3.5rem;
+    height: 4.25rem;
 
     & .logo-image {
       position: relative;
-      height: 2rem;
+      height: 2.1rem;
       width: 2rem;
-      stroke-width: max(0.2rem, 9px);
+      stroke-width: max(0.25rem, 10px);
     }
   }
 

@@ -53,7 +53,7 @@ menu {
   position: relative;
   list-style: none;
   display: grid;
-  grid-template-columns: 1.3fr repeat(4, 1fr) 0.7fr;
+  grid-template-columns: 1.2fr repeat(4, 1fr) 0.8fr;
   place-items: center;
   font-weight: 500;
   height: 10.5rem;
