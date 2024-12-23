@@ -155,15 +155,11 @@ onMounted(() => window.scrollTo(0, 0))
       top: 0;
     }
 
-    @media (orientation: landscape) {
-      & {
-        background-position: 0 25%;
-      }
-    }
+
   }
   .photo2 {
-    background-image: url('@/assets/photo.webp');
-    background-position: 0 25%;
+    background-image: url('@/assets/photo2.webp');
+    background-position: center 65%;
 
     &::before {
       border-radius: 1.75rem;
