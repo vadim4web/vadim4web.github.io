@@ -79,8 +79,13 @@ const messages = {
     comment: 'COMMENT',
     send: 'SEND',
 
-    404: 'No such a page found...',
-    back404: 'go back',
+    notFoundT11: 'In the vast realm of possibilities,',
+    notFoundT12: 'the route ',
+    notFoundT13: ' exists',
+    notFoundT14: 'in the twilight between creation and nonexistence.',
+    notFoundT15: '...It is a path not yet traveled or, perhaps, already forgotten...',
+    notFoundB: 'go back',
+
     loading: 'Loading'
   },
   uk: {
@@ -161,8 +166,12 @@ const messages = {
     comment: 'КОМЕНТАР',
     send: 'НАДІСЛАТИ',
 
-    404: 'Такої сторінки не знайдено...',
-    back404: 'повернутися',
+    notFoundT11: 'У безмежному світі можливостей,',
+    notFoundT12: 'шлях ',
+    notFoundT13: ' існує',
+    notFoundT14: 'у сутінках між створенням та небуттям.',
+    notFoundT15: '...Це шлях, який ще не пройдено, або, можливо, вже забуто...',
+    notFoundB: 'повернутися',
 
     loading: 'Грузимо'
   },

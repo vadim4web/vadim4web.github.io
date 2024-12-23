@@ -63,8 +63,9 @@
 
 :root {
   font-size: 1.4vmin;
+  font-family: 'Victor Mono', serif;
+  font-optical-sizing: auto;
   line-height: normal;
-  font-family: sans-serif;
 }
 
 * {
@@ -308,7 +309,6 @@ a.link:active::after {
   font-size: 1rem;
   padding: 0 10dvw;
   overflow: hidden;
-
   color: var(--color0);
   background: var(--bg0);
 }
@@ -317,16 +317,8 @@ a.link:active::after {
 .h2,
 .h3,
 .h4 {
-  font-family: 'Syne', sans-serif;
   font-weight: 700;
   font-style: normal;
-}
-
-.p1,
-.p2,
-.p3,
-.p4 {
-  font-family: 'Rubik', sans-serif;
 }
 
 .h1 {
@@ -361,7 +353,6 @@ a.link:active::after {
 
 .p2 {
   font-size: 1.125rem;
-  line-height: normal;
   font-weight: 700;
 }
 
@@ -374,7 +365,6 @@ a.link:active::after {
 
 .p4 {
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
   line-height: 170%;
 }
@@ -395,16 +385,9 @@ a.link:active::after {
   text-align: right;
 }
 
-.t1,
-.t2,
-.t3 {
-  font-family: 'Inter', sans-serif;
-}
-
 .t1 {
   font-size: 2rem;
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
 }
@@ -419,7 +402,6 @@ a.link:active::after {
 .t3 {
   font-size: 0.99rem;
   font-weight: 600;
-  line-height: normal;
   letter-spacing: 0.1rem;
 }
 

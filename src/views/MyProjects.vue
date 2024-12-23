@@ -231,7 +231,6 @@ onUpdated(() => handleScroll())
     align-items: center;
     justify-content: center;
     color: var(--accent0);
-    font-family: Inter;
     text-align: center;
     font-size: 0.8rem;
     font-weight: 700;

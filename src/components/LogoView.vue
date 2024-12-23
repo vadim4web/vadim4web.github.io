@@ -38,7 +38,6 @@
 
 <style lang="scss">
 .logo-link {
-  font-family: 'Victor Mono', monospace;
   font-weight: 700;
   z-index: 1;
   font-size: 2.25rem;

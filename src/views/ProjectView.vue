@@ -225,7 +225,6 @@ onMounted(() => window.scrollTo(0, 0))
   pre {
     line-break: normal;
     text-wrap: wrap;
-    font-family: inherit;
   }
 
   .navigation {
@@ -237,7 +236,6 @@ onMounted(() => window.scrollTo(0, 0))
   .nav-button {
     display: flex;
     height: 1.5625rem;
-    font-family: 'Rubik', sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 170%;

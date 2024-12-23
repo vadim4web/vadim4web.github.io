@@ -5,12 +5,12 @@
       <high-light />
 
       <p class="p1">
-        In the vast realm of possibilities,<br />
-        the route <b class="">{{ useRoute().path }}</b> exists<br />
-        in the twilight between creation and nonexistence.<br />
+        {{ $t('notFoundT11') }}<br />
+        {{ $t('notFoundT12') }}<b class="">{{ useRoute().path }}</b>{{ $t('notFoundT13') }}<br />
+        {{ $t('notFoundT14') }}<br />
         <hr />
         <hr />
-        <i>...It is a path not yet traveled or, perhaps, already forgotten... </i>
+        <i>{{ $t('notFoundT15') }}</i>
       </p>
 
       <active-element
@@ -21,7 +21,7 @@
         :bg="'var(--bg50)'"
         class="font-variant go-back"
       >
-        go back
+        {{ $t('notFoundB') }}
       </active-element>
     </h2>
   </div>
@@ -59,7 +59,6 @@ h2 {
   .p1 {
     font-size: 3rem;
     line-height: 3.5rem;
-    font-family: 'Victor Mono', monospace;
 
     b {
       color: var(--bg0);

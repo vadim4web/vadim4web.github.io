@@ -167,7 +167,6 @@ onMounted(() => window.scrollTo(0, 0))
 }
 
 .form {
-  font-family: 'Rubik', sans-serif;
   gap: 3.5rem;
   font-size: 1.5rem;
   font-weight: 400;
@@ -219,7 +218,6 @@ onMounted(() => window.scrollTo(0, 0))
 
   input,
   textarea {
-    font-family: 'Victor Mono', monospace;
     font-size: 1.5rem;
 
     &:not(:focus) {

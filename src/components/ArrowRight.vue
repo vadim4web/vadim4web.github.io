@@ -13,7 +13,6 @@ const { height } = defineProps(['height'])
 
 <style lang="scss" scoped>
 .arrow-right {
-  font-family: 'Victor Mono', monospace;
   font-weight: 700;
   text-wrap: nowrap;
 }
