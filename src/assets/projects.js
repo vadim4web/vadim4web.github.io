@@ -98,6 +98,7 @@ const vertical = [
     tags: ['UI', 'FE', 'API'],
     desc_en: 'This demo serves as a testament to the simplicity and efficiency of the component-based approach in React.js.\n\nIt highlights the ease and speed with which one can create a compelling landing page suitable for various business representations.\n\nHarnessing the power of React.js components, this demonstration underscores the agility and versatility of modern web development.',
     desc_uk: 'Ця демонстрація є свідченням простоти та ефективності підходу, заснованого на компонентах, у React.js.\n\nВона підкреслює легкість і швидкість, з якими можна створити привабливу цільову сторінку, що підходить для різних бізнес-представлень.\n\nВикористовуючи потужність компонентів React.js, ця демонстрація акцентує увагу на гнучкості та універсальності сучасної веб-розробки.',
+    path: 'restaurant-react',
     orientation: '|',
     deps: [
       "react ^18.2.0",
@@ -506,7 +507,6 @@ const chunkArray = (arr, chunkSize) => {
     chunkedArray.push(chunk)
   }
 
-  console.log(chunkedArray)
   return chunkedArray
 }
 
