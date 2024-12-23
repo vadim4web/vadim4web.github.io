@@ -162,7 +162,7 @@ onMounted(() => window.scrollTo(0, 0))
     }
   }
   .photo2 {
-    background-image: url('@/assets/photo.jpg');
+    background-image: url('@/assets/photo.webp');
     background-position: 0 25%;
 
     &::before {
