@@ -10,7 +10,8 @@
         background:
           `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
           var(--accent1), var(--color0))`,
-        fontSize: theme === 'light' ? '1.5rem' : '1.75rem',
+        fontSize: theme === 'light' ? '1.5rem' : '1.85rem',
+        lineHeight: theme === 'light' ? '1.5rem' : '2rem',
       }"
     >
       {{ theme === 'light' ? '🌙' : '🌞' }}

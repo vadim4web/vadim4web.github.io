@@ -108,7 +108,6 @@ menu {
   text-align: center;
   width: 100%;
   text-shadow: 0 0 2rem var(--bg0) !important;
-  background: radial-gradient(var(--bg50), transparent, transparent);
 }
 
 .global-view {

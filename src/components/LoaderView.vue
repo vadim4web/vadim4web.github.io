@@ -48,8 +48,7 @@ const { classes, three } = defineProps(['classes', 'three'])
   }
 }
 
-.loader,
-.circle2 {
+.loader {
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -62,16 +61,15 @@ const { classes, three } = defineProps(['classes', 'three'])
     overflow: hidden;
     content: '';
     position: absolute;
-    width: 20dvw;
+    width: 25dvw;
     text-align: left;
-    padding-left: 1.25dvw;
+    padding-left: 1.5rem;
     font-weight: bold;
     transform-origin: center;
     top: 50%;
     left: 50%;
-    line-height: 125%;
-    transform: translate(-50%, -50%);
-    animation: loading 4s infinite, twist-scale2 4s 2s infinite;
+    line-height: 150%;
+    animation: loading 4s infinite;
     background-clip: text;
     -webkit-background-clip: text;
     mix-blend-mode: var(--loader-bg-blend-mode);
@@ -92,38 +90,24 @@ const { classes, three } = defineProps(['classes', 'three'])
 
   @media (orientation: portrait) {
     &.horizontal:before {
-      transform: translate(-50%, -50%) scale(2);
+      transform: translate(-50%, -50%) scale(6.6);
+    }
+    &.vertical:before {
+      transform: translate(-50%, -50%) scale(5);
     }
   }
 
   @media (orientation: landscape) {
+    &.horizontal:before {
+      transform: translate(-50%, -50%) scale(1.75);
+    }
     &.vertical:before {
-      transform: translate(-50%, -50%) scale(0.5);
+      transform: translate(-50%, -50%) scale(1.33);
     }
   }
 
   &.one-of-three:before {
     transform: translate(-50%, -50%) scale(0.8);
-  }
-
-  &::after {
-    overflow: hidden;
-    content: '';
-    position: absolute;
-    width: 8ch;
-    height: 8ch;
-    top: calc(50% - 4ch);
-    left: calc(50% - 4ch);
-    transform-origin: center;
-    animation: twist-scale 4s infinite;
-    border: 0.25rem solid transparent;
-    border-radius: 50%;
-    background-color: var(--accent0);
-    background-clip: text;
-    -webkit-background-clip: text;
-    z-index: -1;
-    box-shadow: inset 0 0 10rem var(--accent0);
-    filter: blur(1rem) contrast(2);
   }
 }
 </style>

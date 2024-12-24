@@ -209,8 +209,9 @@ onMounted(async () => {
       width: 3.75rem;
       height: 3.75rem;
       border-radius: 1.875rem;
-      box-shadow: inset 0 0 1.5rem #80808080;
+      box-shadow: inset 0 0 1rem 0.33rem #80808080;
       z-index: 1;
+      backdrop-filter: saturate(0.8);
     }
 
     &-img {

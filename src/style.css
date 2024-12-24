@@ -8,7 +8,7 @@
 
   --color-op: #000000;
   --color0: #ffffff;
-  --color50: #ffffff88;
+  --color50: #ffffff80;
   --color33: rgba(255, 255, 255, 0.33);
 
   --color1: #f4f7fa;
@@ -45,11 +45,8 @@
   --color2: #575757;
   --color3: #6b6b6b;
 
-  --bborder: rgba(255, 255, 2507 0.3);
-  --bbg: rgba(3, 3, 4, 0.5);
-
   --accent0: #0066cc;
-  --accent50: #0066cc88;
+  --accent50: #0066cc80;
   --accent1: #ffcc00;
   --accent2: hsl(210, 100%, 71%);
 
