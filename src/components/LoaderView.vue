@@ -66,6 +66,7 @@ const { classes, three } = defineProps(['classes', 'three'])
     padding-left: 1.5rem;
     font-weight: bold;
     transform-origin: center;
+    transform: translate(-50%, -50%) scale(1);
     top: 50%;
     left: 50%;
     line-height: 150%;
