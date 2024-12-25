@@ -6,6 +6,7 @@
     :style="iframeStyle"
     frameborder="0"
     @load="setLoaded"
+    scrolling="no"
   ></iframe>
 
   <loader-view
