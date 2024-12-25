@@ -35,26 +35,26 @@
 
       <div class="contacts">
         <h4 class="h4">
-          <a href="tel:+380933789883" :title="$t('callMe')">
+          <a href="tel:+380933789883" :title="$t('callMe')" target="_blank">
             +380-933-789-883
           </a>
         </h4>
 
         <div class="links">
           <h4 class="h4">
-            <a href="https://github.com/vadim4web" :title="$t('gitHub')">
+            <a href="https://github.com/vadim4web" :title="$t('gitHub')" target="_blank">
               <img src="/github.svg" alt="github logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="https://t.me/vadim4web" :title="$t('chatMe')">
+            <a href="https://t.me/vadim4web" :title="$t('chatMe')" target="_blank">
               <img src="/telegram.png" alt="telegram logo" />&nbsp;
             </a>
           </h4>
 
           <h4 class="h4">
-            <a href="mailto:vadim4web@gmail.com" :title="$t('emailMe')">
+            <a href="mailto:vadim4web@gmail.com" :title="$t('emailMe')" target="_blank">
               <img src="/mail.png" alt="mail logo" />&nbsp;
             </a>
           </h4>

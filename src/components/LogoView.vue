@@ -3,6 +3,7 @@
     href="https://bit.ly/cv_view"
     class="logo-link"
     :title="$t('myCV')"
+    target="_blank"
   >
     <span class="logo-span">
       <span class="logo-letter flex-center">V</span>
