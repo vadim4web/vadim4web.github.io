@@ -29,7 +29,7 @@ const spinnerCanvas = ref(null)
 let startTime = null;
 
 // Spinner animation details
-const totalDuration = 1000; // 1 second total animation duration
+const totalDuration = 1755; // 1 second total animation duration
 const segmentDurations = [0.15, 0.11, 0.08, 0.22, 0.44].map(
   percentage => totalDuration * percentage
 );

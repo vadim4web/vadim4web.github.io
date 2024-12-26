@@ -34,7 +34,7 @@
 import { onMounted, ref, watch } from 'vue'
 import { state } from '@/store.js'
 
-const totalDuration = ref(1170) // Загальна тривалість анімації в мс (2340ms for 30fps)
+const totalDuration = ref(1755) // Загальна тривалість анімації в мс (2340ms for 30fps)
 const isVisible = ref(true)
 const fadeOutClass = ref(false)
 const logoOverlay = ref(null)
@@ -80,7 +80,7 @@ function startAnimation() {
       ctx.beginPath()
       ctx.ellipse(
         200,
-        105,
+        107,
         93,
         93,
         Math.PI / 2,
