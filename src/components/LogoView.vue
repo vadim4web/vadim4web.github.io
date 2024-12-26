@@ -12,24 +12,6 @@
     >
       <defs>
         <filter
-          id="shadowInactive"
-          x="-50%"
-          y="-50%"
-          width="200%"
-          height="200%"
-        >
-          <feDropShadow
-            dx="0"
-            dy="0"
-            stdDeviation="6"
-            flood-color="var(--color0)"
-            flood-opacity="1"
-          />
-        </filter>
-      </defs>
-
-      <defs>
-        <filter
           id="shadowActive"
           x="-50%"
           y="-50%"
@@ -39,9 +21,9 @@
           <feDropShadow
             dx="0"
             dy="0"
-            stdDeviation="1.5"
+            stdDeviation="1"
             flood-color="var(--color0)"
-            flood-opacity="0.8"
+            flood-opacity="0.75"
           />
         </filter>
       </defs>
