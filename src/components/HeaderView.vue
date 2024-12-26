@@ -1,12 +1,10 @@
 <template>
   <header class="header">
     <menu>
-      <li class="menu-item flex-center">
-        <logo-view logoClass="logo-view" />
-      </li>
-
-      <li class="menu-item flex-center">
-        <router-link to="/home" class="link">{{ $t('Home') }}</router-link>
+      <li class="menu-item flex-center ">
+        <router-link to="/home" class="link logo-link">
+          <logo-view logoClass="logo-view" />
+        </router-link>
       </li>
 
       <li class="menu-item flex-center">
@@ -53,26 +51,22 @@ menu {
   position: relative;
   list-style: none;
   display: grid;
-  grid-template-columns: 1.2fr repeat(4, 1fr) 0.8fr;
+  grid-template-columns: repeat(4, 1fr) 0.5fr;
   place-items: center;
   font-weight: 500;
   height: 10.5rem;
 
   gap: 0.125rem;
 
-
-  @media (orientation: landscape) and (min-width: 1000px) {
-    & {
-      left: -3rem;
-    }
-  }
-
-  a:not(.logo-link) {
+  a {
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
     font-size: 1.5rem;
-    padding: 1rem;
+
+    font-size: 2.5rem;
+    line-height: 4.1rem;
+    height: 4.25rem;
     opacity: 0.75;
     font-variant: small-caps;
     text-transform: uppercase;
@@ -81,25 +75,28 @@ menu {
     font-weight: bold;
     color: var(--color50);
 
-    &.router-link-active {
-      background: var(--bg50);
-      border: 0.125rem solid var(--color50);
-      border-radius: 2rem;
-      opacity: 0.8;
-      color: var(--color0);
-
-      &:hover {
-        color: var(--color0);
+    &:hover {
+      background: var(--color0);
+      color: var(--bg0);
+      box-shadow: none;
+      &::after {
         box-shadow: none;
-
-        &::after {
-          box-shadow: none;
-        }
       }
     }
 
-    &:not(.router-link-active, .logo-link) {
-      color: var(--color50);
+    &.router-link-active {
+      background: var(--color0);
+      border: 0.125rem solid var(--color50);
+      border-radius: 2rem;
+      opacity: 0.8;
+      color: var(--bg0);
+    }
+
+
+    &:hover .logo-image,
+    &.router-link-active .logo-image {
+      stroke: var(--bg0);
+      filter: url(#shadowActive);
     }
   }
 }

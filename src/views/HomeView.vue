@@ -1,10 +1,16 @@
 <template>
   <section class="head content flex-col-center">
-    <h1 class="h1">
-      {{ $t('homeH11') }}<br />{{ $t('homeH12') }}.
+    <h1 class="h1" :data-text="$t('homeH11')">
+      {{ $t('homeH11') }}<br />
+
+      <span class="h1_span" :data-text="$t('homeH12')" style="font-size: 75%;">
+        {{ $t('homeH12') }}
+      </span>
 
       <high-light />
     </h1>
+
+    <logo3-d />
 
     <active-element
       path="projects"
@@ -77,6 +83,9 @@ import HighLight from '@/components/HighLight.vue'
 import ActiveElement from '@/components/ActiveElement.vue'
 import ArrowRight from '@/components/ArrowRight.vue'
 
+const Logo3D = defineAsyncComponent(() =>
+  import('@/components/Logo3D.vue')
+)
 const ThreeView = defineAsyncComponent(() =>
   import('@/components/ThreeView.vue')
 )
@@ -93,6 +102,7 @@ onMounted(() => window.scrollTo(0, 0))
 
   .h1 {
     position: relative;
+    z-index: 1;
     width: 22ch;
     height: 10rem;
   }

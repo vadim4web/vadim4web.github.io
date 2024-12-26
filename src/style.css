@@ -121,18 +121,26 @@ body {
   color: #fff;
 }
 
+::selection .logo-image {
+  background: var(--accent0);
+  stroke: #fff !important;
+}
+
+::-moz-selection .logo-image {
+  background: var(--accent0);
+  stroke: #fff !important;
+}
+
+::-webkit-selection .logo-image {
+  background: var(--accent0);
+  stroke: #fff !important;
+}
+
 a:link,
 a:visited,
 a:hover,
 a:active {
   position: relative;
-}
-
-a:not(.link):link,
-a:visited,
-a:not(.link):hover,
-a:not(.link):active {
-  color: var(--color0);
 }
 
 h1,
@@ -255,7 +263,6 @@ a.link:hover {
   -moz-border-radius: 2rem;
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem;
-  color: var(--color0);
   text-shadow: 0 0 0.5rem var(--bg0);
 }
 
@@ -276,7 +283,6 @@ a.link:hover::after {
 
 a.link:active {
   box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem var(--color50);
-  color: var(--color0);
   text-shadow: 0 0 0.5rem var(--bg0);
 }
 
@@ -322,6 +328,27 @@ a.link:active::after {
   font-size: 4.5rem;
   line-height: 110%;
   letter-spacing: -0.045rem;
+}
+
+h1, .h1_span {
+  text-shadow: 0 0 0.25rem var(--color-op);
+  position: relative;
+}
+
+h1::before, .h1_span::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 0 0 0.5rem var(--color-op);
+}
+
+h1::after, .h1_span::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 0 0 1rem var(--color-op);
 }
 
 .h2 {

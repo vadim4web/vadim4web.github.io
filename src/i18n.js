@@ -16,7 +16,8 @@ const messages = {
     toggleLangTip: 'Change the language',
 
     homeH11: 'Crafting Digital Solutions',
-    homeH12: 'End-to-End',
+    homeH12: 'Excellence in Every Detail.',
+
     homeB1: 'EXPLORE WORKS',
     homeH211:'Let’s get to',
     homeH212:'know me',
@@ -102,8 +103,8 @@ const messages = {
     toggleTheme_dark: 'Змінити тему на світлу',
     toggleLangTip: 'Змінити мову',
 
-    homeH11: 'Створення Цифрових Рішень',
-    homeH12: 'Від-i-До',
+    homeH11: 'Розробка Цифрових Рішень',
+    homeH12: 'Досконалість у Кожній Деталі.',
     homeB1: "ПЕРЕГЛЯНУТИ РОБОТИ",
     homeH211:'Давайте',
     homeH212:'знайомитись',

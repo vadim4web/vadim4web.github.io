@@ -75,6 +75,7 @@ const handleClick = () => {
 <style lang="scss">
 .active-element {
   position: relative;
+  z-index: 1;
   display: inline-flex;
   width: max-content;
   align-items: center;

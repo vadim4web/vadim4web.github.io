@@ -116,6 +116,11 @@ footer {
     width: 100%;
     height: 8rem;
 
+    .logo-span {
+      justify-self: start;
+      align-self: start;
+    }
+
     address {
       text-align: center;
       justify-self: center;
