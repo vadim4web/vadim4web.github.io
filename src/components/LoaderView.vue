@@ -1,114 +1,229 @@
 <template>
   <div
-    :data-loading="$t('loading')"
-    class="loader flex-col-center"
-    :class="{
-      vertical: classes?.vertical,
-      horizontal: classes?.horizontal,
-      iframe: classes?.iframe,
-      'one-of-three': three,
-    }"
+    id="logoOverlay"
+    ref="logoOverlay"
+    class="flex-col-center"
+    :class="{ fadeOut: fadeOutClass }"
+    :style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 10 : -1 }"
+    @animationend="handleAnimationEnd"
   >
-    <div class="circle2"></div>
+    <div id="logo2dWrapper">
+      <canvas
+        id="logo2dCanvas"
+        ref="logo2dCanvas"
+        width="400"
+        height="400"
+        stroke="#808080"
+      ></canvas>
+      <svg
+        id="svgPlaceholder"
+        viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line x1="200" y1="400" x2="200" y2="0" />
+        <line x1="200" y1="0" x2="0" y2="200" />
+        <line x1="0" y1="200" x2="200" y2="200" />
+        <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+        <circle cx="200" cy="200" r="186" fill="none" />
+      </svg>
+    </div>
   </div>
 </template>
 
 <script setup>
-const { classes, three } = defineProps(['classes', 'three'])
+import { onMounted, ref, watch } from 'vue'
+import { state } from '@/store.js'
+
+const totalDuration = ref(1170) // Загальна тривалість анімації в мс (2340ms for 30fps)
+const isVisible = ref(true)
+const fadeOutClass = ref(false)
+const logoOverlay = ref(null)
+const logo2dCanvas = ref(null)
+
+const getTheme = () =>
+  document.documentElement.getAttribute('data-theme') === 'dark'
+    ? '#fff'
+    : '#000'
+
+let startTime = null
+
+function startAnimation() {
+  document.body.classList.add('hide-overflow')
+  const overlay = logoOverlay.value || document.getElementById('logoOverlay')
+  overlay.classList.remove('fade-out')
+  const canvas = logo2dCanvas.value || document.getElementById('logo2dCanvas')
+  const ctx = canvas.getContext('2d')
+  ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
+  ctx.lineWidth = 28
+  ctx.strokeStyle = getTheme()
+
+  const drawFunctions = [
+    progress => {
+      ctx.beginPath()
+      ctx.moveTo(200, 400)
+      ctx.lineTo(200, 400 - progress)
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.moveTo(200, 0)
+      ctx.lineTo(200 - progress, progress)
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.moveTo(0, 200)
+      ctx.lineTo(progress, 200)
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.ellipse(
+        200,
+        105,
+        93,
+        93,
+        Math.PI / 2,
+        0,
+        (-Math.PI / 180) * progress,
+        true
+      )
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.ellipse(
+        200,
+        200,
+        186,
+        186,
+        -Math.PI / 2,
+        0,
+        (-Math.PI / 180) * progress,
+        true
+      )
+      ctx.stroke()
+    },
+  ]
+
+  const segmentDurations = [0.15, 0.11, 0.08, 0.22, 0.44].map(
+    percentage => totalDuration.value * percentage
+  )
+  const segmentMaxValues = [400, 200, 200, 180, 360]
+
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp
+    const elapsed = timestamp - startTime
+
+    let accumulatedTime = 0
+
+    for (let i = 0; i < drawFunctions.length; i++) {
+      const segmentStart = accumulatedTime
+      const segmentEnd = accumulatedTime + segmentDurations[i]
+
+      if (elapsed >= segmentStart && elapsed <= segmentEnd) {
+        const segmentProgress = (elapsed - segmentStart) / segmentDurations[i]
+        const progressValue = segmentMaxValues[i] * segmentProgress
+        drawFunctions[i](Math.min(progressValue, segmentMaxValues[i]))
+      } else if (elapsed > segmentEnd) {
+        drawFunctions[i](segmentMaxValues[i])
+      }
+
+      accumulatedTime += segmentDurations[i]
+    }
+
+    if (elapsed < totalDuration.value) {
+      requestAnimationFrame(animate)
+    } else if (state.showLoader) {
+      startTime = null // Reset the start time
+      ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
+      requestAnimationFrame(animate) // Restart the animation
+    } else {
+      // Add fade-out animation class
+      fadeOutClass.value = true
+    }
+  }
+
+  requestAnimationFrame(animate)
+}
+
+const handleAnimationEnd = () => {
+  isVisible.value = false
+  fadeOutClass.value = false
+  document.body.classList.remove('hide-overflow')
+}
+
+onMounted(() => {
+  startAnimation()
+})
+
+// Watch for changes in the state.showLoader value
+watch(
+  () => state.showLoader,
+  (newValue) => {
+    if (newValue) {
+      isVisible.value = newValue
+      // Restart animation when loader becomes visible
+      startAnimation()
+    }
+  }
+)
 </script>
 
-<style lang="scss" scoped>
-@keyframes loading {
+<style scoped>
+@keyframes fade-out {
   0% {
-    content: attr(data-loading)'...';
-  }
-  25% {
-    content: attr(data-loading);
-  }
-  50% {
-    content: attr(data-loading)'.';
-  }
-  75% {
-    content: attr(data-loading)'..';
+    opacity: 1;
   }
   100% {
-    content: attr(data-loading)'...';
+    opacity: 0;
   }
 }
 
-@keyframes twist-scale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(10);
-  }
-  100% {
-    transform: scale(0.1);
-  }
+.fadeOut {
+  animation: fade-out 1170ms forwards ease-out;
+  -webkit-animation: fade-out 1170ms forwards ease-out;
+  -moz-animation: fade-out 1170ms forwards ease-out;
 }
 
-.loader {
+#logoOverlay {
+  position: fixed;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-  font-size: 4dvw;
-  aspect-ratio: 1 / 1;
+  height: 100dvh;
+  background: var(--bg0);
+  opacity: 0;
 }
 
-.loader {
-  &::before {
-    overflow: hidden;
-    content: '';
-    position: absolute;
-    width: 25dvw;
-    text-align: left;
-    padding-left: 1.5rem;
-    font-weight: bold;
-    transform-origin: center;
-    transform: translate(-50%, -50%) scale(1);
-    top: 50%;
-    left: 50%;
-    line-height: 150%;
-    animation: loading 4s infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
-    mix-blend-mode: var(--loader-bg-blend-mode);
-    background: var(--bg0);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    clip-path: polygon(
-      1% 5%, 1% 0%, 5% 0%, 5% 5%, 6% 6%, 8% 0%, 9% 3%, 20% 0%, 35% 3%, 35% 33%,
-      36% 0%, 66% 0%, 67% 3%, 68% 25%, 69% 3%, 86.5% 2%, 87% 15%, 86.25% 25%,
-      87% 45%, 87.5% 35%, 87.75% 25%, 88% 27%, 87.5% 25%, 87.25% 15%, 88% 2%,
-      95% 2%, 95% 95%, 96% 2%, 99% 3%, 99.5% 68%, 98.5% 100%, 97% 100%,
-      95.5% 95%, 95% 80%, 94% 100%, 55% 100%, 55% 95%, 53% 90%, 53% 100%,
-      36% 100%, 35% 50%, 34% 100%, 33% 99%, 20% 98%, 22% 94%, 8% 98%, 6% 96%,
-      5% 100%, 5.5% 35%, 4% 100%, 1% 100%, 0% 50%
-    );
-  }
+#logo2dWrapper {
+  position: relative;
+  top: 2vmin;
+  width: 50vmin;
+  height: 50vmin;
+}
 
-  @media (orientation: portrait) {
-    &.horizontal:before {
-      transform: translate(-50%, -50%) scale(6.6);
-    }
-    &.vertical:before {
-      transform: translate(-50%, -50%) scale(5);
-    }
-  }
+#logo2dCanvas,
+#svgPlaceholder {
+  width: 50vmin;
+  height: 50vmin;
+}
 
-  @media (orientation: landscape) {
-    &.horizontal:before {
-      transform: translate(-50%, -50%) scale(1.75);
-    }
-    &.vertical:before {
-      transform: translate(-50%, -50%) scale(1.33);
-    }
-  }
+#svgPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke-width: 28px;
+  -webkit-stroke-width: 28px;
+  -moz-stroke-width: 28px;
+  stroke: var(--gray);
+  -webkit-stroke: var(--gray);
+  -moz-stroke: var(--gray);
+}
 
-  &.one-of-three:before {
-    transform: translate(-50%, -50%) scale(0.8);
-  }
+#logo2dCanvas {
+  position: relative;
+  z-index: 1;
+  stroke: var(--color0);
+  -webkit-stroke: var(--color0);
+  -moz-stroke: var(--color0);
 }
 </style>

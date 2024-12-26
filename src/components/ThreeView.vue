@@ -1,7 +1,7 @@
 <template>
   <div class="three three-projects">
     <div
-      class="card"
+      class="card card-back"
       v-for="({ title, name, stack, tags, path, white_bg }, i) in three"
       :key="i"
     >

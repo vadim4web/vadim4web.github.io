@@ -3,6 +3,7 @@
   --is-white: 0;
   --bg0: #131313;
   --bg50: #13131380;
+  --bg25: #13131320;
   --bg33: rgba(19, 19, 19, 0.33);
   --bg2: #1a1a1a;
 
@@ -17,6 +18,8 @@
 
   --accent0: #ffcc00;
   --accent50: #ffcc0080;
+  --accent25: #ffcc0040;
+  --accent125: #ffcc0020;
   --accent1: #0066cc;
   --accent2: hsl(48, 100%, 71%);
 
@@ -33,6 +36,7 @@
   --is-white: 1;
   --bg0: #ececec;
   --bg50: #ececec80;
+  --bg25: #ececec20;
   --bg33: rgba(236, 236, 236, 0.33);
   --bg2: #dbdbdb;
 
@@ -47,6 +51,8 @@
 
   --accent0: #0066cc;
   --accent50: #0066cc80;
+  --accent25: #0066cc40;
+  --accent125: #0066cc20;
   --accent1: #ffcc00;
   --accent2: hsl(210, 100%, 71%);
 
@@ -67,6 +73,7 @@
   --rem: calc(100vmin / 4.5);
   --rem05: calc(var(--rem) / 2);
   --tr-dur: 500ms;
+  --gray: #808080;
 }
 
 * {
@@ -151,6 +158,10 @@ body {
   margin: 0;
   overflow-x: hidden;
   background: var(--bg0);
+}
+
+.hide-overflow {
+  overflow: hidden !important;
 }
 
 ::-webkit-scrollbar {
@@ -587,6 +598,17 @@ h1::after, .h1_span::after {
   -ms-transform: rotate(-20deg);
   -o-transform: rotate(-20deg);
   z-index: -1;
+}
+
+.card-back {
+  background: var(--bg25);
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid var(--accent125);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 .white_bg {

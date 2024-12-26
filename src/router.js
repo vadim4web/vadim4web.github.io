@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { projects } from '@/assets/projects.js'
+import { state } from '@/store.js'
 
 const routes = [
   {
@@ -46,11 +47,6 @@ const routes = [
     },
   },
   {
-    path: '/mediaoffice-com-ua/:path(.*)',
-    // This route does nothing; it will not catch 404 errors
-    beforeEnter: (_, __, next) => { next() },
-  },
-  {
     // Catch all routes that don't match the previous ones
     path: '/:pathMatch(.*)*',
     name: 'no-match',
@@ -61,6 +57,24 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+})
+
+router.beforeEach((_to, _from, next) => {
+  state.setShowLoader(true)
+  next()
+})
+
+router.afterEach(() => {
+  if (!sessionStorage.getItem('once_loaded')) {
+    setTimeout(() => {
+      sessionStorage.setItem('once_loaded', true)
+      state.setShowLoader(false)
+    }, 3310)
+  } else {
+    setTimeout(() => {
+      state.setShowLoader(false)
+    }, 1170)
+  }
 })
 
 export default router

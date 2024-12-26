@@ -28,6 +28,7 @@
 <script setup>
 import { ref, onMounted, watch, onUpdated } from 'vue'
 import { useMouse, useWindowSize } from '@vueuse/core'
+import { state } from '@/store.js'
 import getTheme from '@/helpers/getTheme'
 
 const { x, y } = useMouse()
@@ -43,6 +44,7 @@ const toggleTheme = () => {
 
 const setTheme = theme => {
   sessionStorage.setItem('theme', theme)
+  state.setThemeColor(theme === 'dark' ? '#ffffff' : '#000000')
   document.documentElement.setAttribute('data-theme', theme)
   document.getElementById('favicon').href =
     theme === 'dark' ? '/favicon_dark.ico' : '/favicon_light.ico'

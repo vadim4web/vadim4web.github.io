@@ -18,7 +18,7 @@
         :key="index"
         :id="'three-' + index"
       >
-        <div v-for="(p, i) in a" :key="i" class="project">
+        <div v-for="(p, i) in a" :key="i" class="project card-back">
           <async-frame
             :iframeSrc="getPath(p.path)"
             :iframeClass="{
@@ -135,7 +135,6 @@ onUpdated(() => handleScroll())
     flex-grow: 0;
     height: auto;
     overflow: hidden;
-    background: var(--bg50);
     border-radius: 1rem;
     text-align: center;
 

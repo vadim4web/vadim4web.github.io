@@ -9,7 +9,7 @@
     scrolling="no"
   ></iframe>
 
-  <loader-view
+  <loader-spinner
     v-if="!isLoaded"
     :classes="iframeClass"
     class="placeholder"
@@ -20,8 +20,8 @@
 <script setup>
 import { ref, defineAsyncComponent } from 'vue'
 
-const LoaderView = defineAsyncComponent(() =>
-  import('@/components/LoaderView.vue')
+const LoaderSpinner = defineAsyncComponent(() =>
+  import('@/components/LoaderSpinner.vue')
 )
 const { iframeSrc, iframeStyle, iframeClass, three } = defineProps([
   'iframeSrc',
@@ -35,7 +35,7 @@ const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 
 <style lang="scss" scoped>
 .placeholder {
-  background-color: var(--bg50);
+  backdrop-filter: blur(0.5rem);
   border-radius: 1rem;
 }
 </style>
