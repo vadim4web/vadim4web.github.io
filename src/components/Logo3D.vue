@@ -20,6 +20,7 @@ import {
   WebGLRenderer,
   DirectionalLight,
   AmbientLight,
+  PointLight,
   Color,
   MeshStandardMaterial,
 } from 'three'
@@ -32,7 +33,7 @@ const MODEL_NAME = 'logo.glb'
 // Refs and variables
 const canvasContainer = ref(null)
 let scene, camera, renderer
-let directionalLight, ambientLight
+let directionalLight, ambientLight, pointLight
 let model = null
 
 // Utility: Get the current theme color
@@ -73,8 +74,9 @@ const loadModel = () => {
         if (child.isMesh) {
           child.material = new MeshStandardMaterial({
             color: child.material.color,
-            metalness: 0.8,
-            roughness: 0.2,
+            metalness: 1.0, // Fully metallic
+            roughness: 0.15, // Slight roughness for sharp reflections
+            envMapIntensity: 1.5, // Enhance reflection intensity
           })
         }
       })
@@ -87,16 +89,20 @@ const loadModel = () => {
   )
 }
 
-// Setup lighting
 const setupLighting = () => {
   const lightColor = new Color(getThemeColor())
 
-  directionalLight = new DirectionalLight(lightColor, 100)
-  directionalLight.position.set(1, 1, 1).normalize()
+  directionalLight = new DirectionalLight(lightColor, 100) // Softer intensity
+  directionalLight.position.set(5, -2, 5).normalize()
   scene.add(directionalLight)
 
-  ambientLight = new AmbientLight(lightColor, 1)
+  ambientLight = new AmbientLight(lightColor, 1) // Reduced ambient light
   scene.add(ambientLight)
+
+  // Add a point light for specular highlights
+  pointLight = new PointLight(lightColor, 10, 100)
+  pointLight.position.set(1, -5, -10)
+  scene.add(pointLight)
 }
 
 // Update lights dynamically on theme change
@@ -104,6 +110,7 @@ const updateLights = () => {
   const lightColor = new Color(getThemeColor())
   if (directionalLight) directionalLight.color.set(lightColor)
   if (ambientLight) ambientLight.color.set(lightColor)
+  if (pointLight) pointLight.color.set(lightColor)
 }
 
 // Observe theme changes
