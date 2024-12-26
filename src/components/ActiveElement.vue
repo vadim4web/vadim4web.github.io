@@ -7,7 +7,7 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          var(--accent2), ${bg} 50%)`
+          var(--accent50), ${bg} 50%)`
         : bg,
       fontSize,
       padding,
@@ -26,7 +26,7 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          var(--accent2), ${bg} 50%)`
+          var(--accent50), ${bg} 50%)`
         : bg,
       fontSize,
       padding,

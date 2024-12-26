@@ -29,12 +29,12 @@ const { y: scrollY } = useWindowScroll()
     display: block;
     top: 50%;
     left: 50%;
-    width: 100vmin;
-    height: 100vmin;
+    width: 50vmin;
+    height: 50vmin;
     border-radius: 50%;
-    background: radial-gradient(var(--accent0) 5%, transparent);
+    background: radial-gradient(var(--accent0) 15%, transparent);
     transform: translate3d(-50%, -50%, 0);
-    filter: opacity(0.3) blur(10rem);
+    filter: opacity(0.2) blur(5rem);
   }
 }
 </style>

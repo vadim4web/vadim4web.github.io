@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col-start projects-page">
+  <main class="flex-col-start projects-page">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2" style="left: -0.2rem">
         {{ $t('worksH2') }}
@@ -57,7 +57,7 @@
         {{ $t('worksMore') }}
       </active-element>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>

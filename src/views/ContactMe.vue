@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col-start">
+  <main class="flex-col-start">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2" style="left: -0.2rem">
         {{ $t('contactH21') }}
@@ -102,7 +102,7 @@
         </a>
       </h4>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>

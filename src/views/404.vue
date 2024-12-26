@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col-center not-found">
+  <main class="flex-col-center not-found">
     <h2 class="h2 flex-col-center">
       404
       <high-light />
@@ -24,7 +24,7 @@
         {{ $t('notFoundB') }}
       </active-element>
     </h2>
-  </div>
+  </main>
 </template>
 
 <script setup>

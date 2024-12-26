@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col-start">
+  <main class="flex-col-start">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2">
         {{ $t('aboutH21') }}
@@ -47,7 +47,7 @@
 <span>I'm experienced enough to exactly know</span>
 <span>Using DOCs, AI, Google and Stackoverflow</span>
     </pre>
-  </div>
+  </main>
 </template>
 
 <script setup>

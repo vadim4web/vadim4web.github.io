@@ -63,22 +63,94 @@
   font-family: 'Victor Mono', serif;
   font-optical-sizing: auto;
   line-height: normal;
+
+  --rem: calc(100vmin / 4.5);
+  --rem05: calc(var(--rem) / 2);
+  --tr-dur: 500ms;
 }
 
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  -moz-overflow-scrolling: touch; /* Mozilla-specific smooth scrolling */
+
+  transition: 
+    background-color var(--tr-dur), /* Background color */
+    border var(--tr-dur), /* Border */
+    border-color var(--tr-dur), /* Border color */
+    border-radius var(--tr-dur), /* Border radius */
+    box-shadow var(--tr-dur), /* Box shadow */
+    opacity var(--tr-dur), /* Opacity */
+    transform var(--tr-dur), /* Transform (scale, rotate, etc.) */
+    width var(--tr-dur), /* Width */
+    height var(--tr-dur), /* Height */
+    max-width var(--tr-dur), /* Max width */
+    max-height var(--tr-dur), /* Max height */
+    min-width var(--tr-dur), /* Min width */
+    min-height var(--tr-dur), /* Min height */
+    margin var(--tr-dur), /* Margin */
+    padding var(--tr-dur), /* Padding */
+    left var(--tr-dur), /* Left position */
+    right var(--tr-dur), /* Right position */
+    top var(--tr-dur), /* Top position */
+    bottom var(--tr-dur), /* Bottom position */
+    z-index var(--tr-dur), /* Z-index (may not have visual effect) */
+    filter var(--tr-dur), /* Filter (blur, brightness, etc.) */
+    -webkit-filter var(--tr-dur), /* Webkit Filter */
+    visibility var(--tr-dur), /* Visibility */
+    white-space var(--tr-dur), /* White space */
+    line-height var(--tr-dur), /* Line height */
+    font-size var(--tr-dur), /* Font size */
+    transform-origin var(--tr-dur), /* Transform origin */
+    clip-path var(--tr-dur), /* Clip path */
+    object-fit var(--tr-dur), /* Object fit */
+    cursor var(--tr-dur), /* Cursor */
+    transition-delay var(--tr-dur), /* Delay of transition */
+    transition-timing-function var(--tr-dur); /* Timing function */
+
+  -moz-transition: 
+    background-color var(--tr-dur), /* Background color */
+    border var(--tr-dur), /* Border */
+    border-color var(--tr-dur), /* Border color */
+    border-radius var(--tr-dur), /* Border radius */
+    box-shadow var(--tr-dur), /* Box shadow */
+    opacity var(--tr-dur), /* Opacity */
+    transform var(--tr-dur), /* Transform (scale, rotate, etc.) */
+    width var(--tr-dur), /* Width */
+    height var(--tr-dur), /* Height */
+    max-width var(--tr-dur), /* Max width */
+    max-height var(--tr-dur), /* Max height */
+    min-width var(--tr-dur), /* Min width */
+    min-height var(--tr-dur), /* Min height */
+    margin var(--tr-dur), /* Margin */
+    padding var(--tr-dur), /* Padding */
+    left var(--tr-dur), /* Left position */
+    right var(--tr-dur), /* Right position */
+    top var(--tr-dur), /* Top position */
+    bottom var(--tr-dur), /* Bottom position */
+    z-index var(--tr-dur), /* Z-index (may not have visual effect) */
+    filter var(--tr-dur), /* Filter (blur, brightness, etc.) */
+    -moz-filter var(--tr-dur), /* Moz Filter */
+    visibility var(--tr-dur), /* Visibility */
+    white-space var(--tr-dur), /* White space */
+    line-height var(--tr-dur), /* Line height */
+    font-size var(--tr-dur), /* Font size */
+    transform-origin var(--tr-dur), /* Transform origin */
+    clip-path var(--tr-dur), /* Clip path */
+    object-fit var(--tr-dur), /* Object fit */
+    cursor var(--tr-dur), /* Cursor */
+    transition-delay var(--tr-dur), /* Delay of transition */
+    transition-timing-function var(--tr-dur); /* Timing function */
 }
 
 
 body {
   margin: 0;
   overflow-x: hidden;
-  transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -webkit-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -moz-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -ms-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -o-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
+  background: var(--bg0);
 }
 
 ::-webkit-scrollbar {
@@ -158,6 +230,7 @@ label,
 span:not(.logo, #spot) {
   margin: 0;
   padding: 0;
+  cursor: text;
 }
 
 menu, ul ,ol {
@@ -252,20 +325,22 @@ a {
   cursor: pointer;
 }
 
-a:link {
+a {
   color: var(--color0);
 }
 
+a.router-link-active:not(.not-to-show-active),
 a.link:hover {
   box-shadow: inset -0.5rem -0.5rem 1rem 0.5rem var(--color50);
-  border-radius: 2rem;
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -ms-border-radius: 2rem;
-  -o-border-radius: 2rem;
-  text-shadow: 0 0 0.5rem var(--bg0);
+  border-radius: var(--rem05);
+  -webkit-border-radius: var(--rem05);
+  -moz-border-radius: var(--rem05);
+  -ms-border-radius: var(--rem05);
+  -o-border-radius: var(--rem05);
+  text-shadow: 0 0 0.125rem var(--color0);
 }
 
+a.router-link-active:not(.not-to-show-active)::after,
 a.link:hover::after {
   content: '';
   position: absolute;
@@ -274,16 +349,16 @@ a.link:hover::after {
   width: 100%;
   height: 100%;
   box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem var(--bg50);
-  border-radius: inherit;
-  -webkit-border-radius: inherit;
-  -moz-border-radius: inherit;
-  -ms-border-radius: inherit;
-  -o-border-radius: inherit;
+  border-radius: var(--rem05);
+  -webkit-border-radius: var(--rem05);
+  -moz-border-radius: var(--rem05);
+  -ms-border-radius: var(--rem05);
+  -o-border-radius: var(--rem05);
 }
 
-a.link:active {
-  box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem var(--color50);
-  text-shadow: 0 0 0.5rem var(--bg0);
+a.transparent-on-hover:hover {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 a.link:active::after {
@@ -294,11 +369,11 @@ a.link:active::after {
   width: 100%;
   height: 100%;
   box-shadow: inset -0.5rem -0.5rem 1rem 0.5rem var(--bg50);
-  border-radius: inherit;
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -ms-border-radius: 2rem;
-  -o-border-radius: 2rem;
+  border-radius: var(--rem05);
+  -webkit-border-radius: var(--rem05);
+  -moz-border-radius: var(--rem05);
+  -ms-border-radius: var(--rem05);
+  -o-border-radius: var(--rem05);
   color: var(--bg0);
 }
 
@@ -313,7 +388,13 @@ a.link:active::after {
   padding: 0 10dvw;
   overflow: hidden;
   color: var(--color0);
-  background: var(--bg0);
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 .h1,
@@ -333,6 +414,7 @@ a.link:active::after {
 h1, .h1_span {
   text-shadow: 0 0 0.25rem var(--color-op);
   position: relative;
+  z-index: 5;
 }
 
 h1::before, .h1_span::before {
@@ -341,6 +423,7 @@ h1::before, .h1_span::before {
   top: 0;
   left: 0;
   text-shadow: 0 0 0.5rem var(--color-op);
+  z-index: -1;
 }
 
 h1::after, .h1_span::after {
@@ -349,6 +432,7 @@ h1::after, .h1_span::after {
   top: 0;
   left: 0;
   text-shadow: 0 0 1rem var(--color-op);
+  z-index: -2;
 }
 
 .h2 {
@@ -462,11 +546,19 @@ h1::after, .h1_span::after {
   section {
     height: 50dvh;
   }
+
+  main {
+    padding-top: calc(var(--rem05));
+  }
 }
 
 @media (orientation: landscape) {
   section {
     height: 100dvh;
+  }
+
+  main {
+    padding-top: calc(var(--rem05) / 2);
   }
 }
 

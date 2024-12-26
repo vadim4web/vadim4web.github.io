@@ -1,80 +1,82 @@
 <template>
-  <section class="head content flex-col-center">
-    <h1 class="h1" :data-text="$t('homeH11')">
-      {{ $t('homeH11') }}<br />
+  <main>
+    <section class="head content flex-col-center">
+      <h1 class="h1" :data-text="$t('homeH11')">
+        {{ $t('homeH11') }}<br />
 
-      <span class="h1_span" :data-text="$t('homeH12')" style="font-size: 75%;">
-        {{ $t('homeH12') }}
-      </span>
+        <span class="h1_span" :data-text="$t('homeH12')" style="font-size: 75%;">
+          {{ $t('homeH12') }}
+        </span>
 
-      <high-light />
-    </h1>
+        <high-light />
+      </h1>
 
-    <logo3-d />
-
-    <active-element
-      path="projects"
-      :padding="'1.5rem 2.67rem'"
-      :fontSize="'1.625rem'"
-      :borderRadius="'2.3125rem'"
-      :bg="'var(--accent0)'"
-    >
-      {{ $t('homeB1') }}&nbsp;
-
-      <arrow-right height="1.625rem"/>
-    </active-element>
-  </section>
-
-  <section class="hero">
-    <div class="left content flex-col-center">
-      <div class="text">
-        <h2 class="h2">
-          <high-light />
-
-          {{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{ $t('homeH213') }}
-        </h2>
-
-        <p class="t2">
-          {{ $t('homeP1') }}
-        </p>
-      </div>
+      <logo3-d />
 
       <active-element
-        path="about"
-        :padding="'1.5rem 3rem'"
-        :fontSize="'1.25rem'"
-        :borderRadius="'2.125rem'"
+        path="projects"
+        :padding="'1.5rem 2.67rem'"
+        :fontSize="'1.625rem'"
+        :borderRadius="'2.3125rem'"
         :bg="'var(--accent0)'"
-        class="font-variant"
       >
-        {{ $t('homeB2') }}
+        {{ $t('homeB1') }}&nbsp;
+
+        <arrow-right height="1.625rem"/>
       </active-element>
-    </div>
+    </section>
 
-    <div class="right"></div>
-  </section>
+    <section class="hero">
+      <div class="left content flex-col-center">
+        <div class="text">
+          <h2 class="h2">
+            <high-light />
 
-  <section class="projects flex-col-center">
-    <h2 class="h2">
-      {{ $t('homeH22') }}
-      <high-light />
-    </h2>
+            {{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{ $t('homeH213') }}
+          </h2>
 
-    <active-element
-      path="projects"
-      :padding="'1.5rem 2.5rem'"
-      :fontSize="'1.33rem'"
-      :borderRadius="'2.166rem'"
-      :bg="'var(--bg50)'"
-    >
-      {{ $t('homeB3') }}&nbsp;
-      <arrow-right height="1.33rem" />
-    </active-element>
+          <p class="t2">
+            {{ $t('homeP1') }}
+          </p>
+        </div>
 
-    <three-view />
-  </section>
+        <active-element
+          path="about"
+          :padding="'1.5rem 3rem'"
+          :fontSize="'1.25rem'"
+          :borderRadius="'2.125rem'"
+          :bg="'var(--accent0)'"
+          class="font-variant"
+        >
+          {{ $t('homeB2') }}
+        </active-element>
+      </div>
 
-  <tech-stack />
+      <div class="right"></div>
+    </section>
+
+    <section class="projects flex-col-center">
+      <h2 class="h2">
+        {{ $t('homeH22') }}
+        <high-light />
+      </h2>
+
+      <active-element
+        path="projects"
+        :padding="'1.5rem 2.5rem'"
+        :fontSize="'1.33rem'"
+        :borderRadius="'2.166rem'"
+        :bg="'var(--bg50)'"
+      >
+        {{ $t('homeB3') }}&nbsp;
+        <arrow-right height="1.33rem" />
+      </active-element>
+
+      <three-view />
+    </section>
+
+    <tech-stack />
+  </main>
 </template>
 
 <script setup>

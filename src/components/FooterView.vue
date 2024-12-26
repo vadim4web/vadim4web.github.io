@@ -3,8 +3,8 @@
     <h4 class="h4 top">
       <router-link
         to="/contact"
-        class="link"
-        style="padding: 1rem; margin: -1rem; border-radius: 4rem;"
+        class="link not-to-show-active"
+        style="padding: 1rem; border-radius: 4rem;"
       >
         {{ $t('footerGIT') }}
       </router-link>
@@ -14,7 +14,7 @@
       <a
         href="mailto:vadim4web@gmail.com"
         class="link"
-        style="padding: 1rem; margin: -1rem; border-radius: 4rem"
+        style="padding: 1rem; border-radius: 4rem"
         >vadim4web@gmail.com</a
       >
     </h2>

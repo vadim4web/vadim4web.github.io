@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col-start project-page">
+  <main class="flex-col-start project-page">
     <div class="flex-col-start page-header padding-13">
       <h2 class="h2">
         {{ $t('projectH21') }}
@@ -125,7 +125,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>
