@@ -10,6 +10,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%; /* Ensure the body and html are at least the full viewport height */
+      }
+
+      body::after {
+        position: fixed; /* Fixed to cover the entire viewport */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url('https://vadim4web.github.io/abcd-sign/logo.png');
+        background-repeat: repeat;
+        background-position: center;
+        background-size: contain; /* Scale the image appropriately */
+        opacity: 0.05;
+        z-index: 0; /* Ensure it stays behind other content */
+        pointer-events: none; /* Prevent interactions with this layer */
+        background-attachment: local;
+      }
+
+      @media (orientation: portrait) {
+        body::after {
+          background-size: 14.2857%; /* Adjusted for portrait orientation */
+        }
+      }
+
+      @media (orientation: landscape) {
+        body::after {
+          background-size: 7.14285%; /* Adjusted for landscape orientation */
+        }
+      }
+    </style>
     <script type="text/javascript">
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
@@ -32,8 +70,8 @@
         }
       }(window.location))
     </script>
-    <script type="module" crossorigin src="/assets/index-CzvvBYQt.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CZpDfURJ.css">
+    <script type="module" crossorigin src="/assets/index-CgCFnTWI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-fJmOmZmt.css">
   </head>
   <body>
     <div id="app"></div>
