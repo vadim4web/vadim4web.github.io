@@ -28,7 +28,7 @@
         </p>
 
         <p class="t3 text2">
-          {{ $t('aboutT21') }}
+          {{ $t('aboutT22') }}
         </p>
       </div>
 
