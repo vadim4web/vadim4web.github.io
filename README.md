@@ -1,5 +1,5 @@
 <a name="top"></a>
-# Creative Full-Stack | Vue.js Specialist | vadim4web.github.io
+# Creative Full-Stack | Vue.js Specialist | VADIM4WEB.github.io
 
 I am Vadim Chervoniak-Bogdanov, a full-stack web dev & auto-biography-coding-designer based in Ukraine. My expertise includes HTML, CSS, JavaScript, React, Vue, Node.js, various databases, cloud computing, and integrating with different APIs, helping me to deliver complex web development solutions.
   

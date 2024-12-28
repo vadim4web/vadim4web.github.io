@@ -1,102 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <link id="favicon" rel="shortcut icon" href="favicon_light.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Розробка Цифрових Рішень. Досконалість у Кожній Деталі.">
-    <title>VADIM4WEB</title>
-    <link href="https://fonts.cdnfonts.com/css/impact" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        position: relative;
-      }
+<head>
+  <meta charset="UTF-8">
+  <link id="favicon" rel="icon" href="favicon_light.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_light.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Розробка цифрових рішень для бізнесу. Досконалість у кожній деталі.">
+  <meta name="author" content="VADIM4WEB">
+  <meta name="keywords" content="цифрові рішення, веброзробка, цифровий маркетинг, Vadim4Web">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="your_verification_code">
 
-      body, #logoOverlay {
-        padding: 0;
-        margin: 0;
-      }
+  <!-- Hidden Author Meta for SEO -->
+  <meta name="author" content="Червоняк Вадим Вікторович">
 
-      #logoOverlay {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: var(--bg0);
-        z-index: 100;
-      }
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="VADIM4WEB – Розробка цифрових рішень">
+  <meta property="og:description" content="Цифрові рішення, які піднімають ваш бізнес на новий рівень.">
+  <meta property="og:image" content="https://VADIM4WEB.github.io/logo.png">
+  <meta property="og:url" content="https://VADIM4WEB.github.io">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VADIM4WEB – Розробка цифрових рішень">
+  <meta name="twitter:description" content="Цифрові рішення, які піднімають ваш бізнес на новий рівень.">
+  <meta name="twitter:image" content="https://VADIM4WEB.github.io/logo.png">
 
-      #logoOverlay::after {
-        z-index: 100;
-      }
+  <title>VADIM4WEB – Розробка цифрових рішень</title>
 
-      body::after,
-      #logoOverlay::after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        content: '';
-        width: 100dvw;
-        height: 100%;
-        background-image: url('https://vadim4web.github.io/logo.png');
-        background-repeat: repeat;
-        background-position: center;
-        opacity: 0.05;
-        pointer-events: none;
-      }
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://vadim4web.github.io">
 
-      body::after {
-        min-height: 100%;
-        background-attachment: scroll;
-        z-index: 0;
-      }
+  <!-- Preloading Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" as="style">
+  <link href="https://fonts.cdnfonts.com/css/impact" rel="stylesheet">
 
-      @media (orientation: portrait) {
-        body::after,
-        #logoOverlay::after {
-          background-size: 14.2857%;
-        }
-      }
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VADIM4WEB",
+    "url": "https://vadim4web.github.io",
+    "description": "Цифрові рішення для сучасного бізнесу. Досконалість у кожній деталі.",
+    "sameAs": [
+      "https://www.facebook.com/vadim4web",
+      "https://www.twitter.com/vadim4web"
+    ]
+  }
+  </script>
 
-      @media (orientation: landscape) {
-        body::after,
-        #logoOverlay::after {
-          background-size:  7.14285%;
-        }
-      }
-    </style>
-    <script type="text/javascript">
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) {
-            return s.replace(/~and~/g, '&')
-          }).join('?')
+  <!-- Styles -->
+  <style>
+    body {
+      font-family: 'Victor Mono', monospace;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
 
-          window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          )
-        }
-      }(window.location))
-    </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    #logoOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg0);
+      z-index: 100;
+    }
+
+    #logoOverlay::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://vadim4web.github.io/logo.png');
+      opacity: 0.05;
+      background-repeat: repeat;
+      background-size: cover;
+      pointer-events: none;
+    }
+  </style>
+
+  <!-- Redirect Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/') {
+        const decoded = l.search.slice(1).split('&').map(s => s.replace(/~and~/g, '&')).join('?');
+        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+      }
+    })(window.location);
+  </script>
+</head>
+<body>
+  <h1 style="display: none;">
+    Червоняк Вадим Вікторович
+  </h1>
+  <div id="app" role="main"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
