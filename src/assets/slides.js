@@ -1,3 +1,5 @@
+import getTheme from '@/helpers/getTheme'
+
 const slidesArray = [
   {
     title_en: 'Exploring System & Environments',
@@ -14,7 +16,7 @@ const slidesArray = [
     content: [
       { name: 'PowerShell', path: 'powershell.webp' },
       { name: 'Bash', path: 'bash.webp' },
-      { name: 'any CLI --help', path: 'cli.webp' },
+      { name: 'any CLI --help', path: 'cli.webp', to_invert: true },
     ],
   },
   {
@@ -66,9 +68,9 @@ const slidesArray = [
     title_en: 'Visualizing Advanced Graphics Concepts',
     title_uk: 'Візуалізація Концепцій Складної Графіки',
     content: [
-      { name: 'SVG, Canvas', path: 'favicon.ico' },
-      { name: 'WebGL', path: 'webgl.webp' },
-      { name: 'Three.js', path: 'threejs.webp' },
+      { name: 'SVG, Canvas', path: `favicon_light.ico`, to_invert: true },
+      { name: 'WebGL', path: 'webgl.webp', to_invert: true },
+      { name: 'Three.js', path: 'threejs.webp', to_invert: true },
     ],
   },
   {
@@ -102,7 +104,7 @@ const slidesArray = [
     title_en: 'Connecting with APIs and Networking',
     title_uk: 'Робота з API та Мережевими Технологіями',
     content: [
-      { name: 'JSON', path: 'json.webp' },
+      { name: 'JSON', path: 'json.webp', to_invert: true },
       { name: 'REST', path: 'rest.webp' },
       { name: 'GraphQL', path: 'graphql.webp' },
     ],
@@ -130,7 +132,7 @@ const slidesArray = [
     title_uk: 'Версіонування з Системами Контролю Версій',
     content: [
       { name: 'Git', path: 'git.webp' },
-      { name: 'GitHub', path: 'github.webp' },
+      { name: 'GitHub', path: 'github.webp', to_invert: true },
       { name: 'GitLab', path: 'gitlab.webp' },
     ],
   },
@@ -138,7 +140,7 @@ const slidesArray = [
 
 const arrayToHTML = content => content.map(item => `
   <div class="content" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <div class="image" style="background: url('${item.path}'); background-size: contain; background-position: center; background-repeat: no-repeat; width: 6rem; height: 6rem; margin-bottom: 1rem;"></div>
+    <div class="image" style="background: url('${item.path}'); background-size: contain; background-position: center; background-repeat: no-repeat; width: 6rem; height: 6rem; margin-bottom: 1rem; ${item.to_invert === true && 'filter: invert(var(--is-dark));'}"></div>
     <p class="p2" style="margin-bottom: 3rem;">${item.name}</p>
   </div>
 `).join('')
