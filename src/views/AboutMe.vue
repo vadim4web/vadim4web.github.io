@@ -127,6 +127,31 @@ onMounted(() => window.scrollTo(0, 0))
   width: 100%;
   height: 32rem;
   margin-bottom: 10rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    border: 0.125rem solid var(--accent0);
+    z-index: 1;
+  }
+
+  &::before {
+    border-radius: 1rem;
+    width: 2rem;
+    height: 7rem;
+    left: -1.125rem;
+    top: 0;
+  }
+
+  &::after{
+    border-radius: 1.75rem;
+    width: 11rem;
+    height: 3.5rem;
+    right: 0;
+    bottom: -1.875rem;
+  }
 
   .photo {
     width: 100%;
@@ -134,40 +159,28 @@ onMounted(() => window.scrollTo(0, 0))
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 0.5rem;
-    position: relative;
+    filter: grayscale(1);
 
-    &::before {
-      position: absolute;
-      content: '';
-      border: 0.125rem solid var(--accent0);
+    &:hover {
+      filter: grayscale(0);
     }
+  }
+
+  &:has(.photo1:hover)::before {
+    filter: grayscale(1);
+  }
+
+  &:has(.photo2:hover)::after {
+    filter: grayscale(1);
   }
 
   .photo1 {
     background-image: url('@/assets/photo1.webp');
     background-position: center;
-
-    &::before {
-      border-radius: 1rem;
-      width: 2rem;
-      height: 7rem;
-      left: -1.125rem;
-      top: 0;
-    }
-
-
   }
   .photo2 {
     background-image: url('@/assets/photo2.webp');
     background-position: center 65%;
-
-    &::before {
-      border-radius: 1.75rem;
-      width: 11rem;
-      height: 3.5rem;
-      right: 0;
-      bottom: -1.875rem;
-    }
   }
 }
 </style>

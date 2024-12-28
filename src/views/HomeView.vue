@@ -52,7 +52,9 @@
         </active-element>
       </div>
 
-      <div class="right"></div>
+      <div class="right">
+        <div class="photo"></div>
+      </div>
     </section>
 
     <section class="projects flex-col-center">
@@ -147,18 +149,34 @@ onMounted(() => window.scrollTo(0, 0))
   }
 
   .right {
-    width: 100%;
-    aspect-ratio: 9 / 10;
-    background: url('@/assets/photo.webp');
-    background-position: 50% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 2rem;
     position: relative;
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 9 / 10;
+      background: url('@/assets/photo.webp');
+      background-position: 50% 25%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 2rem;
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      .photo {
+        filter: grayscale(0);
+      }
+
+      &::before,
+      &::after {
+        filter: grayscale(1);
+      }
+    }
 
     &::before,
     &::after {
       position: absolute;
+      z-index: 1;
       content: '';
       border: 0.125rem solid var(--accent0);
     }
