@@ -1,0 +1,324 @@
+:root {
+  --rem: calc(100vmin / 4.5);
+  --rem05: calc(var(--rem) / 2);
+  --tr-dur: 500ms;
+  --gray: #808080;
+  font-size: 1.4vmin;
+  font-family: 'Victor Mono', serif;
+  font-optical-sizing: auto;
+  line-height: normal;
+  filter: contrast(1.033);
+  -webkit-filter: contrast(1.033);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* Enables smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+  -moz-overflow-scrolling: touch;
+  /* Mozilla-specific smooth scrolling */
+
+  transition:
+    background-color var(--tr-dur),
+    /* Background color */
+    border var(--tr-dur),
+    /* Border */
+    border-color var(--tr-dur),
+    /* Border color */
+    border-radius var(--tr-dur),
+    /* Border radius */
+    box-shadow var(--tr-dur),
+    /* Box shadow */
+    opacity var(--tr-dur),
+    /* Opacity */
+    transform var(--tr-dur),
+    /* Transform (scale, rotate, etc.) */
+    width var(--tr-dur),
+    /* Width */
+    height var(--tr-dur),
+    /* Height */
+    max-width var(--tr-dur),
+    /* Max width */
+    max-height var(--tr-dur),
+    /* Max height */
+    min-width var(--tr-dur),
+    /* Min width */
+    min-height var(--tr-dur),
+    /* Min height */
+    margin var(--tr-dur),
+    /* Margin */
+    padding var(--tr-dur),
+    /* Padding */
+    left var(--tr-dur),
+    /* Left position */
+    right var(--tr-dur),
+    /* Right position */
+    top var(--tr-dur),
+    /* Top position */
+    bottom var(--tr-dur),
+    /* Bottom position */
+    z-index var(--tr-dur),
+    /* Z-index (may not have visual effect) */
+    filter var(--tr-dur),
+    /* Filter (blur, brightness, etc.) */
+    -webkit-filter var(--tr-dur),
+    /* Webkit Filter */
+    visibility var(--tr-dur),
+    /* Visibility */
+    white-space var(--tr-dur),
+    /* White space */
+    line-height var(--tr-dur),
+    /* Line height */
+    font-size var(--tr-dur),
+    /* Font size */
+    transform-origin var(--tr-dur),
+    /* Transform origin */
+    clip-path var(--tr-dur),
+    /* Clip path */
+    object-fit var(--tr-dur),
+    /* Object fit */
+    cursor var(--tr-dur),
+    /* Cursor */
+    transition-delay var(--tr-dur),
+    /* Delay of transition */
+    transition-timing-function var(--tr-dur);
+  /* Timing function */
+
+  -moz-transition:
+    background-color var(--tr-dur),
+    /* Background color */
+    border var(--tr-dur),
+    /* Border */
+    border-color var(--tr-dur),
+    /* Border color */
+    border-radius var(--tr-dur),
+    /* Border radius */
+    box-shadow var(--tr-dur),
+    /* Box shadow */
+    opacity var(--tr-dur),
+    /* Opacity */
+    transform var(--tr-dur),
+    /* Transform (scale, rotate, etc.) */
+    width var(--tr-dur),
+    /* Width */
+    height var(--tr-dur),
+    /* Height */
+    max-width var(--tr-dur),
+    /* Max width */
+    max-height var(--tr-dur),
+    /* Max height */
+    min-width var(--tr-dur),
+    /* Min width */
+    min-height var(--tr-dur),
+    /* Min height */
+    margin var(--tr-dur),
+    /* Margin */
+    padding var(--tr-dur),
+    /* Padding */
+    left var(--tr-dur),
+    /* Left position */
+    right var(--tr-dur),
+    /* Right position */
+    top var(--tr-dur),
+    /* Top position */
+    bottom var(--tr-dur),
+    /* Bottom position */
+    z-index var(--tr-dur),
+    /* Z-index (may not have visual effect) */
+    filter var(--tr-dur),
+    /* Filter (blur, brightness, etc.) */
+    -moz-filter var(--tr-dur),
+    /* Moz Filter */
+    visibility var(--tr-dur),
+    /* Visibility */
+    white-space var(--tr-dur),
+    /* White space */
+    line-height var(--tr-dur),
+    /* Line height */
+    font-size var(--tr-dur),
+    /* Font size */
+    transform-origin var(--tr-dur),
+    /* Transform origin */
+    clip-path var(--tr-dur),
+    /* Clip path */
+    object-fit var(--tr-dur),
+    /* Object fit */
+    cursor var(--tr-dur),
+    /* Cursor */
+    transition-delay var(--tr-dur),
+    /* Delay of transition */
+    transition-timing-function var(--tr-dur);
+  /* Timing function */
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb_hover);
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: var(--scrollbar-track_hover);
+}
+
+::selection {
+  background: var(--accent50);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--accent50);
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: var(--accent50);
+  color: #fff;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body, #logoOverlay {
+  padding: 0;
+  margin: 0;
+  background: var(--bg0);
+}
+
+#logoOverlay {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+body::after,
+#logoOverlay::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('https://vadim4web.github.io/logo.png');
+  background-repeat: repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+body::after {
+  min-height: 100%;
+  background-attachment: scroll;
+  z-index: -1;
+}
+
+@media (orientation: portrait) {
+  body::after,
+  #logoOverlay::after {
+    background-size: 14.2857%;
+  }
+}
+
+@media (orientation: landscape) {
+  body::after,
+  #logoOverlay::after {
+    background-size:  7.14285%;
+  }
+}
+
+#app {
+  width: 100dvw;
+  margin: 0 auto;
+  font-size: 1rem;
+  padding: 0 10dvw;
+  overflow: hidden;
+  color: var(--color0);
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+menu,
+ul,
+ol,
+li,
+label,
+span:not(.logo, #spot) {
+  margin: 0;
+  padding: 0;
+  cursor: text;
+}
+
+menu,
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  position: relative;
+  cursor: pointer;
+}
+
+button,
+button:hover,
+button:active {
+  border: none;
+}
+
+main {
+  position: relative;
+}
+
+.section {
+  position: relative;
+}
+
+@media (orientation: portrait) {
+  section {
+    height: 50dvh;
+  }
+
+  main {
+    padding-top: calc(var(--rem05));
+  }
+}
+
+@media (orientation: landscape) {
+  section {
+    height: 100dvh;
+  }
+
+  main {
+    padding-top: calc(var(--rem05) / 2);
+  }
+}

@@ -141,7 +141,7 @@ const submitForm = async () => {
       TEMPLATE_ID,
       templateParams,
       {
-          publicKey: USER_KEY,
+        publicKey: USER_KEY,
       }
     )
     console.log('Email sent successfully!', response)
@@ -265,7 +265,7 @@ textarea {
 
 .laptop {
   border-radius: 1rem;
-  background-image: url('@/assets/laptop.webp');
+  background-image: url('@/assets/img/laptop.webp');
   width: 100%;
   height: 55.5%;
   background-size: cover;

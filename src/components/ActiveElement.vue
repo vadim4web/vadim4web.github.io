@@ -7,7 +7,7 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          #fff, ${bg} 33%)`
+          #ffffff, ${bg} 33%)`
         : bg,
       boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
@@ -27,7 +27,7 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          #fff, ${bg} 33%)`
+          #ffffff, ${bg} 33%)`
         : bg,
       boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
@@ -43,16 +43,8 @@
 import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
-const {
-  path,
-  type,
-  action,
-  fontSize,
-  padding,
-  borderRadius,
-  classes,
-  bg
-} = defineProps([
+const { path, type, action, fontSize, padding, borderRadius, classes, bg } =
+  defineProps([
     'path',
     'type',
     'action',

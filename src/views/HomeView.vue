@@ -2,12 +2,23 @@
   <main class="home">
     <section class="head content flex-col-center">
       <div class="h1">
-        <h2 class="h1_h2" :data-text-1="$t('homeH11')" style="filter: drop-shadow(0 0 0.5rem var(--color-op));">
+        <h2
+          class="h1_h2"
+          :data-text-1="$t('homeH11')"
+          style="filter: drop-shadow(0 0 0.5rem var(--color-op))"
+        >
           {{ $t('homeH11') }}<br />
           <high-light />
         </h2>
 
-        <h2 class="h1_span" :data-text-2="$t('homeH12')" style="font-size: 75%; filter: drop-shadow(0 0 0.5rem var(--color-op));">
+        <h2
+          class="h1_span"
+          :data-text-2="$t('homeH12')"
+          style="
+            font-size: 75%;
+            filter: drop-shadow(0 0 0.5rem var(--color-op));
+          "
+        >
           {{ $t('homeH12') }}
         </h2>
       </div>
@@ -23,7 +34,7 @@
       >
         {{ $t('homeB1') }}&nbsp;
 
-        <arrow-right height="1.625rem"/>
+        <arrow-right height="1.625rem" />
       </active-element>
     </section>
 
@@ -33,7 +44,9 @@
           <h2 class="h2">
             <high-light />
 
-            {{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{ $t('homeH213') }}
+            {{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{
+              $t('homeH213')
+            }}
           </h2>
 
           <p class="t2">
@@ -88,9 +101,7 @@ import HighLight from '@/components/HighLight.vue'
 import ActiveElement from '@/components/ActiveElement.vue'
 import ArrowRight from '@/components/ArrowRight.vue'
 
-const Logo3D = defineAsyncComponent(() =>
-  import('@/components/Logo3D.vue')
-)
+const Logo3D = defineAsyncComponent(() => import('@/components/Logo3D.vue'))
 const ThreeView = defineAsyncComponent(() =>
   import('@/components/ThreeView.vue')
 )

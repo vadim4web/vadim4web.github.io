@@ -4,7 +4,7 @@
     ref="logoOverlay"
     class="flex-col-center"
     :class="{ fadeOut: fadeOutClass }"
-    :style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 10 : -1 }"
+    :style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 3 : 0 }"
     @animationend="handleAnimationEnd"
   >
     <div id="logo2dWrapper">
@@ -32,18 +32,14 @@
 
 <script setup>
 import { onMounted, ref, watch } from 'vue'
-import { state } from '@/store.js'
+import { state } from '@/store/'
+import getThemeColor from '@/helpers/getThemeColor.js'
 
 const totalDuration = ref(1755) // Загальна тривалість анімації в мс (2340ms for 30fps)
 const isVisible = ref(true)
 const fadeOutClass = ref(false)
 const logoOverlay = ref(null)
 const logo2dCanvas = ref(null)
-
-const getTheme = () =>
-  document.documentElement.getAttribute('data-theme') === 'dark'
-    ? '#fff'
-    : '#000'
 
 let startTime = null
 
@@ -55,7 +51,7 @@ function startAnimation() {
   const ctx = canvas.getContext('2d')
   ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
   ctx.lineWidth = 28
-  ctx.strokeStyle = getTheme()
+  ctx.strokeStyle = getThemeColor()
 
   const drawFunctions = [
     progress => {
@@ -160,7 +156,7 @@ onMounted(() => {
 // Watch for changes in the state.showLoader value
 watch(
   () => state.showLoader,
-  (newValue) => {
+  newValue => {
     if (newValue) {
       isVisible.value = newValue
       // Restart animation when loader becomes visible
@@ -175,6 +171,7 @@ watch(
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -186,21 +183,12 @@ watch(
   -moz-animation: fade-out 1170ms forwards ease-out;
 }
 
-#logoOverlay {
-  position: fixed;
-  width: 100%;
-  height: 100dvh;
-  background: var(--bg0);
-  opacity: 0;
-}
-
 #logo2dWrapper {
   position: relative;
-  top: 2vmin;
-  width: 50vmin;
-  height: 50vmin;
+  z-index: 0;
 }
 
+#logo2dWrapper,
 #logo2dCanvas,
 #svgPlaceholder {
   width: 50vmin;
@@ -221,9 +209,9 @@ watch(
 
 #logo2dCanvas {
   position: relative;
-  z-index: 1;
   stroke: var(--color0);
   -webkit-stroke: var(--color0);
   -moz-stroke: var(--color0);
+  z-index: 1;
 }
 </style>

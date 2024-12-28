@@ -11,13 +11,7 @@
       class="logo-image"
     >
       <defs>
-        <filter
-          id="shadowActive"
-          x="-50%"
-          y="-50%"
-          width="200%"
-          height="200%"
-        >
+        <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
           <feDropShadow
             dx="0"
             dy="0"

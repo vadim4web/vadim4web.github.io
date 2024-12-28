@@ -71,14 +71,14 @@ onMounted(() => window.scrollTo(0, 0))
 
   @media (orientation: portrait) {
     grid-template-areas:
-      "mission text1"
-      "text2 text2";
+      'mission text1'
+      'text2 text2';
   }
 
   @media (orientation: landscape) {
     grid-template-areas:
-      "mission text1"
-      "mission text2";
+      'mission text1'
+      'mission text2';
   }
 }
 
@@ -145,7 +145,7 @@ onMounted(() => window.scrollTo(0, 0))
     top: 0;
   }
 
-  &::after{
+  &::after {
     border-radius: 1.75rem;
     width: 11rem;
     height: 3.5rem;
@@ -175,11 +175,11 @@ onMounted(() => window.scrollTo(0, 0))
   }
 
   .photo1 {
-    background-image: url('@/assets/photo1.webp');
+    background-image: url('@/assets/img/photo1.webp');
     background-position: center;
   }
   .photo2 {
-    background-image: url('@/assets/photo2.webp');
+    background-image: url('@/assets/img/photo2.webp');
     background-position: center 65%;
   }
 }

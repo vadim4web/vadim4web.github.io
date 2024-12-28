@@ -179,7 +179,7 @@ const messages = {
 }
 
 const i18n = createI18n({
-  locale: localStorage.getItem('lang') || 'en',
+  locale: sessionStorage.getItem('lang') || 'en',
   fallbackLocale: 'en',
   messages,
 })

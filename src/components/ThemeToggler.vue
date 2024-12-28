@@ -7,8 +7,7 @@
     <span
       id="spot"
       :style="{
-        background:
-          `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
+        background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
           var(--accent1_50) 5%, var(--color0))`,
         fontSize: theme === 'light' ? '1.5rem' : '1.85rem',
         lineHeight: theme === 'light' ? '1.5rem' : '2rem',
@@ -28,7 +27,7 @@
 <script setup>
 import { ref, onMounted, watch, onUpdated } from 'vue'
 import { useMouse, useWindowSize } from '@vueuse/core'
-import { state } from '@/store.js'
+import { state } from '@/store/'
 import getTheme from '@/helpers/getTheme'
 
 const { x, y } = useMouse()
@@ -58,7 +57,7 @@ onUpdated(() => {
   setTheme(theme.value)
 })
 
-watch(theme, newTheme => setTheme(newTheme))
+watch(theme, setTheme)
 </script>
 
 <style lang="scss">

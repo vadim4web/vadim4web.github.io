@@ -31,7 +31,7 @@
         </router-link>
       </h4>
 
-      <p class="p3" style="letter-spacing: -0.1rem;">
+      <p class="p3" style="letter-spacing: -0.1rem">
         <span class="dimmed">tech stack: &nbsp;</span>
 
         {{ stack.join(' | ') }}
@@ -48,7 +48,7 @@
 
 <script setup>
 import { defineAsyncComponent } from 'vue'
-import { projects } from '@/assets/projects.js'
+import { projects } from '@/assets/data/projects.js'
 import getPath from '@/helpers/getPath.js'
 import getThreeRandom from '@/helpers/getThreeRandom'
 

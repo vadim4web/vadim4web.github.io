@@ -31,20 +31,20 @@
 import { ref, onMounted, onUpdated } from 'vue'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-import slides from '@/assets/slides.js'
+import slides from '@/assets/data/slides.js'
 
 const slider = ref()
 
 const setSlideContentGrid = () => {
   const contentElements = document.querySelectorAll('.vueperslide__content')
-  contentElements.forEach((element) => {
+  contentElements.forEach(element => {
     element.setAttribute(
       'style',
       `display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
           width: 100% !important; transition: none !important;`
-    );
-  });
+    )
+  })
 }
 
 onMounted(() => {
@@ -52,7 +52,7 @@ onMounted(() => {
   slider.value.goToSlide(3)
 })
 
-onUpdated(() =>  setSlideContentGrid())
+onUpdated(() => setSlideContentGrid())
 </script>
 
 <style lang="scss">

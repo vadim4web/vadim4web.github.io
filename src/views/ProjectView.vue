@@ -131,9 +131,9 @@
 <script setup>
 import { ref, watchEffect, computed, onMounted, defineAsyncComponent } from 'vue'
 import { useRoute } from 'vue-router'
-import { projects } from '@/assets/projects.js'
-import HighLight from '@/components/HighLight.vue'
 import ArrowNavigation from '@/components/ArrowNavigation.vue'
+import HighLight from '@/components/HighLight.vue'
+import { projects } from '@/assets/data/projects.js'
 import getPath from '@/helpers/getPath.js'
 import getSrc from '@/helpers/getSrc.js'
 import getThreeRandom from '@/helpers/getThreeRandom'

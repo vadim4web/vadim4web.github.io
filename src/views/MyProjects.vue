@@ -64,7 +64,7 @@
 import { ref, onMounted, onUpdated, defineAsyncComponent } from 'vue'
 import HighLight from '@/components/HighLight.vue'
 import ActiveElement from '@/components/ActiveElement.vue'
-import { chunkedProjects } from '@/assets/projects.js'
+import { chunkedProjects } from '@/assets/data/projects.js'
 import getPath from '@/helpers/getPath.js'
 
 const AsyncFrame = defineAsyncComponent(() =>

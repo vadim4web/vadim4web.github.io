@@ -4,7 +4,6 @@
     ref="canvasContainer"
     style="
       position: absolute;
-      z-index: 0;
       background-color: transparent;
       filter: drop-shadow(0 0 1rem var(--accent0));
       -webkit-filter: drop-shadow(0 0 1rem var(--accent0));
@@ -66,11 +65,11 @@ const loadModel = () => {
   const loader = new GLTFLoader()
   loader.load(
     `${ASSETS_DIR}${MODEL_NAME}`,
-    (gltf) => {
+    gltf => {
       model = gltf.scene
 
       // Update material properties for all meshes
-      model.traverse((child) => {
+      model.traverse(child => {
         if (child.isMesh) {
           child.material = new MeshStandardMaterial({
             color: child.material.color,
@@ -85,7 +84,7 @@ const loadModel = () => {
       renderer.render(scene, camera)
     },
     undefined,
-    (error) => console.error('Error loading model:', error)
+    error => console.error('Error loading model:', error)
   )
 }
 

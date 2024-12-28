@@ -1,22 +1,28 @@
 <template>
   <header class="header">
     <menu>
-      <li class="menu-item flex-center ">
+      <li class="menu-item flex-center">
         <router-link to="/home" class="link flex-center logo-link">
           <logo-view logoClass="logo-view" />
         </router-link>
       </li>
 
       <li class="menu-item flex-center">
-        <router-link to="/about" class="link flex-center">{{ $t('AboutMe') }}</router-link>
+        <router-link to="/about" class="link flex-center">{{
+          $t('AboutMe')
+        }}</router-link>
       </li>
 
       <li class="menu-item">
-        <router-link to="/projects" class="link flex-center">{{ $t('MyWorks') }}</router-link>
+        <router-link to="/projects" class="link flex-center">{{
+          $t('MyWorks')
+        }}</router-link>
       </li>
 
       <li class="menu-item flex-center">
-        <router-link to="/contact" class="link flex-center">{{ $t('Contact') }}</router-link>
+        <router-link to="/contact" class="link flex-center">{{
+          $t('Contact')
+        }}</router-link>
       </li>
 
       <li class="menu-item flex-col-center global-view">
@@ -38,7 +44,7 @@ import LangToggler from '@/components/LangToggler.vue'
   top: 0;
   left: 0;
   position: fixed;
-  z-index: 5;
+  z-index: 2;
   height: var(--rem);
   width: 100dvw;
   background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
@@ -85,7 +91,6 @@ menu {
       opacity: 0.66;
       filter: hue-rotate(90deg);
     }
-
 
     &:hover .logo-image,
     &.router-link-active .logo-image {
