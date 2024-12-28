@@ -7,7 +7,7 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          #ffffffcc, ${bg} 33%)`
+          #fff, ${bg} 33%)`
         : bg,
       boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
@@ -27,7 +27,7 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          #ffffffcc, ${bg} 33%)`
+          #fff, ${bg} 33%)`
         : bg,
       boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
@@ -88,7 +88,6 @@ const handleClick = () => {
   position: relative;
   overflow: hidden;
   font-weight: bold;
-  mix-blend-mode: difference;
   mix-blend-mode: plus-lighter;
 
   &::before {

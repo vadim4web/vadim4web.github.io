@@ -85,12 +85,13 @@
   font-family: 'Victor Mono', serif;
   font-optical-sizing: auto;
   line-height: normal;
-
   --rem: calc(100vmin / 4.5);
   --rem05: calc(var(--rem) / 2);
   --tr-dur: 500ms;
   --gray: #808080;
   --green: #1B5E20;
+  filter: contrast(1.1);
+  -webkit-filter: contrast(1.1);
 }
 
 * {
@@ -207,33 +208,18 @@ body {
 }
 
 ::selection {
-  background: var(--accent0);
+  background: var(--accent50);
   color: #fff;
 }
 
 ::-moz-selection {
-  background: var(--accent0);
+  background: var(--accent50);
   color: #fff;
 }
 
 ::-webkit-selection {
-  background: var(--accent0);
+  background: var(--accent50);
   color: #fff;
-}
-
-::selection .logo-image {
-  background: var(--accent0);
-  stroke: #fff !important;
-}
-
-::-moz-selection .logo-image {
-  background: var(--accent0);
-  stroke: #fff !important;
-}
-
-::-webkit-selection .logo-image {
-  background: var(--accent0);
-  stroke: #fff !important;
 }
 
 a:link,
