@@ -414,32 +414,56 @@ main {
   font-style: normal;
 }
 
-.h1 {
+.h1,
+.h1_h2 {
   font-size: 4.5rem;
   line-height: 110%;
   letter-spacing: -0.045rem;
 }
 
-.home .h1, .h1_span {
+.h1_h2,
+.h1_span {
   text-shadow: 0 0 0.25rem var(--color-op);
   position: relative;
   z-index: 5;
+  width: 100%;
 }
 
-.home .h1::before, .h1_span::before {
+.home .h1 {
+  filter: drop-shadow(0 0 0.5rem var(--color-op));
+  -webkit-filter: drop-shadow(0 0 0.5rem var(--color-op));
+}
+
+.h1_h2::before,
+.h1_h2::after,
+.h1_span::before,
+.h1_span::after {
   content: attr(data-text);
   position: absolute;
   top: 0;
+}
+
+.h1_h2::before,
+.h1_h2::after {
   left: 0;
+}
+
+.h1_span::before {
+  left: -1px;
+}
+
+.h1_span::after {
+  left: 1px;
+}
+
+.h1_h2::before,
+.h1_span::before {
   text-shadow: 0 0 0.5rem var(--color-op);
   z-index: -1;
 }
 
-.home .h1::after, .h1_span::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
+.h1_h2::after,
+.h1_span::after {
   text-shadow: 0 0 1rem var(--color-op);
   z-index: -2;
 }

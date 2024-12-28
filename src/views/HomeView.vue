@@ -1,15 +1,16 @@
 <template>
   <main class="home">
     <section class="head content flex-col-center">
-      <h2 class="h1" :data-text="$t('homeH11')">
-        {{ $t('homeH11') }}<br />
+      <div class="h1">
+        <h2 class="h1_h2" :data-text="$t('homeH11')">
+          {{ $t('homeH11') }}<br />
+          <high-light />
+        </h2>
 
-        <span class="h2_span" :data-text="$t('homeH12')" style="font-size: 75%;">
+        <h2 class="h2_span" :data-text="$t('homeH12')" style="font-size: 75%; filter: drop-shadow(0 0 0.75rem var(--color-op));">
           {{ $t('homeH12') }}
-        </span>
-
-        <high-light />
-      </h2>
+        </h2>
+      </div>
 
       <logo3-d />
 
@@ -105,10 +106,9 @@ onMounted(() => window.scrollTo(0, 0))
   text-align: center;
 
   .h1 {
-    position: relative;
     z-index: 1;
     width: 22ch;
-    height: 10rem;
+    padding: 0;
   }
 
   & .highlight {
