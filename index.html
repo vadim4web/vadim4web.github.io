@@ -56,66 +56,6 @@
     ]
   }
   </script>
-
-  <!-- Styles -->
-  <style>
-    body {
-      position: relative;
-    }
-
-    body, #logoOverlay {
-      padding: 0;
-      margin: 0;
-    }
-
-    #logoOverlay {
-      width: 100%;
-      height: 100%;
-      overflow: hidden !important;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: var(--bg0);
-    }
-
-    body::after,
-    #logoOverlay::after {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-image: url('https://vadim4web.github.io/logo.png');
-      background-repeat: repeat;
-      background-position: center;
-      opacity: 0.05;
-      pointer-events: none;
-    }
-
-    body::after {
-      min-height: 100%;
-      background-attachment: scroll;
-      z-index: -1;
-    }
-
-    @media (orientation: portrait) {
-      body::after,
-      #logoOverlay::after {
-        background-size: 14.2857%;
-      }
-    }
-
-    @media (orientation: landscape) {
-      body::after,
-      #logoOverlay::after {
-        background-size:  7.14285%;
-      }
-    }
-  </style>
-
   <!-- Redirect Script -->
   <script>
     (function(l) {
@@ -132,21 +72,5 @@
   </h1>
   <div id="app" role="main"></div>
   <script type="module" src="/src/main.js"></script>
-
-  <!-- JavaScript for theme selection and dynamic favicon -->
-  <!-- <script type="text/javascript">
-    (function() {
-      let savedTheme = sessionStorage.getItem('theme');
-      if (!savedTheme) {
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        savedTheme = prefersDarkMode ? 'dark' : 'light';
-        sessionStorage.setItem('theme', savedTheme);
-      }
-      document.documentElement.setAttribute('data-theme', savedTheme);
-
-      const favicon = document.getElementById('favicon');
-      favicon.href = savedTheme === 'dark' ? 'https://vadim4web.github.io/favicon_dark.ico' : 'https://vadim4web.github.io/favicon_light.ico';
-    })();
-  </script> -->
 </body>
 </html>
