@@ -18,7 +18,7 @@
         :padding="'1.5rem 2.67rem'"
         :fontSize="'1.625rem'"
         :borderRadius="'2.3125rem'"
-        :bg="'var(--accent0)'"
+        :bg="'var(--accent50)'"
       >
         {{ $t('homeB1') }}&nbsp;
 
@@ -43,9 +43,9 @@
         <active-element
           path="about"
           :padding="'1.5rem 3rem'"
-          :fontSize="'1.25rem'"
+          :fontSize="'1.5rem'"
           :borderRadius="'2.125rem'"
-          :bg="'var(--accent0)'"
+          :bg="'var(--accent50)'"
           class="font-variant"
         >
           {{ $t('homeB2') }}
@@ -66,7 +66,7 @@
         :padding="'1.5rem 2.5rem'"
         :fontSize="'1.33rem'"
         :borderRadius="'2.166rem'"
-        :bg="'var(--bg50)'"
+        :bg="'transparent'"
       >
         {{ $t('homeB3') }}&nbsp;
         <arrow-right height="1.33rem" />

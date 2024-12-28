@@ -35,7 +35,7 @@ const messages = {
     aboutH223: 'development',
     aboutH224: 'easier.',
     aboutT21: 'As individuals, we are all born developers, constantly shaping our neural networks as we journey through life. Some of us, including myself, have chosen to transform this passion for development into a fulfilling career in web development. For me, it\'s not just a job but a calling that allows me to express my creativity and make a meaningful impact through technology.',
-    aboutT21: 'We each have our own unique story to tell, and through the language of technology, we code our autobiographies, breathing life into our ideas on the digital canvas. I am deeply dedicated to creating user-friendly web applications and continually enhancing my skills to stay ahead in this ever-evolving industry.',
+    aboutT22: 'We each have our own unique story to tell, and through the language of technology, we code our autobiographies, breathing life into our ideas on the digital canvas. I am deeply dedicated to creating user-friendly web applications and continually enhancing my skills to stay ahead in this ever-evolving industry.',
 
     worksH2: 'My Works',
     worksT1: 'Showcase About Works',

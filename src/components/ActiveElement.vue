@@ -7,8 +7,9 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          var(--accent50), ${bg} 50%)`
+          #ffffffcc, ${bg} 33%)`
         : bg,
+      boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
       padding,
       borderRadius,
@@ -26,8 +27,9 @@
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          var(--accent50), ${bg} 50%)`
+          #ffffffcc, ${bg} 33%)`
         : bg,
+      boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
       padding,
       borderRadius,
@@ -81,15 +83,28 @@ const handleClick = () => {
   align-items: center;
   justify-content: center;
   color: var(--color0);
-  text-shadow: 0 0 1rem var(--bg0);
+  text-shadow: 0 0 0.15rem var(--accent0);
   line-height: 100%;
   position: relative;
   overflow: hidden;
   font-weight: bold;
-  box-shadow: inset -1rem -1rem 1rem #0004;
+  mix-blend-mode: difference;
+  mix-blend-mode: plus-lighter;
+
+  &::before {
+    box-shadow: inset 1rem 1rem 1rem #fff4;
+    top: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+  }
 
   &::after {
-    box-shadow: inset 1rem 1rem 1rem #fff4;
+    box-shadow: inset -1rem -1rem 1rem #0004;
     top: 0;
     right: 0;
     content: '';
@@ -102,7 +117,8 @@ const handleClick = () => {
 
   &:hover {
     box-shadow: inset 1rem 1rem 1rem #0004;
-    text-shadow: 0 0 1rem var(--bg0);
+    mix-blend-mode: difference;
+    background-blend-mode: luminosity;
 
     &::after {
       box-shadow: inset -1rem -1rem 1rem #fff4;
@@ -110,8 +126,7 @@ const handleClick = () => {
   }
 
   &:active {
-    color: var(--bg0);
-    text-shadow: 0 0 1rem var(--color0);
+    text-shadow: 0 0 1rem var(--accent);
   }
 }
 </style>

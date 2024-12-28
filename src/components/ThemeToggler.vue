@@ -9,7 +9,7 @@
       :style="{
         background:
           `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
-          var(--accent1), var(--color0))`,
+          var(--accent1_50) 5%, var(--color0))`,
         fontSize: theme === 'light' ? '1.5rem' : '1.85rem',
         lineHeight: theme === 'light' ? '1.5rem' : '2rem',
       }"
@@ -84,9 +84,22 @@ watch(theme, newTheme => setTheme(newTheme))
     border-radius: 50%;
     background: radial-gradient(
       ellipse at 0% 0%,
-      var(--accent2),
-      var(--accent1)
+      var(--accent2) 5%,
+      var(--color0)
     );
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: inherit;
+      background: var(--color0);
+    }
   }
 }
 </style>

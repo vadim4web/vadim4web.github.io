@@ -105,6 +105,7 @@ footer {
   }
 
   .h1 {
+    padding-top: 1rem;
     padding-bottom: 12rem;
   }
 

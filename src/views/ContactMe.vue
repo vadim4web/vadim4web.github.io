@@ -19,7 +19,7 @@
 
         <form
           @submit.prevent="submitForm"
-          class="flex-col-start form"
+          class="flex-col-start form card-back"
         >
           <label :data-text="$t('name')">
             <input
@@ -57,7 +57,7 @@
             :padding="'0'"
             :fontSize="'2.1rem'"
             :borderRadius="'1.75rem'"
-            :bg="'var(--accent0)'"
+            :bg="'var(--accent50)'"
             class="font-variant"
           >
             {{ $t('send') }}
@@ -170,7 +170,8 @@ onMounted(() => window.scrollTo(0, 0))
   gap: 3.5rem;
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--color0) !important;
+  color: var(--color0);
+  border-radius: 1.75rem;
 
   label {
     position: relative;
@@ -235,14 +236,12 @@ input[type='submit'],
 button {
   width: 14rem;
   height: 3.5rem;
-  background: var(--accent0);
   border-color: transparent;
   border-radius: 1.75rem;
   border-width: 0.125rem;
   padding: 0;
   margin: 0;
   position: relative;
-  color: var(--color0);
   box-sizing: content-box;
   cursor: pointer;
   font-weight: 400;

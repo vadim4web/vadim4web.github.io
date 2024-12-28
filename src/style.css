@@ -16,11 +16,19 @@
   --color2: #a8a8a8;
   --color3: #949494;
 
+  --accent: #ffcc00;
   --accent0: #ffcc00;
+  --accent0: #ffd800;
   --accent50: #ffcc0080;
+  --accent50: #ffd80080;
   --accent25: #ffcc0040;
+  --accent25: #ffd80040;
   --accent125: #ffcc0020;
+  --accent125: #ffd80020;
   --accent1: #0066cc;
+  --accent1: #0056b9;
+  --accent1_50: #0066cc80;
+  --accent1_50: #0056b980;
   --accent2: hsl(48, 100%, 71%);
 
   --scrollbar-thumb: rgb(54, 54, 54);
@@ -49,11 +57,19 @@
   --color2: #575757;
   --color3: #6b6b6b;
 
+  --accent: #0000cc;
   --accent0: #0066cc;
+  --accent0: #0056b9;
   --accent50: #0066cc80;
+  --accent50: #0056b980;
   --accent25: #0066cc40;
+  --accent25: #0056b940;
   --accent125: #0066cc20;
+  --accent125: #0056b920;
   --accent1: #ffcc00;
+  --accent1: #ffd800;
+  --accent1_50: #ffcc0080;
+  --accent1_50: #ffd80080;
   --accent2: hsl(210, 100%, 71%);
 
   --scrollbar-thumb: rgb(145, 145, 145);
@@ -74,6 +90,7 @@
   --rem05: calc(var(--rem) / 2);
   --tr-dur: 500ms;
   --gray: #808080;
+  --green: #1B5E20;
 }
 
 * {
@@ -367,11 +384,6 @@ a.link:hover::after {
   -o-border-radius: var(--rem05);
 }
 
-a.transparent-on-hover:hover {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
 a.link:active::after {
   content: '';
   position: absolute;
@@ -602,13 +614,24 @@ h1::after, .h1_span::after {
 
 .card-back {
   background: var(--bg25);
-  backdrop-filter: blur(0.25rem);
+  backdrop-filter: blur(0.33rem);
   border: 1px solid var(--accent125);
+}
+
+.br1 {
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+}
+
+.br2 {
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
 }
 
 .white_bg {

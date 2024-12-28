@@ -1,7 +1,7 @@
 <template>
   <div class="three three-projects">
     <div
-      class="card card-back"
+      class="card card-back br1"
       v-for="({ title, name, stack, tags, path, white_bg }, i) in three"
       :key="i"
     >
@@ -31,7 +31,7 @@
         </router-link>
       </h4>
 
-      <p class="p3">
+      <p class="p3" style="letter-spacing: -0.1rem;">
         <span class="dimmed">tech stack: &nbsp;</span>
 
         {{ stack.join(' | ') }}
@@ -154,7 +154,7 @@ const three = getThreeRandom(projects)
       &::after {
         position: absolute;
         height: 2px;
-        content: '-------------------';
+        content: '---------------------';
         right: 0;
         bottom: 0;
         width: fit-content;

@@ -18,7 +18,7 @@
         :key="index"
         :id="'three-' + index"
       >
-        <div v-for="(p, i) in a" :key="i" class="project card-back">
+        <div v-for="(p, i) in a" :key="i" class="project card-back br1">
           <async-frame
             :iframeSrc="getPath(p.path)"
             :iframeClass="{
@@ -50,7 +50,7 @@
         :padding="'1.5rem 2.5rem'"
         :fontSize="'1.33rem'"
         :borderRadius="'2.166rem'"
-        :bg="'var(--bg50)'"
+        :bg="'transparent'"
         class="font-variant load-more"
         :action="handleLoadMore"
       >
@@ -229,7 +229,6 @@ onUpdated(() => handleScroll())
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent0);
     text-align: center;
     font-size: 0.8rem;
     font-weight: 700;

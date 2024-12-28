@@ -7,6 +7,7 @@
     <vueper-slides
       :fixed-height="true"
       :bullets="false"
+      :arrows-outside="true"
       class="no-shadow"
       ref="slider"
       autoplay
@@ -55,22 +56,6 @@ onUpdated(() =>  setSlideContentGrid())
 </script>
 
 <style lang="scss">
-.vueperslides--fixed-height {
-  position: relative;
-
-  @media (orientation: landscape) {
-    & {
-      height: 34rem;
-    }
-  }
-
-  @media (orientation: portrait) {
-    & {
-      height: 30rem;
-    }
-  }
-}
-
 .tech-stack {
   padding: 2rem auto 2rem auto;
 
@@ -87,20 +72,35 @@ onUpdated(() =>  setSlideContentGrid())
   }
 }
 
+.vueperslides--fixed-height {
+  position: relative;
+
+  @media (orientation: landscape) {
+    & {
+      height: 34rem;
+    }
+  }
+
+  @media (orientation: portrait) {
+    & {
+      height: 30rem;
+    }
+  }
+}
+
 .vueperslides {
   width: 100%;
+}
 
-  .vueperslide__content-wrapper {}
+.vueperslides__arrow {
+  color: var(--accent);
+  filter: drop-shadow(0 0 1px var(--accent));
 }
 
 .vueperslide__content {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   width: 100% !important;
-
-  /* These styles are already added in `src\assets\slides.js` */
-  .content {}
-  .image {}
 }
 
 @media (max-width: 480px) {
