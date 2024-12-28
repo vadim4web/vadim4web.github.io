@@ -423,7 +423,7 @@ main {
 
 .h1_h2,
 .h1_span {
-  text-shadow: 0 0 0.25rem var(--color-op);
+  text-shadow: 0 0 0.5rem var(--color-op);
   position: relative;
   z-index: 5;
   width: 100%;
@@ -438,22 +438,28 @@ main {
 .h1_h2::after,
 .h1_span::before,
 .h1_span::after {
-  content: attr(data-text);
   position: absolute;
   top: 0;
 }
 
 .h1_h2::before,
 .h1_h2::after {
+  content: attr(data-text-1);
   left: 0;
 }
 
+.h1_span::before,
+.h1_span::after {
+  content: attr(data-text-2);
+  width: 100%;
+}
+
 .h1_span::before {
-  left: -1px;
+  left: 0;
 }
 
 .h1_span::after {
-  left: 1px;
+  left: 0;
 }
 
 .h1_h2::before,

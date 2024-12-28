@@ -2,12 +2,12 @@
   <main class="home">
     <section class="head content flex-col-center">
       <div class="h1">
-        <h2 class="h1_h2" :data-text="$t('homeH11')">
+        <h2 class="h1_h2" :data-text-1="$t('homeH11')" style="filter: drop-shadow(0 0 0.75rem var(--color-op));">
           {{ $t('homeH11') }}<br />
           <high-light />
         </h2>
 
-        <h2 class="h2_span" :data-text="$t('homeH12')" style="font-size: 75%; filter: drop-shadow(0 0 0.75rem var(--color-op));">
+        <h2 class="h1_span" :data-text-2="$t('homeH12')" style="font-size: 75%; filter: drop-shadow(0 0 0.75rem var(--color-op));">
           {{ $t('homeH12') }}
         </h2>
       </div>
