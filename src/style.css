@@ -423,15 +423,15 @@ main {
 
 .h1_h2,
 .h1_span {
-  text-shadow: 0 0 0.5rem var(--color-op);
+  text-shadow: 0 0 0.25rem var(--color-op);
   position: relative;
   z-index: 5;
   width: 100%;
 }
 
 .home .h1 {
-  filter: drop-shadow(0 0 0.5rem var(--color-op));
-  -webkit-filter: drop-shadow(0 0 0.5rem var(--color-op));
+  filter: drop-shadow(0 0 0.25rem var(--color-op));
+  -webkit-filter: drop-shadow(0 0 0.25rem var(--color-op));
 }
 
 .h1_h2::before,
@@ -464,13 +464,13 @@ main {
 
 .h1_h2::before,
 .h1_span::before {
-  text-shadow: 0 0 0.5rem var(--color-op);
+  text-shadow: 0 0 0.25rem var(--color-op);
   z-index: -1;
 }
 
 .h1_h2::after,
 .h1_span::after {
-  text-shadow: 0 0 1rem var(--color-op);
+  text-shadow: 0 0 0.25rem var(--color-op);
   z-index: -2;
 }
 
