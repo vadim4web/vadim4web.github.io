@@ -19,7 +19,7 @@
 
         <form
           @submit.prevent="submitForm"
-          class="flex-col-start form card-back"
+          class="flex-col-start form card-backkk"
         >
           <label :data-text="$t('name')">
             <input

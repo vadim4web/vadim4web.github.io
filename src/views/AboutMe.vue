@@ -159,19 +159,19 @@ onMounted(() => window.scrollTo(0, 0))
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 0.5rem;
-    filter: grayscale(1);
+    filter: var(--filter1);
 
     &:hover {
-      filter: grayscale(0);
+      filter: var(--filter0);
     }
   }
 
   &:has(.photo1:hover)::before {
-    filter: grayscale(1);
+    filter: var(--filter1);
   }
 
   &:has(.photo2:hover)::after {
-    filter: grayscale(1);
+    filter: var(--filter1);
   }
 
   .photo1 {

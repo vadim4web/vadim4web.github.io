@@ -28,7 +28,7 @@
       <active-element
         path="projects"
         :padding="'1.5rem 2.67rem'"
-        :fontSize="'1.625rem'"
+        :fontSize="'1.75rem'"
         :borderRadius="'2.3125rem'"
         :bg="'var(--accent50)'"
       >
@@ -170,17 +170,17 @@ onMounted(() => window.scrollTo(0, 0))
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 2rem;
-      filter: grayscale(1);
+      filter: var(--filter1);
     }
 
     &:hover {
       .photo {
-        filter: grayscale(0);
+        filter:  var(--filter0);
       }
 
       &::before,
       &::after {
-        filter: grayscale(1);
+        filter: var(--filter1);
       }
     }
 

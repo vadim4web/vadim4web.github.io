@@ -80,7 +80,21 @@ const handleClick = () => {
   position: relative;
   overflow: hidden;
   font-weight: bold;
-  mix-blend-mode: plus-lighter;
+
+  mix-blend-mode: var(--mix-blend-mode1);
+
+  &:hover {
+    box-shadow: inset 1rem 1rem 1rem #0004;
+    mix-blend-mode: var(--mix-blend-mode2);
+
+    &::after {
+      box-shadow: inset -1rem -1rem 1rem #fff4;
+    }
+  }
+
+  &:active {
+    text-shadow: 0 0 1rem var(--accent0);
+  }
 
   &::before {
     box-shadow: inset 1rem 1rem 1rem #fff4;
@@ -104,20 +118,6 @@ const handleClick = () => {
     height: 100%;
     border-radius: inherit;
     overflow: hidden;
-  }
-
-  &:hover {
-    box-shadow: inset 1rem 1rem 1rem #0004;
-    mix-blend-mode: difference;
-    background-blend-mode: luminosity;
-
-    &::after {
-      box-shadow: inset -1rem -1rem 1rem #fff4;
-    }
-  }
-
-  &:active {
-    text-shadow: 0 0 1rem var(--accent);
   }
 }
 </style>

@@ -7,8 +7,6 @@
   font-family: 'Victor Mono', serif;
   font-optical-sizing: auto;
   line-height: normal;
-  filter: contrast(1.033);
-  -webkit-filter: contrast(1.033);
 }
 
 * {

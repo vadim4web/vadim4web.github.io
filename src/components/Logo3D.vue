@@ -142,7 +142,7 @@ onMounted(() => {
     requestAnimationFrame(animate)
     if (model) {
       model.rotation.x = 1.5
-      model.rotation.z += 0.01
+      model.rotation.z += 0.015 // 0.015 : full turn (2π) / duration (3510ms) * 1000ms/s / FPS (120)
     }
     renderer.render(scene, camera)
   }

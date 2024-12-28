@@ -35,6 +35,19 @@
   --scrollbar-track: rgb(90, 90, 90);
   --scrollbar-thumb_hover: rgb(21, 21, 21);
   --scrollbar-track_hover: rgb(106, 106, 106);
+
+  --mix-blend-mode1: lighten;
+
+  --mix-blend-mode2: difference;
+  --mix-blend-mode2: exclusion;
+  --mix-blend-mode2: color-dodge;
+
+  --mix-blend-mode2: hard-light;
+
+  --mix-blend-mode2: plus-lighter;
+
+  --filter0: sepia(0);
+  --filter1: sepia(1) brightness(0.9);
 }
 
 [data-theme='light'] {
@@ -74,6 +87,12 @@
   --scrollbar-track: rgb(242, 242, 242);
   --scrollbar-thumb_hover: rgb(45, 45, 45);
   --scrollbar-track_hover: rgb(226, 226, 226);
+
+  --mix-blend-mode1: plus-dark;
+  --mix-blend-mode2: hard-light;
+
+  --filter0: grayscale(0);
+  --filter1: grayscale(1) brightness(1.2);
 }
 
 :root {
