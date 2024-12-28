@@ -1,15 +1,15 @@
 <template>
-  <main>
+  <main class="home">
     <section class="head content flex-col-center">
-      <h1 class="h1" :data-text="$t('homeH11')">
+      <h2 class="h1" :data-text="$t('homeH11')">
         {{ $t('homeH11') }}<br />
 
-        <span class="h1_span" :data-text="$t('homeH12')" style="font-size: 75%;">
+        <span class="h2_span" :data-text="$t('homeH12')" style="font-size: 75%;">
           {{ $t('homeH12') }}
         </span>
 
         <high-light />
-      </h1>
+      </h2>
 
       <logo3-d />
 
