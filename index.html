@@ -58,35 +58,64 @@
   <!-- Styles -->
   <style>
     body {
-      font-family: 'Victor Mono', monospace;
-      margin: 0;
+      position: relative;
+    }
+
+    body, #logoOverlay {
       padding: 0;
-      background-color: #f4f4f9;
+      margin: 0;
     }
 
     #logoOverlay {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden !important;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100vh;
       background: var(--bg0);
       z-index: 100;
     }
 
     #logoOverlay::after {
-      content: '';
-      display: block;
+      z-index: 100;
+    }
+
+    body::after,
+    #logoOverlay::after {
       position: absolute;
       top: 0;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
+      content: '';
+      width: 100dvw;
+      height: 100%;
       background-image: url('https://vadim4web.github.io/logo.png');
-      opacity: 0.05;
       background-repeat: repeat;
-      background-size: cover;
+      background-position: center;
+      opacity: 0.05;
       pointer-events: none;
+    }
+
+    body::after {
+      min-height: 100%;
+      background-attachment: scroll;
+      z-index: 0;
+    }
+
+    @media (orientation: portrait) {
+      body::after,
+      #logoOverlay::after {
+        background-size: 14.2857%;
+      }
+    }
+
+    @media (orientation: landscape) {
+      body::after,
+      #logoOverlay::after {
+        background-size:  7.14285%;
+      }
     }
   </style>
 
