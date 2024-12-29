@@ -4,12 +4,12 @@
   --tr-dur: 500ms;
   --gray: #808080;
   font-size: 1.4vmin;
-  font-family: 'Victor Mono', serif;
-  font-optical-sizing: auto;
-  line-height: normal;
 }
 
 * {
+  font-family: 'Victor Mono', serif;
+  font-optical-sizing: auto;
+  line-height: normal;
   box-sizing: border-box;
   scroll-behavior: smooth;
   /* Enables smooth scrolling */
