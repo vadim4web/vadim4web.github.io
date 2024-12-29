@@ -93,8 +93,8 @@ onUpdated(() => setSlideContentGrid())
 }
 
 .vueperslides__arrow {
-  color: var(--accent);
-  filter: drop-shadow(0 0 1px var(--accent));
+  color: var(--accent0);
+  filter: drop-shadow(0 0 1px var(--accent0));
 }
 
 .vueperslide__content {

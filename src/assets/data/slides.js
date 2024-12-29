@@ -68,7 +68,7 @@ const slidesArray = [
     title_en: 'Visualizing Advanced Graphics Concepts',
     title_uk: 'Візуалізація Концепцій Складної Графіки',
     content: [
-      { name: 'SVG, Canvas', path: `favicon_light.ico`, to_invert: true },
+      { name: 'SVG, Canvas', path: `favicon_light.svg`, to_invert: true },
       { name: 'WebGL', path: 'webgl.webp', to_invert: true },
       { name: 'Three.js', path: 'threejs.webp', to_invert: true },
     ],

@@ -19,49 +19,52 @@
 
         <form
           @submit.prevent="submitForm"
-          class="flex-col-start form card-backkk"
         >
-          <label :data-text="$t('name')">
-            <input
-              type="text"
-              v-model="name"
-              required
-              autocomplete="name"
-              aria-label="name-input"
-            />
-          </label>
+          <div class="form flex-col-start inputs card-back">
+            <label :data-text="$t('name')">
+              <input
+                type="text"
+                v-model="name"
+                required
+                autocomplete="name"
+                aria-label="name-input"
+              />
+            </label>
+  
+            <label :data-text="$t('email')">
+              <input
+                type="email"
+                v-model="email"
+                required
+                aria-label="email-input"
+              />
+            </label>
+  
+            <label :data-text="$t('project')">
+              <input
+                type="text"
+                v-model="subject"
+                required
+                aria-label="subject-input"
+              />
+            </label>
+  
+            <label :data-text="$t('comment')">
+              <textarea v-model="message"></textarea>
+            </label>
+          </div>
 
-          <label :data-text="$t('email')">
-            <input
-              type="email"
-              v-model="email"
-              required
-              aria-label="email-input"
-            />
-          </label>
-
-          <label :data-text="$t('project')">
-            <input
-              type="text"
-              v-model="subject"
-              required
-              aria-label="subject-input"
-            />
-          </label>
-
-          <label :data-text="$t('comment')">
-            <textarea v-model="message"></textarea>
-          </label>
-
-          <active-element
-            :padding="'0'"
-            :fontSize="'2.1rem'"
-            :borderRadius="'1.75rem'"
-            :bg="'var(--accent50)'"
-            class="font-variant"
-          >
-            {{ $t('send') }}
-          </active-element>
+          <div class="button-wrapper">
+            <active-element
+              :padding="'0'"
+              :fontSize="'2.1rem'"
+              :borderRadius="'1.75rem'"
+              :bg="'var(--accent50)'"
+              class="font-variant"
+            >
+              {{ $t('send') }}
+            </active-element>
+          </div>
         </form>
       </div>
     </div>
@@ -173,6 +176,20 @@ onMounted(() => window.scrollTo(0, 0))
   color: var(--color0);
   border-radius: 1.75rem;
 
+  clip-path: polygon(
+    0 0,           /* Top-left */
+    100% 0,        /* Top-right */
+    100% 100%,     /* Bottom-right */
+    calc(14rem) 100%,    /* Move left from bottom-right */
+    calc(14rem) calc(100% - 3.5rem), /* Move up */
+    0 calc(100% - 3.5rem)  /* Cut-in at 2rem from bottom-left */
+  );
+
+  padding: 1rem 1rem 5.5rem;
+  margin-bottom: calc(-3.5rem);
+
+  position: relative;
+
   label {
     position: relative;
     background: transparent !important;
@@ -245,6 +262,32 @@ button {
   box-sizing: content-box;
   cursor: pointer;
   font-weight: 400;
+}
+
+.button-wrapper {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(14rem - 1px);
+    height: calc(3.5rem - 1px);
+    background: transparent;
+    border: 1px solid var(--accent125);
+  }
+
+  &::after {
+    border-radius: 1.75rem;
+  }
+
+  &::before {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-left-radius: 1.75rem;
+  }
 }
 
 input:-webkit-autofill,

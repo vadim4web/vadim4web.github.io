@@ -41,12 +41,23 @@ const toggleTheme = () => {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
 }
 
+const setFavIcon = theme => {
+  document.documentElement.setAttribute('data-theme', theme)
+  document.getElementById('favicon').href =
+    theme === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
+}
+
 const setTheme = theme => {
   sessionStorage.setItem('theme', theme)
   state.setThemeColor(theme === 'dark' ? '#ffffff' : '#000000')
   document.documentElement.setAttribute('data-theme', theme)
   document.getElementById('favicon').href =
-    theme === 'dark' ? '/favicon_dark.ico' : '/favicon_light.ico'
+    theme === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
+}
+
+const setAll = theme => {
+  setTheme(theme)
+  setFavIcon(theme)
 }
 
 onMounted(() => setTheme(theme.value))
@@ -54,10 +65,10 @@ onMounted(() => setTheme(theme.value))
 onUpdated(() => {
   offsetX.value = (x.value / width.value) * 100 || 50
   offsetY.value = (y.value / height.value) * 100 || 50
-  setTheme(theme.value)
+  setAll(theme.value)
 })
 
-watch(theme, setTheme)
+watch(theme, setAll)
 </script>
 
 <style lang="scss">

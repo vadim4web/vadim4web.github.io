@@ -37,13 +37,6 @@
   --scrollbar-track_hover: rgb(106, 106, 106);
 
   --mix-blend-mode1: lighten;
-
-  --mix-blend-mode2: difference;
-  --mix-blend-mode2: exclusion;
-  --mix-blend-mode2: color-dodge;
-
-  --mix-blend-mode2: hard-light;
-
   --mix-blend-mode2: plus-lighter;
 
   --filter0: sepia(0);
