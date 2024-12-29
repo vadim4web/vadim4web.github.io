@@ -94,7 +94,7 @@
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setFavicon(prefersDarkScheme ? 'dark' : 'light');
   </script>
-  <script type="module" crossorigin src="/assets/index-CLiVpbCF.js"></script>
+  <script type="module" crossorigin src="/assets/index-BysNWize.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-5lGywPs6.css">
 </head>
 <body>
@@ -102,5 +102,9 @@
     Червоняк Вадим Вікторович
   </h1>
   <div id="app" role="main"></div>
+
+  <script>
+    window.onload = () => console.log = console.warn = console.error = console.debug = () => {}
+  </script>
 </body>
 </html>
