@@ -121,10 +121,6 @@ const three = getThreeRandom(projects)
         width: 100%;
         aspect-ratio: 1 / 1;
         position: absolute;
-
-        &:not(.white_bg) {
-          background-color: var(--bg50);
-        }
       }
     }
 

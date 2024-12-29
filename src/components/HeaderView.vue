@@ -50,6 +50,7 @@ import LangToggler from '@/components/LangToggler.vue'
   background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
   backdrop-filter: blur(0.5rem);
   display: flex;
+
 }
 
 menu {
@@ -68,16 +69,13 @@ menu {
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
-    font-size: 1.5rem;
-
+    text-transform: uppercase;
     font-size: 2.5rem;
     line-height: 4.1rem;
-    height: 4.25rem;
-    height: var(--rem);
 
+    height: var(--rem);
     opacity: 0.75;
-    font-variant: small-caps;
-    text-transform: uppercase;
+
     text-wrap: nowrap;
     border: 0.125rem solid transparent;
     font-weight: bold;

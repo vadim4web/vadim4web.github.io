@@ -44,7 +44,6 @@
 <style lang="scss">
 .logo-span {
   font-size: 2.5rem;
-  line-height: 4.1rem;
   font-weight: 700;
   letter-spacing: -0.075ch;
 
@@ -53,9 +52,10 @@
   }
 
   .logo-image {
-    height: 2.1rem;
+    height: 1.95rem;
     width: 2rem;
     margin-left: 1px;
+    margin-right: -0.5px;
     stroke-width: max(0.25rem, 10px);
     stroke: var(--color0);
   }

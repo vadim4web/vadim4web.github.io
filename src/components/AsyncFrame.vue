@@ -11,9 +11,9 @@
 
   <loader-spinner
     v-if="!isLoaded"
-    :classes="iframeClass"
-    class="placeholder"
+    class="placeholder iframe"
     :three="three"
+    :classes="iframeClass"
   />
 </template>
 
@@ -29,6 +29,7 @@ const { iframeSrc, iframeStyle, iframeClass, three } = defineProps([
   'iframeClass',
   'three',
 ])
+
 const isLoaded = ref(false)
 const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 </script>

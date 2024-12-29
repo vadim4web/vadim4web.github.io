@@ -5,7 +5,10 @@
       vertical: classes?.vertical,
       horizontal: classes?.horizontal,
       iframe: classes?.iframe,
+      preview: classes?.preview,
+      'other': classes?.other,
       'one-of-three': three,
+      null: classes?.white_bg
     }"
   >
     <canvas
@@ -24,7 +27,6 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { state } from '@/store/'
 
 const { classes, three } = defineProps(['classes', 'three'])
-
 const spinnerCanvas = ref(null)
 let startTime = null
 
@@ -140,12 +142,9 @@ watch(
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
 }
 
 .spinner-canvas {
-  height: auto;
-  aspect-ratio: 1;
   background-color: transparent;
 }
 
@@ -158,5 +157,6 @@ watch(
 
 .one-of-three .spinner-canvas {
   width: 50%;
+  transform: scale(0.5);
 }
 </style>

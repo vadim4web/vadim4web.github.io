@@ -15,7 +15,7 @@
       <async-frame
         :iframeSrc="demo"
         :iframeClass="{ white_bg: project.white_bg, preview: true }"
-        :iframeStyle="{ zoom: '0.75' }"
+        :iframeStyle="{ zoom: '0.2' }"
       />
 
       <div class="text flex-col-start">
@@ -105,7 +105,7 @@
       </h2>
 
       <div class="cards">
-        <div class="card" v-for="p, i in others" :key="i">
+        <div class="card card-back br1" v-for="p, i in others" :key="i">
           <router-link
             :to="{ name: 'project', params: { projectName: p.name } }"
             :title="$t('worksDetails') + ' `' + p.title + '`'"
@@ -113,7 +113,8 @@
             <async-frame
               :iframeSrc="getPath(p.path)"
               :iframeClass="{ white_bg: p.white_bg, other: true }"
-              :iframeStyle="{ zoom: '0.25' }"
+              :iframeStyle="{ zoom: '0.1' }"
+              :three="true"
             />
 
             <div class="other-text flex-col-start">
