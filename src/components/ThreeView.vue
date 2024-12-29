@@ -154,7 +154,7 @@ const three = getThreeRandom(projects)
       &::after {
         position: absolute;
         height: 2px;
-        content: '---------------------';
+        content: '--------------------';
         right: 0;
         bottom: 0;
         width: fit-content;
@@ -164,6 +164,10 @@ const three = getThreeRandom(projects)
         color: var(--accent0);
         text-align: right;
       }
+    }
+
+    .h4, .p3 {
+      padding: 0 0.5rem;
     }
   }
 }

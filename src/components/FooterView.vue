@@ -4,7 +4,7 @@
       <router-link
         to="/contact"
         class="link not-to-show-active"
-        style="padding: 1rem; border-radius: 4rem"
+        style="padding: 1rem; border-radius: 4rem;"
       >
         {{ $t('footerGIT') }}
       </router-link>
@@ -14,7 +14,7 @@
       <a
         href="mailto:vadim4web@gmail.com"
         class="link"
-        style="padding: 1rem; border-radius: 4rem"
+        style="padding: 1rem; border-radius: 4rem;"
         target="_self"
         >vadim4web@gmail.com</a
       >
@@ -158,7 +158,7 @@ footer {
 
   .h4.top {
     text-align: center;
-    padding: 6rem 0 1.5rem 0;
+    padding: 6rem 0 1rem 0;
 
     & a {
       color: var(--accent0);
