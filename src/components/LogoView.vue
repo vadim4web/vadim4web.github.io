@@ -16,7 +16,7 @@
             dx="0"
             dy="0"
             stdDeviation="1"
-            flood-color="var(--color0)"
+            flood-color="var(--color50)"
             flood-opacity="0.75"
           />
         </filter>
@@ -49,7 +49,7 @@
   letter-spacing: -0.075ch;
 
   .logo-letter.v {
-    letter-spacing: -0.2ch;
+    letter-spacing: -0.25ch;
   }
 
   .logo-image {
