@@ -44,7 +44,7 @@ import LangToggler from '@/components/LangToggler.vue'
   top: 0;
   left: 0;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   height: 20vmin;
   width: 100dvw;
   background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
