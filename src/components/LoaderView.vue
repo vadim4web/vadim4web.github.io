@@ -4,7 +4,7 @@
     ref="logoOverlay"
     class="flex-col-center"
     :class="{ fadeOut: fadeOutClass }"
-    :style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 3 : 0 }"
+    :style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 4 : 0 }"
     @animationend="handleAnimationEnd"
   >
     <div id="logo2dWrapper">
