@@ -45,7 +45,7 @@ import LangToggler from '@/components/LangToggler.vue'
   left: 0;
   position: fixed;
   z-index: 2;
-  height: var(--rem);
+  height: 20vmin;
   width: 100dvw;
   background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
   backdrop-filter: blur(0.5rem);
@@ -58,10 +58,10 @@ menu {
   position: relative;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) 0.5fr;
+  grid-template-columns: repeat(5, 1fr);
   place-items: center;
   font-weight: 500;
-  height: var(--rem);
+  height: 20vmin;
 
   gap: 0.125rem;
 
@@ -70,10 +70,8 @@ menu {
     width: 100%;
     box-sizing: border-box;
     text-transform: uppercase;
-    font-size: 2.5rem;
-    line-height: 4.1rem;
-
-    height: var(--rem);
+    font-size: 3vmin;
+    height: 20vmin;
     opacity: 0.75;
 
     text-wrap: nowrap;
@@ -84,7 +82,7 @@ menu {
     &:hover,
     &.router-link-active {
       border: 0.125rem solid var(--color50);
-      border-radius: var(--rem05);
+      border-radius: 10vmin;
       color: var(--color0);
       opacity: 0.66;
       filter: hue-rotate(90deg);

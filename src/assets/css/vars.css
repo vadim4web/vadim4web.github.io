@@ -89,8 +89,9 @@
 }
 
 :root {
-  --rem: calc(100vmin / 4.5);
-  --rem05: calc(var(--rem) / 2);
+  --rem: 20vmin;
+  --rem05: 10vmin;
+  --rem001: 1vmin;
   --tr-dur: 500ms;
   --gray: #808080;
 }

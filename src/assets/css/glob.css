@@ -1,8 +1,4 @@
 :root {
-  --rem: calc(100vmin / 4.5);
-  --rem05: calc(var(--rem) / 2);
-  --tr-dur: 500ms;
-  --gray: #808080;
   font-size: 1.4vmin;
 }
 

@@ -43,20 +43,17 @@
 
 <style lang="scss">
 .logo-span {
-  font-size: 2.5rem;
+  font-size: 3vmin;
   font-weight: 700;
-  letter-spacing: -0.075ch;
 
   .logo-letter.v {
     letter-spacing: -0.25ch;
   }
 
   .logo-image {
-    height: 1.95rem;
-    width: 2rem;
-    margin-left: 1px;
-    margin-right: -0.5px;
-    stroke-width: max(0.25rem, 10px);
+    height: 3vmin;
+    width: 3vmin;
+    stroke-width: max(0.25vmin, 10px);
     stroke: var(--color0);
   }
 
