@@ -27,14 +27,14 @@
 
       <active-element
         path="projects"
-        :padding="'1.5rem 2.67rem'"
+        :padding="'1.5rem 4rem'"
         :fontSize="'1.75rem'"
         :borderRadius="'2.3125rem'"
         :bg="'var(--accent50)'"
       >
         {{ $t('homeB1') }}&nbsp;
 
-        <arrow-right height="1.625rem" />
+        <arrow-right height="2.5rem" />
       </active-element>
     </section>
 
@@ -79,13 +79,13 @@
 
       <active-element
         path="projects"
-        :padding="'1.5rem 2.5rem'"
+        :padding="'1.5rem 3rem'"
         :fontSize="'1.33rem'"
         :borderRadius="'2.166rem'"
         :bg="'transparent'"
       >
         {{ $t('homeB3') }}&nbsp;
-        <arrow-right height="1.33rem" />
+        <arrow-right height="2rem" />
       </active-element>
 
       <three-view />
