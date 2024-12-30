@@ -303,7 +303,7 @@ main {
   }
 
   main {
-    padding-top: calc(var(--rem05));
+    padding-top: 10vmin;
   }
 }
 
@@ -313,6 +313,6 @@ main {
   }
 
   main {
-    padding-top: calc(var(--rem05) / 2);
+    padding-top: 5vmin;
   }
 }

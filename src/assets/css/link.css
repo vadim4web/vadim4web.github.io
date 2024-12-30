@@ -32,11 +32,11 @@ a {
 a.router-link-active:not(.not-to-show-active),
 a.link:hover {
   box-shadow: inset -0.5rem -0.5rem 1rem 0.5rem var(--color50);
-  border-radius: var(--rem05);
-  -webkit-border-radius: var(--rem05);
-  -moz-border-radius: var(--rem05);
-  -ms-border-radius: var(--rem05);
-  -o-border-radius: var(--rem05);
+  border-radius: 10vmin;
+  -webkit-border-radius: 10vmin;
+  -moz-border-radius: 10vmin;
+  -ms-border-radius: 10vmin;
+  -o-border-radius: 10vmin;
   text-shadow: 0 0 0.125rem var(--color0);
 }
 
@@ -49,11 +49,11 @@ a.link:hover::after {
   width: 100%;
   height: 100%;
   box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem var(--bg50);
-  border-radius: var(--rem05);
-  -webkit-border-radius: var(--rem05);
-  -moz-border-radius: var(--rem05);
-  -ms-border-radius: var(--rem05);
-  -o-border-radius: var(--rem05);
+  border-radius: 10vmin;
+  -webkit-border-radius: 10vmin;
+  -moz-border-radius: 10vmin;
+  -ms-border-radius: 10vmin;
+  -o-border-radius: 10vmin;
 }
 
 a.link:active::after {
@@ -64,10 +64,10 @@ a.link:active::after {
   width: 100%;
   height: 100%;
   box-shadow: inset -0.5rem -0.5rem 1rem 0.5rem var(--bg50);
-  border-radius: var(--rem05);
-  -webkit-border-radius: var(--rem05);
-  -moz-border-radius: var(--rem05);
-  -ms-border-radius: var(--rem05);
-  -o-border-radius: var(--rem05);
+  border-radius: 10vmin;
+  -webkit-border-radius: 10vmin;
+  -moz-border-radius: 10vmin;
+  -ms-border-radius: 10vmin;
+  -o-border-radius: 10vmin;
   color: var(--bg0);
 }

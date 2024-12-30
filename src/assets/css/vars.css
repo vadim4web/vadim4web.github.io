@@ -89,9 +89,6 @@
 }
 
 :root {
-  --rem: 20vmin;
-  --rem05: 10vmin;
-  --rem001: 1vmin;
   --tr-dur: 500ms;
   --gray: #808080;
 }
