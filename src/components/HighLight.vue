@@ -45,6 +45,7 @@
   width: 60vmin;
   height: 40vmin;
   transform: rotate(10deg);
+  z-index: -1;
 }
 
 .path {
