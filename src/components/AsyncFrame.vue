@@ -6,7 +6,7 @@
     :style="iframeStyle"
     frameborder="0"
     @load="setLoaded"
-    scrolling="no"
+    :scrolling="scrolling"
   ></iframe>
 
   <loader-spinner
@@ -23,11 +23,18 @@ import { ref, defineAsyncComponent } from 'vue'
 const LoaderSpinner = defineAsyncComponent(() =>
   import('@/components/LoaderSpinner.vue')
 )
-const { iframeSrc, iframeStyle, iframeClass, three } = defineProps([
+const {
+  iframeSrc,
+  iframeStyle,
+  iframeClass,
+  three,
+  scrolling
+} = defineProps([
   'iframeSrc',
   'iframeStyle',
   'iframeClass',
   'three',
+  'scrolling'
 ])
 
 const isLoaded = ref(false)

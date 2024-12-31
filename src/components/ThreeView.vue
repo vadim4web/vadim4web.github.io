@@ -14,6 +14,7 @@
           }"
           :iframeStyle="{ zoom: '0.125' }"
           :three="true"
+          :scrolling="'no'"
         />
       </div>
 
@@ -78,16 +79,15 @@ const three = getThreeRandom(projects)
   .card {
     overflow: hidden;
     display: grid;
+    gap: 0.75rem;
 
     @media (orientation: landscape) {
-      gap: 1rem;
       width: 29rem;
       height: calc(29rem + 8.75rem);
       grid-template-rows: 29rem 4rem 2.75rem;
     }
 
     @media (orientation: portrait) {
-      gap: 1rem;
       width: 18rem;
       height: calc(18rem + 8.75rem);
       grid-template-rows: 18rem 4rem 2.75rem;
@@ -97,12 +97,6 @@ const three = getThreeRandom(projects)
       width: 18rem;
       height: calc(18rem + 8.75rem);
       grid-template-rows: 18rem 4rem 2.75rem;
-      flex-grow: 0;
-      flex-shrink: 1;
-    }
-
-    & .h4 {
-      justify-self: start;
     }
 
     .frame {

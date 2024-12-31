@@ -10,6 +10,7 @@
   --color-op: #000000;
   --color0: #ffffff;
   --color50: #ffffff80;
+  --color06125: #ffffff10;
   --color33: rgba(255, 255, 255, 0.33);
 
   --color1: #f4f7fa;
@@ -55,6 +56,7 @@
   --color-op: #ffffff;
   --color0: #000000;
   --color50: #00000080;
+  --color06125: #00000010;
   --color33: rgba(0, 0, 0, 0.33);
 
   --color1: #0b0805;

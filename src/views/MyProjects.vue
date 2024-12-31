@@ -27,9 +27,10 @@
               white_bg: p.white_bg,
               iframe: true,
             }"
+            :scrolling="'no'"
           />
 
-          <div class="title-box">
+          <div class="title-box flex-align">
             <p class="t3">
               {{ p.tags.join(' | ') }}
             </p>
@@ -50,7 +51,7 @@
         :padding="'1.5rem 2.5rem'"
         :fontSize="'1.33rem'"
         :borderRadius="'2.166rem'"
-        :bg="'transparent'"
+        :bg="'var(--accent50)'"
         class="font-variant load-more"
         :action="handleLoadMore"
       >
@@ -165,19 +166,21 @@ onUpdated(() => handleScroll())
       width: 100%;
     }
 
+    .title-box {
+      padding: 0.5rem;
+      justify-content: space-between;
+    }
+
     &:has(.vertical) .title-box {
-      display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 1rem;
     }
 
-    @media (max-width: 1000px) {
-      &:has(.horizontal) .title-box {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-      }
+    &:has(.horizontal) .title-box {
+      flex-direction: row;
+    }
+    @media (min-width: 1000px) {
     }
 
     .horizontal {
@@ -189,14 +192,16 @@ onUpdated(() => handleScroll())
     }
 
     .iframe {
-      border-radius: 1rem;
+      border: none;
 
       @media (orientation: portrait) {
         zoom: 0.175;
+        border-radius: 5.715rem;
       }
 
       @media (orientation: landscape) {
         zoom: 0.33;
+        border-radius: 3rem;
       }
     }
   }
@@ -211,10 +216,6 @@ onUpdated(() => handleScroll())
     position: absolute;
     top: calc(50% + 0.75rem);
     right: 0;
-  }
-
-  .iframe {
-    border: none;
   }
 
   @media (orientation: landscape) {

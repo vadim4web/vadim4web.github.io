@@ -15,7 +15,7 @@
       <async-frame
         :iframeSrc="demo"
         :iframeClass="{ white_bg: project.white_bg, preview: true }"
-        :iframeStyle="{ zoom: '0.2' }"
+        :scrolling="'yes'"
       />
 
       <div class="text flex-col-start">
@@ -113,11 +113,12 @@
             <async-frame
               :iframeSrc="getPath(p.path)"
               :iframeClass="{ white_bg: p.white_bg, other: true }"
-              :iframeStyle="{ zoom: '0.1' }"
+              :iframeStyle="{ zoom: '0.1', borderRadius: '10rem' }"
               :three="true"
+              :scrolling="'no'"
             />
 
-            <div class="other-text flex-col-start">
+            <div class="other-text flex-col-between">
               <h4 class="h4">{{ p.title }}</h4>
 
               <p class="other-p">{{ p.stack.join(', ') }}</p>
@@ -188,7 +189,8 @@ onMounted(() => window.scrollTo(0, 0))
 .project-page {
   .preview {
     aspect-ratio: 1 / 1;
-    border-radius: 1rem;
+    zoom: 0.5;
+    border-radius: 2rem;
 
     &:not(.white_bg) {
       background-color: var(--bg50);
@@ -274,6 +276,7 @@ onMounted(() => window.scrollTo(0, 0))
   .card a {
     aspect-ratio: 3 / 5;
     display: flex;
+    gap: 2rem;
     flex-direction: column;
   }
 
@@ -291,9 +294,9 @@ onMounted(() => window.scrollTo(0, 0))
   }
 
   .other-text {
-    padding-top: 1.6875rem;
-    padding-left: 1.25rem;
-    gap: 0.625rem;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
   }
 }
 </style>

@@ -1,3 +1,8 @@
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -52,7 +57,17 @@
 .card-back {
   background: var(--bg25);
   backdrop-filter: blur(0.33rem);
-  border: 1px solid var(--accent125);
+  border: 1px solid var(--accent25);
+  overflow: hidden;
+}
+
+.card-back:hover,
+.card-back:has(:focus) {
+  backdrop-filter: blur(0.33rem);
+  filter: brightness(1.05) contrast(1.05);
+  -webkit-filter: brightness(1.05) contrast(1.05);
+  box-shadow: 0 0 2.5rem var(--accent25);
+  border-color: var(--accent50);
 }
 
 .br1 {

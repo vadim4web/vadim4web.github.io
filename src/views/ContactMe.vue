@@ -17,10 +17,8 @@
           {{ $t('contactH223') }}
         </h2>
 
-        <form
-          @submit.prevent="submitForm"
-        >
-          <div class="form flex-col-start inputs card-back">
+        <form @submit.prevent="submitForm" class="form-itself">
+          <div class="form flex-col-start inputs">
             <label :data-text="$t('name')">
               <input
                 type="text"
@@ -30,7 +28,7 @@
                 aria-label="name-input"
               />
             </label>
-  
+
             <label :data-text="$t('email')">
               <input
                 type="email"
@@ -39,7 +37,7 @@
                 aria-label="email-input"
               />
             </label>
-  
+
             <label :data-text="$t('project')">
               <input
                 type="text"
@@ -48,13 +46,27 @@
                 aria-label="subject-input"
               />
             </label>
-  
+
             <label :data-text="$t('comment')">
               <textarea v-model="message"></textarea>
             </label>
           </div>
 
           <div class="button-wrapper">
+            <svg
+              class="corner top-left"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+            >
+              <path d="M 100 0 A 100 100 0 0 1 0 100 L 100 100 Z" />
+            </svg>
+            <svg
+              class="corner top-right"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+            >
+              <path d="M 100 0 A 100 100 0 0 1 0 100 L 100 100 Z" />
+            </svg>
             <active-element
               :padding="'0'"
               :fontSize="'2.1rem'"
@@ -64,6 +76,30 @@
             >
               {{ $t('send') }}
             </active-element>
+            <svg
+              class="corner bottom-right"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+            >
+              <path d="M 100 0 A 100 100 0 0 1 0 100 L 100 100 Z" />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+              <filter id="brightness-contrast-filter">
+                <!-- Brightness -->
+                <feComponentTransfer>
+                  <feFuncR type="linear" slope="1.05" />
+                  <feFuncG type="linear" slope="1.05" />
+                  <feFuncB type="linear" slope="1.05" />
+                </feComponentTransfer>
+                <!-- Contrast -->
+                <feComponentTransfer>
+                  <feFuncR type="linear" slope="1.05" intercept="-0.025" />
+                  <feFuncG type="linear" slope="1.05" intercept="-0.025" />
+                  <feFuncB type="linear" slope="1.05" intercept="-0.025" />
+                </feComponentTransfer>
+              </filter>
+            </svg>
           </div>
         </form>
       </div>
@@ -72,17 +108,6 @@
     <div class="laptop"></div>
 
     <div class="address">
-      <h4 class="h4">
-        <a
-          href="https://t.me/bogdanovvad1m"
-          class="link"
-          style="padding: 0.5rem; margin: -0.5rem"
-          title="Contact me via Telegram or any other social media"
-        >
-          @vadim4web
-        </a>
-      </h4>
-
       <h4 class="h4">
         <a
           href="tel:+380933789883"
@@ -102,6 +127,17 @@
           title="Contact me via e-mail"
         >
           vadim4web@gmail.com
+        </a>
+      </h4>
+
+      <h4 class="h4">
+        <a
+          href="https://t.me/vadim4web"
+          class="link"
+          style="padding: 0.5rem; margin: -0.5rem"
+          title="Contact me via Telegram or any other social media"
+        >
+          @vadim4web
         </a>
       </h4>
     </div>
@@ -169,26 +205,62 @@ onMounted(() => window.scrollTo(0, 0))
   padding: 9.5rem 0 7.25rem 0;
 }
 
+.form-itself {
+  position: relative;
+  border-radius: 1.75rem;
+  border: 1px solid var(--accent25);
+  backdrop-filter: blur(0.33rem);
+
+  &:hover,
+  &:has(:focus) {
+    border: 1px solid var(--accent50);
+    box-shadow: 0 0 2.5rem var(--accent25);
+
+    & .form {
+      filter: brightness(1.05) contrast(1.05);
+      -webkit-filter: brightness(1.05) contrast(1.05);
+    }
+
+    & .corner {
+      filter: url(#brightness-contrast-filter);
+    }
+  }
+
+  &:hover::after,
+  &:has(:focus)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 1px);
+    height: calc(100% - 2px);
+    background: transparent;
+    border-radius: 1.75rem;
+    z-index: -1;
+    overflow: hidden;
+  }
+}
+
 .form {
   gap: 3.5rem;
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color0);
   border-radius: 1.75rem;
-
   clip-path: polygon(
-    0 0,           /* Top-left */
-    100% 0,        /* Top-right */
-    100% 100%,     /* Bottom-right */
-    calc(14rem) 100%,    /* Move left from bottom-right */
-    calc(14rem) calc(100% - 3.5rem), /* Move up */
-    0 calc(100% - 3.5rem)  /* Cut-in at 2rem from bottom-left */
+    0 0,
+    100% 0,
+    100% 100%,
+    calc(14rem) 100%,
+    calc(14rem) calc(100% - 3.5rem),
+    0 calc(100% - 3.5rem)
   );
 
   padding: 1rem 1rem 5.5rem;
-  margin-bottom: calc(-3.5rem);
-
+  margin-bottom: calc(-3.5rem + 1px);
   position: relative;
+  background: var(--bg25);
+  backdrop-filter: blur(0.33rem);
 
   label {
     position: relative;
@@ -210,6 +282,7 @@ onMounted(() => window.scrollTo(0, 0))
   outline: none;
   font-size: 1.5rem;
 }
+
 .form *:not([type='submit']) {
   width: 100%;
   height: 5rem;
@@ -253,40 +326,38 @@ input[type='submit'],
 button {
   width: 14rem;
   height: 3.5rem;
-  border-color: transparent;
-  border-radius: 1.75rem;
-  border-width: 0.125rem;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  box-sizing: content-box;
-  cursor: pointer;
-  font-weight: 400;
 }
 
 .button-wrapper {
   position: relative;
+  width: 14rem;
+  overflow: visible;
 
-  &::before,
-  &::after {
-    content: '';
+  .corner {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: calc(14rem - 1px);
-    height: calc(3.5rem - 1px);
-    background: transparent;
-    border: 1px solid var(--accent125);
-  }
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--bg25);
+    backdrop-filter: blur(0.33rem);
 
-  &::after {
-    border-radius: 1.75rem;
-  }
+    &.top-left,
+    &.top-right {
+      top: 0;
+    }
 
-  &::before {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-left-radius: 1.75rem;
+    &.top-left {
+      left: 0.5px;
+      transform: rotate(180deg);
+    }
+
+    &.top-right {
+      right: 0;
+    }
+
+    &.bottom-right {
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 
@@ -319,10 +390,17 @@ textarea {
 }
 
 .address {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 3rem;
+  width: 100%;
   margin-bottom: 10rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  & :nth-child(2) {
+    justify-self: center;
+  }
+
+  & :last-child {
+    justify-self: end;
+  }
 }
 </style>

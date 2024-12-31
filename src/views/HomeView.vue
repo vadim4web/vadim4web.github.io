@@ -82,7 +82,7 @@
         :padding="'1.5rem 3rem'"
         :fontSize="'1.33rem'"
         :borderRadius="'2.166rem'"
-        :bg="'transparent'"
+        :bg="'var(--accent50)'"
       >
         {{ $t('homeB3') }}&nbsp;
         <arrow-right height="2rem" />
