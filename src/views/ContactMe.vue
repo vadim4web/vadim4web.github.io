@@ -209,7 +209,6 @@ onMounted(() => window.scrollTo(0, 0))
   position: relative;
   border-radius: 1.75rem;
   border: 1px solid var(--accent25);
-  backdrop-filter: blur(0.33rem);
 
   &:hover,
   &:has(:focus) {
@@ -257,9 +256,8 @@ onMounted(() => window.scrollTo(0, 0))
   );
 
   padding: 1rem 1rem 5.5rem;
-  margin-bottom: calc(-3.5rem + 1px);
+  margin-bottom: calc(-3.5rem);
   position: relative;
-  background: var(--bg25);
   backdrop-filter: blur(0.33rem);
 
   label {
@@ -330,19 +328,21 @@ button {
 
 .button-wrapper {
   position: relative;
+  height: 3.5rem;
   width: 14rem;
-  overflow: visible;
+  margin: -0.5px 0 0 -0.5px;
 
   .corner {
     position: absolute;
     width: 1.75rem;
     height: 1.75rem;
     fill: var(--bg25);
+    background: transparent !important;
     backdrop-filter: blur(0.33rem);
 
     &.top-left,
     &.top-right {
-      top: 0;
+      top: -0.5px;
     }
 
     &.top-left {
@@ -351,6 +351,7 @@ button {
     }
 
     &.top-right {
+      transform: rotate(-90deg);
       right: 0;
     }
 
