@@ -17,8 +17,8 @@
           {{ $t('contactH223') }}
         </h2>
 
-        <form @submit.prevent="submitForm" class="form-itself">
-          <div class="form flex-col-start inputs">
+        <form @submit.prevent="submitForm">
+          <div class="form flex-col-start inputs card-back inputs">
             <label :data-text="$t('name')">
               <input
                 type="text"
@@ -53,20 +53,6 @@
           </div>
 
           <div class="button-wrapper">
-            <svg
-              class="corner top-left"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-            >
-              <path d="M 100 0 A 100 100 0 0 1 0 100 L 100 100 Z" />
-            </svg>
-            <svg
-              class="corner top-right"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-            >
-              <path d="M 100 0 A 100 100 0 0 1 0 100 L 100 100 Z" />
-            </svg>
             <active-element
               :padding="'0'"
               :fontSize="'2.1rem'"
@@ -76,30 +62,6 @@
             >
               {{ $t('send') }}
             </active-element>
-            <svg
-              class="corner bottom-right"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-            >
-              <path d="M 100 0 A 100 100 0 0 1 0 100 L 100 100 Z" />
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-              <filter id="brightness-contrast-filter">
-                <!-- Brightness -->
-                <feComponentTransfer>
-                  <feFuncR type="linear" slope="1.05" />
-                  <feFuncG type="linear" slope="1.05" />
-                  <feFuncB type="linear" slope="1.05" />
-                </feComponentTransfer>
-                <!-- Contrast -->
-                <feComponentTransfer>
-                  <feFuncR type="linear" slope="1.05" intercept="-0.025" />
-                  <feFuncG type="linear" slope="1.05" intercept="-0.025" />
-                  <feFuncB type="linear" slope="1.05" intercept="-0.025" />
-                </feComponentTransfer>
-              </filter>
-            </svg>
           </div>
         </form>
       </div>
@@ -205,58 +167,12 @@ onMounted(() => window.scrollTo(0, 0))
   padding: 9.5rem 0 7.25rem 0;
 }
 
-.form-itself {
-  position: relative;
-  border-radius: 1.75rem;
-  border: 1px solid var(--accent25);
-
-  &:hover,
-  &:has(:focus) {
-    border: 1px solid var(--accent50);
-    box-shadow: 0 0 2.5rem var(--accent25);
-
-    & .form {
-      filter: brightness(1.05) contrast(1.05);
-      -webkit-filter: brightness(1.05) contrast(1.05);
-    }
-
-    & .corner {
-      filter: url(#brightness-contrast-filter);
-    }
-  }
-
-  &:hover::after,
-  &:has(:focus)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - 1px);
-    height: calc(100% - 2px);
-    background: transparent;
-    border-radius: 1.75rem;
-    z-index: -1;
-    overflow: hidden;
-  }
-}
-
 .form {
   gap: 3.5rem;
   font-size: 1.5rem;
-  font-weight: 400;
   color: var(--color0);
   border-radius: 1.75rem;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    calc(14rem) 100%,
-    calc(14rem) calc(100% - 3.5rem),
-    0 calc(100% - 3.5rem)
-  );
-
-  padding: 1rem 1rem 5.5rem;
-  margin-bottom: calc(-3.5rem);
+  padding: 3rem 1.5rem 1.5rem;
   position: relative;
   backdrop-filter: blur(0.33rem);
 
@@ -324,42 +240,14 @@ input[type='submit'],
 button {
   width: 14rem;
   height: 3.5rem;
+  position: absolute;
+  bottom: -1.5rem;
 }
 
 .button-wrapper {
   position: relative;
   height: 3.5rem;
   width: 14rem;
-  margin: -0.5px 0 0 -0.5px;
-
-  .corner {
-    position: absolute;
-    width: 1.75rem;
-    height: 1.75rem;
-    fill: var(--bg25);
-    background: transparent !important;
-    backdrop-filter: blur(0.33rem);
-
-    &.top-left,
-    &.top-right {
-      top: -0.5px;
-    }
-
-    &.top-left {
-      left: 0.5px;
-      transform: rotate(180deg);
-    }
-
-    &.top-right {
-      transform: rotate(-90deg);
-      right: 0;
-    }
-
-    &.bottom-right {
-      bottom: 0;
-      right: 0;
-    }
-  }
 }
 
 input:-webkit-autofill,

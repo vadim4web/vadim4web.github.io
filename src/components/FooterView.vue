@@ -205,14 +205,14 @@ footer {
   gap: 1rem;
 
   .h4 {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.33rem;
+    height: 4.33rem;
   }
 }
 
 .links svg {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
 
   stroke: var(--color0);
 }

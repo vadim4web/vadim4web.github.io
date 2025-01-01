@@ -75,7 +75,7 @@ const handleClick = () => {
   align-items: center;
   justify-content: center;
   color: var(--color0);
-  text-shadow: 0 0 0.15rem var(--accent0);
+  text-shadow: 0 0 0.5em var(--color-op);
   line-height: 100%;
   position: relative;
   overflow: hidden;
@@ -85,6 +85,7 @@ const handleClick = () => {
 
   &:hover {
     box-shadow: inset 1rem 1rem 1rem #0004;
+    text-shadow: 0 0 0.5em var(--accent0);
     mix-blend-mode: var(--mix-blend-mode2);
 
     &::after {
