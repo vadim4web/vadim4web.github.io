@@ -1,5 +1,7 @@
 {
   "semi": false,
   "singleQuote": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "experimentalTernaries": true,
+  "useTabs": true
 }

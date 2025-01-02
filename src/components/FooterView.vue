@@ -4,18 +4,19 @@
       <router-link
         to="/contact"
         class="link not-to-show-active"
-        style="padding: 1rem; border-radius: 4rem;"
+        style="padding: 1rem; border-radius: 4rem"
       >
-        {{ $t('footerGIT') }}
+        {{ $t("footerGIT") }}
       </router-link>
     </h4>
 
     <h2 class="h1 mail">
       <a
-        href="mailto:vadim4web@gmail.com"
+        :href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent($t('emailSubject'))}`"
         class="link"
-        style="padding: 1rem; border-radius: 4rem;"
-        target="_self"
+        style="padding: 1rem; border-radius: 4rem"
+        target="_blank"
+        rel="noopener noreferrer"
         >vadim4web@gmail.com</a
       >
     </h2>
@@ -25,8 +26,8 @@
 
       <address>
         <h4 class="h4" :title="$t('location')">
-          {{ $t('footerA1') }}, 175/14,<br />
-          {{ $t('footerA2') }},<br />
+          {{ $t("footerA1") }}, 175/14,<br />
+          {{ $t("footerA2") }},<br />
           08150
         </h4>
       </address>
@@ -67,9 +68,10 @@
 
           <h4 class="h4">
             <a
-              href="mailto:vadim4web@gmail.com"
+              :href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent($t('emailSubject'))}`"
               :title="$t('emailMe')"
-              target="_self"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 id="Layer_1"
@@ -125,13 +127,13 @@
       >
         VADIM4WEB.
       </a>
-      {{ $t('copyright') }}.
+      {{ $t("copyright") }}.
     </h4>
   </footer>
 </template>
 
 <script setup>
-import LogoView from '@/components/LogoView.vue'
+import LogoView from "@/components/LogoView.vue";
 </script>
 
 <style lang="scss" scoped>

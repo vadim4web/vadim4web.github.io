@@ -180,8 +180,6 @@ onUpdated(() => handleScroll())
     &:has(.horizontal) .title-box {
       flex-direction: row;
     }
-    @media (min-width: 1000px) {
-    }
 
     .horizontal {
       aspect-ratio: 2 / 1;

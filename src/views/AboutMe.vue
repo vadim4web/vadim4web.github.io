@@ -1,45 +1,45 @@
 <template>
-  <main class="flex-col-start">
-    <div class="flex-col-start page-header padding-13">
-      <h2 class="h2">
-        {{ $t('aboutH21') }}
-        <high-light />
-      </h2>
+	<main class="flex-col-start">
+		<div class="flex-col-start page-header padding-13">
+			<h2 class="h2">
+				{{ $t('aboutH21') }}
+				<high-light />
+			</h2>
 
-      <p class="t2">
-        {{ $t('aboutT1') }}
-      </p>
-    </div>
+			<p class="t2">
+				{{ $t('aboutT1') }}
+			</p>
+		</div>
 
-    <div class="mission flex-col-start">
-      <div class="mission-header">
-        <h2 class="h2">
-          {{ $t('aboutH221') }}
-          <br />
-          {{ $t('aboutH222') }}
-          <br />
-          {{ $t('aboutH223') }}
-          <br />
-          {{ $t('aboutH224') }}
-        </h2>
+		<div class="mission flex-col-start">
+			<div class="mission-header">
+				<h2 class="h2">
+					{{ $t('aboutH221') }}
+					<br />
+					{{ $t('aboutH222') }}
+					<br />
+					{{ $t('aboutH223') }}
+					<br />
+					{{ $t('aboutH224') }}
+				</h2>
 
-        <p class="t3 text1">
-          {{ $t('aboutT21') }}
-        </p>
+				<p class="t3 text1">
+					{{ $t('aboutT21') }}
+				</p>
 
-        <p class="t3 text2">
-          {{ $t('aboutT22') }}
-        </p>
-      </div>
+				<p class="t3 text2">
+					{{ $t('aboutT22') }}
+				</p>
+			</div>
 
-      <div class="photos">
-        <div class="photo photo1"></div>
+			<div class="photos">
+				<div class="photo photo1"></div>
 
-        <div class="photo photo2"></div>
-      </div>
-    </div>
+				<div class="photo photo2"></div>
+			</div>
+		</div>
 
-    <pre class="rhymes">
+		<pre class="rhymes">
 <span>I've earned my own very first PC</span>
 <span>By working summer holidays in 2003</span>
 <span>I'm a `web dev <em lang="es">loco</em>` (if you will) code-addict</span>
@@ -47,7 +47,7 @@
 <span>I'm experienced enough to exactly know</span>
 <span>Using DOCs, AI, Google and Stackoverflow</span>
     </pre>
-  </main>
+	</main>
 </template>
 
 <script setup>
@@ -59,128 +59,128 @@ onMounted(() => window.scrollTo(0, 0))
 
 <style lang="scss" scoped>
 .mission-header {
-  padding: 5.5rem 0 6.25rem 1.5rem;
-  display: flex;
-  display: grid;
-  grid-gap: 2.2rem;
+	padding: 5.5rem 0 6.25rem 1.5rem;
+	display: flex;
+	display: grid;
+	grid-gap: 2.2rem;
 
-  .h2 {
-    min-width: 10ch;
-    grid-area: mission;
-  }
+	.h2 {
+		min-width: 10ch;
+		grid-area: mission;
+	}
 
-  @media (orientation: portrait) {
-    grid-template-areas:
-      'mission text1'
-      'text2 text2';
-  }
+	@media (orientation: portrait) {
+		grid-template-areas:
+			'mission text1'
+			'text2 text2';
+	}
 
-  @media (orientation: landscape) {
-    grid-template-areas:
-      'mission text1'
-      'mission text2';
-  }
+	@media (orientation: landscape) {
+		grid-template-areas:
+			'mission text1'
+			'mission text2';
+	}
 }
 
 .rhymes {
-  text-align: center;
-  padding-bottom: 10rem;
+	text-align: center;
+	padding-bottom: 10rem;
 
-  span {
-    display: inline-block;
-    font-style: italic;
-    width: min(42rem, 75%);
-    font-size: 1.5rem;
-    line-height: 3rem;
-    font-weight: 700;
-    text-align-last: justify;
-  }
+	span {
+		display: inline-block;
+		font-style: italic;
+		width: min(42rem, 75%);
+		font-size: 1.5rem;
+		line-height: 3rem;
+		font-weight: 700;
+		text-align-last: justify;
+	}
 }
 
 .t3 {
-  @media (orientation: portrait) {
-    font-size: 140%;
-  }
+	@media (orientation: portrait) {
+		font-size: 140%;
+	}
 
-  &.text1 {
-    grid-area: text1;
-  }
+	&.text1 {
+		grid-area: text1;
+	}
 
-  &.text2 {
-    grid-area: text2;
+	&.text2 {
+		grid-area: text2;
 
-    @media (orientation: portrait) {
-      min-width: 100%;
-    }
-  }
+		@media (orientation: portrait) {
+			min-width: 100%;
+		}
+	}
 
-  @media (orientation: landscape) {
-    font-size: 166%;
-    line-height: normal;
-  }
+	@media (orientation: landscape) {
+		font-size: 166%;
+		line-height: normal;
+	}
 }
 
 .photos {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1.75rem;
-  width: 100%;
-  height: 32rem;
-  margin-bottom: 10rem;
-  position: relative;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 1.75rem;
+	width: 100%;
+	height: 32rem;
+	margin-bottom: 10rem;
+	position: relative;
 
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    border: 0.125rem solid var(--accent0);
-    z-index: 1;
-  }
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		border: 0.125rem solid var(--accent0);
+		z-index: 1;
+	}
 
-  &::before {
-    border-radius: 1rem;
-    width: 2rem;
-    height: 7rem;
-    left: -1.125rem;
-    top: 0;
-  }
+	&::before {
+		border-radius: 1rem;
+		width: 2rem;
+		height: 7rem;
+		left: -1.125rem;
+		top: 0;
+	}
 
-  &::after {
-    border-radius: 1.75rem;
-    width: 11rem;
-    height: 3.5rem;
-    right: 0;
-    bottom: -1.875rem;
-  }
+	&::after {
+		border-radius: 1.75rem;
+		width: 11rem;
+		height: 3.5rem;
+		right: 0;
+		bottom: -1.875rem;
+	}
 
-  .photo {
-    width: 100%;
-    height: 32rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0.5rem;
-    filter: var(--filter1);
+	.photo {
+		width: 100%;
+		height: 32rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: 0.5rem;
+		filter: var(--filter1);
 
-    &:hover {
-      filter: var(--filter0);
-    }
-  }
+		&:hover {
+			filter: var(--filter0);
+		}
+	}
 
-  &:has(.photo1:hover)::before {
-    filter: var(--filter1);
-  }
+	&:has(.photo1:hover)::before {
+		filter: var(--filter1);
+	}
 
-  &:has(.photo2:hover)::after {
-    filter: var(--filter1);
-  }
+	&:has(.photo2:hover)::after {
+		filter: var(--filter1);
+	}
 
-  .photo1 {
-    background-image: url('@/assets/img/photo1.webp');
-    background-position: center;
-  }
-  .photo2 {
-    background-image: url('@/assets/img/photo2.webp');
-    background-position: center 65%;
-  }
+	.photo1 {
+		background-image: url('@/assets/img/photo1.webp');
+		background-position: center;
+	}
+	.photo2 {
+		background-image: url('@/assets/img/photo2.webp');
+		background-position: center 65%;
+	}
 }
 </style>

@@ -38,9 +38,6 @@
   --scrollbar-track_hover: rgb(106, 106, 106);
 
   --mix-blend-mode1: lighten;
-  /* --mix-blend-mode2: hard-light;
-
-  --mix-blend-mode1: plus-lighter; */
   --mix-blend-mode2: color-dodge;
 
   --filter0: sepia(0);
@@ -87,8 +84,6 @@
   --scrollbar-track_hover: rgb(226, 226, 226);
 
   --mix-blend-mode1: hard-light;
-  --mix-blend-mode2: plus-darker;
-
   --mix-blend-mode2: color-burn;
 
   --filter0: grayscale(0);
@@ -98,11 +93,4 @@
 :root {
   --tr-dur: 500ms;
   --gray: #808080;
-
-  /* --mix-blend-mode1: multiply;
-  --mix-blend-mode1: screen;
-  --mix-blend-mode1: overlay;
-  --mix-blend-mode1: darken;
-  --mix-blend-mode1: lighten; */
-
 }
