@@ -97,10 +97,8 @@
 
 <script setup>
 import { defineAsyncComponent, onMounted } from 'vue'
+import Logo3D from '@/components/Logo3D.vue'
 
-const Logo3D = defineAsyncComponent(() =>
-	import('@/components/Logo3D.vue')
-)
 const ArrowRight = defineAsyncComponent(() =>
 	import('@/components/ArrowRight.vue')
 )
