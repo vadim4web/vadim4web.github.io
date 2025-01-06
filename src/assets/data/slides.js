@@ -141,8 +141,9 @@ const arrayToHTML = content =>
 		.map(
 			item => `
   <div
-		class="content text-center"
-		style="display: flex; flex-direction: column; align-items: center; justify-content: center;margin-top: 2rem;"
+		class="content"
+		style="display: flex; flex-direction: column; align-items: center; justify-content: center;
+			margin-top: 2rem; text-align: center;"
 	>
     <div
 			class="image"
