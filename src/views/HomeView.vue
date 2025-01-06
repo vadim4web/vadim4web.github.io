@@ -98,15 +98,13 @@
 <script setup>
 import { defineAsyncComponent, onMounted } from 'vue'
 import Logo3D from '@/components/Logo3D.vue'
+import ActiveElement from '@/components/ActiveElement.vue'
 
 const ArrowRight = defineAsyncComponent(() =>
 	import('@/components/ArrowRight.vue')
 )
 const HighLight = defineAsyncComponent(() =>
 	import('@/components/HighLight.vue')
-)
-const ActiveElement = defineAsyncComponent(() =>
-	import('@/components/ActiveElement.vue')
 )
 const ThreeView = defineAsyncComponent(() =>
 	import('@/components/ThreeView.vue')
