@@ -43,7 +43,6 @@ a.link:hover {
 a.router-link-active:not(.not-to-show-active)::after,
 a.link:hover::after {
   content: '';
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -58,7 +57,6 @@ a.link:hover::after {
 
 a.link:active::after {
   content: '';
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

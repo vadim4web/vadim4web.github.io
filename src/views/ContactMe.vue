@@ -1,6 +1,6 @@
 <template>
-	<main class="flex-col-start">
-		<div class="flex-col-start page-header padding-13">
+	<main class="flex-col">
+		<div class="flex-col page-header padding-13">
 			<h2 class="h2" style="left: -0.2rem">
 				{{ $t('contactH21') }}
 				<high-light />
@@ -9,7 +9,7 @@
 			<p class="t2">{{ $t('contactT1') }}</p>
 		</div>
 
-		<div class="flex-col-start">
+		<div class="flex-col">
 			<div class="grid-text-form">
 				<h2 class="h2">
 					{{ $t('contactH221') }}<br />
@@ -18,8 +18,8 @@
 				</h2>
 
 				<form @submit.prevent="submitForm">
-					<div class="form flex-col-start inputs card-back inputs">
-						<label :data-text="$t('name')">
+					<div class="form flex-col card-back rel">
+						<label :data-text="$t('name')" class="rel">
 							<input
 								type="text"
 								v-model="name"
@@ -29,7 +29,7 @@
 							/>
 						</label>
 
-						<label :data-text="$t('email')">
+						<label :data-text="$t('email')" class="rel">
 							<input
 								type="email"
 								v-model="email"
@@ -38,7 +38,7 @@
 							/>
 						</label>
 
-						<label :data-text="$t('project')">
+						<label :data-text="$t('project')" class="rel">
 							<input
 								type="text"
 								v-model="subject"
@@ -47,12 +47,12 @@
 							/>
 						</label>
 
-						<label :data-text="$t('comment')">
+						<label :data-text="$t('comment')" class="rel">
 							<textarea v-model="message"></textarea>
 						</label>
 					</div>
 
-					<div class="button-wrapper">
+					<div class="button-wrapper rel">
 						<active-element
 							:padding="'0'"
 							:fontSize="'2.1rem'"
@@ -67,9 +67,9 @@
 			</div>
 		</div>
 
-		<div class="laptop"></div>
+		<div class="laptop w100 br1"></div>
 
-		<div class="address">
+		<div class="address w100">
 			<h4 class="h4">
 				<a
 					href="tel:+380933789883"
@@ -110,10 +110,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import HighLight from '@/components/HighLight.vue'
-import ActiveElement from '@/components/ActiveElement.vue'
+import { ref, onMounted, defineAsyncComponent } from 'vue'
 import emailjs from '@emailjs/browser'
+
+const HighLight = defineAsyncComponent(() =>
+	import('@/components/HighLight.vue')
+)
+const ActiveElement = defineAsyncComponent(() =>
+	import('@/components/HighLight.vue')
+)
 
 const name = ref('')
 const email = ref('')
@@ -176,15 +181,12 @@ onMounted(() => window.scrollTo(0, 0))
 	color: var(--color0);
 	border-radius: 1.75rem;
 	padding: 3rem 1.5rem 1.5rem;
-	position: relative;
 	backdrop-filter: blur(0.33rem);
 
 	label {
-		position: relative;
 		background: transparent !important;
 
 		&::before {
-			position: absolute;
 			left: 0;
 			top: 0;
 			height: 2rem;
@@ -248,7 +250,6 @@ button {
 }
 
 .button-wrapper {
-	position: relative;
 	height: 3.5rem;
 	width: 14rem;
 }
@@ -270,9 +271,7 @@ textarea {
 }
 
 .laptop {
-	border-radius: 1rem;
 	background-image: url('@/assets/img/laptop.webp');
-	width: 100%;
 	height: 55.5%;
 	background-size: cover;
 	background-position: center;
@@ -282,7 +281,6 @@ textarea {
 }
 
 .address {
-	width: 100%;
 	margin-bottom: 10rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

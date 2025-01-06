@@ -1,6 +1,6 @@
 <template>
 	<main class="home">
-		<section class="head content flex-col-center">
+		<section class="head content flex-col-center text-center">
 			<div class="h1">
 				<h2
 					class="h1_h2"
@@ -38,8 +38,8 @@
 			</active-element>
 		</section>
 
-		<section class="hero">
-			<div class="left content flex-col-center">
+		<section class="hero w100">
+			<div class="left content flex-col-center w100 rel">
 				<div class="text">
 					<h2 class="h2">
 						<high-light />
@@ -66,13 +66,13 @@
 				</active-element>
 			</div>
 
-			<div class="right">
-				<div class="photo"></div>
+			<div class="right rel">
+				<div class="photo w100"></div>
 			</div>
 		</section>
 
 		<section class="projects flex-col-center">
-			<h2 class="h2">
+			<h2 class="h2 text-center">
 				{{ $t('homeH22') }}
 				<high-light />
 			</h2>
@@ -97,11 +97,19 @@
 
 <script setup>
 import { defineAsyncComponent, onMounted } from 'vue'
-import HighLight from '@/components/HighLight.vue'
-import ActiveElement from '@/components/ActiveElement.vue'
-import ArrowRight from '@/components/ArrowRight.vue'
 
-const Logo3D = defineAsyncComponent(() => import('@/components/Logo3D.vue'))
+const Logo3D = defineAsyncComponent(() =>
+	import('@/components/Logo3D.vue')
+)
+const ArrowRight = defineAsyncComponent(() =>
+	import('@/components/ArrowRight.vue')
+)
+const HighLight = defineAsyncComponent(() =>
+	import('@/components/HighLight.vue')
+)
+const ActiveElement = defineAsyncComponent(() =>
+	import('@/components/ActiveElement.vue')
+)
 const ThreeView = defineAsyncComponent(() =>
 	import('@/components/ThreeView.vue')
 )
@@ -114,8 +122,6 @@ onMounted(() => window.scrollTo(0, 0))
 
 <style lang="scss" scoped>
 .head {
-	text-align: center;
-
 	.h1 {
 		z-index: 1;
 		width: 22ch;
@@ -123,33 +129,24 @@ onMounted(() => window.scrollTo(0, 0))
 	}
 
 	& .highlight {
-		position: absolute;
 		top: -7.5rem;
 		right: 0;
 	}
 }
 
 .hero {
-	width: 100%;
 	display: grid;
 	grid-template-columns: 4fr 3fr;
 	gap: 6rem;
 	align-items: center;
 
 	.left {
-		width: 100%;
 		align-items: flex-start;
 		justify-content: flex-start;
-		position: relative;
 
-		.h2 {
-			position: relative;
-
-			& .highlight {
-				position: absolute;
-				top: -7.5rem;
-				left: -15rem;
-			}
+		.h2 .highlight {
+			top: -7.5rem;
+			left: -15rem;
 		}
 
 		.text {
@@ -160,10 +157,7 @@ onMounted(() => window.scrollTo(0, 0))
 	}
 
 	.right {
-		position: relative;
-
 		.photo {
-			width: 100%;
 			aspect-ratio: 9 / 10;
 			background: url('@/assets/img/photo.webp');
 			background-position: 50% 25%;
@@ -186,7 +180,6 @@ onMounted(() => window.scrollTo(0, 0))
 
 		&::before,
 		&::after {
-			position: absolute;
 			z-index: 1;
 			content: '';
 			border: 0.125rem solid var(--accent0);
@@ -218,15 +211,9 @@ onMounted(() => window.scrollTo(0, 0))
 	padding: 3rem 0;
 	gap: 2rem;
 
-	.h2 {
-		text-align: center;
-		position: relative;
-
-		& .highlight {
-			position: absolute;
-			top: -10rem;
-			right: -12rem;
-		}
+	.h2 .highlight {
+		top: -10rem;
+		right: -12rem;
 	}
 }
 </style>

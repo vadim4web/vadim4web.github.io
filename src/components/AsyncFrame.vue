@@ -1,40 +1,34 @@
 <template>
-  <iframe
-    v-show="isLoaded"
-    :src="iframeSrc"
-    :class="iframeClass"
-    :style="iframeStyle"
-    frameborder="0"
-    @load="setLoaded"
-    :scrolling="scrolling"
-  ></iframe>
+	<iframe
+		v-show="isLoaded"
+		:src="iframeSrc"
+		:class="iframeClass"
+		:style="iframeStyle"
+		frameborder="0"
+		@load="setLoaded"
+		:scrolling="scrolling"
+	></iframe>
 
-  <loader-spinner
-    v-if="!isLoaded"
-    class="placeholder iframe"
-    :three="three"
-    :classes="iframeClass"
-  />
+	<loader-spinner
+		v-if="!isLoaded"
+		class="placeholder iframe br1"
+		:three="three"
+		:classes="iframeClass"
+	/>
 </template>
 
 <script setup>
 import { ref, defineAsyncComponent } from 'vue'
 
 const LoaderSpinner = defineAsyncComponent(() =>
-  import('@/components/LoaderSpinner.vue')
+	import('@/components/LoaderSpinner.vue')
 )
-const {
-  iframeSrc,
-  iframeStyle,
-  iframeClass,
-  three,
-  scrolling
-} = defineProps([
-  'iframeSrc',
-  'iframeStyle',
-  'iframeClass',
-  'three',
-  'scrolling'
+const { iframeSrc, iframeStyle, iframeClass, three, scrolling } = defineProps([
+	'iframeSrc',
+	'iframeStyle',
+	'iframeClass',
+	'three',
+	'scrolling',
 ])
 
 const isLoaded = ref(false)
@@ -43,7 +37,6 @@ const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 
 <style lang="scss" scoped>
 .placeholder {
-  backdrop-filter: blur(0.5rem);
-  border-radius: 1rem;
+	backdrop-filter: blur(0.5rem);
 }
 </style>

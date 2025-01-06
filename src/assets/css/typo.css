@@ -30,7 +30,6 @@
 .h1_h2::after,
 .h1_span::before,
 .h1_span::after {
-  position: absolute;
   top: 0;
 }
 
@@ -70,6 +69,7 @@
   font-size: 4rem;
   line-height: 140%;
   letter-spacing: -0.04rem;
+  position: relative;
 }
 
 .h3 {

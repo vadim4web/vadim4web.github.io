@@ -1,6 +1,6 @@
 <template>
-  <main class="flex-col-center not-found">
-    <h2 class="h2 flex-col-center">
+  <main class="flex-col-center not-found w100">
+    <h2 class="h2 flex-col-center text-center">
       404
       <high-light />
 
@@ -28,9 +28,15 @@
 </template>
 
 <script setup>
-import HighLight from '@/components/HighLight.vue'
-import ActiveElement from '@/components/ActiveElement.vue'
+import { defineAsyncComponent } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+
+const ActiveElement = defineAsyncComponent(() =>
+  import('@/components/ActiveElement.vue')
+)
+const HighLight = defineAsyncComponent(() =>
+  import('@/components/HighLight.vue')
+)
 
 const router = useRouter()
 const goBack = () => {
@@ -40,19 +46,14 @@ const goBack = () => {
 
 <style lang="scss" scoped>
 .not-found {
-  width: 100%;
   height: 100dvh;
 }
 
 h2 {
   top: -7.5vh;
-  text-align: center;
   font-size: 20rem;
-  position: relative;
-  width: 100%;
 
   .highlight {
-    position: absolute;
     top: 2rem;
   }
 

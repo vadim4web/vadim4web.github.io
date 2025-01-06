@@ -23,9 +23,23 @@
   justify-content: space-between;
 }
 
-.flex-col-start {
+.flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.rel {
+  position: relative;
+}
+
+.bg-cont-cent-norep {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .padding-13 {
@@ -94,6 +108,6 @@
   font-variant: small-caps;
 }
 
-.hide-overflow {
-  overflow: hidden !important;
+.hideO {
+  overflow: hidden;
 }

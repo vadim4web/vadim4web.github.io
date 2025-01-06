@@ -1,6 +1,6 @@
 <template>
-	<main class="flex-col-start">
-		<div class="flex-col-start page-header padding-13">
+	<main class="flex-col">
+		<div class="flex-col page-header padding-13">
 			<h2 class="h2">
 				{{ $t('aboutH21') }}
 				<high-light />
@@ -11,7 +11,7 @@
 			</p>
 		</div>
 
-		<div class="mission flex-col-start">
+		<div class="mission flex-col">
 			<div class="mission-header">
 				<h2 class="h2">
 					{{ $t('aboutH221') }}
@@ -32,14 +32,14 @@
 				</p>
 			</div>
 
-			<div class="photos">
-				<div class="photo photo1"></div>
+			<div class="photos w100 rel">
+				<div class="photo photo1 w100"></div>
 
-				<div class="photo photo2"></div>
+				<div class="photo photo2 w100"></div>
 			</div>
 		</div>
 
-		<pre class="rhymes">
+		<pre class="rhymes text-center">
 <span>I've earned my own very first PC</span>
 <span>By working summer holidays in 2003</span>
 <span>I'm a `web dev <em lang="es">loco</em>` (if you will) code-addict</span>
@@ -51,8 +51,11 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-import HighLight from '@/components/HighLight.vue'
+import { onMounted, defineAsyncComponent } from 'vue'
+
+const HighLight = defineAsyncComponent(() =>
+	import('@/components/HighLight.vue')
+)
 
 onMounted(() => window.scrollTo(0, 0))
 </script>
@@ -60,7 +63,6 @@ onMounted(() => window.scrollTo(0, 0))
 <style lang="scss" scoped>
 .mission-header {
 	padding: 5.5rem 0 6.25rem 1.5rem;
-	display: flex;
 	display: grid;
 	grid-gap: 2.2rem;
 
@@ -83,7 +85,6 @@ onMounted(() => window.scrollTo(0, 0))
 }
 
 .rhymes {
-	text-align: center;
 	padding-bottom: 10rem;
 
 	span {
@@ -124,14 +125,11 @@ onMounted(() => window.scrollTo(0, 0))
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	gap: 1.75rem;
-	width: 100%;
 	height: 32rem;
 	margin-bottom: 10rem;
-	position: relative;
 
 	&::before,
 	&::after {
-		position: absolute;
 		content: '';
 		border: 0.125rem solid var(--accent0);
 		z-index: 1;
@@ -154,7 +152,6 @@ onMounted(() => window.scrollTo(0, 0))
 	}
 
 	.photo {
-		width: 100%;
 		height: 32rem;
 		background-size: cover;
 		background-repeat: no-repeat;

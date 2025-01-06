@@ -1,6 +1,6 @@
 <template>
-  <main class="flex-col-start project-page">
-    <div class="flex-col-start page-header padding-13">
+  <main class="flex-col project-page">
+    <div class="flex-col page-header padding-13">
       <h2 class="h2">
         {{ $t('projectH21') }}
         <high-light />
@@ -11,14 +11,14 @@
       </p>
     </div>
 
-    <div class="project-details flex-col-start">
+    <div class="project-details flex-col">
       <async-frame
         :iframeSrc="demo"
         :iframeClass="{ white_bg: project.white_bg, preview: true }"
         :scrolling="'yes'"
       />
 
-      <div class="text flex-col-start">
+      <div class="text flex-col">
         <h3 class="h3">{{ project.title }}</h3>
 
         <p class="p4">
@@ -99,26 +99,27 @@
       </router-link>
     </div>
 
-    <div class="others flex-col-start">
+    <div class="others flex-col">
       <h2 class="h1">
         {{ $t('projectH22') }}
       </h2>
 
       <div class="cards">
-        <div class="card card-back br1" v-for="p, i in others" :key="i">
+        <div class="card card-back br1 rel" v-for="p, i in others" :key="i">
           <router-link
             :to="{ name: 'project', params: { projectName: p.name } }"
             :title="$t('worksDetails') + ' `' + p.title + '`'"
+            class="flex-col"
           >
             <async-frame
               :iframeSrc="getPath(p.path)"
-              :iframeClass="{ white_bg: p.white_bg, other: true }"
-              :iframeStyle="{ zoom: '0.1', borderRadius: '10rem' }"
+              :iframeClass="{ white_bg: p.white_bg, other: true, w100: true, rel: true, br1: true }"
+              :iframeStyle="{ zoom: zoom, borderRadius: br }"
               :three="true"
               :scrolling="'no'"
             />
 
-            <div class="other-text flex-col-between">
+            <div class="other-text flex-col-between text-center">
               <h4 class="h4">{{ p.title }}</h4>
 
               <p class="other-p">{{ p.stack.join(', ') }}</p>
@@ -132,27 +133,37 @@
 
 <script setup>
 import { ref, watchEffect, computed, onMounted, defineAsyncComponent } from 'vue'
+import { useMediaQuery } from '@vueuse/core'
 import { useRoute } from 'vue-router'
-import ArrowNavigation from '@/components/ArrowNavigation.vue'
-import HighLight from '@/components/HighLight.vue'
 import { projects } from '@/assets/data/projects.js'
 import getPath from '@/helpers/getPath.js'
 import getSrc from '@/helpers/getSrc.js'
 import getThreeRandom from '@/helpers/getThreeRandom'
 
 const AsyncFrame = defineAsyncComponent(() =>
-  import('@/components/AsyncFrame.vue')
+import('@/components/AsyncFrame.vue')
 )
+const ArrowNavigation = defineAsyncComponent(() =>
+import('@/components/ArrowNavigation.vue')
+)
+const HighLight = defineAsyncComponent(() =>
+import('@/components/HighLight.vue')
+)
+
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+const zoom = computed(() => isLargeScreen ? '0.2' : '0.1')
+const br = computed(() => isLargeScreen ? '5rem' : '10rem')
 
 const route = useRoute()
 const projectName = ref(route.params.projectName)
 const project = ref(getProjectDetails(projectName.value))
-const source = computed(() => getSrc(projectName.value))
-const demo = computed(() => getPath(project.value.path))
 const curIdx = ref(getCurrentProjectIndex())
 const prev = ref(getPreviousProject())
 const next = ref(getNextProject())
 const others = ref(getThreeRandom(projects, curIdx.value))
+
+const source = computed(() => getSrc(projectName.value))
+const demo = computed(() => getPath(project.value.path))
 
 function getProjectDetails(projectName) {
   return projects.find(project => project.name === projectName) || {}
@@ -238,11 +249,11 @@ onMounted(() => window.scrollTo(0, 0))
 
   .nav-button {
     display: flex;
+    justify-content: center;
     height: 1.5625rem;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 170%;
-    justify-content: center;
     gap: 1.25rem;
   }
 
@@ -269,23 +280,17 @@ onMounted(() => window.scrollTo(0, 0))
   }
 
   .card {
-    position: relative;
     z-index: 1;
   }
 
   .card a {
     aspect-ratio: 3 / 5;
-    display: flex;
     gap: 2rem;
-    flex-direction: column;
   }
 
   .other {
-    width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;
-    border-radius: 1rem;
-    position: relative;
     z-index: -1;
 
     &:not(.white_bg) {
@@ -294,7 +299,6 @@ onMounted(() => window.scrollTo(0, 0))
   }
 
   .other-text {
-    text-align: center;
     padding: 1rem;
     gap: 1rem;
   }
