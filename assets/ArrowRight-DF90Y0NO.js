@@ -1,1 +1,0 @@
-import{_ as e,e as r,c as a,D as s}from"./index-8E_h6bX3.js";const o={__name:"ArrowRight",props:["height"],setup(t){return(c,h)=>(r(),a("strong",{class:"arrow-right",style:s({height:t.height,width:parseInt(t.height)*1.5+"rem"})}," -> ",4))}},n=e(o,[["__scopeId","data-v-ca079263"]]);export{n as default};
