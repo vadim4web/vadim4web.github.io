@@ -90,7 +90,7 @@ menu {
 }
 
 .menu-item {
-	text-shadow: 0 0 2rem var(--bg0) !important;
+	text-shadow: 0 0 2rem var(--bg0);
 	--padding: calc((100vw - 100vmin) / 10);
 	--padding2: calc((100vw - 100vmin) / 5);
 
