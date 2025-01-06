@@ -140,13 +140,16 @@ const arrayToHTML = content =>
 	content
 		.map(
 			item => `
-  <div class="content text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center;margin-top: 2rem;">
-    <div class="image bg-cont-cent-norep" style="background: url('${
-			item.path
-		}'); background-size: contain; background-position: center; background-repeat: no-repeat;width: 6rem; height: 6rem; margin-bottom: 1rem; ${
-				item.to_invert === true && 'filter: invert(var(--is-dark));'
-			}"></div>
-    <p class="p2" style="margin-bottom: 3rem;">${item.name}</p>
+  <div
+		class="content text-center"
+		style="display: flex; flex-direction: column; align-items: center; justify-content: center;margin-top: 2rem;"
+	>
+    <div
+			class="image"
+			style="background: url('${item.path}'); background-size: contain; background-position: center; background-repeat: no-repeat; width: 6rem; height: 6rem; margin-bottom: 1rem;
+			${item.to_invert === true && 'filter: invert(var(--is-dark));'}"
+		></div>
+    	<p class="p2" style="margin-bottom: 3rem;">${item.name}</p>
   </div>
 `
 		)
