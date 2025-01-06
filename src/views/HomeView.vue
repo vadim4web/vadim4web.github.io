@@ -91,7 +91,7 @@
 </template>
 
 <script setup>
-import { defineAsyncComponent, onMounted } from "vue";
+import { defineAsyncComponent } from "vue";
 import Logo3D from "@/components/Logo3D.vue";
 import ActiveElement from "@/components/ActiveElement.vue";
 import ArrowRight from "@/components/ArrowRight.vue";

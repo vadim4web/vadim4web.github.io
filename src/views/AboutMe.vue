@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import { onMounted, defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 
 const HighLight = defineAsyncComponent(() =>
 	import('@/components/HighLight.vue')

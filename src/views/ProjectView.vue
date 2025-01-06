@@ -132,7 +132,7 @@
 </template>
 
 <script setup>
-import { ref, watchEffect, computed, onMounted, defineAsyncComponent } from 'vue'
+import { ref, watchEffect, computed, defineAsyncComponent } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { useRoute } from 'vue-router'
 import { projects } from '@/assets/data/projects.js'

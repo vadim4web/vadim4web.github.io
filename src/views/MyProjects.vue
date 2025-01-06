@@ -67,7 +67,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated, defineAsyncComponent } from "vue";
+import { ref, onUpdated, defineAsyncComponent } from "vue";
 import { chunkedProjects } from "@/assets/data/projects.js";
 import getPath from "@/helpers/getPath.js";
 

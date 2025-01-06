@@ -100,7 +100,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, defineAsyncComponent } from "vue";
+import { ref, defineAsyncComponent } from "vue";
 import emailjs from "@emailjs/browser";
 
 const HighLight = defineAsyncComponent(() => import("@/components/HighLight.vue"));
