@@ -36,12 +36,6 @@
   position: relative;
 }
 
-.bg-cont-cent-norep {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .padding-13 {
   padding-top: 13rem;
 }
