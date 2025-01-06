@@ -77,6 +77,8 @@ router.afterEach((to) => {
 			state.setShowLoader(false)
 		}, 1755)
 	}
+
+	window.scrollTo(0, 0)
 })
 
 export default router

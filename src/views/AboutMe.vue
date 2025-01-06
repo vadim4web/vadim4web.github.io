@@ -56,8 +56,6 @@ import { onMounted, defineAsyncComponent } from 'vue'
 const HighLight = defineAsyncComponent(() =>
 	import('@/components/HighLight.vue')
 )
-
-onMounted(() => window.scrollTo(0, 0))
 </script>
 
 <style lang="scss" scoped>

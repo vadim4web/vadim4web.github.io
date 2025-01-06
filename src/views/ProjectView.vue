@@ -192,8 +192,6 @@ watchEffect(() => {
   next.value = getNextProject()
   others.value = getThreeRandom(projects, curIdx.value)
 })
-
-onMounted(() => window.scrollTo(0, 0))
 </script>
 
 <style lang="scss">
