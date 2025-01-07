@@ -1,13 +1,13 @@
 <template>
-	<div
-		class="canvas-container abs"
-		ref="canvasContainer"
-		style="
+  <div
+    ref="canvasContainer"
+    class="canvas-container abs"
+    style="
 			background-color: transparent;
 			filter: drop-shadow(0 0 1rem var(--accent0));
 			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));
 		"
-	></div>
+  />
 </template>
 
 <script setup>

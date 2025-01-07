@@ -1,10 +1,10 @@
 <template>
-	<strong
-		class="arrow-right"
-		:style="{ height, width: parseInt(height) * 1.5 + 'rem' }"
-	>
-		->
-	</strong>
+  <strong
+    class="arrow-right"
+    :style="{ height, width: parseInt(height) * 1.5 + 'rem' }"
+  >
+    ->
+  </strong>
 </template>
 
 <script setup>

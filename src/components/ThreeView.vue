@@ -1,54 +1,57 @@
 <template>
-	<div class="three three-projects flex-center w100">
-		<div
-			class="card card-back br1 hideO"
-			v-for="({ title, name, stack, tags, path, white_bg }, i) in three"
-			:key="i"
-		>
-			<div class="frame w100 rel">
-				<async-frame
-					:iframeSrc="getPath(path)"
-					:iframeClass="{
-						white_bg: white_bg,
-						iframe: true,
-						w100: true,
-						hideO: true,
-						br1: true,
-						abs: true,
-					}"
-					:iframeStyle="{ zoom: zoom }"
-					:three="true"
-					:scrolling="'no'"
-				/>
-			</div>
+  <div class="three three-projects flex-center w100">
+    <div
+      v-for="({ title, name, stack, tags, path, white_bg }, i) in three"
+      :key="i"
+      class="card card-back br1 hideO"
+    >
+      <div class="frame w100 rel">
+        <async-frame
+          :iframe-src="getPath(path)"
+          :iframe-class="{
+            white_bg: white_bg,
+            iframe: true,
+            w100: true,
+            hideO: true,
+            br1: true,
+            abs: true,
+          }"
+          :iframe-style="{ zoom: zoom, borderRadius: br }"
+          :three="true"
+          :scrolling="'no'"
+        />
+      </div>
 
-			<h4 class="h4 text-left rel">
-				<router-link
-					:to="{ name: 'project', params: { projectName: name } }"
-					class="text-wrap hideO"
-					:title="'View more details about `' + title + '`'"
-				>
-					{{ title.split(' ').slice(0, -1).join(' ') }}
+      <h4 class="h4 text-left rel">
+        <router-link
+          :to="{ name: 'project', params: { projectName: name } }"
+          class="text-wrap hideO"
+          :title="'View more details about `' + title + '`'"
+        >
+          {{ title.split(' ').slice(0, -1).join(' ') }}
 
-					<span class="gap2 w100">
-						{{ title.split(' ').slice(-1).join(' ') }}
-					</span>
-				</router-link>
-			</h4>
+          <span class="gap2 w100">
+            {{ title.split(' ').slice(-1).join(' ') }}
+          </span>
+        </router-link>
+      </h4>
 
-			<p class="p3" style="letter-spacing: -0.1rem">
-				<span class="dimmed">tech stack: &nbsp;</span>
+      <p
+        class="p3"
+        style="letter-spacing: -0.1rem"
+      >
+        <span class="dimmed">tech stack: &nbsp;</span>
 
-				{{ stack.join(' | ') }}
+        {{ stack.join(' | ') }}
 
-				<br />
+        <br>
 
-				<span class="dimmed">tech area: &nbsp;&nbsp;</span>
+        <span class="dimmed">tech area: &nbsp;&nbsp;</span>
 
-				{{ tags.join(', ') }}
-			</p>
-		</div>
-	</div>
+        {{ tags.join(', ') }}
+      </p>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -61,10 +64,11 @@ import { useMediaQuery } from '@vueuse/core'
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 const isPortrait = useMediaQuery('(orientation: portrait)')
 
-const zoom = computed(() => (isLargeScreen && isPortrait ? '0.125' : '0.125'))
+const zoom = computed(() => (isLargeScreen && isPortrait ? '0.3' : '0.175'))
+const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 
-const AsyncFrame = defineAsyncComponent(() =>
-	import('@/components/AsyncFrame.vue')
+const AsyncFrame = defineAsyncComponent(
+	() => import('@/components/AsyncFrame.vue')
 )
 const three = getThreeRandom(projects)
 </script>

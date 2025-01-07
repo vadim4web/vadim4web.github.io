@@ -1,26 +1,26 @@
 <template>
-	<div class="lang-swither-wrapper flex-center rel">
-		<menu
-			:title="$t('toggleLangTip')"
-			v-click-outside="closeMenu"
-			class="lang-switcher select flex-col-center hideO abs"
-			:class="{ open: showOptions, close: !showOptions }"
-		>
-			<li
-				v-for="(option, index) in sortedLanguageOptions"
-				@click="handleClick(option.value)"
-				:key="index"
-				:class="{ selected: selectedLanguage === option.value }"
-				class="select-option rel"
-			>
-				<img
-					:src="option.image"
-					:alt="$t('lang') + ' flag'"
-					class="select-option-img"
-				/>
-			</li>
-		</menu>
-	</div>
+  <div class="lang-swither-wrapper flex-center rel">
+    <menu
+      v-click-outside="closeMenu"
+      :title="$t('toggleLangTip')"
+      class="lang-switcher select flex-col-center hideO abs"
+      :class="{ open: showOptions, close: !showOptions }"
+    >
+      <li
+        v-for="(option, index) in sortedLanguageOptions"
+        :key="index"
+        :class="{ selected: selectedLanguage === option.value }"
+        class="select-option rel"
+        @click="handleClick(option.value)"
+      >
+        <img
+          :src="option.image"
+          :alt="$t('lang') + ' flag'"
+          class="select-option-img"
+        >
+      </li>
+    </menu>
+  </div>
 </template>
 
 <script setup>
@@ -51,10 +51,6 @@ const handleClick = lang => {
 
 const closeMenu = () => {
 	showOptions.value = false
-}
-
-const openMenu = () => {
-	showOptions.value = true
 }
 
 const setLanguage = lang => {

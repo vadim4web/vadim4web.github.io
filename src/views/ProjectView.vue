@@ -13,71 +13,88 @@
 
     <div class="project-details flex-col">
       <async-frame
-        :iframeSrc="demo"
-        :iframeClass="{ white_bg: project.white_bg, preview: true }"
+        :iframe-src="demo"
+        :iframe-class="{ white_bg: project.white_bg, preview: true }"
         :scrolling="'yes'"
       />
 
       <div class="text flex-col">
-        <h3 class="h3">{{ project.title }}</h3>
+        <h3 class="h3">
+          {{ project.title }}
+        </h3>
 
         <p class="p4">
-          <b>
-            {{ $t('projectP1') }}:&nbsp;
-          </b>
+          <b> {{ $t('projectP1') }}:&nbsp; </b>
           {{ project.tags.join(' | ') }}
         </p>
 
         <p class="p4">
-          <b>
-            {{ $t('projectP2') }}:&nbsp;
-          </b>
+          <b> {{ $t('projectP2') }}:&nbsp; </b>
           {{ project.stack.join(', ') }}
         </p>
 
         <p class="p4">
-          <b>
-            {{ $t('projectP3') }}:&nbsp;
-          </b>
-          <a :href="source" target="_blank" class="source" title="GitHub Repository">{{ source }}</a>
+          <b> {{ $t('projectP3') }}:&nbsp; </b>
+          <a
+            :href="source"
+            target="_blank"
+            class="source"
+            title="GitHub Repository"
+          >{{ source }}</a>
         </p>
 
         <p class="p4">
-          <b>
-            {{ $t('projectP4') }}:&nbsp;
-          </b>
-          <a :href="demo" target="_blank" class="demo" title="Live Demo">{{ demo }}</a>
+          <b> {{ $t('projectP4') }}:&nbsp; </b>
+          <a
+            :href="demo"
+            target="_blank"
+            class="demo"
+            title="Live Demo"
+          >{{
+            demo
+          }}</a>
         </p>
 
-        <div class="p4" v-if="project.deps.length">
+        <div
+          v-if="project.deps.length"
+          class="p4"
+        >
           <b>{{ $t('projectP5') }}:</b>
 
-          <br />
+          <br>
 
           <ul>
-            <li v-for="d, i in project.deps" :key="i">{{ d }}</li>
+            <li
+              v-for="(d, i) in project.deps"
+              :key="i"
+            >
+              {{ d }}
+            </li>
           </ul>
         </div>
 
-        <p class="p4" v-else>
+        <p
+          v-else
+          class="p4"
+        >
           {{ $t('projectP5_default') }}
         </p>
 
-        <p class="p4">
-          <b>
-            {{ $t('projectP6') }}:
-          </b>
+        <div class="p4">
+          <b> {{ $t('projectP6') }}: </b>
 
-          <br />
+          <br>
 
-          <pre v-if="project['desc_' + $i18n.locale]">
-{{ project['desc_' + $i18n.locale] }}
+          <pre v-if="project['desc_' + $i18n.locale]">{{ project['desc_' + $i18n.locale] }}
           </pre>
 
-          <p class="p4" v-else>
+          <p
+            v-else
+            class="p4"
+          >
             {{ $t('projectP6_default') }}
           </p>
-        </p>
+        </div>
       </div>
     </div>
 
@@ -105,24 +122,38 @@
       </h2>
 
       <div class="cards">
-        <div class="card card-back br1 rel" v-for="p, i in others" :key="i">
+        <div
+          v-for="(p, i) in others"
+          :key="i"
+          class="card card-back br1 rel"
+        >
           <router-link
             :to="{ name: 'project', params: { projectName: p.name } }"
             :title="$t('worksDetails') + ' `' + p.title + '`'"
             class="flex-col"
           >
             <async-frame
-              :iframeSrc="getPath(p.path)"
-              :iframeClass="{ white_bg: p.white_bg, other: true, w100: true, rel: true, br1: true }"
-              :iframeStyle="{ zoom: zoom, borderRadius: br }"
+              :iframe-src="getPath(p.path)"
+              :iframe-class="{
+                white_bg: p.white_bg,
+                other: true,
+                w100: true,
+                br1: true,
+                rel: true,
+              }"
+              :iframe-style="{ zoom: zoom, borderRadius: br }"
               :three="true"
               :scrolling="'no'"
             />
 
             <div class="other-text flex-col-between text-center">
-              <h4 class="h4">{{ p.title }}</h4>
+              <h4 class="h4">
+                {{ p.title }}
+              </h4>
 
-              <p class="other-p">{{ p.stack.join(', ') }}</p>
+              <p class="other-p">
+                {{ p.stack.join(', ') }}
+              </p>
             </div>
           </router-link>
         </div>
@@ -140,19 +171,19 @@ import getPath from '@/helpers/getPath.js'
 import getSrc from '@/helpers/getSrc.js'
 import getThreeRandom from '@/helpers/getThreeRandom'
 
-const AsyncFrame = defineAsyncComponent(() =>
-  import('@/components/AsyncFrame.vue')
+const AsyncFrame = defineAsyncComponent(
+	() => import('@/components/AsyncFrame.vue')
 )
-const ArrowNavigation = defineAsyncComponent(() =>
-  import('@/components/ArrowNavigation.vue')
+const ArrowNavigation = defineAsyncComponent(
+	() => import('@/components/ArrowNavigation.vue')
 )
-const HighLight = defineAsyncComponent(() =>
-  import('@/components/HighLight.vue')
+const HighLight = defineAsyncComponent(
+	() => import('@/components/HighLight.vue')
 )
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
-const zoom = computed(() => isLargeScreen ? '0.2' : '0.1')
-const br = computed(() => isLargeScreen ? '5rem' : '10rem')
+const zoom = computed(() => (isLargeScreen ? '0.25' : '0.175'))
+const br = computed(() => (isLargeScreen ? '4rem' : '5.714285rem'))
 
 const route = useRoute()
 const projectName = ref(route.params.projectName)
@@ -166,139 +197,142 @@ const source = computed(() => getSrc(projectName.value))
 const demo = computed(() => getPath(project.value.path))
 
 function getProjectDetails(projectName) {
-  return projects.find(project => project.name === projectName) || {}
+	return projects.find(project => project.name === projectName) || {}
 }
 
 function getCurrentProjectIndex() {
-  return projects.findIndex(p => p.name === project.value.name
-    && p.orientation === project.value.orientation)
+	return projects.findIndex(
+		p =>
+			p.name === project.value.name &&
+			p.orientation === project.value.orientation
+	)
 }
 
 function getNextProject() {
-  const nextIndex = curIdx.value < projects.length - 1 ? curIdx.value + 1 : 0
-  return projects[nextIndex]
+	const nextIndex = curIdx.value < projects.length - 1 ? curIdx.value + 1 : 0
+	return projects[nextIndex]
 }
 
 function getPreviousProject() {
-  const prevIndex = curIdx.value > 0 ? curIdx.value - 1 : projects.length - 1
-  return projects[prevIndex]
+	const prevIndex = curIdx.value > 0 ? curIdx.value - 1 : projects.length - 1
+	return projects[prevIndex]
 }
 
 watchEffect(() => {
-  projectName.value = route.params.projectName
-  project.value = getProjectDetails(projectName.value)
-  curIdx.value = getCurrentProjectIndex()
-  prev.value = getPreviousProject()
-  next.value = getNextProject()
-  others.value = getThreeRandom(projects, curIdx.value)
+	projectName.value = route.params.projectName
+	project.value = getProjectDetails(projectName.value)
+	curIdx.value = getCurrentProjectIndex()
+	prev.value = getPreviousProject()
+	next.value = getNextProject()
+	others.value = getThreeRandom(projects, curIdx.value)
 })
 </script>
 
 <style lang="scss">
 .project-page {
-  .preview {
-    aspect-ratio: 1 / 1;
-    zoom: 0.5;
-    border-radius: 2rem;
+	.preview {
+		aspect-ratio: 1 / 1;
+		zoom: 0.5;
+		border-radius: 2rem;
 
-    &:not(.white_bg) {
-      background-color: var(--bg50);
-    }
+		&:not(.white_bg) {
+			background-color: var(--bg50);
+		}
 
-    @media (orientation: portrait) {
-      width: 100%;
-    }
+		@media (orientation: portrait) {
+			width: 100%;
+		}
 
-    @media (orientation: landscape) {
-      width: 65%;
-    }
-  }
+		@media (orientation: landscape) {
+			width: 65%;
+		}
+	}
 
-  .project-details {
-    margin-top: 7.5rem;
-    align-items: center;
-  }
+	.project-details {
+		margin-top: 7.5rem;
+		align-items: center;
+	}
 
-  .text {
-    width: 65%;
-    gap: 1.875rem;
-  }
+	.text {
+		width: 65%;
+		gap: 1.875rem;
+	}
 
-  .h3 {
-    margin-top: 4rem;
-    font-size: 2rem;
-  }
+	.h3 {
+		margin-top: 4rem;
+		font-size: 2rem;
+	}
 
-  .source:not(:hover),
-  .demo:not(:hover) {
-    text-decoration: underline;
-  }
+	.source:not(:hover),
+	.demo:not(:hover) {
+		text-decoration: underline;
+	}
 
-  pre {
-    line-break: normal;
-    text-wrap: wrap;
-  }
+	pre {
+		line-break: normal;
+		text-wrap: wrap;
+	}
 
-  .navigation {
-    margin-top: 9rem;
-    display: flex;
-    justify-content: space-between;
-  }
+	.navigation {
+		margin-top: 9rem;
+		display: flex;
+		justify-content: space-between;
+	}
 
-  .nav-button {
-    display: flex;
-    justify-content: center;
-    height: 1.5625rem;
-    gap: 1.25rem;
-    line-height: 170%;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
+	.nav-button {
+		display: flex;
+		justify-content: center;
+		height: 1.5625rem;
+		gap: 1.25rem;
+		line-height: 170%;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
 
-  .prev svg {
-    align-self: flex-end;
-  }
+	.prev svg {
+		align-self: flex-end;
+	}
 
-  .next svg {
-    align-self: flex-start;
-    transform: rotate(180deg);
-  }
+	.next svg {
+		align-self: flex-start;
+		transform: rotate(180deg);
+	}
 
-  .others {
-    margin-top: 12rem;
-    align-items: center;
-  }
+	.others {
+		margin-top: 12rem;
+		align-items: center;
+	}
 
-  .cards {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3.125rem;
-  }
+	.cards {
+		margin-top: 5rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		margin-bottom: 3.125rem;
+	}
 
-  .card {
-    z-index: 1;
-  }
+	.card {
+		z-index: 1;
+	}
 
-  .card a {
-    aspect-ratio: 3 / 5;
-    gap: 2rem;
-  }
+	.card a {
+		aspect-ratio: 3 / 5;
+		gap: 2rem;
+	}
 
-  .other {
-    height: auto;
-    aspect-ratio: 4 / 5;
-    z-index: -1;
+	.other {
+		height: auto;
+		aspect-ratio: 4 / 5;
+		z-index: -1;
 
-    &:not(.white_bg) {
-      background-color: var(--bg50);
-    }
-  }
+		&:not(.white_bg) {
+			background-color: var(--bg50);
+		}
+	}
 
-  .other-text {
-    padding: 1rem;
-    gap: 1rem;
-  }
+	.other-text {
+		padding: 1rem;
+		gap: 1rem;
+	}
 }
 </style>

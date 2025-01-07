@@ -1,69 +1,72 @@
 <template>
-	<main class="flex-col projects-page">
-		<div class="flex-col page-header padding-13">
-			<h2 class="h2" style="left: -0.2rem">
-				{{ $t('worksH2') }}
-				<high-light />
-			</h2>
+  <main class="flex-col projects-page">
+    <div class="flex-col page-header padding-13">
+      <h2
+        class="h2"
+        style="left: -0.2rem"
+      >
+        {{ $t('worksH2') }}
+        <high-light />
+      </h2>
 
-			<p class="t2">
-				{{ $t('worksT1') }}
-			</p>
-		</div>
+      <p class="t2">
+        {{ $t('worksT1') }}
+      </p>
+    </div>
 
-		<div class="projects-container w100 rel">
-			<div
-				class="three w100 rel"
-				v-for="(a, index) in projectsToShow"
-				:key="index"
-				:id="'three-' + index"
-			>
-				<div
-					v-for="(p, i) in a"
-					:key="i"
-					class="project card-back br1 text-center flex-col hideO"
-				>
-					<async-frame
-						:iframeSrc="getPath(p.path)"
-						:iframeClass="{
-							vertical: p.orientation === '|',
-							horizontal: p.orientation === '-',
-							white_bg: p.white_bg,
-							iframe: true,
-							w100: true,
-						}"
-						:scrolling="'no'"
-					/>
+    <div class="projects-container w100 rel">
+      <div
+        v-for="(a, index) in projectsToShow"
+        :id="'three-' + index"
+        :key="index"
+        class="three w100 rel"
+      >
+        <div
+          v-for="(p, i) in a"
+          :key="i"
+          class="project card-back br1 text-center flex-col hideO"
+        >
+          <async-frame
+            :iframe-src="getPath(p.path)"
+            :iframe-class="{
+              vertical: p.orientation === '|',
+              horizontal: p.orientation === '-',
+              white_bg: p.white_bg,
+              iframe: true,
+              w100: true,
+            }"
+            :scrolling="'no'"
+          />
 
-					<div class="title-box flex-align">
-						<p class="t3">
-							{{ p.tags.join(' | ') }}
-						</p>
+          <div class="title-box flex-align">
+            <p class="t3">
+              {{ p.tags.join(' | ') }}
+            </p>
 
-						<router-link
-							class="t2"
-							:to="{ name: 'project', params: { projectName: p.name } }"
-							:title="$t('worksDetails') + ' `' + p.title + '`'"
-						>
-							{{ p.title }}
-						</router-link>
-					</div>
-				</div>
-			</div>
+            <router-link
+              class="t2"
+              :to="{ name: 'project', params: { projectName: p.name } }"
+              :title="$t('worksDetails') + ' `' + p.title + '`'"
+            >
+              {{ p.title }}
+            </router-link>
+          </div>
+        </div>
+      </div>
 
-			<active-element
-				v-if="!isLimitReached"
-				:padding="'1.5rem 2.5rem'"
-				:fontSize="'1.33rem'"
-				:borderRadius="'2.166rem'"
-				:bg="'var(--accent50)'"
-				class="font-variant load-more text-center flex-center"
-				:action="handleLoadMore"
-			>
-				{{ $t('worksMore') }}
-			</active-element>
-		</div>
-	</main>
+      <active-element
+        v-if="!isLimitReached"
+        :padding="'1.5rem 2.5rem'"
+        :font-size="'1.33rem'"
+        :border-radius="'2.166rem'"
+        :bg="'var(--accent50)'"
+        class="font-variant load-more text-center flex-center"
+        :action="handleLoadMore"
+      >
+        {{ $t('worksMore') }}
+      </active-element>
+    </div>
+  </main>
 </template>
 
 <script setup>
@@ -71,14 +74,14 @@ import { ref, onUpdated, defineAsyncComponent } from 'vue'
 import { chunkedProjects } from '@/assets/data/projects.js'
 import getPath from '@/helpers/getPath.js'
 
-const AsyncFrame = defineAsyncComponent(() =>
-	import('@/components/AsyncFrame.vue')
+const AsyncFrame = defineAsyncComponent(
+	() => import('@/components/AsyncFrame.vue')
 )
-const ActiveElement = defineAsyncComponent(() =>
-	import('@/components/ActiveElement.vue')
+const ActiveElement = defineAsyncComponent(
+	() => import('@/components/ActiveElement.vue')
 )
-const HighLight = defineAsyncComponent(() =>
-	import('@/components/HighLight.vue')
+const HighLight = defineAsyncComponent(
+	() => import('@/components/HighLight.vue')
 )
 
 const itemsToShow = ref(2)
@@ -193,8 +196,8 @@ onUpdated(() => handleScroll())
 			}
 
 			@media (orientation: portrait) and (min-width: 1024px) {
-				zoom: 0.25;
-				border-radius: 4rem;
+				zoom: 0.333;
+				border-radius: 3rem;
 			}
 
 			@media (orientation: landscape) and (max-width: 1023px) {

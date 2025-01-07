@@ -1,41 +1,39 @@
 {
-  "name": "vadim4web.github.io",
-  "homepage": "http://vadim4web.github.io/",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "lint": "eslint . --ext .js,.vue",
-    "lint:fix": "eslint . --ext .js,.vue --fix"
-  },
-  "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@vueuse/core": "^10.7.0",
-    "axios": "^1.7.9",
-    "emailjs-com": "^3.2.0",
-    "pinia": "^2.1.7",
-    "three": "^0.171.0",
-    "vue": "^3.3.11",
-    "vue-i18n": "^10.0.5",
-    "vue-router": "^4.2.5",
-    "vueperslides": "^3.5.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@vitejs/plugin-vue": "^4.5.2",
-    "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.32.0",
-    "gh-pages": "^6.1.0",
-    "globals": "^15.14.0",
-    "sass": "^1.69.5",
-    "vite": "^5.0.8",
-    "vite-plugin-eslint": "^1.8.1"
-  }
+	"name": "vadim4web.github.io",
+	"homepage": "http://vadim4web.github.io/",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist",
+		"lint": "eslint --fix-dry-run  src/**",
+		"format": "prettier .  --write"
+	},
+	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
+		"@vueuse/core": "^10.7.0",
+		"axios": "^1.7.9",
+		"emailjs-com": "^3.2.0",
+		"three": "^0.171.0",
+		"vue": "^3.3.11",
+		"vue-i18n": "^10.0.5",
+		"vue-router": "^4.2.5",
+		"vueperslides": "^3.5.1"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.17.0",
+		"@vitejs/plugin-vue": "^4.5.2",
+		"eslint": "^9.17.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-vue": "^9.32.0",
+		"gh-pages": "^6.1.0",
+		"globals": "^15.14.0",
+		"prettier": "3.4.2",
+		"sass": "^1.69.5",
+		"vite": "^5.0.8"
+	}
 }

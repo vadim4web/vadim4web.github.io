@@ -1,27 +1,27 @@
 <template>
-	<button
-		@click="toggleTheme"
-		class="theme-toggler flex-align"
-		:title="$t(`toggleTheme${'_' + theme}`)"
-	>
-		<span
-			id="spot"
-			class="flex-center rel"
-			:style="{
-				background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
+  <button
+    class="theme-toggler flex-align"
+    :title="$t(`toggleTheme${'_' + theme}`)"
+    @click="toggleTheme"
+  >
+    <span
+      id="spot"
+      class="flex-center rel"
+      :style="{
+        background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
           var(--accent1_50) 5%, var(--color0))`,
-				fontSize: theme === 'light' ? '1.5rem' : '1.75rem',
-			}"
-		>
-			{{ theme === 'light' ? '🌙' : '🌞' }}
-		</span>
+        fontSize: theme === 'light' ? '1.5rem' : '1.75rem',
+      }"
+    >
+      {{ theme === 'light' ? '🌙' : '🌞' }}
+    </span>
 
-		<h2 v-show="false">
-			{{ width }} {{ height }}<br />
-			{{ x }} {{ y }}<br />
-			{{ offsetX }} {{ offsetY }}
-		</h2>
-	</button>
+    <h2 v-show="false">
+      {{ width }} {{ height }}<br>
+      {{ x }} {{ y }}<br>
+      {{ offsetX }} {{ offsetY }}
+    </h2>
+  </button>
 </template>
 
 <script setup>

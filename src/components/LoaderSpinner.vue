@@ -1,25 +1,25 @@
 <template>
-	<div
-		class="spinner-container flex-center w100"
-		:class="{
-			vertical: classes?.vertical,
-			horizontal: classes?.horizontal,
-			iframe: classes?.iframe,
-			preview: classes?.preview,
-			other: classes?.other,
-			'one-of-three': three,
-			null: classes?.white_bg,
-		}"
-	>
-		<canvas
-			class="spinner-canvas icon"
-			ref="spinnerCanvas"
-			id="spinnerCanvas"
-			width="100"
-			height="100"
-			:stroke="state.themeColor"
-		></canvas>
-	</div>
+  <div
+    class="spinner-container flex-center w100"
+    :class="{
+      vertical: classes?.vertical,
+      horizontal: classes?.horizontal,
+      iframe: classes?.iframe,
+      preview: classes?.preview,
+      other: classes?.other,
+      'one-of-three': three,
+      null: classes?.white_bg,
+    }"
+  >
+    <canvas
+      id="spinnerCanvas"
+      ref="spinnerCanvas"
+      class="spinner-canvas icon"
+      width="100"
+      height="100"
+      :stroke="state.themeColor"
+    />
+  </div>
 </template>
 
 <script setup>

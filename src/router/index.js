@@ -50,7 +50,7 @@ const routes = [
 		// Catch all routes that don't match the previous ones
 		path: '/:pathMatch(.*)*',
 		name: 'no-match',
-		component: () => import('@/views/404.vue'),
+		component: () => import('@/views/NotFound.vue'),
 	},
 ]
 
@@ -64,7 +64,7 @@ router.beforeEach((_to, _from, next) => {
 	next()
 })
 
-router.afterEach((to) => {
+router.afterEach(to => {
 	if (to.path === '/loader') return
 
 	if (!sessionStorage.getItem('once_loaded')) {

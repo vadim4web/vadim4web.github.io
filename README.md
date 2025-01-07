@@ -12,6 +12,7 @@ I'm Vadim, a Frontend-Focused Full-Stack Developer with a passion for building c
 ---
 
 ### 🎉 Featured Projects
+
 - [**Vue Weather App**](https://vadim4web.github.io/vue-weather-app/): Responsive weather app with themed layouts, multi-API integration, and internationalization.
 - [**MediaOffice Landing**](https://vadim4web.github.io/mediaoffice-com-ua/): Modern business landing page replacing a legacy WordPress site.
 - [**Vue3 Feedback Widget**](https://vadim4web.github.io/vue3-feedback-widget/): Reusable feedback app for a bank, using Vuetify and Firebase.
@@ -21,6 +22,7 @@ I'm Vadim, a Frontend-Focused Full-Stack Developer with a passion for building c
 ---
 
 ### 📫 Let’s Connect!
+
 - [GitHub](https://github.com/vadim4web)
 - [Portfolio](https://vadim4web.github.io)
 - [Telegram](https://t.me/vadim4web)

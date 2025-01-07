@@ -1,42 +1,44 @@
 <template>
-	<router-link
-		v-if="isRouterLink"
-		ref="target"
-		:to="path"
-		class="active-element flex-center hideO rel"
-		:style="{
-			background: !isOutside
-				? `radial-gradient(circle at ${elementX}px ${elementY}px,
+  <router-link
+    v-if="isRouterLink"
+    ref="target"
+    :to="path"
+    class="active-element flex-center hideO rel"
+    :style="{
+      background:
+        !isOutside ?
+          `radial-gradient(circle at ${elementX}px ${elementY}px,
           #ffffff, ${bg} 33%)`
-				: bg,
-			boxShadow: `0 0 1.5rem ${bg}`,
-			fontSize,
-			padding,
-			borderRadius,
-		}"
-	>
-		<slot></slot>
-	</router-link>
+          :	bg,
+      boxShadow: `0 0 1.5rem ${bg}`,
+      fontSize,
+      padding,
+      borderRadius,
+    }"
+  >
+    <slot />
+  </router-link>
 
-	<button
-		v-else
-		ref="target"
-		type="submit"
-		class="active-element flex-center hideO rel"
-		@click="handleClick"
-		:style="{
-			background: !isOutside
-				? `radial-gradient(circle at ${elementX}px ${elementY}px,
+  <button
+    v-else
+    ref="target"
+    type="submit"
+    class="active-element flex-center hideO rel"
+    :style="{
+      background:
+        !isOutside ?
+          `radial-gradient(circle at ${elementX}px ${elementY}px,
           #ffffff, ${bg} 33%)`
-				: bg,
-			boxShadow: `0 0 1.5rem ${bg}`,
-			fontSize,
-			padding,
-			borderRadius,
-		}"
-	>
-		<slot></slot>
-	</button>
+          :	bg,
+      boxShadow: `0 0 1.5rem ${bg}`,
+      fontSize,
+      padding,
+      borderRadius,
+    }"
+    @click="handleClick"
+  >
+    <slot />
+  </button>
 </template>
 
 <script setup>

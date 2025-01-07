@@ -1,60 +1,37 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import pluginVue from "eslint-plugin-vue";
-import pluginPrettier from "eslint-plugin-prettier";
+import eslint from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginVue from 'eslint-plugin-vue'
+// import globals from 'globals';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
-  // Apply to all JS, MJS, CJS, and Vue files
-  { files: ["**/*.{js,mjs,cjs,vue}"] },
+  eslintConfigPrettier,
+  eslint.configs.recommended,
+  ...eslintPluginVue.configs['flat/recommended'],
 
-  // Set language options
-  { languageOptions: { globals: globals.browser } },
-
-  // JavaScript recommended rules
-  pluginJs.configs.recommended,
-
-  // Vue essential rules
-  pluginVue.configs["flat/essential"],
-
-  // Prettier integration
   {
-    plugins: { prettier: pluginPrettier },
+    ignores: [
+      "dist/**/*",
+      "/**/*",
+      "!src/**/*",
+    ],
     rules: {
-      "prettier/prettier": [
-        "error",
-        {
-          semi: false,
-          singleQuote: true,
-          arrowParens: "avoid",
-          experimentalTernaries: true,
-          useTabs: true
-        },
-      ],
+      "vue/require-prop-types": 0,
+			"vue/attributes-order": ["error", {
+				"order": [
+					"DEFINITION",
+					"LIST_RENDERING",
+					"CONDITIONALS",
+					"RENDER_MODIFIERS",
+					"GLOBAL",
+					["UNIQUE", "SLOT"],
+					"TWO_WAY_BINDING",
+					"OTHER_DIRECTIVES",
+					"OTHER_ATTR",
+					"EVENTS",
+					"CONTENT"
+				],
+				"alphabetical": false
+			}],
     },
-  },
-
-  // Vue-specific rules
-  {
-    rules: {
-      "vue/attributes-order": [
-        "error",
-        {
-          order: [
-            "DEFINITION", // is
-            "LIST_RENDERING", // v-for
-            "CONDITIONALS", // v-if, v-else-if, v-else, v-show, v-cloak
-            "RENDER_MODIFIERS", // v-pre, v-once
-            "GLOBAL", // id, ref
-            "UNIQUE", // key, slot
-            "BINDING", // v-model, :binding
-            "OTHER_ATTR", // class, style
-            "EVENTS", // @click, @input
-            "CONTENT", // v-text, v-html
-          ],
-          alphabetical: true,
-        },
-      ],
-    },
-  },
+  }
 ];

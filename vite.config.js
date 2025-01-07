@@ -1,34 +1,27 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import eslintPlugin from 'vite-plugin-eslint'
 import path from 'path'
 
 export default defineConfig(({ command, mode }) => {
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
+	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
-  const isProduction = mode === 'production' || command === 'build'
-  const base = isProduction ? process.env.VITE_BASE_URL : '/'
+	const isProduction = mode === 'production' || command === 'build'
+	const base = isProduction ? process.env.VITE_BASE_URL : '/'
 
-  return {
-    plugins: [
-      vue(),
-      eslintPlugin({
-        // Optional: Display ESLint warnings/errors in the terminal
-        cache: false,
-      }),
-    ],
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
-    },
-    base,
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler', // or "modern"
-        },
-      },
-    },
-  }
+	return {
+		plugins: [vue()],
+		resolve: {
+			alias: {
+				'@': path.resolve(__dirname, 'src'),
+			},
+		},
+		base,
+		css: {
+			preprocessorOptions: {
+				scss: {
+					api: 'modern-compiler', // or "modern"
+				},
+			},
+		},
+	}
 })
