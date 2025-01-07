@@ -143,14 +143,14 @@ import LogoView from '@/components/LogoView.vue'
 <style lang="scss" scoped>
 footer {
 	justify-content: flex-end;
-	background: var(--bg2);
-	padding: 0 10dvw;
-	width: 100dvw;
 	left: -10dvw;
+	width: 100dvw;
+	padding: 0 10dvw;
+	background: var(--bg2);
 
 	.h4.hr-above {
-		border-top: 0.125rem solid var(--color2);
 		padding: 2.25rem 0 5rem 0;
+		border-top: 0.125rem solid var(--color2);
 	}
 
 	.h4.top {
@@ -168,15 +168,15 @@ footer {
 	}
 
 	.grid {
-		height: 8rem;
 		display: grid;
 		grid-template-columns: 1fr 1.5fr 1fr;
 		gap: 2rem;
+		height: 8rem;
 		padding-bottom: 2.5rem;
 
 		.logo-span {
-			justify-self: start;
 			align-self: start;
+			justify-self: start;
 		}
 
 		address {
@@ -192,11 +192,11 @@ footer {
 }
 
 .links {
-	padding-top: 1rem;
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 1rem;
+	padding-top: 1rem;
 
 	.h4 {
 		width: 4.33rem;

@@ -5,7 +5,7 @@
 		height="651"
 		viewBox="0 0 917 651"
 		fill="none"
-		class="highlight"
+		class="highlight abs"
 	>
 		<g filter="url(#filter0_f_101_462)">
 			<path
@@ -42,11 +42,10 @@
 
 <style lang="scss" scoped>
 .highlight {
-	position: absolute;
+	z-index: -1;
 	width: 60vmin;
 	height: 40vmin;
 	transform: rotate(10deg);
-	z-index: -1;
 }
 
 .path {

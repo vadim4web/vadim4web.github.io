@@ -18,8 +18,8 @@
 
 <style lang="scss" scoped>
 .nav-arrow {
-	fill: var(--color0);
-	height: 0.8125rem;
 	width: 3.125rem;
+	height: 0.8125rem;
+	fill: var(--color0);
 }
 </style>

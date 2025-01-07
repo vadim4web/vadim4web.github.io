@@ -3,7 +3,7 @@
 		<menu
 			:title="$t('toggleLangTip')"
 			v-click-outside="closeMenu"
-			class="lang-switcher select flex-col-center hideO"
+			class="lang-switcher select flex-col-center hideO abs"
 			:class="{ open: showOptions, close: !showOptions }"
 		>
 			<li
@@ -88,7 +88,6 @@ onMounted(async () => {
 }
 
 .lang-switcher {
-	position: absolute;
 	top: 0.5rem;
 }
 
@@ -96,12 +95,12 @@ onMounted(async () => {
 	justify-content: space-between;
 
 	&::after {
-		background: #80808080;
+		content: '';
+		z-index: -1;
 		top: 0;
 		left: calc((100% - 3.75rem) / 2);
-		content: '';
 		width: 3.75rem;
-		z-index: -1;
+		background: #80808080;
 		border-radius: 1.875rem;
 	}
 
@@ -111,24 +110,24 @@ onMounted(async () => {
 
 		&::after {
 			content: '';
+			z-index: 1;
 			top: 0;
 			left: 0;
 			width: 3.75rem;
 			height: 3.75rem;
 			border-radius: 1.875rem;
 			box-shadow: inset 0 0 1rem 0.33rem #80808080;
-			z-index: 1;
 			backdrop-filter: saturate(0.8);
 		}
 
 		&-img {
-			border-radius: 50%;
 			width: 3.75rem;
 			height: 3.75rem;
-			filter: blur(0.5px) contrast(1.05) brightness(1.05);
 			object-fit: cover;
 			-webkit-object-fit: cover;
 			-moz-object-fit: cover;
+			border-radius: 50%;
+			filter: blur(0.5px) contrast(1.05) brightness(1.05);
 		}
 	}
 

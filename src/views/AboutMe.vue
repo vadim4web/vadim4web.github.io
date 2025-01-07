@@ -60,9 +60,9 @@ const HighLight = defineAsyncComponent(() =>
 
 <style lang="scss" scoped>
 .mission-header {
-	padding: 5.5rem 0 6.25rem 1.5rem;
 	display: grid;
 	grid-gap: 2.2rem;
+	padding: 5.5rem 0 6.25rem 1.5rem;
 
 	.h2 {
 		min-width: 10ch;
@@ -87,11 +87,11 @@ const HighLight = defineAsyncComponent(() =>
 
 	span {
 		display: inline-block;
-		font-style: italic;
 		width: min(42rem, 75%);
-		font-size: 1.5rem;
 		line-height: 3rem;
+		font-size: 1.5rem;
 		font-weight: 700;
+		font-style: italic;
 		text-align-last: justify;
 	}
 }
@@ -115,7 +115,6 @@ const HighLight = defineAsyncComponent(() =>
 
 	@media (orientation: landscape) {
 		font-size: 166%;
-		line-height: normal;
 	}
 }
 
@@ -129,31 +128,31 @@ const HighLight = defineAsyncComponent(() =>
 	&::before,
 	&::after {
 		content: '';
-		border: 0.125rem solid var(--accent0);
 		z-index: 1;
+		border: 0.125rem solid var(--accent0);
 	}
 
 	&::before {
-		border-radius: 1rem;
+		top: 0;
+		left: -1.125rem;
 		width: 2rem;
 		height: 7rem;
-		left: -1.125rem;
-		top: 0;
+		border-radius: 1rem;
 	}
 
 	&::after {
-		border-radius: 1.75rem;
-		width: 11rem;
-		height: 3.5rem;
 		right: 0;
 		bottom: -1.875rem;
+		width: 11rem;
+		height: 3.5rem;
+		border-radius: 1.75rem;
 	}
 
 	.photo {
 		height: 32rem;
+		border-radius: 0.5rem;
 		background-size: cover;
 		background-repeat: no-repeat;
-		border-radius: 0.5rem;
 		filter: var(--filter1);
 
 		&:hover {

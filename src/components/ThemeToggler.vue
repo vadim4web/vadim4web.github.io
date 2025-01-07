@@ -73,19 +73,19 @@ watch(theme, setAll)
 
 <style lang="scss">
 .theme-toggler {
-	background-color: transparent;
 	z-index: 1;
+	height: 5rem;
+	opacity: 0.75;
+	background: transparent;
 	transition: transform 0.5s;
 	cursor: pointer;
-	opacity: 0.75;
-	height: 5rem;
 
 	#spot {
-		color: var(--color0);
-		line-height: 1.5rem;
 		width: 3.75rem;
 		height: 3.75rem;
+		line-height: 1.5rem;
 		border-radius: 50%;
+		color: var(--color0);
 		background: radial-gradient(
 			ellipse at 0% 0%,
 			var(--accent2) 5%,
@@ -94,11 +94,11 @@ watch(theme, setAll)
 
 		&::after {
 			content: '';
+			z-index: -1;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			z-index: -1;
 			border-radius: inherit;
 			background: var(--color0);
 		}

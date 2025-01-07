@@ -14,6 +14,7 @@
 						w100: true,
 						hideO: true,
 						br1: true,
+						abs: true,
 					}"
 					:iframeStyle="{ zoom: zoom }"
 					:three="true"
@@ -85,21 +86,21 @@ const three = getThreeRandom(projects)
 		gap: 0.75rem;
 
 		@media (orientation: landscape) {
+			grid-template-rows: 29rem 4rem 2.75rem;
 			width: 29rem;
 			height: calc(29rem + 8.75rem);
-			grid-template-rows: 29rem 4rem 2.75rem;
 		}
 
 		@media (orientation: portrait) {
+			grid-template-rows: 18rem 4rem 2.75rem;
 			width: 18rem;
 			height: calc(18rem + 8.75rem);
-			grid-template-rows: 18rem 4rem 2.75rem;
 		}
 
 		& {
+			grid-template-rows: 18rem 4rem 2.75rem;
 			width: 18rem;
 			height: calc(18rem + 8.75rem);
-			grid-template-rows: 18rem 4rem 2.75rem;
 		}
 
 		.frame {
@@ -108,7 +109,6 @@ const three = getThreeRandom(projects)
 
 			.iframe {
 				aspect-ratio: 1 / 1;
-				position: absolute;
 			}
 		}
 
@@ -118,13 +118,13 @@ const three = getThreeRandom(projects)
 			}
 
 			&::after {
-				height: 2px;
 				content: '--------------------';
 				right: 0;
 				bottom: 0;
 				width: fit-content;
-				font-size: inherit;
+				height: 2px;
 				line-height: inherit;
+				font-size: inherit;
 				letter-spacing: -0.33ch;
 				color: var(--accent0);
 				text-align: right;

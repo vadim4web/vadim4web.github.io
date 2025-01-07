@@ -218,7 +218,7 @@ body::after,
   bottom: 0;
   left: 0;
   right: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-image: url('https://vadim4web.github.io/logo.png');

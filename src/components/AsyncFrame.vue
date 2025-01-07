@@ -11,7 +11,7 @@
 
 	<loader-spinner
 		v-if="!isLoaded"
-		class="placeholder iframe br1"
+		class="placeholder iframe br1 back-blur05"
 		:three="three"
 		:classes="iframeClass"
 	/>
@@ -34,9 +34,3 @@ const { iframeSrc, iframeStyle, iframeClass, three, scrolling } = defineProps([
 const isLoaded = ref(false)
 const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 </script>
-
-<style lang="scss" scoped>
-.placeholder {
-	backdrop-filter: blur(0.5rem);
-}
-</style>

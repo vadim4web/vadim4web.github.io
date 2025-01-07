@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header w100 back-blur05">
 		<menu class="w100 rel">
 			<li class="menu-item w100 flex-center text-center">
 				<router-link to="/home" class="link flex-center w100 logo-link">
@@ -41,36 +41,32 @@ import LangToggler from '@/components/LangToggler.vue'
 
 <style lang="scss">
 .header {
-	top: 0;
-	left: 0;
 	position: fixed;
 	z-index: 3;
+	top: 0;
+	left: 0;
 	height: 20vmin;
-	width: 100dvw;
 	background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
-	backdrop-filter: blur(0.5rem);
 }
 
 menu {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	place-items: center;
-	font-weight: 500;
 	height: 20vmin;
-
 	gap: 0.125rem;
+	font-weight: 500;
 
 	a {
 		display: inline-block;
-		text-transform: uppercase;
-		font-size: 3vmin;
 		height: 20vmin;
 		opacity: 0.75;
-
-		text-wrap: nowrap;
-		border: 0.125rem solid transparent;
+		font-size: 3vmin;
 		font-weight: bold;
+		text-wrap: nowrap;
+		text-transform: uppercase;
 		color: var(--color0);
+		border: 0.125rem solid transparent;
 
 		&:hover,
 		&.router-link-active {
@@ -109,8 +105,8 @@ menu {
 }
 
 .global-view {
-	padding: 0.125rem 0;
-	gap: 0.125rem;
 	height: 10.5rem;
+	gap: 0.125rem;
+	padding: 0.125rem 0;
 }
 </style>

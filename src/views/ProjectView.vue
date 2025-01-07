@@ -141,13 +141,13 @@ import getSrc from '@/helpers/getSrc.js'
 import getThreeRandom from '@/helpers/getThreeRandom'
 
 const AsyncFrame = defineAsyncComponent(() =>
-import('@/components/AsyncFrame.vue')
+  import('@/components/AsyncFrame.vue')
 )
 const ArrowNavigation = defineAsyncComponent(() =>
-import('@/components/ArrowNavigation.vue')
+  import('@/components/ArrowNavigation.vue')
 )
 const HighLight = defineAsyncComponent(() =>
-import('@/components/HighLight.vue')
+  import('@/components/HighLight.vue')
 )
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
@@ -249,10 +249,10 @@ watchEffect(() => {
     display: flex;
     justify-content: center;
     height: 1.5625rem;
+    gap: 1.25rem;
+    line-height: 170%;
     font-size: 0.875rem;
     font-weight: 600;
-    line-height: 170%;
-    gap: 1.25rem;
   }
 
   .prev svg {
@@ -260,8 +260,8 @@ watchEffect(() => {
   }
 
   .next svg {
-    transform: rotate(180deg);
     align-self: flex-start;
+    transform: rotate(180deg);
   }
 
   .others {

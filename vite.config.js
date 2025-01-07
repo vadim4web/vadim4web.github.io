@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import eslintPlugin from 'vite-plugin-eslint'
 import path from 'path'
 
 export default defineConfig(({ command, mode }) => {
@@ -11,6 +12,10 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [
       vue(),
+      eslintPlugin({
+        // Optional: Display ESLint warnings/errors in the terminal
+        cache: false,
+      }),
     ],
     resolve: {
       alias: {

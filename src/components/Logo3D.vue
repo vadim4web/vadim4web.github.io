@@ -1,9 +1,8 @@
 <template>
 	<div
-		class="canvas-container"
+		class="canvas-container abs"
 		ref="canvasContainer"
 		style="
-			position: absolute;
 			background-color: transparent;
 			filter: drop-shadow(0 0 1rem var(--accent0));
 			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));
