@@ -97,10 +97,6 @@
 
 <script setup>
 import { defineAsyncComponent } from 'vue'
-// import Logo3D from '@/components/Logo3D.vue'
-// import ActiveElement from '@/components/ActiveElement.vue'
-// import ArrowRight from '@/components/ArrowRight.vue'
-// import HighLight from '@/components/HighLight.vue'
 
 const Logo3D = defineAsyncComponent(
 	() => import('@/components/Logo3D.vue')

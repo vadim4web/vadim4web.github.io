@@ -9,8 +9,7 @@
       class="flex-center rel"
       :style="{
         background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
-          var(--accent1_50) 5%, var(--color0))`,
-        fontSize: theme === 'light' ? '1.5rem' : '1.75rem',
+          var(--accent1_50) 5%, var(--color0))`
       }"
     >
 			<svg
@@ -165,7 +164,6 @@ watch(theme, setAll)
 	#spot {
 		width: 3.75rem;
 		height: 3.75rem;
-		line-height: 1.5rem;
 		border-radius: 50%;
 		color: var(--color0);
 		background: radial-gradient(
@@ -173,6 +171,11 @@ watch(theme, setAll)
 			var(--accent2) 5%,
 			var(--color0)
 		);
+
+		svg {
+			width: 3rem;
+			height: 3rem;
+		}
 
 		&::after {
 			content: '';

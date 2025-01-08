@@ -1,13 +1,14 @@
 <template>
-  <div
-    ref="canvasContainer"
-    class="canvas-container abs"
-    style="
-			background-color: transparent;
-			filter: drop-shadow(0 0 1rem var(--accent0));
-			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));
+	<div
+		ref="canvasContainer"
+		class="canvas-container abs"
+		:style="
+			!noShadow ?
+				`filter: drop-shadow(0 0 1rem var(--accent0));
+			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));`
+			:	''
 		"
-  />
+	/>
 </template>
 
 <script setup>
@@ -20,8 +21,6 @@ import {
 	CubeTextureLoader,
 	Clock,
 } from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
 
 const canvasContainer = ref(null)
 let scene, camera, renderer
@@ -34,20 +33,42 @@ let currentTheme = getCurrentTheme() // Tracks current theme to avoid unnecessar
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const MODEL_NAME = 'logo.glb'
 
+const { noRotate, noShadow, size } = defineProps({
+	noRotate: {
+		type: Boolean,
+		required: false,
+	},
+	noShadow: {
+		type: Boolean,
+		required: false,
+	},
+	size: {
+		type: Number,
+		required: false,
+	},
+})
+
+// Dynamic imports for loaders
+let GLTFLoader, DRACOLoader
+
 // Preload Environment Maps
 function preloadEnvironmentMaps() {
 	const loader = new CubeTextureLoader()
-	environmentMaps.light = loader.load('texture-silver.jpg '.repeat(6).split(' '))
+	environmentMaps.light = loader.load(
+		'texture-silver.jpg '.repeat(6).split(' ')
+	)
 	environmentMaps.dark = loader.load('texture-gold.jpg '.repeat(6).split(' '))
 }
 
 // Get Current Theme
-function getCurrentTheme()	{
-	return	getComputedStyle(document.documentElement)
-		.getPropertyValue('--is-dark')
-		.trim() === '1'
-		? 'dark'
-		: 'light'
+function getCurrentTheme() {
+	return (
+			getComputedStyle(document.documentElement)
+				.getPropertyValue('--is-dark')
+				.trim() === '1'
+		) ?
+			'dark'
+		:	'light'
 }
 
 // Initialize Scene and Renderer
@@ -58,31 +79,44 @@ function initializeScene() {
 	renderer = new WebGLRenderer({ antialias: true, alpha: true })
 	renderer.autoClear = false
 	canvasContainer.value.appendChild(renderer.domElement)
-	handleResize()
+	setRendererSize()
 }
 
 // Load Model
-function loadModel() {
+async function loadModel() {
+	if (!GLTFLoader || !DRACOLoader) {
+		const { GLTFLoader: Loader } = await import(
+			'three/examples/jsm/loaders/GLTFLoader.js'
+		)
+		const { DRACOLoader: DracoLoader } = await import(
+			'three/addons/loaders/DRACOLoader.js'
+		)
+		GLTFLoader = Loader
+		DRACOLoader = DracoLoader
+	}
+
 	const loader = new GLTFLoader()
 	const draco = new DRACOLoader()
-	draco.setDecoderPath( 'https://www.gstatic.com/draco/versioned/decoders/1.5.6/' )
+	draco.setDecoderPath(
+		'https://www.gstatic.com/draco/versioned/decoders/1.5.6/'
+	)
 	loader.setDRACOLoader(draco)
 	loader.load(
 		`${ASSETS_DIR}${MODEL_NAME}`,
-		(gltf) => {
+		gltf => {
 			model = gltf.scene
 			updateModelMaterial(currentTheme) // Apply material during initial load
 			scene.add(model)
 		},
 		undefined,
-		(error) => console.error('Error loading model:', error)
+		error => console.error('Error loading model:', error)
 	)
 }
 
 // Update Model Material
 function updateModelMaterial(theme) {
 	if (!model || !environmentMaps[theme]) return
-	model.traverse((child) => {
+	model.traverse(child => {
 		if (child.isMesh) {
 			child.material = new MeshStandardMaterial({
 				metalness: 1,
@@ -108,8 +142,12 @@ function observeThemeChanges() {
 }
 
 // Resize Handler
-function handleResize() {
-	const vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
+function setRendererSize() {
+	let vmin
+	if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
+	else {
+		vmin = size
+	}
 	renderer.setSize(vmin, vmin)
 	camera.aspect = 1
 	camera.updateProjectionMatrix()
@@ -121,7 +159,8 @@ function animate() {
 
 	if (model) {
 		model.rotation.x = Math.PI / 2
-		model.rotation.z += delta * 0.5 // Smooth rotation
+
+		if (!noRotate) model.rotation.z += delta * 0.5 // Smooth rotation
 	}
 
 	renderer.clear()
@@ -135,12 +174,12 @@ onMounted(() => {
 	loadModel()
 
 	const themeObserver = observeThemeChanges()
-	window.addEventListener('resize', handleResize)
+	window.addEventListener('resize', setRendererSize)
 	clock.start()
 	animate()
 
 	onUnmounted(() => {
-		window.removeEventListener('resize', handleResize)
+		window.removeEventListener('resize', setRendererSize)
 		themeObserver.disconnect()
 		cancelAnimationFrame(animationFrameId)
 		renderer.dispose()

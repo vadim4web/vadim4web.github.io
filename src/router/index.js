@@ -20,6 +20,10 @@ const routes = [
 		component: () => import('@/views/ContactMe.vue'),
 	},
 	{
+		path: '/capture',
+		component: () => import('@/views/CaptureLogo.vue'),
+	},
+	{
 		path: '/loader',
 		component: () => import('@/components/LoaderView.vue'),
 	},
