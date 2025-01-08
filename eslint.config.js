@@ -32,6 +32,14 @@ export default [
 				],
 				"alphabetical": false
 			}],
+
+			"vue/html-indent": ["error", "tab", {
+				"attribute": 1,
+				"baseIndent": 1,
+				"closeBracket": 0,
+				"alignAttributesVertically": true,
+				"ignores": []
+			}]
     },
   }
 ];

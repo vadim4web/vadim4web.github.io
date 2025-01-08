@@ -72,10 +72,13 @@ const messages = {
 		footerA2: "Boiarka, Kyivs'ka oblast",
 		location: 'Location of my integrated home-office web development studio',
 
-		emailMe: 'E-mail me',
-		chatMe: 'Message me on Telegram',
-		callMe: 'Call me',
 		gitHub: 'My GitHub profile',
+		linkedin: "My LinkedIn profile",
+		facebook: "My Facebook profile",
+
+		chatMe: 'Message me on Telegram',
+		emailMe: 'E-mail me',
+		callMe: 'Call me',
 
 		copyright: 'All rights reserved',
 
@@ -166,10 +169,13 @@ const messages = {
 		footerA2: 'м. Боярка, Київська область',
 		location: 'Розташування моєї інтегрованої домашньої студії веб-розробки',
 
-		emailMe: 'Написати e-mail',
-		chatMe: 'Написати в Telegram',
-		callMe: 'Зателефонувати мені',
 		gitHub: 'Мій GitHub профіль',
+		linkedin: "Мій профіль LinkedIn",
+		facebook: "Мій профіль Facebook",
+
+		chatMe: 'Написати в Telegram',
+		emailMe: 'Написати e-mail',
+		callMe: 'Зателефонувати мені',
 
 		copyright: 'Усі права захищено',
 
