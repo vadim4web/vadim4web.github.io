@@ -120,8 +120,9 @@ import Logo3D from '@/components/Logo3D.vue'
 	z-index: 1;
 	position: relative;
 	background: var(--gray);
-	backdrop-filter: drop-shawow(0 0 1rem #fff);
 	font-weight: bold;
+  border: none;
+  padding: 0;
 
 	& > span {
 		display: block;
