@@ -21,6 +21,7 @@ import {
 	Clock,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
 
 const canvasContainer = ref(null)
 let scene, camera, renderer
@@ -63,6 +64,9 @@ function initializeScene() {
 // Load Model
 function loadModel() {
 	const loader = new GLTFLoader()
+	const draco = new DRACOLoader()
+	draco.setDecoderPath( 'https://www.gstatic.com/draco/versioned/decoders/1.5.6/' )
+	loader.setDRACOLoader(draco)
 	loader.load(
 		`${ASSETS_DIR}${MODEL_NAME}`,
 		(gltf) => {
@@ -84,7 +88,7 @@ function updateModelMaterial(theme) {
 				metalness: 1,
 				roughness: 0,
 				envMap: environmentMaps[theme],
-				envMapIntensity: 1,
+				// envMapIntensity: 1,
 			})
 		}
 	})
