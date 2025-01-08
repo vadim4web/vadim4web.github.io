@@ -16,140 +16,155 @@ import {
 	Scene,
 	PerspectiveCamera,
 	WebGLRenderer,
-	DirectionalLight,
-	AmbientLight,
-	PointLight,
-	Color,
+	// DirectionalLight,
+	// AmbientLight,
+	// PointLight,
+	// Color,
 	MeshStandardMaterial,
+	CubeTextureLoader,
+	Clock,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
-// Configuration
+const canvasContainer = ref(null)
+let scene, camera, renderer
+// let directionalLight, ambientLight, pointLight
+let model = null
+let environmentMaps = {}
+let clock = new Clock()
+let animationFrameId = null
+let currentTheme = getCurrentTheme() // Tracks current theme to avoid unnecessary updates
+
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const MODEL_NAME = 'logo.glb'
 
-// Refs and variables
-const canvasContainer = ref(null)
-let scene, camera, renderer
-let directionalLight, ambientLight, pointLight
-let model = null
+// Preload Environment Maps
+const preloadEnvironmentMaps = () => {
+	const loader = new CubeTextureLoader()
+	environmentMaps.light = loader.load('texture-silver.jpg '.repeat(6).split(' '))
+	environmentMaps.dark = loader.load('texture-gold.jpg '.repeat(6).split(' '))
+}
 
-// Utility: Get the current theme color
-const getThemeColor = () =>
-	getComputedStyle(document.documentElement)
-		.getPropertyValue('--accent0')
-		.trim()
+// Get Current Theme
+function getCurrentTheme()	{
+	return	getComputedStyle(document.documentElement)
+		.getPropertyValue('--is-dark')
+		.trim() === '1'
+		? 'dark'
+		: 'light'
+}
 
-// Initialize the scene
+// Initialize Scene and Renderer
 const initializeScene = () => {
 	scene = new Scene()
-	camera = new PerspectiveCamera(
-		76.5,
-		1, // Square aspect ratio initially
-		1.5,
-		1000
-	)
+	camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
 	camera.position.set(0, 0, 5)
-}
-
-// Initialize the renderer
-const initializeRenderer = () => {
 	renderer = new WebGLRenderer({ antialias: true, alpha: true })
+	renderer.autoClear = false
 	canvasContainer.value.appendChild(renderer.domElement)
-	handleResize() // Set the initial size to match `66vmin`
+	handleResize()
 }
 
-// Load the 3D model
+// Load Model
 const loadModel = () => {
 	const loader = new GLTFLoader()
 	loader.load(
 		`${ASSETS_DIR}${MODEL_NAME}`,
-		gltf => {
+		(gltf) => {
 			model = gltf.scene
-
-			// Update material properties for all meshes
-			model.traverse(child => {
-				if (child.isMesh) {
-					child.material = new MeshStandardMaterial({
-						color: child.material.color,
-						metalness: 1.0, // Fully metallic
-						roughness: 0.15, // Slight roughness for sharp reflections
-						envMapIntensity: 1.5, // Enhance reflection intensity
-					})
-				}
-			})
-
+			updateModelMaterial(currentTheme) // Apply material during initial load
 			scene.add(model)
-			renderer.render(scene, camera)
 		},
 		undefined,
-		error => console.error('Error loading model:', error)
+		(error) => console.error('Error loading model:', error)
 	)
 }
 
-const setupLighting = () => {
-	const lightColor = new Color(getThemeColor())
-
-	directionalLight = new DirectionalLight(lightColor, 100) // Softer intensity
-	directionalLight.position.set(5, -2, 5).normalize()
-	scene.add(directionalLight)
-
-	ambientLight = new AmbientLight(lightColor, 1) // Reduced ambient light
-	scene.add(ambientLight)
-
-	// Add a point light for specular highlights
-	pointLight = new PointLight(lightColor, 10, 100)
-	pointLight.position.set(1, -5, -10)
-	scene.add(pointLight)
-}
-
-// Update lights dynamically on theme change
-const updateLights = () => {
-	const lightColor = new Color(getThemeColor())
-	if (directionalLight) directionalLight.color.set(lightColor)
-	if (ambientLight) ambientLight.color.set(lightColor)
-	if (pointLight) pointLight.color.set(lightColor)
-}
-
-// Observe theme changes
-const observeThemeChanges = () => {
-	const observer = new MutationObserver(updateLights)
-	observer.observe(document.documentElement, {
-		attributes: true,
+// Update Model Material
+const updateModelMaterial = (theme) => {
+	if (!model || !environmentMaps[theme]) return
+	model.traverse((child) => {
+		if (child.isMesh) {
+			child.material = new MeshStandardMaterial({
+				metalness: 1,
+				roughness: 0,
+				envMap: environmentMaps[theme],
+				envMapIntensity: 1.5,
+			})
+		}
 	})
+}
+
+// Setup Lighting
+// const setupLighting = () => {
+// 	const lightColor = new Color(getComputedStyle(document.documentElement).getPropertyValue('--accent0').trim())
+// 	directionalLight = new DirectionalLight(lightColor, 100)
+// 	directionalLight.position.set(5, -2, 5).normalize()
+// 	ambientLight = new AmbientLight(lightColor, 1)
+// 	pointLight = new PointLight(lightColor, 10, 100)
+// 	pointLight.position.set(1, -5, -10)
+// 	// scene.add(directionalLight, ambientLight, pointLight)
+// }
+
+// Update Lighting
+// const updateLighting = () => {
+// 	const lightColor = new Color(getComputedStyle(document.documentElement).getPropertyValue('--accent0').trim())
+// 	directionalLight.color.set(lightColor)
+// 	ambientLight.color.set(lightColor)
+// 	pointLight.color.set(lightColor)
+// }
+
+// Observe Theme Changes
+const observeThemeChanges = () => {
+	const observer = new MutationObserver(() => {
+		const newTheme = getCurrentTheme()
+		if (newTheme !== currentTheme) {
+			currentTheme = newTheme
+			// updateLighting()
+			updateModelMaterial(currentTheme)
+		}
+	})
+	observer.observe(document.documentElement, { attributes: true })
 	return observer
 }
 
-// Resize handler: Keep canvas as a square (66vmin x 66vmin)
+// Resize Handler
 const handleResize = () => {
 	const vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
 	renderer.setSize(vmin, vmin)
-	camera.aspect = 1 // Keep the square aspect ratio
+	camera.aspect = 1
 	camera.updateProjectionMatrix()
 }
 
+// Animation Loop
+const animate = () => {
+	const delta = clock.getDelta()
+
+	if (model) {
+		model.rotation.x = Math.PI / 2
+		model.rotation.z += delta * 0.5 // Smooth rotation
+	}
+
+	renderer.clear()
+	renderer.render(scene, camera)
+	animationFrameId = requestAnimationFrame(animate)
+}
+
 onMounted(() => {
+	preloadEnvironmentMaps()
 	initializeScene()
-	initializeRenderer()
-	setupLighting()
+	// setupLighting()
 	loadModel()
 
-	window.addEventListener('resize', handleResize)
 	const themeObserver = observeThemeChanges()
-
-	const animate = () => {
-		requestAnimationFrame(animate)
-		if (model) {
-			model.rotation.x = Math.PI / 2
-			model.rotation.z += 0.015 // 0.015 : full turn (2π) / duration (3510ms) * 1000ms/s / FPS (120)
-		}
-		renderer.render(scene, camera)
-	}
+	window.addEventListener('resize', handleResize)
+	clock.start()
 	animate()
 
 	onUnmounted(() => {
 		window.removeEventListener('resize', handleResize)
 		themeObserver.disconnect()
+		cancelAnimationFrame(animationFrameId)
 		renderer.dispose()
 		scene.clear()
 	})
