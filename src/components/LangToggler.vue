@@ -123,7 +123,7 @@ onMounted(async () => {
 			-webkit-object-fit: cover;
 			-moz-object-fit: cover;
 			border-radius: 50%;
-			filter: blur(0.5px) contrast(1.05) brightness(1.05);
+			filter: contrast(1.05) brightness(1.05);
 		}
 	}
 

@@ -38,7 +38,7 @@
           class="link flex-center w100"
         >
           {{
-            $t('Contact')
+            $t('MyContacts')
           }}
         </router-link>
       </li>
@@ -80,6 +80,8 @@ menu {
 		height: 20vmin;
 		opacity: 0.75;
 		font-size: 3vmin;
+		letter-spacing: -0.1ch;
+		word-spacing: -0.5ch;
 		font-weight: bold;
 		text-wrap: nowrap;
 		text-transform: uppercase;

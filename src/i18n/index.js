@@ -7,10 +7,10 @@ const messages = {
 
 		emailSubject: 'Crafting Digital Solutions - Excellence in Every Detail',
 
-		Home: 'Home',
-		AboutMe: 'About Me',
-		MyWorks: 'My Works',
-		Contact: 'Contact',
+		Home: 'home',
+		AboutMe: 'about me',
+		MyWorks: 'my works',
+		MyContacts: 'my contacts',
 		toggleTheme_light: 'Change the theme to dark',
 		toggleTheme_dark: 'Change the theme to light',
 		toggleLangTip: 'Change the language',
@@ -104,10 +104,10 @@ const messages = {
 
 		emailSubject: 'Розробка Цифрових Рішень - Досконалість у Кожній Деталі',
 
-		Home: 'Головна',
-		AboutMe: 'Про мене',
-		MyWorks: 'Мої роботи',
-		Contact: 'Контакти',
+		Home: 'головна',
+		AboutMe: 'про мене',
+		MyWorks: 'мої роботи',
+		MyContacts: 'мої контакти',
 		toggleTheme_light: 'Змінити тему на темну',
 		toggleTheme_dark: 'Змінити тему на світлу',
 		toggleLangTip: 'Змінити мову',
