@@ -120,9 +120,9 @@ function updateModelMaterial(theme) {
 		if (child.isMesh) {
 			child.material = new MeshStandardMaterial({
 				metalness: 1,
-				roughness: 0,
+				roughness: 0.1,
 				envMap: environmentMaps[theme],
-				// envMapIntensity: 1,
+				envMapIntensity: 1,
 			})
 		}
 	})

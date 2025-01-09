@@ -250,7 +250,7 @@ import LogoView from '@/components/LogoView.vue'
 
 	.grid {
 		display: grid;
-		grid-template-columns: 1.5fr 2.5fr 2fr;
+		grid-template-columns: 1.5fr 2.5fr 1.5fr;
 		gap: 1rem;
 		height: 8rem;
 		padding-bottom: 2.5rem;
