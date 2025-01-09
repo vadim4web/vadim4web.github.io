@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as a,D as o}from"./index-u8rq8QvH.js";const s={__name:"ArrowRight",props:["height"],setup(t){return(c,h)=>(r(),a("strong",{class:"arrow-right",style:o({height:t.height,width:parseInt(t.height)*1.5+"rem"})}," -> ",4))}},n=e(s,[["__scopeId","data-v-115b75d6"]]);export{n as default};
