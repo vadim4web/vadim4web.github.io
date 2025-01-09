@@ -1,30 +1,30 @@
 <template>
-  <main class="flex-col-center not-found w100">
-    <h2 class="h2 flex-col-center text-center">
-      404
-      <high-light />
+	<main class="flex-col-center not-found w100">
+		<h2 class="h2 flex-col-center text-center">
+			404
+			<high-light />
 
-      <div class="p1">
-        {{ $t('notFoundT11') }}<br>
-        {{ $t('notFoundT12') }}<b>{{ useRoute().path }}</b>{{ $t('notFoundT13') }}<br>
-        {{ $t('notFoundT14') }}<br>
-        <hr>
-        <hr>
-        <i>{{ $t('notFoundT15') }}</i>
-      </div>
+			<div class="p1">
+				{{ $t('notFoundT11') }}<br />
+				{{ $t('notFoundT12') }}<b>{{ useRoute().path }}</b>{{ $t('notFoundT13') }}<br />
+				{{ $t('notFoundT14') }}<br />
+				<hr />
+				<hr />
+				<i>{{ $t('notFoundT15') }}</i>
+			</div>
 
-      <active-element
-        :action="goBack"
-        :padding="'3rem 5rem'"
-        :font-size="'2.5rem'"
-        :border-radius="'4.25rem'"
-        :bg="'var(--bg50)'"
-        class="font-variant go-back"
-      >
-        {{ $t('notFoundB') }}
-      </active-element>
-    </h2>
-  </main>
+			<active-element
+				:action="goBack"
+				:bg="'var(--bg50)'"
+				:border-radius="'4.25rem'"
+				class="font-variant go-back"
+				:font-size="'2.5rem'"
+				:padding="'3rem 5rem'"
+			>
+				{{ $t('notFoundB') }}
+			</active-element>
+		</h2>
+	</main>
 </template>
 
 <script setup>

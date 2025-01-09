@@ -1,45 +1,45 @@
 <template>
-  <main class="flex-col">
-    <div class="flex-col page-header padding-13">
-      <h2 class="h2">
-        {{ $t('aboutH21') }}
-        <high-light />
-      </h2>
+	<main class="flex-col">
+		<div class="flex-col page-header padding-13">
+			<h2 class="h2">
+				{{ $t('aboutH21') }}
+				<high-light />
+			</h2>
 
-      <p class="t2">
-        {{ $t('aboutT1') }}
-      </p>
-    </div>
+			<p class="t2">
+				{{ $t('aboutT1') }}
+			</p>
+		</div>
 
-    <div class="mission flex-col">
-      <div class="mission-header">
-        <h2 class="h2">
-          {{ $t('aboutH221') }}
-          <br>
-          {{ $t('aboutH222') }}
-          <br>
-          {{ $t('aboutH223') }}
-          <br>
-          {{ $t('aboutH224') }}
-        </h2>
+		<div class="mission flex-col">
+			<div class="mission-header">
+				<h2 class="h2">
+					{{ $t('aboutH221') }}
+					<br />
+					{{ $t('aboutH222') }}
+					<br />
+					{{ $t('aboutH223') }}
+					<br />
+					{{ $t('aboutH224') }}
+				</h2>
 
-        <p class="t3 text1">
-          {{ $t('aboutT21') }}
-        </p>
+				<p class="t3 text1">
+					{{ $t('aboutT21') }}
+				</p>
 
-        <p class="t3 text2">
-          {{ $t('aboutT22') }}
-        </p>
-      </div>
+				<p class="t3 text2">
+					{{ $t('aboutT22') }}
+				</p>
+			</div>
 
-      <div class="photos w100 rel">
-        <div class="photo photo1 w100" />
+			<div class="photos w100 rel">
+				<div class="photo photo1 w100" />
 
-        <div class="photo photo2 w100" />
-      </div>
-    </div>
+				<div class="photo photo2 w100" />
+			</div>
+		</div>
 
-    <pre class="rhymes text-center">
+		<pre class="rhymes text-center">
 <span>I've earned my own very first PC</span>
 <span>By working summer holidays in 2003</span>
 <span>I'm a `web dev <em lang="es">loco</em>` (if you will) code-addict</span>
@@ -47,7 +47,7 @@
 <span>I'm experienced enough to exactly know</span>
 <span>Using DOCs, AI, Google and Stackoverflow</span>
     </pre>
-  </main>
+	</main>
 </template>
 
 <script setup>

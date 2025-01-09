@@ -1,30 +1,30 @@
 <template>
-  <section class="flex-col-center tech-stack">
-    <h2 class="h2 text-center">
-      {{ $t('homeH23') }}
-    </h2>
+	<section class="flex-col-center tech-stack">
+		<h2 class="h2 text-center">
+			{{ $t('homeH23') }}
+		</h2>
 
-    <vueper-slides
-      ref="slider"
-      :fixed-height="true"
-      :bullets="false"
-      :arrows-outside="true"
-      class="no-shadow w100 rel"
-      autoplay
-    >
-      <vueper-slide
-        v-for="(slide) in slides"
-        :key="slide.id"
-        :title="slide[`title_${$i18n.locale}`]"
-        :content="slide.content"
-        :style="'font-size: 3rem'"
-      />
+		<vueper-slides
+			ref="slider"
+			:arrows-outside="true"
+			autoplay
+			:bullets="false"
+			class="no-shadow w100 rel"
+			:fixed-height="true"
+		>
+			<vueper-slide
+				v-for="slide in slides"
+				:key="slide.id"
+				:content="slide.content"
+				:style="'font-size: 3rem'"
+				:title="slide[`title_${$i18n.locale}`]"
+			/>
 
-      <template #pause>
-        <i class="icon pause_circle_outline" />
-      </template>
-    </vueper-slides>
-  </section>
+			<template #pause>
+				<i class="icon pause_circle_outline" />
+			</template>
+		</vueper-slides>
+	</section>
 </template>
 
 <script setup>

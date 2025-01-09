@@ -1,106 +1,104 @@
 <template>
-  <main class="home">
-    <section class="head content flex-col-center text-center">
-      <div class="h1">
-        <h2
-          class="h1_h2"
-          :data-text-1="$t('homeH11')"
-          style="filter: drop-shadow(0 0 0.5rem var(--color-op))"
-        >
-          {{ $t('homeH11') }}<br>
-          <high-light />
-        </h2>
+	<main class="home">
+		<section class="head content flex-col-center text-center">
+			<div class="h1">
+				<h2
+					class="h1_h2"
+					:data-text-1="$t('homeH11')"
+					style="filter: drop-shadow(0 0 0.5rem var(--color-op))"
+				>
+					{{ $t('homeH11') }}<br />
+					<high-light />
+				</h2>
 
-        <h2
-          class="h1_span"
-          :data-text-2="$t('homeH12')"
-          style="
+				<h2
+					class="h1_span"
+					:data-text-2="$t('homeH12')"
+					style="
 						font-size: 75%;
 						filter: drop-shadow(0 0 0.5rem var(--color-op));
 					"
-        >
-          {{ $t('homeH12') }}
-        </h2>
-      </div>
+				>
+					{{ $t('homeH12') }}
+				</h2>
+			</div>
 
-      <logo3-d />
+			<logo3-d />
 
-      <active-element
-        path="projects"
-        :padding="'1.5rem 4rem'"
-        :font-size="'1.75rem'"
-        :border-radius="'2.3125rem'"
-        :bg="'var(--accent50)'"
-      >
-        {{ $t('homeB1') }}&nbsp;
+			<active-element
+				:bg="'var(--accent50)'"
+				:border-radius="'2.3125rem'"
+				:font-size="'1.75rem'"
+				:padding="'1.5rem 4rem'"
+				path="projects"
+			>
+				{{ $t('homeB1') }}&nbsp;
 
-        <arrow-right height="2.5rem" />
-      </active-element>
-    </section>
+				<arrow-right height="2.5rem" />
+			</active-element>
+		</section>
 
-    <section class="hero w100">
-      <div class="left content flex-col-center w100 rel">
-        <div class="text flex-col">
-          <h2 class="h2">
-            <high-light />
+		<section class="hero w100">
+			<div class="left content flex-col-center w100 rel">
+				<div class="text flex-col">
+					<h2 class="h2">
+						<high-light />
 
-            {{ $t('homeH211') }}<br>{{ $t('homeH212') }}<br>{{
-              $t('homeH213')
-            }}
-          </h2>
+						{{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{
+							$t('homeH213')
+						}}
+					</h2>
 
-          <p class="t2">
-            {{ $t('homeP1') }}
-          </p>
-        </div>
+					<p class="t2">
+						{{ $t('homeP1') }}
+					</p>
+				</div>
 
-        <active-element
-          path="about"
-          :padding="'1.5rem 3rem'"
-          :font-size="'1.5rem'"
-          :border-radius="'2.125rem'"
-          :bg="'var(--accent50)'"
-          class="font-variant"
-        >
-          {{ $t('homeB2') }}
-        </active-element>
-      </div>
+				<active-element
+					:bg="'var(--accent50)'"
+					:border-radius="'2.125rem'"
+					class="font-variant"
+					:font-size="'1.5rem'"
+					:padding="'1.5rem 3rem'"
+					path="about"
+				>
+					{{ $t('homeB2') }}
+				</active-element>
+			</div>
 
-      <div class="right rel">
-        <div class="photo w100" />
-      </div>
-    </section>
+			<div class="right rel">
+				<div class="photo w100" />
+			</div>
+		</section>
 
-    <section class="projects flex-col-center">
-      <h2 class="h2 text-center">
-        {{ $t('homeH22') }}
-        <high-light />
-      </h2>
+		<section class="projects flex-col-center">
+			<h2 class="h2 text-center">
+				{{ $t('homeH22') }}
+				<high-light />
+			</h2>
 
-      <active-element
-        path="projects"
-        :padding="'1.5rem 3rem'"
-        :font-size="'1.33rem'"
-        :border-radius="'2.166rem'"
-        :bg="'var(--accent50)'"
-      >
-        {{ $t('homeB3') }}&nbsp;
-        <arrow-right height="2rem" />
-      </active-element>
+			<active-element
+				:bg="'var(--accent50)'"
+				:border-radius="'2.166rem'"
+				:font-size="'1.33rem'"
+				:padding="'1.5rem 3rem'"
+				path="projects"
+			>
+				{{ $t('homeB3') }}&nbsp;
+				<arrow-right height="2rem" />
+			</active-element>
 
-      <three-view />
-    </section>
+			<three-view />
+		</section>
 
-    <tech-stack />
-  </main>
+		<tech-stack />
+	</main>
 </template>
 
 <script setup>
 import { defineAsyncComponent } from 'vue'
 
-const Logo3D = defineAsyncComponent(
-	() => import('@/components/Logo3D.vue')
-)
+const Logo3D = defineAsyncComponent(() => import('@/components/Logo3D.vue'))
 const ActiveElement = defineAsyncComponent(
 	() => import('@/components/ActiveElement.vue')
 )

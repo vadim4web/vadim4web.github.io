@@ -1,165 +1,144 @@
 <template>
-  <main class="flex-col project-page">
-    <div class="flex-col page-header padding-13">
-      <h2 class="h2">
-        {{ $t('projectH21') }}
-        <high-light />
-      </h2>
+	<main class="flex-col project-page">
+		<div class="flex-col page-header padding-13">
+			<h2 class="h2">
+				{{ $t('projectH21') }}
+				<high-light />
+			</h2>
 
-      <p class="t2">
-        {{ $t('projectT1') }}
-      </p>
-    </div>
+			<p class="t2">
+				{{ $t('projectT1') }}
+			</p>
+		</div>
 
-    <div class="project-details flex-col">
-      <async-frame
-        :iframe-src="demo"
-        :iframe-class="{ white_bg: project.white_bg, preview: true }"
-        :scrolling="'yes'"
-      />
+		<div class="project-details flex-col">
+			<async-frame
+				:iframe-class="{ white_bg: project.white_bg, preview: true }"
+				:iframe-src="demo"
+				:scrolling="'yes'"
+			/>
 
-      <div class="text flex-col">
-        <h3 class="h3">
-          {{ project.title }}
-        </h3>
+			<div class="text flex-col">
+				<h3 class="h3">
+					{{ project.title }}
+				</h3>
 
-        <p class="p4">
-          <b> {{ $t('projectP1') }}:&nbsp; </b>
-          {{ project.tags.join(' | ') }}
-        </p>
+				<p class="p4">
+					<b> {{ $t('projectP1') }}:&nbsp; </b>
+					{{ project.tags.join(' | ') }}
+				</p>
 
-        <p class="p4">
-          <b> {{ $t('projectP2') }}:&nbsp; </b>
-          {{ project.stack.join(', ') }}
-        </p>
+				<p class="p4">
+					<b> {{ $t('projectP2') }}:&nbsp; </b>
+					{{ project.stack.join(', ') }}
+				</p>
 
-        <p class="p4">
-          <b> {{ $t('projectP3') }}:&nbsp; </b>
-          <a
-            :href="source"
-            target="_blank"
-            class="source"
-            title="GitHub Repository"
-          >{{ source }}</a>
-        </p>
+				<p class="p4">
+					<b> {{ $t('projectP3') }}:&nbsp; </b>
+					<a
+						class="source"
+						:href="source"
+						target="_blank"
+						title="GitHub Repository"
+						>{{ source }}</a>
+				</p>
 
-        <p class="p4">
-          <b> {{ $t('projectP4') }}:&nbsp; </b>
-          <a
-            :href="demo"
-            target="_blank"
-            class="demo"
-            title="Live Demo"
-          >{{
-            demo
-          }}</a>
-        </p>
+				<p class="p4">
+					<b> {{ $t('projectP4') }}:&nbsp; </b>
+					<a class="demo" :href="demo" target="_blank" title="Live Demo">{{
+						demo
+					}}</a>
+				</p>
 
-        <div
-          v-if="project.deps.length"
-          class="p4"
-        >
-          <b>{{ $t('projectP5') }}:</b>
+				<div v-if="project.deps.length" class="p4">
+					<b>{{ $t('projectP5') }}:</b>
 
-          <br>
+					<br />
 
-          <ul>
-            <li
-              v-for="(d, i) in project.deps"
-              :key="i"
-            >
-              {{ d }}
-            </li>
-          </ul>
-        </div>
+					<ul>
+						<li v-for="(d, i) in project.deps" :key="i">
+							{{ d }}
+						</li>
+					</ul>
+				</div>
 
-        <p
-          v-else
-          class="p4"
-        >
-          {{ $t('projectP5_default') }}
-        </p>
+				<p v-else class="p4">
+					{{ $t('projectP5_default') }}
+				</p>
 
-        <div class="p4">
-          <b> {{ $t('projectP6') }}: </b>
+				<div class="p4">
+					<b> {{ $t('projectP6') }}: </b>
 
-          <br>
+					<br />
 
-          <pre v-if="project['desc_' + $i18n.locale]">{{ project['desc_' + $i18n.locale] }}
+					<pre v-if="project['desc_' + $i18n.locale]">{{ project['desc_' + $i18n.locale] }}
           </pre>
 
-          <p
-            v-else
-            class="p4"
-          >
-            {{ $t('projectP6_default') }}
-          </p>
-        </div>
-      </div>
-    </div>
+					<p v-else class="p4">
+						{{ $t('projectP6_default') }}
+					</p>
+				</div>
+			</div>
+		</div>
 
-    <div class="navigation">
-      <router-link
-        :to="{ name: 'project', params: { projectName: prev.name } }"
-        class="nav-button prev"
-      >
-        <arrow-navigation />
-        {{ $t('projectPrev') }}
-      </router-link>
+		<div class="navigation">
+			<router-link
+				class="nav-button prev"
+				:to="{ name: 'project', params: { projectName: prev.name } }"
+			>
+				<arrow-navigation />
+				{{ $t('projectPrev') }}
+			</router-link>
 
-      <router-link
-        :to="{ name: 'project', params: { projectName: next.name } }"
-        class="nav-button next"
-      >
-        {{ $t('projectNext') }}
-        <arrow-navigation />
-      </router-link>
-    </div>
+			<router-link
+				class="nav-button next"
+				:to="{ name: 'project', params: { projectName: next.name } }"
+			>
+				{{ $t('projectNext') }}
+				<arrow-navigation />
+			</router-link>
+		</div>
 
-    <div class="others flex-col">
-      <h2 class="h1">
-        {{ $t('projectH22') }}
-      </h2>
+		<div class="others flex-col">
+			<h2 class="h1">
+				{{ $t('projectH22') }}
+			</h2>
 
-      <div class="cards">
-        <div
-          v-for="(p, i) in others"
-          :key="i"
-          class="card card-back br1 rel"
-        >
-          <router-link
-            :to="{ name: 'project', params: { projectName: p.name } }"
-            :title="$t('worksDetails') + ' `' + p.title + '`'"
-            class="flex-col"
-          >
-            <async-frame
-              :iframe-src="getPath(p.path)"
-              :iframe-class="{
-                white_bg: p.white_bg,
-                other: true,
-                w100: true,
-                br1: true,
-                rel: true,
-              }"
-              :iframe-style="{ zoom: zoom, borderRadius: br }"
-              :three="true"
-              :scrolling="'no'"
-            />
+			<div class="cards">
+				<div v-for="(p, i) in others" :key="i" class="card card-back br1 rel">
+					<router-link
+						class="flex-col"
+						:title="$t('worksDetails') + ' `' + p.title + '`'"
+						:to="{ name: 'project', params: { projectName: p.name } }"
+					>
+						<async-frame
+							:iframe-class="{
+								white_bg: p.white_bg,
+								other: true,
+								w100: true,
+								br1: true,
+								rel: true,
+							}"
+							:iframe-src="getPath(p.path)"
+							:iframe-style="{ zoom: zoom, borderRadius: br }"
+							:scrolling="'no'"
+							:three="true"
+						/>
 
-            <div class="other-text flex-col-between text-center">
-              <h4 class="h4">
-                {{ p.title }}
-              </h4>
+						<div class="other-text flex-col-between text-center">
+							<h4 class="h4">
+								{{ p.title }}
+							</h4>
 
-              <p class="other-p">
-                {{ p.stack.join(', ') }}
-              </p>
-            </div>
-          </router-link>
-        </div>
-      </div>
-    </div>
-  </main>
+							<p class="other-p">
+								{{ p.stack.join(', ') }}
+							</p>
+						</div>
+					</router-link>
+				</div>
+			</div>
+		</div>
+	</main>
 </template>
 
 <script setup>

@@ -1,129 +1,114 @@
 <template>
-  <main class="flex-col">
-    <div class="flex-col page-header padding-13">
-      <h2
-        class="h2"
-        style="left: -0.2rem"
-      >
-        {{ $t('contactH21') }}
-        <high-light />
-      </h2>
+	<main class="flex-col">
+		<div class="flex-col page-header padding-13">
+			<h2 class="h2" style="left: -0.2rem">
+				{{ $t('contactH21') }}
+				<high-light />
+			</h2>
 
-      <p class="t2">
-        {{ $t('contactT1') }}
-      </p>
-    </div>
+			<p class="t2">
+				{{ $t('contactT1') }}
+			</p>
+		</div>
 
-    <div class="flex-col">
-      <div class="grid-text-form">
-        <h2 class="h2">
-          {{ $t('contactH221') }}<br>
-          {{ $t('contactH222') }}<br>
-          {{ $t('contactH223') }}
-        </h2>
+		<div class="flex-col">
+			<div class="grid-text-form">
+				<h2 class="h2">
+					{{ $t('contactH221') }}<br />
+					{{ $t('contactH222') }}<br />
+					{{ $t('contactH223') }}
+				</h2>
 
-        <form @submit.prevent="submitForm">
-          <div class="form flex-col card-back rel">
-            <label
-              :data-text="$t('name')"
-              class="rel"
-            >
-              <input
-                v-model="name"
-                type="text"
-                required
-                autocomplete="name"
-                aria-label="name-input"
-              >
-            </label>
+				<form @submit.prevent="submitForm">
+					<div class="form flex-col card-back rel">
+						<label class="rel" :data-text="$t('name')">
+							<input
+								v-model="name"
+								aria-label="name-input"
+								autocomplete="name"
+								required
+								type="text"
+							/>
+						</label>
 
-            <label
-              :data-text="$t('email')"
-              class="rel"
-            >
-              <input
-                v-model="email"
-                type="email"
-                required
-                aria-label="email-input"
-              >
-            </label>
+						<label class="rel" :data-text="$t('email')">
+							<input
+								v-model="email"
+								aria-label="email-input"
+								required
+								type="email"
+							/>
+						</label>
 
-            <label
-              :data-text="$t('project')"
-              class="rel"
-            >
-              <input
-                v-model="subject"
-                type="text"
-                required
-                aria-label="subject-input"
-              >
-            </label>
+						<label class="rel" :data-text="$t('project')">
+							<input
+								v-model="subject"
+								aria-label="subject-input"
+								required
+								type="text"
+							/>
+						</label>
 
-            <label
-              :data-text="$t('comment')"
-              class="rel"
-            >
-              <textarea v-model="message" />
-            </label>
-          </div>
+						<label class="rel" :data-text="$t('comment')">
+							<textarea v-model="message" />
+						</label>
+					</div>
 
-          <div class="button-wrapper rel">
-            <active-element
-              :padding="'0'"
-              :font-size="'2.1rem'"
-              :border-radius="'1.75rem'"
-              :bg="'var(--accent50)'"
-              class="font-variant abs"
-            >
-              {{ $t('send') }}
-            </active-element>
-          </div>
-        </form>
-      </div>
-    </div>
+					<div class="button-wrapper rel">
+						<active-element
+							:bg="'var(--accent50)'"
+							:border-radius="'1.75rem'"
+							class="font-variant abs"
+							:font-size="'2.1rem'"
+							:padding="'0'"
+						>
+							{{ $t('send') }}
+						</active-element>
+					</div>
+				</form>
+			</div>
+		</div>
 
-    <div class="laptop w100 br1" />
+		<div class="laptop w100 br1" />
 
-    <div class="address w100">
-      <h4 class="h4">
-        <a
-          href="tel:+380933789883"
-          class="link"
-          style="padding: 0.5rem; margin: -0.5rem"
-          title="Contact me via phone"
-        >
-          +380-933-789-883
-        </a>
-      </h4>
+		<div class="address w100">
+			<h4 class="h4">
+				<a
+					class="link"
+					href="tel:+380933789883"
+					style="padding: 0.5rem; margin: -0.5rem"
+					title="Contact me via phone"
+				>
+					+380-933-789-883
+				</a>
+			</h4>
 
-      <h4 class="h4">
-        <a
-          :href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent(
-            $t('emailSubject')
-          )}`"
-          class="link"
-          style="padding: 0.5rem; margin: -0.5rem"
-          title="Contact me via e-mail"
-          target="_blank"
-        >
-          vadim4web@gmail.com
-        </a>
-      </h4>
+			<h4 class="h4">
+				<a
+					class="link"
+					:href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent(
+						$t('emailSubject')
+					)}`"
+					style="padding: 0.5rem; margin: -0.5rem"
+					target="_blank"
+					title="Contact me via e-mail"
+				>
+					vadim4web@gmail.com
+				</a>
+			</h4>
 
-      <h4 class="h4">
-        <a
-          href="https://t.me/vadim4web"
-          class="link"
-          style="padding: 0.5rem; margin: -0.5rem"
-          title="Contact me via Telegram or any other social media"
-        >
-          @vadim4web
-        </a>
-      </h4>
-    </div>
-  </main>
+			<h4 class="h4">
+				<a
+					class="link"
+					href="https://t.me/vadim4web"
+					style="padding: 0.5rem; margin: -0.5rem"
+					title="Contact me via Telegram or any other social media"
+				>
+					@vadim4web
+				</a>
+			</h4>
+		</div>
+	</main>
 </template>
 
 <script setup>

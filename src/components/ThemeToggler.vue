@@ -1,24 +1,24 @@
 <template>
-  <button
-    class="theme-toggler flex-align"
-    :title="$t(`toggleTheme${'_' + theme}`)"
-    @click="toggleTheme"
-  >
-    <span
-      id="spot"
-      class="flex-center rel"
-      :style="{
-        background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
-          var(--accent1_50) 5%, var(--color0))`
-      }"
-    >
+	<button
+		class="theme-toggler flex-align"
+		:title="$t(`toggleTheme${'_' + theme}`)"
+		@click="toggleTheme"
+	>
+		<span
+			id="spot"
+			class="flex-center rel"
+			:style="{
+				background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
+          var(--accent1_50) 5%, var(--color0))`,
+			}"
+		>
 			<svg
 				v-if="theme === 'light'"
-				width="24"
+				fill="none"
 				height="24"
 				stroke-width="1.5"
 				viewBox="0 0 24 24"
-				fill="none"
+				width="24"
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<path
@@ -31,11 +31,11 @@
 
 			<svg
 				v-else
-				width="24"
+				fill="none"
 				height="24"
 				stroke-width="1.5"
 				viewBox="0 0 24 24"
-				fill="none"
+				width="24"
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<path
@@ -93,16 +93,14 @@
 					stroke-linejoin="round"
 				/>
 			</svg>
+		</span>
 
-
-    </span>
-
-    <h2 v-show="false">
-      {{ width }} {{ height }}<br>
-      {{ x }} {{ y }}<br>
-      {{ offsetX }} {{ offsetY }}
-    </h2>
-  </button>
+		<h2 v-show="false">
+			{{ width }} {{ height }}<br />
+			{{ x }} {{ y }}<br />
+			{{ offsetX }} {{ offsetY }}
+		</h2>
+	</button>
 </template>
 
 <script setup>

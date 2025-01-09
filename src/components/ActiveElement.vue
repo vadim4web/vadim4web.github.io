@@ -1,58 +1,58 @@
 <template>
-  <router-link
-    v-if="isRouterLink"
-    ref="target"
-    :to="path"
-    class="active-element flex-center hideO rel"
-    :style="{
-      background:
-        !isOutside ?
-          `radial-gradient(circle at ${elementX}px ${elementY}px,
+	<router-link
+		v-if="isRouterLink"
+		ref="target"
+		class="active-element flex-center hideO rel"
+		:style="{
+			background:
+				!isOutside ?
+					`radial-gradient(circle at ${elementX}px ${elementY}px,
           #ffffff, ${bg} 33%)`
-          :	bg,
-      boxShadow: `0 0 1.5rem ${bg}`,
-      fontSize,
-      padding,
-      borderRadius,
-    }"
-  >
-    <slot />
-  </router-link>
+				:	bg,
+			boxShadow: `0 0 1.5rem ${bg}`,
+			fontSize,
+			padding,
+			borderRadius,
+		}"
+		:to="path"
+	>
+		<slot />
+	</router-link>
 
-  <button
-    v-else
-    ref="target"
-    type="submit"
-    class="active-element flex-center hideO rel"
-    :style="{
-      background:
-        !isOutside ?
-          `radial-gradient(circle at ${elementX}px ${elementY}px,
+	<button
+		v-else
+		ref="target"
+		class="active-element flex-center hideO rel"
+		:style="{
+			background:
+				!isOutside ?
+					`radial-gradient(circle at ${elementX}px ${elementY}px,
           #ffffff, ${bg} 33%)`
-          :	bg,
-      boxShadow: `0 0 1.5rem ${bg}`,
-      fontSize,
-      padding,
-      borderRadius,
-    }"
-    @click="handleClick"
-  >
-    <slot />
-  </button>
+				:	bg,
+			boxShadow: `0 0 1.5rem ${bg}`,
+			fontSize,
+			padding,
+			borderRadius,
+		}"
+		type="submit"
+		@click="handleClick"
+	>
+		<slot />
+	</button>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
-const { path, action, fontSize, padding, borderRadius, bg } = defineProps([
-	'path',
-	'action',
-	'fontSize',
-	'padding',
-	'borderRadius',
-	'bg',
-])
+const { path, action, fontSize, padding, borderRadius, bg } = defineProps({
+	path: String,
+	action: Function,
+	fontSize: String,
+	padding: String,
+	borderRadius: String,
+	bg: String,
+})
 
 const target = ref(null)
 const isRouterLink = !!path

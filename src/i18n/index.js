@@ -73,8 +73,8 @@ const messages = {
 		location: 'Location of my integrated home-office web development studio',
 
 		gitHub: 'My GitHub profile',
-		linkedin: "My LinkedIn profile",
-		facebook: "My Facebook profile",
+		linkedin: 'My LinkedIn profile',
+		facebook: 'My Facebook profile',
 
 		chatMe: 'Message me on Telegram',
 		emailMe: 'E-mail me',
@@ -170,8 +170,8 @@ const messages = {
 		location: 'Розташування моєї інтегрованої домашньої студії веб-розробки',
 
 		gitHub: 'Мій GitHub профіль',
-		linkedin: "Мій профіль LinkedIn",
-		facebook: "Мій профіль Facebook",
+		linkedin: 'Мій профіль LinkedIn',
+		facebook: 'Мій профіль Facebook',
 
 		chatMe: 'Написати в Telegram',
 		emailMe: 'Написати e-mail',

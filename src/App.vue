@@ -1,8 +1,8 @@
 <template>
-  <loader-view />
-  <header-view />
-  <router-view />
-  <footer-view />
+	<loader-view />
+	<header-view />
+	<router-view />
+	<footer-view />
 </template>
 
 <script setup>

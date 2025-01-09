@@ -1,54 +1,36 @@
 <template>
-  <header class="header w100 back-blur05">
-    <menu class="w100 rel">
-      <li class="menu-item w100 flex-center text-center">
-        <router-link
-          to="/home"
-          class="link flex-center w100 logo-link"
-        >
-          <logo-view logo-class="logo-view" />
-        </router-link>
-      </li>
+	<header class="header w100 back-blur05">
+		<menu class="w100 rel">
+			<li class="menu-item w100 flex-center text-center">
+				<router-link class="link flex-center w100 logo-link" to="/home">
+					<logo-view logo-class="logo-view" />
+				</router-link>
+			</li>
 
-      <li class="menu-item w100 flex-center text-center">
-        <router-link
-          to="/about"
-          class="link flex-center w100"
-        >
-          {{
-            $t('AboutMe')
-          }}
-        </router-link>
-      </li>
+			<li class="menu-item w100 flex-center text-center">
+				<router-link class="link flex-center w100" to="/about">
+					{{ $t('AboutMe') }}
+				</router-link>
+			</li>
 
-      <li class="menu-item w100 flex-center text-center">
-        <router-link
-          to="/projects"
-          class="link flex-center w100"
-        >
-          {{
-            $t('MyWorks')
-          }}
-        </router-link>
-      </li>
+			<li class="menu-item w100 flex-center text-center">
+				<router-link class="link flex-center w100" to="/projects">
+					{{ $t('MyWorks') }}
+				</router-link>
+			</li>
 
-      <li class="menu-item w100 flex-center text-center">
-        <router-link
-          to="/contact"
-          class="link flex-center w100"
-        >
-          {{
-            $t('MyContacts')
-          }}
-        </router-link>
-      </li>
+			<li class="menu-item w100 flex-center text-center">
+				<router-link class="link flex-center w100" to="/contact">
+					{{ $t('MyContacts') }}
+				</router-link>
+			</li>
 
-      <li class="menu-item w100 flex-col-center text-center global-view">
-        <theme-toggler />
-        <lang-toggler />
-      </li>
-    </menu>
-  </header>
+			<li class="menu-item w100 flex-col-center text-center global-view">
+				<theme-toggler />
+				<lang-toggler />
+			</li>
+		</menu>
+	</header>
 </template>
 
 <script setup>

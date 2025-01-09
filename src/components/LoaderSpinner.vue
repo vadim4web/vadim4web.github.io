@@ -1,32 +1,36 @@
 <template>
-  <div
-    class="spinner-container flex-center w100"
-    :class="{
-      vertical: classes?.vertical,
-      horizontal: classes?.horizontal,
-      iframe: classes?.iframe,
-      preview: classes?.preview,
-      other: classes?.other,
-      'one-of-three': three,
-      null: classes?.white_bg,
-    }"
-  >
-    <canvas
-      id="spinnerCanvas"
-      ref="spinnerCanvas"
-      class="spinner-canvas icon"
-      width="100"
-      height="100"
-      :stroke="state.themeColor"
-    />
-  </div>
+	<div
+		class="spinner-container flex-center w100"
+		:class="{
+			vertical: classes?.vertical,
+			horizontal: classes?.horizontal,
+			iframe: classes?.iframe,
+			preview: classes?.preview,
+			other: classes?.other,
+			'one-of-three': three,
+			null: classes?.white_bg,
+		}"
+	>
+		<canvas
+			id="spinnerCanvas"
+			ref="spinnerCanvas"
+			class="spinner-canvas icon"
+			height="100"
+			:stroke="state.themeColor"
+			width="100"
+		/>
+	</div>
 </template>
 
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { state } from '@/store/'
 
-const { classes, three } = defineProps(['classes', 'three'])
+const { classes, three } = defineProps({
+	classes: Object,
+	three: Boolean,
+})
+
 const spinnerCanvas = ref(null)
 let startTime = null
 

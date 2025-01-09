@@ -10,8 +10,9 @@
 		"preview": "vite preview",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d dist",
-		"lint": "eslint --fix-dry-run  src/**",
-		"format": "prettier .  --write"
+		"prettify": "prettier src/**/*.{js,vue,css} --write",
+		"lint": "eslint --fix src/**/*.{js,vue}",
+		"format": "npm run prettify && npm run lint"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
@@ -33,6 +34,7 @@
 		"gh-pages": "^6.1.0",
 		"globals": "^15.14.0",
 		"prettier": "3.4.2",
+		"prettier-plugin-vue": "^1.1.6",
 		"sass": "^1.69.5",
 		"vite": "^5.0.8"
 	}
