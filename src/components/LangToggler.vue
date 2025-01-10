@@ -7,16 +7,16 @@
 			:title="$t('toggleLangTip')"
 		>
 			<li
-				v-for="(option, index) in sortedLanguageOptions"
+				v-for="({ value, image }, index) in sortedLanguageOptions"
 				:key="index"
 				class="select-option rel"
-				:class="{ selected: selectedLanguage === option.value }"
-				@click="handleClick(option.value)"
+				:class="{ selected: selectedLanguage === value }"
+				@click="handleClick(value)"
 			>
 				<img
-					:alt="$t('langImgAlt')"
+					:alt="$t(`flagAlt_${value}`)"
 					class="select-option-img"
-					:src="option.image"
+					:src="image"
 				/>
 			</li>
 		</menu>

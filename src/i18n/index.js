@@ -2,8 +2,9 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
 	en: {
-		flag: './Flag_of_the_UK.webp',
-		langImgAlt: 'The Union Jack',
+		flag: 'Flag_of_the_UK.webp',
+		flagAlt_en: 'The Union Jack',
+		flagAlt_uk: 'The Ukrainian flag',
 
 		AboutMe: 'about me',
 		MyWorks: 'my works',
@@ -96,8 +97,9 @@ const messages = {
 		notFoundB: 'go back',
 	},
 	uk: {
-		flag: './Flag_of_Ukraine.webp',
-		langImgAlt: 'Прапор України',
+		flag: 'Flag_of_Ukraine.webp',
+		flagAlt_en: 'Прапор Великої Британії',
+		flagAlt_uk: 'Прапор України',
 
 		AboutMe: 'про мене',
 		MyWorks: 'мої роботи',
