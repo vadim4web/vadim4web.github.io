@@ -62,20 +62,6 @@ const vertical = [
 		],
 	},
 	{
-		title: 'Chat-GPT tech recipe',
-		name: 'gpt-cuisine-symphony',
-		stack: ['html', 'css', 'js'],
-		tags: ['UI', 'FE', 'API'],
-		desc_en:
-			'In this culinary exploration, we delve into the exquisite ingredients that compose the harmonious symphony of GPT-3.5 development. Each element plays a distinct role, contributing to the blend of code and creativity.\n\nThe genesis of this demo has an interesting anecdote. During my training sessions with GPT-3.5, driven by internal curiosity, I posed a unique question. I asked the model to imagine itself as a delectable dish, akin to a complex culinary creation. Specifically, I inquired about the percentage composition of its "ingredients" and requested a diagram, complete with percentages. Additionally, I asked for commentary on the use cases of each "ingredient", drawing parallels to the steps involved in preparing food. The response was amusing and insightful, prompting me to preserve it as part of this demo!',
-		desc_uk:
-			'У цьому кулінарному дослідженні ми занурюємося в ексклюзивні інгредієнти, які складають гармонійну симфонію розробки GPT-3.5. Кожен елемент відіграє окрему роль, вносячи свій внесок у поєднання коду та творчості.\n\nПоходження цієї демонстрації має цікаву анекдоту. Під час моїх тренувальних сесій з GPT-3.5, зокрема через внутрішню цікавість, я поставив унікальне запитання. Я попросив модель уявити себе як смачну страву, подібну до складного кулінарного творіння. Зокрема, я запитав про відсотковий склад її "інгредієнтів" і попросив діаграму, з відсотками. Крім того, я попросив прокоментувати можливі варіанти використання кожного "інгредієнта", проводячи паралелі з етапами приготування їжі. Відповідь була веселою та цікавою, що спонукало мене зберегти її як частину цієї демонстрації!',
-		path: 'gpt-cuisine-symphony',
-		orientation: '|',
-		deps: [],
-		white_bg: true,
-	},
-	{
 		title: 'Vue ABCDΞSIGN landing SPA',
 		name: 'abcd-sign',
 		stack: ['js', 'vue', 'i18n'],
@@ -200,7 +186,7 @@ const vertical = [
 		],
 	},
 	{
-		title: "Fire'S'Now - SCSS bg",
+		title: "Fire\'S\'Now - SCSS bg",
 		name: 'fireSnow',
 		stack: ['html', 'css', 'scss'],
 		tags: ['UI', 'FE', 'API'],
@@ -233,6 +219,20 @@ const vertical = [
 			'stylelint ^13.5.0',
 			'stylelint-scss ^3.17.2',
 		],
+		white_bg: true,
+	},
+	{
+		title: 'Vue fetch random user',
+		name: 'random-user-vue',
+		stack: ['vue', 'html', 'css'],
+		tags: ['UI', 'FE', 'API'],
+		desc_en:
+			'This simple Vue app offers a hands-on demonstration of effortlessly fetching and displaying user data.\n\nIt seamlessly utilizes the placeholder API, https://randomuser.me/api, to showcase the power of Vue.js.\n\nImportantly, Vue.js is included through the CDN: https://unpkg.com/vue@3/dist/vue.global.js.',
+		desc_uk:
+			'Цей простий Vue-додаток пропонує практичну демонстрацію без зусиль отримання та відображення даних користувача.\n\nВін безшовно використовує API-заповнювач, https://randomuser.me/api, щоб продемонструвати можливості Vue.js.\n\nВажливо, що Vue.js підключено через CDN: https://unpkg.com/vue@3/dist/vue.global.js.',
+		path: 'random-user-vue',
+		orientation: '|',
+		deps: [],
 		white_bg: true,
 	},
 ]
@@ -287,20 +287,6 @@ const horizontal = [
 			'react-router-dom ^6.17.0',
 			'styled-components ^6.1.0',
 		],
-	},
-	{
-		title: 'Vue fetch random user',
-		name: 'random-user-vue',
-		stack: ['vue', 'html', 'css'],
-		tags: ['UI', 'FE', 'API'],
-		desc_en:
-			'This simple Vue app offers a hands-on demonstration of effortlessly fetching and displaying user data.\n\nIt seamlessly utilizes the placeholder API, https://randomuser.me/api, to showcase the power of Vue.js.\n\nImportantly, Vue.js is included through the CDN: https://unpkg.com/vue@3/dist/vue.global.js.',
-		desc_uk:
-			'Цей простий Vue-додаток пропонує практичну демонстрацію без зусиль отримання та відображення даних користувача.\n\nВін безшовно використовує API-заповнювач, https://randomuser.me/api, щоб продемонструвати можливості Vue.js.\n\nВажливо, що Vue.js підключено через CDN: https://unpkg.com/vue@3/dist/vue.global.js.',
-		path: 'random-user-vue',
-		orientation: '-',
-		deps: [],
-		white_bg: true,
 	},
 	{
 		title: 'Layout, git, js, ts basics',
@@ -491,6 +477,19 @@ const horizontal = [
 		path: 'clicker-js',
 		orientation: '-',
 		deps: [],
+	},
+	{
+		title: 'Mozgi - Full-Cycle Event Agency',
+		name: 'mozgi-events',
+		stack: ['vue', 'css', 'i18n'],
+		tags: ['SPA', 'UI', 'i18n'],
+		desc_en:
+			"Mozgi Events is a landing page built for a full-cycle event agency. This responsive single-page application (SPA) showcases the agency's services with smooth animations, interactive features, and multi-language support. Developed with Vue.js and Vite, the project emphasizes a seamless user experience across browsers and devices. Key highlights include animated logo fills, mouse interaction effects, and language selection with opacity animations.",
+		desc_uk:
+			'Mozgi Events — це посадкова сторінка для агенції повного циклу організації заходів. Ця адаптивна односторінкова програма демонструє послуги агенції зі стильними анімаціями, інтерактивними елементами та підтримкою кількох мов. Розроблена з використанням Vue.js та Vite, сторінка забезпечує бездоганний користувацький досвід у різних браузерах і на пристроях. Основні особливості: анімоване заповнення логотипа, ефекти взаємодії з мишею та вибір мови з анімацією прозорості.',
+		path: 'mozgi-events',
+		orientation: '-',
+		deps: ['@vueuse/core', 'vue', 'vue-i18n', 'vue-router'],
 	},
 ]
 
