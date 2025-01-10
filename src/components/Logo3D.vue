@@ -33,7 +33,11 @@ let currentTheme = getCurrentTheme() // Tracks current theme to avoid unnecessar
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const MODEL_NAME = 'logo.glb'
 
-const { noRotate, noShadow, size } = defineProps({
+const {
+	noRotate,
+	noShadow,
+	size,
+} = defineProps({
 	noRotate: {
 		type: Boolean,
 		required: false,

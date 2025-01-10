@@ -21,7 +21,7 @@
 					/>
 				</filter>
 			</defs>
-
+			<desc>4</desc>
 			<!-- Vertical line -->
 			<line x1="50" x2="50" y1="96" y2="4" />
 			<!-- Diagonal line from center to top-left -->

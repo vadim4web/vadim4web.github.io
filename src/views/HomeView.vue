@@ -96,18 +96,12 @@
 </template>
 
 <script setup>
+import Logo3D from '@/components/Logo3D.vue'
+import ActiveElement  from '@/components/ActiveElement.vue'
+import ArrowRight from '@/components/ArrowRight.vue'
+import HighLight from '@/components/HighLight.vue'
 import { defineAsyncComponent } from 'vue'
 
-const Logo3D = defineAsyncComponent(() => import('@/components/Logo3D.vue'))
-const ActiveElement = defineAsyncComponent(
-	() => import('@/components/ActiveElement.vue')
-)
-const ArrowRight = defineAsyncComponent(
-	() => import('@/components/ArrowRight.vue')
-)
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
-)
 const ThreeView = defineAsyncComponent(
 	() => import('@/components/ThreeView.vue')
 )

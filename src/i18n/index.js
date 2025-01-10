@@ -3,11 +3,8 @@ import { createI18n } from 'vue-i18n'
 const messages = {
 	en: {
 		flag: './Flag_of_the_UK.webp',
-		lang: 'English',
+		langImgAlt: 'The Union Jack',
 
-		emailSubject: 'Crafting Digital Solutions - Excellence in Every Detail',
-
-		Home: 'home',
 		AboutMe: 'about me',
 		MyWorks: 'my works',
 		MyContacts: 'my contacts',
@@ -67,9 +64,17 @@ const messages = {
 		contactH222: 'Touch With',
 		contactH223: 'Me',
 
+		name: 'NAME',
+		email: 'EMAIL',
+		project: 'PROJECT',
+		comment: 'COMMENT',
+		send: 'SEND',
+
 		footerGIT: 'Get in Touch With Me',
 		footerA1: 'Ivana Franka St',
 		footerA2: "Boiarka, Kyivs'ka oblast",
+
+		emailSubject: 'Crafting Digital Solutions - Excellence in Every Detail',
 		location: 'Location of my integrated home-office web development studio',
 
 		gitHub: 'My GitHub profile',
@@ -82,12 +87,6 @@ const messages = {
 
 		copyright: 'All rights reserved',
 
-		name: 'NAME',
-		email: 'EMAIL',
-		project: 'PROJECT',
-		comment: 'COMMENT',
-		send: 'SEND',
-
 		notFoundT11: 'In the vast realm of possibilities,',
 		notFoundT12: 'the route ',
 		notFoundT13: ' exists',
@@ -95,16 +94,11 @@ const messages = {
 		notFoundT15:
 			'...It is a path not yet traveled or, perhaps, already forgotten...',
 		notFoundB: 'go back',
-
-		loading: 'Loading',
 	},
 	uk: {
 		flag: './Flag_of_Ukraine.webp',
-		lang: 'Ukrainian',
+		langImgAlt: 'Прапор України',
 
-		emailSubject: 'Розробка Цифрових Рішень - Досконалість у Кожній Деталі',
-
-		Home: 'головна',
 		AboutMe: 'про мене',
 		MyWorks: 'мої роботи',
 		MyContacts: 'мої контакти',
@@ -164,9 +158,17 @@ const messages = {
 		contactH222: 'Зі Мною',
 		contactH223: 'Зараз',
 
+		name: 'ІМ’Я',
+		email: 'ПОШТА',
+		project: 'ПРОЕКТ',
+		comment: 'КОМЕНТАР',
+		send: 'НАДІСЛАТИ',
+
 		footerGIT: 'Зв’яжіться Зі Мною',
 		footerA1: 'Вул. Івана Франка',
 		footerA2: 'м. Боярка, Київська область',
+
+		emailSubject: 'Розробка Цифрових Рішень - Досконалість у Кожній Деталі',
 		location: 'Розташування моєї інтегрованої домашньої студії веб-розробки',
 
 		gitHub: 'Мій GitHub профіль',
@@ -179,20 +181,12 @@ const messages = {
 
 		copyright: 'Усі права захищено',
 
-		name: 'ІМ’Я',
-		email: 'ПОШТА',
-		project: 'ПРОЕКТ',
-		comment: 'КОМЕНТАР',
-		send: 'НАДІСЛАТИ',
-
 		notFoundT11: 'У безмежному світі можливостей,',
 		notFoundT12: 'шлях ',
 		notFoundT13: ' існує',
 		notFoundT14: 'у сутінках між створенням та небуттям.',
 		notFoundT15: '...Це шлях, який ще не пройдено, або, можливо, вже забуто...',
 		notFoundB: 'повернутися',
-
-		loading: 'Грузимо',
 	},
 }
 

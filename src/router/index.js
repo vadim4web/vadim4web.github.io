@@ -5,10 +5,6 @@ import { state } from '@/store/'
 const routes = [
 	{
 		path: '/',
-		redirect: '/home', // Redirect root path to the Home route
-	},
-	{
-		path: '/home',
 		component: () => import('@/views/HomeView.vue'),
 	},
 	{
@@ -19,14 +15,6 @@ const routes = [
 		path: '/contact',
 		component: () => import('@/views/ContactMe.vue'),
 	},
-	// {
-	// 	path: '/capture',
-	// 	component: () => import('@/views/CaptureLogo.vue'),
-	// },
-	// {
-	// 	path: '/loader',
-	// 	component: () => import('@/components/LoaderView.vue'),
-	// },
 	{
 		path: '/projects',
 		component: () => import('@/views/MyProjects.vue'),
@@ -69,8 +57,6 @@ router.beforeEach((_to, _from, next) => {
 })
 
 router.afterEach(to => {
-	// if (to.path === '/loader') return
-
 	if (!sessionStorage.getItem('once_loaded')) {
 		setTimeout(() => {
 			sessionStorage.setItem('once_loaded', true)
@@ -81,7 +67,6 @@ router.afterEach(to => {
 			state.setShowLoader(false)
 		}, 1755)
 	}
-
 	window.scrollTo(0, 0)
 })
 

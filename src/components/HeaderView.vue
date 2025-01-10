@@ -2,7 +2,7 @@
 	<header class="header w100 back-blur05">
 		<menu class="w100 rel">
 			<li class="menu-item w100 flex-center text-center">
-				<router-link class="link flex-center w100 logo-link" to="/home">
+				<router-link class="link flex-center w100 logo-link" to="/">
 					<logo-view logo-class="logo-view" />
 				</router-link>
 			</li>
@@ -109,6 +109,5 @@ menu {
 .global-view {
 	height: 10.5rem;
 	gap: 0.125rem;
-	padding: 0.125rem 0;
 }
 </style>

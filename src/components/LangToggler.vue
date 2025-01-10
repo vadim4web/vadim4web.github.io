@@ -14,7 +14,7 @@
 				@click="handleClick(option.value)"
 			>
 				<img
-					:alt="$t('lang') + ' flag'"
+					:alt="$t('langImgAlt')"
 					class="select-option-img"
 					:src="option.image"
 				/>
