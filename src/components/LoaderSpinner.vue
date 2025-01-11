@@ -152,6 +152,10 @@ watch(
 	width: 66%;
 }
 
+.preview .spinner-canvas {
+	width: 50%;
+}
+
 .one-of-three .spinner-canvas {
 	width: 50%;
 	transform: scale(0.5);
