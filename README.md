@@ -45,6 +45,8 @@ vadim4web.github.io/
 │   ├── App.vue # Main application file
 │   ├── main.js # App entry point
 │   ├── style.css # Global styles
+├── .prettierrc # Prettier configuration file for consistent formatting
+├── eslint.config.js # ESLint configuration for code quality and readability
 ├── index.html # Main HTML file
 ├── package.json # Project metadata and dependencies
 ├── README.md # Project documentation
