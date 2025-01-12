@@ -1,28 +1,81 @@
-## Hi there 👋
-
 [![Portfolio](https://github.com/vadim4web/vadim4web/blob/main/gh.png)](https://vadim4web.github.io)
 
-I'm Vadim, a Frontend-Focused Full-Stack Developer with a passion for building clean, scalable web applications. Here's a bit about me:
+# VADIM4WEB
+## Crafting Digital Solutions
+### Excellence in Every Detail.
 
-- 🔭 **I’m currently working on** expanding my portfolio with new Vue.js, React, and Node.js projects.
-- 🌱 **I’m currently learning** advanced problem-solving through platforms like LeetCode and Codewars, while experimenting with modern CSS techniques.
-- 💬 **Ask me about** Vue.js, API integration, or how I use Firebase and Vuetify in projects.
-- 😄 **Fun fact**: I bought my first PC in 2003 after saving up from a summer job in woodcrafting. It sparked my lifelong love for tech!
+Welcome to my portfolio, showcasing my expertise in front-end development and modern web technologies. Explore my projects, skills, and experiences!
 
----
+### 📂 Project Structure
 
-### 🎉 Featured Projects
+```bash
+vadim4web.github.io/
+├── public/ # Public assets (favicon, icons, SEO files, etc.)
+│   ├── 404.html # GitHub Pages redirect file
+│   ├── logo.png # Favicon and logos
+│   ├── favicon.ico # Light theme favicon
+│   ├── favicon_dark.ico # Dark theme favicon
+│   └── ... # Various tech stack images, manifest, sitemap, etc.
+├── src/ # Source code for the portfolio
+│   ├── assets/ # Static resources for the app
+│   │   ├── css/ # Custom CSS files
+│   │   ├── data/ # Data used in components
+│   │   └── img/ # Images used across the app
+│   ├── components/ # Vue components for the portfolio
+│   │   ├── ActiveElement.vue
+│   │   ├── ArrowNavigation.vue
+│   │   ├── FooterView.vue
+│   │   ├── HeaderView.vue
+│   │   ├── LangToggler.vue
+│   │   ├── LoaderView.vue
+│   │   ├── TechStack.vue
+│   │   └── ... # Other components
+│   ├── views/ # Vue views corresponding to app pages
+│   │   ├── AboutMe.vue
+│   │   ├── ContactMe.vue
+│   │   ├── HomeView.vue
+│   │   ├── MyProjects.vue
+│   │   ├── NotFound.vue
+│   │   └── ProjectView.vue
+│   ├── App.vue # Main application file
+│   ├── main.js # App entry point
+│   ├── router/ # Vue Router configuration
+│   ├── store/ # Vuex store configuration
+│   ├── helpers/ # Helper functions
+│   ├── i18n/ # Internationalization setup
+│   ├── style.css # Global styles
+│   └── utils/ # Utility files
+├── index.html # Main HTML file
+├── vite.config.js # Vite configuration
+├── package.json # Project metadata and dependencies
+├── package-lock.json # Lockfile for installed dependencies
+└── README.md # Project documentation
+```
 
-- [**Vue Weather App**](https://vadim4web.github.io/vue-weather-app/): Responsive weather app with themed layouts, multi-API integration, and internationalization.
-- [**MediaOffice Landing**](https://vadim4web.github.io/mediaoffice-com-ua/): Modern business landing page replacing a legacy WordPress site.
-- [**Vue3 Feedback Widget**](https://vadim4web.github.io/vue3-feedback-widget/): Reusable feedback app for a bank, using Vuetify and Firebase.
-- [**ABCD Sign**](https://vadim4web.github.io/abcd-sign/): Creative showcase of my design and development experience.
-- [**E-Time**](https://vadim4web.github.io/e-time/): Explores the solar, lunar, and common calendars, featuring NASA moon animations, modern CSS, and precise JavaScript calculations. Built with Vue.js.
+### 🛠️ Technologies Used
 
----
+- **Vue.js 3**: The modern front-end framework for building SPAs.
+- **Vite**: Fast and modern build tool for web development.
+- **JavaScript (ES6+)**: Core programming language.
+- **SCSS**: Advanced styling with variables and mixins.
+- **Three.js**: 3D rendering for interactive visuals.
+- **Vue Router**: For navigation between pages.
+- **Vuex**: State management for the app.
+- **i18n**: Internationalization for multi-language support.
+
+### 🌟 Features
+
+- **Responsive Design**: Optimized for all devices.
+- **3D Graphics**: Interactive elements using Three.js.
+- **Dark/Light Theme**: Theme toggler for a personalized experience.
+- **Internationalization**: Supports multiple languages.
+- **SEO Friendly**: Metadata and optimized for search engines.
+
 
 ### 📫 Let’s Connect!
 
-- [GitHub](https://github.com/vadim4web)
+- [Email](mailto:vadim4web@gmail.com)
 - [Portfolio](https://vadim4web.github.io)
+- [LinkedIn](https://www.linkedin.com/in/vadim4web/)
+- [Facebook](https://www.facebook.com/vadim4web)
 - [Telegram](https://t.me/vadim4web)
