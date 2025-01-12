@@ -30,6 +30,11 @@ vadim4web.github.io/
 │   │   ├── LoaderView.vue
 │   │   ├── TechStack.vue
 │   │   └── ... # Other components
+│   ├── helpers/ # Helper functions
+│   ├── i18n/ # Internationalization setup
+│   ├── router/ # Vue Router configuration
+│   ├── store/ # Reactive store configuration
+│   └── utils/ # Utility files
 │   ├── views/ # Vue views corresponding to app pages
 │   │   ├── AboutMe.vue
 │   │   ├── ContactMe.vue
@@ -39,29 +44,22 @@ vadim4web.github.io/
 │   │   └── ProjectView.vue
 │   ├── App.vue # Main application file
 │   ├── main.js # App entry point
-│   ├── router/ # Vue Router configuration
-│   ├── store/ # Vuex store configuration
-│   ├── helpers/ # Helper functions
-│   ├── i18n/ # Internationalization setup
 │   ├── style.css # Global styles
-│   └── utils/ # Utility files
 ├── index.html # Main HTML file
-├── vite.config.js # Vite configuration
 ├── package.json # Project metadata and dependencies
-├── package-lock.json # Lockfile for installed dependencies
-└── README.md # Project documentation
+├── README.md # Project documentation
+└── vite.config.js # Vite configuration
 ```
 
 ### 🛠️ Technologies Used
 
-- **Vue.js 3**: The modern front-end framework for building SPAs.
 - **Vite**: Fast and modern build tool for web development.
 - **JavaScript (ES6+)**: Core programming language.
+- **Vue.js 3**: The modern front-end framework for building SPAs.
+- **Vue Router**: For navigation between pages.
+- **i18n**: Internationalization for multi-language support.
 - **SCSS**: Advanced styling with variables and mixins.
 - **Three.js**: 3D rendering for interactive visuals.
-- **Vue Router**: For navigation between pages.
-- **Vuex**: State management for the app.
-- **i18n**: Internationalization for multi-language support.
 
 ### 🌟 Features
 
