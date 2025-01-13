@@ -2,20 +2,24 @@
 	<main class="flex-col">
 		<div class="flex-col page-header padding-13">
 			<h2 class="h2" style="left: -0.2rem">
-				{{ $t('contactH21') }}
+				<strong>
+					{{ $t('contactH21') }}
+				</strong>
 				<high-light />
 			</h2>
 
 			<p class="t2">
-				{{ $t('contactT1') }}
+				<em>
+					{{ $t('contactT1') }}
+				</em>
 			</p>
 		</div>
 
 		<div class="flex-col">
 			<div class="grid-text-form">
 				<h2 class="h2">
-					{{ $t('contactH221') }}<br />
-					{{ $t('contactH222') }}<br />
+					{{ $t('contactH221') }}<br>
+					{{ $t('contactH222') }}<br>
 					{{ $t('contactH223') }}
 				</h2>
 

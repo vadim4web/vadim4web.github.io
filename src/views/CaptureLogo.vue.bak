@@ -100,8 +100,8 @@ import Logo3D from '@/components/Logo3D.vue'
 
 <style lang="scss" scoped>
 .capture-logo-view {
-	text-align: center;
 	gap: 1rem;
+	text-align: center;
 
 	@media (orientation: portrait) {
 		margin: 10vmin 0 calc(100vh - 10vmin - 1539px - 3rem);
@@ -119,20 +119,20 @@ import Logo3D from '@/components/Logo3D.vue'
 .node {
 	z-index: 1;
 	position: relative;
-	background: var(--gray);
-	font-weight: bold;
-  border: none;
   padding: 0;
+	font-weight: bold;
+	background: var(--gray);
+  border: none;
 
 	& > span {
 		display: block;
+		padding: 0 0.1ch !important;
+		overflow: visible;
 		background: url('texture-silver.jpg');
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: transparent;
-		padding: 0 0.1ch !important;
-		overflow: visible;
 	}
 
 	.vadim {
@@ -165,29 +165,25 @@ import Logo3D from '@/components/Logo3D.vue'
 	}
 
 	.crafting {
-		background: linear-gradient(180deg, #fff, #c0c0c0);
+		top: 0;
 		font-size: 0.425em;
 		letter-spacing: -0.2ch;
-		top: 0;
+		background: linear-gradient(180deg, #fff, #c0c0c0);
 	}
 
 	.excellence {
-		background: linear-gradient(0deg, #fff, #c0c0c0);
-		font-size: 0.263em;
 		bottom: 0;
+		font-size: 0.263em;
+		background: linear-gradient(0deg, #fff, #c0c0c0);
 	}
 
 	.crafting,
 	.excellence {
+		position: absolute;
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: transparent;
-		position: absolute;
-		/* width: 28ch;
-    text-justify: inter-character;
-    text-align-last: justify; */
-		line-height: 1.25em;
 	}
 
 	&::after {
@@ -204,8 +200,8 @@ import Logo3D from '@/components/Logo3D.vue'
 }
 
 .for-capture {
-	aspect-ratio: 1;
 	position: relative;
+	aspect-ratio: 1;
 }
 
 #github {

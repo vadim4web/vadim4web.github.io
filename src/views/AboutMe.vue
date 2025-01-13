@@ -2,12 +2,16 @@
 	<main class="flex-col">
 		<div class="flex-col page-header padding-13">
 			<h2 class="h2">
-				{{ $t('aboutH21') }}
+				<strong>
+					{{ $t('aboutH21') }}
+				</strong>
 				<high-light />
 			</h2>
 
 			<p class="t2">
-				{{ $t('aboutT1') }}
+				<em>
+					{{ $t('aboutT1') }}
+				</em>
 			</p>
 		</div>
 
@@ -15,11 +19,11 @@
 			<div class="mission-header">
 				<h2 class="h2">
 					{{ $t('aboutH221') }}
-					<br />
+					<br>
 					{{ $t('aboutH222') }}
-					<br />
+					<br>
 					{{ $t('aboutH223') }}
-					<br />
+					<br>
 					{{ $t('aboutH224') }}
 				</h2>
 

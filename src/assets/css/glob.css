@@ -212,6 +212,16 @@ span:not(.logo, #spot) {
 	margin: 0;
 	padding: 0;
 	cursor: text;
+
+}
+
+strong,
+em {
+	line-height: 100%;
+}
+
+b {
+	text-shadow: 0 0 1px var(--color0);
 }
 
 menu,

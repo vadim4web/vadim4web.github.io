@@ -7,7 +7,7 @@
 					:data-text-1="$t('homeH11')"
 					style="filter: drop-shadow(0 0 0.5rem var(--color-op))"
 				>
-					{{ $t('homeH11') }}<br />
+					<strong>{{ $t('homeH11') }}</strong><br>
 					<high-light />
 				</h2>
 
@@ -19,7 +19,7 @@
 						filter: drop-shadow(0 0 0.5rem var(--color-op));
 					"
 				>
-					{{ $t('homeH12') }}
+					<em>{{ $t('homeH12') }}</em>
 				</h2>
 			</div>
 
@@ -44,7 +44,7 @@
 					<h2 class="h2">
 						<high-light />
 
-						{{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{
+						{{ $t('homeH211') }}<br>{{ $t('homeH212') }}<br>{{
 							$t('homeH213')
 						}}
 					</h2>

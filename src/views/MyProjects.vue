@@ -2,12 +2,16 @@
 	<main class="flex-col projects-page">
 		<div class="flex-col page-header padding-13">
 			<h2 class="h2" style="left: -0.2rem">
-				{{ $t('worksH2') }}
+				<strong>
+					{{ $t('worksH2') }}
+				</strong>
 				<high-light />
 			</h2>
 
 			<p class="t2">
-				{{ $t('worksT1') }}
+				<em>
+					{{ $t('worksT1') }}
+				</em>
 			</p>
 		</div>
 
@@ -45,7 +49,9 @@
 							:title="$t('worksDetails') + ' `' + p.title + '`'"
 							:to="{ name: 'project', params: { projectName: p.name } }"
 						>
-							{{ p.title }}
+							<em>
+								{{ p.title }}
+							</em>
 						</router-link>
 					</div>
 				</div>

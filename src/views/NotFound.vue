@@ -5,9 +5,9 @@
 			<high-light />
 
 			<div class="p1">
-				{{ $t('notFoundT11') }}<br />
-				{{ $t('notFoundT12') }}<b>{{ useRoute().path }}</b>{{ $t('notFoundT13') }}<br />
-				{{ $t('notFoundT14') }}<br />
+				{{ $t('notFoundT11') }}<br>
+				{{ $t('notFoundT12') }}<b>{{ useRoute().path }}</b>{{ $t('notFoundT13') }}<br>
+				{{ $t('notFoundT14') }}<br>
 				<hr />
 				<hr />
 				<i>{{ $t('notFoundT15') }}</i>

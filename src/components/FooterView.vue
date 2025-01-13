@@ -29,8 +29,8 @@
 
 			<address class="text-center">
 				<h4 class="h4" :title="$t('location')">
-					{{ $t('footerA1') }}, 175/14,<br />
-					{{ $t('footerA2') }},<br />
+					{{ $t('footerA1') }}, 175/14,<br>
+					{{ $t('footerA2') }},<br>
 					08150
 				</h4>
 			</address>
@@ -212,7 +212,9 @@
 			>
 				VADIM4WEB.
 			</a>
-			{{ $t('copyright') }}.
+			<em>
+				{{ $t('copyright') }}.
+			</em>
 		</h4>
 	</footer>
 </template>

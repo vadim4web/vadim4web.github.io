@@ -2,12 +2,16 @@
 	<main class="flex-col project-page">
 		<div class="flex-col page-header padding-13">
 			<h2 class="h2">
-				{{ $t('projectH21') }}
+				<strong>
+					{{ $t('projectH21') }}
+				</strong>
 				<high-light />
 			</h2>
 
 			<p class="t2">
-				{{ $t('projectT1') }}
+				<em>
+					{{ $t('projectT1') }}
+				</em>
 			</p>
 		</div>
 
@@ -40,20 +44,26 @@
 						:href="source"
 						target="_blank"
 						title="GitHub Repository"
-						>{{ source }}</a>
+						>
+						<i>
+							{{ source }}
+						</i>
+					</a>
 				</p>
 
 				<p class="p4">
 					<b> {{ $t('projectP4') }}:&nbsp; </b>
-					<a class="demo" :href="demo" target="_blank" title="Live Demo">{{
-						demo
-					}}</a>
+					<a class="demo" :href="demo" target="_blank" title="Live Demo">
+						<i>
+							{{ demo	}}
+						</i>
+					</a>
 				</p>
 
 				<div v-if="project.deps.length" class="p4">
 					<b>{{ $t('projectP5') }}:</b>
 
-					<br />
+					<br>
 
 					<ul>
 						<li v-for="(d, i) in project.deps" :key="i">
@@ -69,7 +79,7 @@
 				<div class="p4">
 					<b> {{ $t('projectP6') }}: </b>
 
-					<br />
+					<br>
 
 					<pre v-if="project['desc_' + $i18n.locale]">{{ project['desc_' + $i18n.locale] }}
           </pre>
@@ -127,7 +137,9 @@
 
 						<div class="other-text flex-col-between text-center">
 							<h4 class="h4">
-								{{ p.title }}
+								<em>
+									{{ p.title }}
+								</em>
 							</h4>
 
 							<p class="other-p">

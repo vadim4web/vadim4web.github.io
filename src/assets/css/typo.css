@@ -42,15 +42,9 @@
 .h1_span::before,
 .h1_span::after {
 	content: attr(data-text-2);
+	left: 0;
 	width: 100%;
-}
-
-.h1_span::before {
-	left: 0;
-}
-
-.h1_span::after {
-	left: 0;
+	font-style: italic;
 }
 
 .h1_h2::before,

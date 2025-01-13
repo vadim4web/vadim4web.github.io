@@ -96,8 +96,8 @@
 		</span>
 
 		<h2 v-show="false">
-			{{ width }} {{ height }}<br />
-			{{ x }} {{ y }}<br />
+			{{ width }} {{ height }}<br>
+			{{ x }} {{ y }}<br>
 			{{ offsetX }} {{ offsetY }}
 		</h2>
 	</button>

@@ -28,11 +28,12 @@
 					:title="'View more details about `' + title + '`'"
 					:to="{ name: 'project', params: { projectName: name } }"
 				>
-					{{ title.split(' ').slice(0, -1).join(' ') }}
+					<!-- {{ title.split(' ').slice(0, -1).join(' ') }}
 
 					<span class="gap2 w100">
 						{{ title.split(' ').slice(-1).join(' ') }}
-					</span>
+					</span> -->
+					<em>{{ title }}</em>
 				</router-link>
 			</h4>
 
@@ -41,7 +42,7 @@
 
 				{{ stack.join(' | ') }}
 
-				<br />
+				<br>
 
 				<span class="dimmed">tech area: &nbsp;&nbsp;</span>
 
@@ -113,23 +114,17 @@ const three = getThreeRandom(projects)
 			}
 		}
 
-		.h4 {
-			& .gap2 {
-				word-spacing: 2rem;
-			}
-
-			&::after {
-				content: '--------------------';
-				right: 0;
-				bottom: 0;
-				width: fit-content;
-				height: 2px;
-				line-height: inherit;
-				font-size: inherit;
-				letter-spacing: -0.33ch;
-				color: var(--accent0);
-				text-align: right;
-			}
+		.h4::after {
+			content: '--------------------';
+			bottom: 0;
+			right: 0;
+			width: fit-content;
+			height: 2px;
+			line-height: inherit;
+			font-size: inherit;
+			letter-spacing: -0.33ch;
+			color: var(--accent0);
+			text-align: right;
 		}
 
 		.h4,

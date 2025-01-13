@@ -29,7 +29,7 @@
 			<!-- Horizontal line from left to center -->
 			<line x1="4" x2="50" y1="50" y2="50" />
 			<!-- Arc from top-center to center -->
-			<path d="M 50,3.5 A 23.25,23.25,0,1,1,50,50" fill="none" />
+			<path d="M 50,4 A 23,23,0,1,1,50,50" fill="none" />
 			<!-- Outer circle -->
 			<circle cx="50" cy="50" fill="none" r="46" />
 		</svg>
@@ -85,6 +85,7 @@
 		height: 3vmin;
 		stroke-width: max(0.25vmin, 10px);
 		stroke: var(--color0);
+		overflow: visible;
 	}
 
 	&::selection .logo-image {
