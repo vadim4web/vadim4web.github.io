@@ -151,7 +151,9 @@ body,
 	left: 0;
 }
 
+body::before,
 body::after,
+#logoOverlay::before,
 #logoOverlay::after {
 	top: 0;
 	bottom: 0;
@@ -167,24 +169,35 @@ body::after,
 	pointer-events: none;
 }
 
+body::before,
 body::after {
 	min-height: 100%;
+}
+
+body::before {
+	background-attachment: fixed;
+}
+
+body::after {
 	background-attachment: scroll;
+}
+
+body::before {
+	z-index: -2;
+}
+
+body::after {
 	z-index: -1;
 }
 
-@media (orientation: portrait) {
-	body::after,
-	#logoOverlay::after {
-		background-size: 14.2857%;
-	}
+body::before,
+#logoOverlay::before {
+	background-size: 50vmin;
 }
 
-@media (orientation: landscape) {
-	body::after,
-	#logoOverlay::after {
-		background-size: 7.14285%;
-	}
+body::after,
+#logoOverlay::after {
+	background-size: calc(100vmin / 7);
 }
 
 #app {

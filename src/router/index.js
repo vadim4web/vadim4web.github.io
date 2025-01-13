@@ -15,6 +15,10 @@ const routes = [
 		path: '/contact',
 		component: () => import('@/views/ContactMe.vue'),
 	},
+	// {
+	// 	path: '/cover',
+	// 	component: () => import('@/views/CoverImages.vue'),
+	// },
 	{
 		path: '/projects',
 		component: () => import('@/views/MyProjects.vue'),
