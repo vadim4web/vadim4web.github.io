@@ -4,6 +4,7 @@
 		<cover-image id="linkedin-profile" :logo-size="396" />
 		<cover-image id="linkedin-company" :logo-size="191" />
 		<cover-image id="facebook" :logo-size="312" />
+		<cover-image id="x" :logo-size="500" />
 	</main>
 </template>
 

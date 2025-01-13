@@ -29,8 +29,8 @@
 
 			<address class="text-center">
 				<h4 class="h4" :title="$t('location')">
-					{{ $t('footerA1') }}, 175/14,<br>
-					{{ $t('footerA2') }},<br>
+					{{ $t('footerA1') }}, 175/14,<br />
+					{{ $t('footerA2') }},<br />
 					08150
 				</h4>
 			</address>
@@ -129,6 +129,52 @@
 
 					<h4 class="h4">
 						<a
+							href="https://x.com/vadim4web"
+							rel="noopener noreferrer"
+							target="_blank"
+							:title="$t('xtwitter')"
+						>
+							<svg
+								height="192.000000pt"
+								preserveAspectRatio="xMidYMid meet"
+								style="padding: 5%"
+								version="1.0"
+								viewBox="0 0 192.000000 192.000000"
+								width="192.000000pt"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g
+									fill="var(--color0)"
+									stroke="none"
+									transform="translate(0.000000,192.000000) scale(0.100000,-0.100000)"
+								>
+									<path
+										d="M825 1910 c-367 -57 -667 -314 -778 -666 -102 -322 -25 -669 204
+							-928 112 -127 310 -245 484 -288 127 -31 323 -31 449 0 284 71 516 260 641
+							524 66 141 89 244 89 408 0 168 -23 271 -94 416 -157 324 -465 525 -825 539
+							-60 2 -137 0 -170 -5z m331 -140 c309 -71 558 -329 624 -645 7 -33 13 -107 13
+							-165 0 -121 -13 -194 -55 -302 -98 -258 -339 -461 -613 -518 -77 -16 -241 -17
+							-325 -1 -260 50 -497 240 -606 488 -94 211 -87 489 16 698 175 353 558 533
+							946 445z"
+									/>
+									<path
+										d="M507 1343 c48 -65 140 -189 206 -276 l118 -158 -104 -112 c-218 -234
+							-307 -332 -307 -339 0 -5 24 -8 53 -8 l53 0 175 190 c96 104 177 190 181 190
+							5 0 72 -85 150 -190 l143 -190 162 0 c104 0 163 4 163 10 0 6 -94 136 -210
+							290 -115 154 -210 284 -210 290 0 5 86 102 191 215 l190 205 -60 0 -60 0 -157
+							-170 c-87 -93 -161 -170 -165 -170 -4 0 -64 77 -134 170 l-127 170 -169 0
+							-169 0 87 -117z m512 -378 c171 -228 311 -417 311 -420 0 -3 -26 -5 -57 -5
+							l-58 1 -303 405 c-167 223 -306 412 -309 420 -4 11 6 14 50 14 l55 0 311 -415z"
+									/>
+								</g>
+							</svg>
+
+							&nbsp;
+						</a>
+					</h4>
+
+					<h4 class="h4">
+						<a
 							href="https://www.facebook.com/vadim4web"
 							rel="noopener noreferrer"
 							target="_blank"
@@ -212,9 +258,7 @@
 			>
 				VADIM4WEB.
 			</a>
-			<em>
-				{{ $t('copyright') }}.
-			</em>
+			<em> {{ $t('copyright') }}. </em>
 		</h4>
 	</footer>
 </template>
@@ -252,8 +296,7 @@ import LogoView from '@/components/LogoView.vue'
 
 	.grid {
 		display: grid;
-		grid-template-columns: 1.5fr 2.5fr 1.5fr;
-		gap: 1rem;
+		grid-template-columns: 23.5vw 33vw 23.5vw;
 		height: 8rem;
 		padding-bottom: 2.5rem;
 
@@ -268,12 +311,8 @@ import LogoView from '@/components/LogoView.vue'
 		}
 
 		.contacts {
+			text-align: right;
 			justify-self: end;
-			justify-content: end;
-
-			.phone {
-				font-size: 175%;
-			}
 		}
 	}
 }
@@ -281,19 +320,19 @@ import LogoView from '@/components/LogoView.vue'
 .links {
 	display: flex;
 	align-items: flex-start;
-	justify-content: flex-start;
-	gap: 1rem;
-	padding-top: 1rem;
+	justify-content: flex-end;
+	gap: 0.375rem;
+	padding: 1.5rem 0;
 
 	.h4 {
-		width: 3.5rem;
-		height: 3.5rem;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 }
 
 .links svg {
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
 	stroke: var(--color0);
 }
 

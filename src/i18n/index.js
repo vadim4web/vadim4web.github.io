@@ -80,6 +80,7 @@ const messages = {
 
 		gitHub: 'My GitHub profile',
 		linkedin: 'My LinkedIn profile',
+		xtwitter: 'My X (formerly Twitter) profile',
 		facebook: 'My Facebook profile',
 
 		chatMe: 'Message me on Telegram',
@@ -175,6 +176,7 @@ const messages = {
 
 		gitHub: 'Мій GitHub профіль',
 		linkedin: 'Мій профіль LinkedIn',
+		xtwitter: 'Мій профіль на X (раніше Twitter)',
 		facebook: 'Мій профіль Facebook',
 
 		chatMe: 'Написати в Telegram',

@@ -174,8 +174,8 @@ defineProps({
 	}
 
 	.for-capture {
-		margin-left: -1.15ch;
-		margin-right: -1.25ch;
+		margin-left: -1.1375ch;
+		margin-right: -1.2625ch;
 	}
 
 	&::before {
@@ -203,7 +203,7 @@ defineProps({
 
 	.for-capture {
 		margin-left: -1.1ch;
-		margin-right: -1.225ch;
+		margin-right: -1.2125ch;
 	}
 
 	&::before {
@@ -240,6 +240,34 @@ defineProps({
 
 	&::after {
 		background-size: calc(312px / 7);
+	}
+}
+
+#x {
+	width: 1500px;
+	height: 500px;
+
+	font-size: calc(500px / 2.8);
+
+	.crafting {
+		top: 0.55ch;
+	}
+
+	.excellence {
+		bottom: 2.1ch;
+	}
+
+	.for-capture {
+		margin-left: -1.155ch;
+		margin-right: -1.275ch;
+	}
+
+	&::before {
+		background-size: calc(500px / 2);
+	}
+
+	&::after {
+		background-size: calc(500px / 7);
 	}
 }
 </style>
