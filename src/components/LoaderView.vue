@@ -37,12 +37,11 @@ import { onMounted, ref, watch } from 'vue'
 import { state } from '@/store/'
 import getThemeColor from '@/helpers/getThemeColor.js'
 
-const totalDuration = ref(1755) // Загальна тривалість анімації в мс (2340ms for 30fps)
+const totalDuration = ref(1755) // 2340ms for 30fps
 const isVisible = ref(true)
 const fadeOutClass = ref(false)
 const logoOverlay = ref(null)
 const logo2dCanvas = ref(null)
-
 let startTime = null
 
 function startAnimation() {
@@ -51,7 +50,7 @@ function startAnimation() {
 	overlay.classList.remove('fade-out')
 	const canvas = logo2dCanvas.value || document.getElementById('logo2dCanvas')
 	const ctx = canvas.getContext('2d')
-	ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
 	ctx.lineWidth = 28
 	ctx.strokeStyle = getThemeColor()
 
@@ -126,18 +125,16 @@ function startAnimation() {
 			} else if (elapsed > segmentEnd) {
 				drawFunctions[i](segmentMaxValues[i])
 			}
-
 			accumulatedTime += segmentDurations[i]
 		}
 
 		if (elapsed < totalDuration.value) {
 			requestAnimationFrame(animate)
 		} else if (state.showLoader) {
-			startTime = null // Reset the start time
-			ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
-			requestAnimationFrame(animate) // Restart the animation
+			startTime = null
+			ctx.clearRect(0, 0, canvas.width, canvas.height)
+			requestAnimationFrame(animate)
 		} else {
-			// Add fade-out animation class
 			fadeOutClass.value = true
 		}
 	}
@@ -155,13 +152,11 @@ onMounted(() => {
 	startAnimation()
 })
 
-// Watch for changes in the state.showLoader value
 watch(
 	() => state.showLoader,
 	newValue => {
 		if (newValue) {
 			isVisible.value = newValue
-			// Restart animation when loader becomes visible
 			startAnimation()
 		}
 	}

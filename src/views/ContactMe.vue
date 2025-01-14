@@ -18,8 +18,8 @@
 		<div class="flex-col">
 			<div class="grid-text-form">
 				<h2 class="h2">
-					{{ $t('contactH221') }}<br>
-					{{ $t('contactH222') }}<br>
+					{{ $t('contactH221') }}<br />
+					{{ $t('contactH222') }}<br />
 					{{ $t('contactH223') }}
 				</h2>
 

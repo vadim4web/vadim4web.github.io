@@ -51,7 +51,6 @@ onMounted(() => {
 	setSlideContentGrid()
 	slider.value.goToSlide(3)
 })
-
 onUpdated(() => setSlideContentGrid())
 </script>
 

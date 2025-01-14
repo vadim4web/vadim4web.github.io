@@ -96,8 +96,8 @@
 		</span>
 
 		<h2 v-show="false">
-			{{ width }} {{ height }}<br>
-			{{ x }} {{ y }}<br>
+			{{ width }} {{ height }}<br />
+			{{ x }} {{ y }}<br />
 			{{ offsetX }} {{ offsetY }}
 		</h2>
 	</button>
@@ -113,7 +113,6 @@ const { x, y } = useMouse()
 const { width, height } = useWindowSize()
 const offsetX = ref(50)
 const offsetY = ref(50)
-
 const theme = ref(getTheme())
 
 const toggleTheme = () => {
@@ -140,13 +139,11 @@ const setAll = theme => {
 }
 
 onMounted(() => setTheme(theme.value))
-
 onUpdated(() => {
 	offsetX.value = (x.value / width.value) * 100 || 50
 	offsetY.value = (y.value / height.value) * 100 || 50
 	setAll(theme.value)
 })
-
 watch(theme, setAll)
 </script>
 

@@ -44,7 +44,7 @@
 						:href="source"
 						target="_blank"
 						title="GitHub Repository"
-						>
+					>
 						<i>
 							{{ source }}
 						</i>
@@ -55,7 +55,7 @@
 					<b> {{ $t('projectP4') }}:&nbsp; </b>
 					<a class="demo" :href="demo" target="_blank" title="Live Demo">
 						<i>
-							{{ demo	}}
+							{{ demo }}
 						</i>
 					</a>
 				</p>
@@ -63,7 +63,7 @@
 				<div v-if="project.deps.length" class="p4">
 					<b>{{ $t('projectP5') }}:</b>
 
-					<br>
+					<br />
 
 					<ul>
 						<li v-for="(d, i) in project.deps" :key="i">
@@ -79,7 +79,7 @@
 				<div class="p4">
 					<b> {{ $t('projectP6') }}: </b>
 
-					<br>
+					<br />
 
 					<pre v-if="project['desc_' + $i18n.locale]">{{ project['desc_' + $i18n.locale] }}
           </pre>

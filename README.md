@@ -76,6 +76,6 @@ vadim4web.github.io/
 
 - [Email](mailto:vadim4web@gmail.com)
 - [Portfolio](https://vadim4web.github.io)
-- [LinkedIn](https://www.linkedin.com/in/vadim4web/)
+- [LinkedIn](https://www.linkedin.com/in/vadim4web)
 - [Facebook](https://www.facebook.com/vadim4web)
 - [Telegram](https://t.me/vadim4web)

@@ -516,8 +516,8 @@ Array.prototype.shuffle = function () {
 	return this.sort(() => Math.random() - 0.5)
 }
 
-vertical.shuffle() // 13
-horizontal.shuffle() // 14
+vertical.shuffle()
+horizontal.shuffle()
 
 const projects = [
 	vertical[0],

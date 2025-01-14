@@ -19,7 +19,7 @@ export default defineConfig(({ command, mode }) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					api: 'modern-compiler', // or "modern"
+					api: 'modern-compiler',
 				},
 			},
 		},
@@ -27,11 +27,8 @@ export default defineConfig(({ command, mode }) => {
 			rollupOptions: {
 				output: {
 					manualChunks: {
-						// Separate three.js into its own chunk
 						three: ['three'],
-						// Separate GLTFLoader into its own chunk
 						gltfLoader: ['three/examples/jsm/loaders/GLTFLoader.js'],
-						// Separate DRACOLoader into its own chunk
 						dracoLoader: ['three/addons/loaders/DRACOLoader.js'],
 					},
 				},

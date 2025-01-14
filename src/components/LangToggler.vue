@@ -29,6 +29,8 @@ import i18n from '@/i18n/'
 import getIPInfo from '@/helpers/ipInfoHelper'
 
 const BASE_URL = import.meta.env.BASE_URL
+const selectedLanguage = ref(i18n.global.locale)
+const showOptions = ref(false)
 
 const languageOptions = Object.keys(i18n.global.messages).map(locale => ({
 	value: locale,
@@ -40,9 +42,6 @@ const sortedLanguageOptions = computed(() => {
 		i18n.global.locale === o1.value ? -1 : 1
 	)
 })
-
-const selectedLanguage = ref(i18n.global.locale)
-const showOptions = ref(false)
 
 const handleClick = lang => {
 	setLanguage(lang)

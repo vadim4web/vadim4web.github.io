@@ -28,11 +28,6 @@
 					:title="'View more details about `' + title + '`'"
 					:to="{ name: 'project', params: { projectName: name } }"
 				>
-					<!-- {{ title.split(' ').slice(0, -1).join(' ') }}
-
-					<span class="gap2 w100">
-						{{ title.split(' ').slice(-1).join(' ') }}
-					</span> -->
 					<em>{{ title }}</em>
 				</router-link>
 			</h4>
@@ -42,7 +37,7 @@
 
 				{{ stack.join(' | ') }}
 
-				<br>
+				<br />
 
 				<span class="dimmed">tech area: &nbsp;&nbsp;</span>
 

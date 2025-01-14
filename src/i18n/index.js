@@ -26,8 +26,7 @@ const messages = {
 
 		homeP11:
 			'Hello, my name is Vadim Chervoniak, I am from Ukraine and I’ve got ',
-		homeP12:
-			'approximately ~ ',
+		homeP12: 'approximately ~ ',
 		homeP13:
 			'I am a Full-stack developer and my expertise includes HTML, CSS, JavaScript, Vue, React, Node.js, various databases, cloud computing, and integrating with different APIs, helping me to deliver complex web development solutions.',
 
@@ -125,10 +124,8 @@ const messages = {
 		homeH212: 'знайомитись',
 		homeH213: 'ближче',
 
-		homeP11:
-			'Привіт, мене звати Вадім Червоняк, я з України і мені ',
-		homeP12:
-			'приблизно ~ ',
+		homeP11: 'Привіт, мене звати Вадім Червоняк, я з України і мені ',
+		homeP12: 'приблизно ~ ',
 		homeP13:
 			'Я — Full-stack розробник, і моя експертиза включає HTML, CSS, JavaScript, Vue, React, Node.js, різні бази даних, хмарні технології та інтеграцію з різними API, що дозволяє мені надавати комплексні рішення для веб-розробки.',
 
@@ -209,10 +206,8 @@ const messages = {
 	},
 }
 
-const i18n = createI18n({
+export default createI18n({
 	locale: sessionStorage.getItem('lang') || 'en',
 	fallbackLocale: 'en',
 	messages,
 })
-
-export default i18n

@@ -33,9 +33,8 @@ const { classes, three } = defineProps({
 
 const spinnerCanvas = ref(null)
 let startTime = null
+const totalDuration = 1755
 
-// Spinner animation details
-const totalDuration = 1755 // 1 second total animation duration
 const segmentDurations = [0.15, 0.11, 0.08, 0.22, 0.44].map(
 	percentage => totalDuration * percentage
 )
@@ -80,25 +79,19 @@ async function getCanvasContext() {
 
 async function animateSpinner(timestamp) {
 	const ctx = await getCanvasContext()
-
 	if (!startTime) startTime = timestamp
 	const elapsed = timestamp - startTime
-
 	ctx.clearRect(0, 0, 100, 100)
-
 	let accumulatedTime = 0
 	for (let i = 0; i < drawFunctions.length; i++) {
 		const segmentStart = accumulatedTime
 		const segmentEnd = accumulatedTime + segmentDurations[i]
-
 		const segmentProgress = Math.min(
 			Math.max((elapsed - segmentStart) / segmentDurations[i], 0),
 			1
 		)
 		const progressValue = segmentMaxValues[i] * segmentProgress
-
 		await drawFunctions[i](progressValue)
-
 		accumulatedTime = segmentEnd
 	}
 
@@ -106,7 +99,7 @@ async function animateSpinner(timestamp) {
 		requestAnimationFrame(animateSpinner)
 	} else {
 		startTime = null
-		requestAnimationFrame(animateSpinner) // Restart animation
+		requestAnimationFrame(animateSpinner)
 	}
 }
 
@@ -118,19 +111,14 @@ const updateTheme = async () => {
 onMounted(async () => {
 	await waitForCanvas()
 	const ctx = await getCanvasContext()
-
 	ctx.lineWidth = 7
 	ctx.strokeStyle = state.themeColor
-
 	requestAnimationFrame(animateSpinner)
-
 	window.addEventListener('themechange', updateTheme)
 })
-
 onUnmounted(() => {
 	window.removeEventListener('themechange', updateTheme)
 })
-
 watch(
 	() => state.themeColor,
 	async newColor => {

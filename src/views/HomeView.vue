@@ -7,7 +7,7 @@
 					:data-text-1="$t('homeH11')"
 					style="filter: drop-shadow(0 0 0.5rem var(--color-op))"
 				>
-					<strong>{{ $t('homeH11') }}</strong><br>
+					<strong>{{ $t('homeH11') }}</strong><br />
 					<high-light />
 				</h2>
 
@@ -44,13 +44,13 @@
 					<h2 class="h2">
 						<high-light />
 
-						{{ $t('homeH211') }}<br>{{ $t('homeH212') }}<br>{{
+						{{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{
 							$t('homeH213')
 						}}
 					</h2>
 
 					<p class="t2">
-						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-calculator />.<br>{{ $t('homeP13') }}
+						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-calculator />.<br />{{ $t('homeP13') }}
 					</p>
 				</div>
 
@@ -97,7 +97,7 @@
 
 <script setup>
 import Logo3D from '@/components/Logo3D.vue'
-import ActiveElement  from '@/components/ActiveElement.vue'
+import ActiveElement from '@/components/ActiveElement.vue'
 import ArrowRight from '@/components/ArrowRight.vue'
 import HighLight from '@/components/HighLight.vue'
 import AgeCalculator from '@/components/AgeCalculator.vue'

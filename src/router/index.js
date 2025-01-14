@@ -34,16 +34,13 @@ const routes = [
 			if (!isInProjects)
 				return {
 					name: 'no-match',
-					// preserve current path and remove the first char to avoid the target URL starting with `//`
 					params: { pathMatch: to.path.substring(1).split('/') },
-					// preserve existing query and hash if any
 					query: to.query,
 					hash: to.hash,
 				}
 		},
 	},
 	{
-		// Catch all routes that don't match the previous ones
 		path: '/:pathMatch(.*)*',
 		name: 'no-match',
 		component: () => import('@/views/NotFound.vue'),

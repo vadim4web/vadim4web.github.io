@@ -22,15 +22,10 @@
 				</filter>
 			</defs>
 			<desc>4</desc>
-			<!-- Vertical line -->
 			<line x1="50" x2="50" y1="96" y2="4" />
-			<!-- Diagonal line from center to top-left -->
 			<line x1="50" x2="4" y1="4" y2="50" />
-			<!-- Horizontal line from left to center -->
 			<line x1="4" x2="50" y1="50" y2="50" />
-			<!-- Arc from top-center to center -->
 			<path d="M 50,4 A 23,23,0,1,1,50,50" fill="none" />
-			<!-- Outer circle -->
 			<circle cx="50" cy="50" fill="none" r="46" />
 		</svg>
 		<span class="logo-letter w">W</span>
@@ -39,9 +34,7 @@
 	</span>
 </template>
 
-<sc&ript></sc&ript>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .logo-span {
 	font-size: 3vmin;
 	font-weight: 700;

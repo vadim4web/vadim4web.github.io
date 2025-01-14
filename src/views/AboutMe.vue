@@ -19,11 +19,11 @@
 			<div class="mission-header">
 				<h2 class="h2">
 					{{ $t('aboutH221') }}
-					<br>
+					<br />
 					{{ $t('aboutH222') }}
-					<br>
+					<br />
 					{{ $t('aboutH223') }}
-					<br>
+					<br />
 					{{ $t('aboutH224') }}
 				</h2>
 

@@ -28,16 +28,12 @@ let model = null
 let environmentMaps = {}
 let clock = new Clock()
 let animationFrameId = null
-let currentTheme = getCurrentTheme() // Tracks current theme to avoid unnecessary updates
+let currentTheme = getCurrentTheme()
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const MODEL_NAME = 'logo.glb'
 
-const {
-	noRotate,
-	noShadow,
-	size,
-} = defineProps({
+const { noRotate, noShadow, size } = defineProps({
 	noRotate: {
 		type: Boolean,
 		required: false,
@@ -52,10 +48,8 @@ const {
 	},
 })
 
-// Dynamic imports for loaders
 let GLTFLoader, DRACOLoader
 
-// Preload Environment Maps
 function preloadEnvironmentMaps() {
 	const loader = new CubeTextureLoader()
 	environmentMaps.light = loader.load(
@@ -64,7 +58,6 @@ function preloadEnvironmentMaps() {
 	environmentMaps.dark = loader.load('texture-gold.jpg '.repeat(6).split(' '))
 }
 
-// Get Current Theme
 function getCurrentTheme() {
 	return (
 			getComputedStyle(document.documentElement)
@@ -75,7 +68,6 @@ function getCurrentTheme() {
 		:	'light'
 }
 
-// Initialize Scene and Renderer
 function initializeScene() {
 	scene = new Scene()
 	camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
@@ -86,7 +78,6 @@ function initializeScene() {
 	setRendererSize()
 }
 
-// Load Model
 async function loadModel() {
 	if (!GLTFLoader || !DRACOLoader) {
 		const { GLTFLoader: Loader } = await import(
@@ -109,7 +100,7 @@ async function loadModel() {
 		`${ASSETS_DIR}${MODEL_NAME}`,
 		gltf => {
 			model = gltf.scene
-			updateModelMaterial(currentTheme) // Apply material during initial load
+			updateModelMaterial(currentTheme)
 			scene.add(model)
 		},
 		undefined,
@@ -117,7 +108,6 @@ async function loadModel() {
 	)
 }
 
-// Update Model Material
 function updateModelMaterial(theme) {
 	if (!model || !environmentMaps[theme]) return
 	model.traverse(child => {
@@ -132,7 +122,6 @@ function updateModelMaterial(theme) {
 	})
 }
 
-// Observe Theme Changes
 function observeThemeChanges() {
 	const observer = new MutationObserver(() => {
 		const newTheme = getCurrentTheme()
@@ -145,7 +134,6 @@ function observeThemeChanges() {
 	return observer
 }
 
-// Resize Handler
 function setRendererSize() {
 	let vmin
 	if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
@@ -157,14 +145,13 @@ function setRendererSize() {
 	camera.updateProjectionMatrix()
 }
 
-// Animation Loop
 function animate() {
 	const delta = clock.getDelta()
 
 	if (model) {
 		model.rotation.x = Math.PI / 2
 
-		if (!noRotate) model.rotation.z += delta * 0.5 // Smooth rotation
+		if (!noRotate) model.rotation.z += delta * 0.5
 	}
 
 	renderer.clear()
