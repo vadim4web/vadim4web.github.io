@@ -23,10 +23,41 @@ const calculateAge = () => {
 		birthDate.add(years, 'year').add(months, 'month'),
 		'day'
 	)
-	const hours = now.diff(birthDate, 'hour') % 24
-	const minutes = now.diff(birthDate, 'minute') % 60
-	const seconds = now.diff(birthDate, 'second') % 60
-	const milliseconds = now.diff(birthDate, 'millisecond') % 1000
+	const hours =
+		now.diff(
+			birthDate.add(years, 'year').add(months, 'month').add(days, 'day'),
+			'hour'
+		) % 24
+	const minutes =
+		now.diff(
+			birthDate
+				.add(years, 'year')
+				.add(months, 'month')
+				.add(days, 'day')
+				.add(hours, 'hour'),
+			'minute'
+		) % 60
+	const seconds =
+		now.diff(
+			birthDate
+				.add(years, 'year')
+				.add(months, 'month')
+				.add(days, 'day')
+				.add(hours, 'hour')
+				.add(minutes, 'minute'),
+			'second'
+		) % 60
+	const milliseconds =
+		now.diff(
+			birthDate
+				.add(years, 'year')
+				.add(months, 'month')
+				.add(days, 'day')
+				.add(hours, 'hour')
+				.add(minutes, 'minute')
+				.add(seconds, 'second'),
+			'millisecond'
+		) % 1000
 
 	return {
 		y: years,
