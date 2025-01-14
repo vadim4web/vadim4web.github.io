@@ -137,7 +137,7 @@
 							<svg
 								height="192.000000pt"
 								preserveAspectRatio="xMidYMid meet"
-								style="padding: 5%"
+								style="padding: 5.5%"
 								version="1.0"
 								viewBox="0 0 192.000000 192.000000"
 								width="192.000000pt"
@@ -334,6 +334,7 @@ import LogoView from '@/components/LogoView.vue'
 	width: 2.5rem;
 	height: 2.5rem;
 	stroke: var(--color0);
+	overflow: visible;
 }
 
 .mail a {

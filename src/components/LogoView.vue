@@ -79,6 +79,8 @@
 		stroke-width: max(0.25vmin, 10px);
 		stroke: var(--color0);
 		overflow: visible;
+		position: relative;
+		top: 0.12vmin;
 	}
 
 	&::selection .logo-image {
