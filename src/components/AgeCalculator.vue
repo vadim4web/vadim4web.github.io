@@ -13,7 +13,7 @@ dayjs.extend(duration)
 const { locale } = useI18n()
 const result = ref('')
 let intervalId = null
-const birthDate = dayjs('1988-06-17T11:40:00Z')
+const birthDate = dayjs('1988-06-17T09:40:00Z')
 
 const calculateAge = () => {
 	const now = dayjs()
