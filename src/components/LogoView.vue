@@ -74,13 +74,13 @@
 	}
 
 	.logo-image {
+		position: relative;
+		top: 0.12vmin;
 		width: 3vmin;
 		height: 3vmin;
 		stroke-width: max(0.25vmin, 10px);
 		stroke: var(--color0);
 		overflow: visible;
-		position: relative;
-		top: 0.12vmin;
 	}
 
 	&::selection .logo-image {
