@@ -79,13 +79,20 @@ const updateResult = () => {
 
 const startInterval = () => (intervalId = setInterval(updateResult, 33))
 
+const handleVisibilityChange = () => {
+	if (!document.hidden) startInterval()
+	else clearInterval(intervalId)
+}
+
 onBeforeUnmount(() => {
 	if (intervalId) clearInterval(intervalId)
+	document.removeEventListener('visibilitychange', handleVisibilityChange)
 })
 
 onMounted(() => {
 	updateResult()
 	startInterval()
+	document.addEventListener('visibilitychange', handleVisibilityChange)
 })
 
 watch(locale, updateResult)
