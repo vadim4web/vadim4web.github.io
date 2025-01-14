@@ -51,6 +51,7 @@
 
 					<p class="t2">
 						{{ $t('homeP1') }}
+						<age-calculator />
 					</p>
 				</div>
 
@@ -100,6 +101,7 @@ import Logo3D from '@/components/Logo3D.vue'
 import ActiveElement  from '@/components/ActiveElement.vue'
 import ArrowRight from '@/components/ArrowRight.vue'
 import HighLight from '@/components/HighLight.vue'
+import AgeCalculator from '@/components/AgeCalculator.vue'
 import { defineAsyncComponent } from 'vue'
 
 const ThreeView = defineAsyncComponent(
