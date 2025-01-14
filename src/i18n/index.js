@@ -20,8 +20,17 @@ const messages = {
 		homeH211: 'Let’s get to',
 		homeH212: 'know me',
 		homeH213: 'closer',
+
 		homeP1:
 			'Hello, I am Vadim Chervoniak, a Full-stack developer based in Ukraine. My expertise includes HTML, CSS, JavaScript, Vue, React, Node.js, various databases, cloud computing, and integrating with different APIs, helping me to deliver complex web development solutions.',
+
+		homeP11:
+			'Hello, my name is Vadim Chervoniak, I am from Ukraine and I’ve got ',
+		homeP12:
+			'approximately ~ ',
+		homeP13:
+			'I am a Full-stack developer and my expertise includes HTML, CSS, JavaScript, Vue, React, Node.js, various databases, cloud computing, and integrating with different APIs, helping me to deliver complex web development solutions.',
+
 		homeB2: 'Discover More About Me',
 		homeH22: 'My Projects Highlight',
 		homeB3: 'EXPLORE MORE',
@@ -34,7 +43,7 @@ const messages = {
 		aboutH223: 'development',
 		aboutH224: 'easier.',
 		aboutT21:
-			"As individuals, we are all born developers, constantly shaping our neural networks as we journey through life. Some of us, including myself, have chosen to transform this passion for development into a fulfilling career in web development. For me, it's not just a job but a calling that allows me to express my creativity and make a meaningful impact through technology.",
+			'As individuals, we are all born developers, constantly shaping our neural networks as we journey through life. Some of us, including myself, have chosen to transform this passion for development into a fulfilling career in web development. For me, it’s not just a job but a calling that allows me to express my creativity and make a meaningful impact through technology.',
 		aboutT22:
 			'We each have our own unique story to tell, and through the language of technology, we code our autobiographies, breathing life into our ideas on the digital canvas. I am deeply dedicated to creating user-friendly web applications and continually enhancing my skills to stay ahead in this ever-evolving industry.',
 
@@ -54,7 +63,7 @@ const messages = {
 			'The project does not utilize any external libraries and relies solely on the standard built-in HTML, CSS, and JavaScript processing capabilities of modern browsers.',
 		projectP6: 'Description',
 		projectP6_default:
-			"It seems that there is no description attached, so let's suppose that this project is self-descriptive and needs no explicit descriptional words.",
+			'It seems that there is no description attached, so let’s suppose that this project is self-descriptive and needs no explicit descriptional words.',
 		projectPrev: 'PREVIOUS WORK',
 		projectNext: 'NEXT WORK',
 		projectH22: 'Other Projects',
@@ -73,9 +82,9 @@ const messages = {
 
 		footerGIT: 'Get in Touch With Me',
 		footerA1: 'Ivana Franka St',
-		footerA2: "Boiarka, Kyivs'ka oblast",
+		footerA2: 'Boiarka, Kyivs’ka oblast',
 
-		emailSubject: 'Crafting Digital Solutions - Excellence in Every Detail',
+		emailSubject: 'Crafting Digital Solutions — Excellence in Every Detail',
 		location: 'Location of my integrated home-office web development studio',
 
 		gitHub: 'My GitHub profile',
@@ -115,8 +124,14 @@ const messages = {
 		homeH211: 'Давайте',
 		homeH212: 'знайомитись',
 		homeH213: 'ближче',
-		homeP1:
-			'Привіт, я Вадім Червоняк, Full-stack розробник з України. Моя експертиза включає HTML, CSS, JavaScript, Vue, React, Node.js, різні бази даних, хмарні технології та інтеграцію з різними API, що дозволяє мені надавати комплексні рішення для веб-розробки.',
+
+		homeP11:
+			'Привіт, мене звати Вадім Червоняк, я з України і мені ',
+		homeP12:
+			'приблизно ~ ',
+		homeP13:
+			'Я — Full-stack розробник, і моя експертиза включає HTML, CSS, JavaScript, Vue, React, Node.js, різні бази даних, хмарні технології та інтеграцію з різними API, що дозволяє мені надавати комплексні рішення для веб-розробки.',
+
 		homeB2: 'Дізнатись Про Мене Більше',
 		homeH22: 'Огляд Моїх Проєктів',
 		homeB3: 'ВІДКРИТИ БІЛЬШЕ',
@@ -150,7 +165,7 @@ const messages = {
 			'Цей проєкт не використовує жодних зовнішніх бібліотек і спирається виключно на стандартні вбудовані можливості обробки HTML, CSS та JavaScript у сучасних браузерах.',
 		projectP6: 'Опис',
 		projectP6_default:
-			'Схоже, що опис не додано, тому припустімо, що цей проєкт є самодостатнім і не потребує явних описових слів.',
+			'Схоже, що опис не додано, тому припустімо, що цей проєкт є самоописовим і не потребує явних описових слів.',
 		projectPrev: 'ПОПЕРЕДНЯ РОБОТА',
 		projectNext: 'НАСТУПНА РОБОТА',
 		projectH22: 'Інші Проєкти',
@@ -171,7 +186,7 @@ const messages = {
 		footerA1: 'Вул. Івана Франка',
 		footerA2: 'м. Боярка, Київська область',
 
-		emailSubject: 'Розробка Цифрових Рішень - Досконалість у Кожній Деталі',
+		emailSubject: 'Розробка Цифрових Рішень — Досконалість у Кожній Деталі',
 		location: 'Розташування моєї інтегрованої домашньої студії веб-розробки',
 
 		gitHub: 'Мій GitHub профіль',

@@ -50,8 +50,7 @@
 					</h2>
 
 					<p class="t2">
-						{{ $t('homeP1') }}
-						<age-calculator />
+						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-calculator />.<br>{{ $t('homeP13') }}
 					</p>
 				</div>
 
