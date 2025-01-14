@@ -147,7 +147,7 @@ onUpdated(() => {
 watch(theme, setAll)
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .theme-toggler {
 	z-index: 1;
 	height: 5rem;

@@ -65,7 +65,7 @@ const handleClick = () => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .active-element {
 	z-index: 1;
 	width: max-content;

@@ -71,7 +71,7 @@ onMounted(async () => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .lang-swither-wrapper {
 	width: 5rem;
 	height: 5rem;

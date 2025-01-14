@@ -48,6 +48,8 @@ const timeUnitsUk = [
 	'секунда',
 	'секунди',
 	'секунд',
+	'мілісекунда',
+	'мілісекунди',
 	'мілісекунд',
 ]
 
@@ -62,7 +64,7 @@ const calculateAge = () => {
 	const hours = now.diff(birthDate, 'hour') % 24
 	const minutes = now.diff(birthDate, 'minute') % 60
 	const seconds = now.diff(birthDate, 'second') % 60
-	const milliseconds = now.diff(birthDate, 'millisecond') % 1000
+	const milliseconds = now.diff(birthDate) % 1000
 
 	return {
 		y: years,
