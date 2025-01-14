@@ -5,14 +5,9 @@
         stroke="#000000"
         stroke-width="8"
       >
-        <!-- Vertical line -->
         <line x1="50" y1="96" x2="50" y2="4" />
-        <!-- Diagonal line from center to top-left -->
         <line x1="50" y1="4" x2="4" y2="50" />
-        <!-- Horizontal line from left to center -->
         <line x1="4" y1="50" x2="50" y2="50" />
-        <!-- Arc from top-center to center -->
         <path d="M 50,4 A 23,23,0,1,1,50,50" fill="none" />
-        <!-- Outer circle -->
         <circle cx="50" cy="50" r="46" fill="none" />
       </svg>
