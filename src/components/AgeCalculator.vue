@@ -10,10 +10,10 @@ import duration from 'dayjs/plugin/duration'
 
 dayjs.extend(duration)
 
-const { locale } = useI18n()
 const result = ref('')
-let intervalId = null
+const { locale } = useI18n()
 const birthDate = dayjs('1988-06-17T09:40:00Z')
+let intervalId = null
 
 const calculateAge = () => {
 	const now = dayjs()
@@ -115,15 +115,15 @@ const handleVisibilityChange = () => {
 	else clearInterval(intervalId)
 }
 
-onBeforeUnmount(() => {
-	if (intervalId) clearInterval(intervalId)
-	document.removeEventListener('visibilitychange', handleVisibilityChange)
-})
-
 onMounted(() => {
 	updateResult()
 	startInterval()
 	document.addEventListener('visibilitychange', handleVisibilityChange)
+})
+
+onBeforeUnmount(() => {
+	if (intervalId) clearInterval(intervalId)
+	document.removeEventListener('visibilitychange', handleVisibilityChange)
 })
 
 watch(locale, updateResult)

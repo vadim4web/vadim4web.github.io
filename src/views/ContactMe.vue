@@ -1,19 +1,6 @@
 <template>
 	<main class="flex-col">
-		<div class="flex-col page-header padding-13">
-			<h2 class="h2" style="left: -0.2rem">
-				<strong>
-					{{ $t('contactH21') }}
-				</strong>
-				<high-light />
-			</h2>
-
-			<p class="t2">
-				<em>
-					{{ $t('contactT1') }}
-				</em>
-			</p>
-		</div>
+		<PageHeader head-key="contactH21" text-key="contactT1" />
 
 		<div class="flex-col">
 			<div class="grid-text-form">
@@ -73,16 +60,11 @@
 			</div>
 		</div>
 
-		<div class="laptop w100 br1" />
+		<div class="laptop w100 br1"></div>
 
 		<div class="address w100">
 			<h4 class="h4">
-				<a
-					class="link"
-					href="tel:+380933789883"
-					style="padding: 0.5rem; margin: -0.5rem"
-					title="Contact me via phone"
-				>
+				<a class="link" href="tel:+380933789883" :title="$t('callMe')">
 					+380-933-789-883
 				</a>
 			</h4>
@@ -93,21 +75,15 @@
 					:href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent(
 						$t('emailSubject')
 					)}`"
-					style="padding: 0.5rem; margin: -0.5rem"
 					target="_blank"
-					title="Contact me via e-mail"
+					:title="$t('emailMe')"
 				>
 					vadim4web@gmail.com
 				</a>
 			</h4>
 
 			<h4 class="h4">
-				<a
-					class="link"
-					href="https://t.me/vadim4web"
-					style="padding: 0.5rem; margin: -0.5rem"
-					title="Contact me via Telegram or any other social media"
-				>
+				<a class="link" href="https://t.me/vadim4web" :title="$t('chatMe')">
 					@vadim4web
 				</a>
 			</h4>
@@ -119,8 +95,8 @@
 import { ref, defineAsyncComponent } from 'vue'
 import emailjs from '@emailjs/browser'
 
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
+const PageHeader = defineAsyncComponent(
+	() => import('@/components/PageHeader.vue')
 )
 const ActiveElement = defineAsyncComponent(
 	() => import('@/components/HighLight.vue')
@@ -293,6 +269,11 @@ textarea {
 
 	& :last-child {
 		justify-self: end;
+	}
+
+	.link {
+		padding: 0.5rem;
+		margin: -0.5rem 0;
 	}
 }
 </style>

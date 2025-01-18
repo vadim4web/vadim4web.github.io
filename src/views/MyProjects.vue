@@ -1,19 +1,6 @@
 <template>
 	<main class="flex-col projects-page">
-		<div class="flex-col page-header padding-13">
-			<h2 class="h2" style="left: -0.2rem">
-				<strong>
-					{{ $t('worksH2') }}
-				</strong>
-				<high-light />
-			</h2>
-
-			<p class="t2">
-				<em>
-					{{ $t('worksT1') }}
-				</em>
-			</p>
-		</div>
+		<PageHeader head-key="worksH2" text-key="worksT1" />
 
 		<div class="projects-container w100 rel">
 			<div
@@ -77,14 +64,14 @@ import { ref, onUpdated, defineAsyncComponent } from 'vue'
 import { chunkedProjects } from '@/assets/data/projects.js'
 import getPath from '@/helpers/getPath.js'
 
+const PageHeader = defineAsyncComponent(
+	() => import('@/components/PageHeader.vue')
+)
 const AsyncFrame = defineAsyncComponent(
 	() => import('@/components/AsyncFrame.vue')
 )
 const ActiveElement = defineAsyncComponent(
 	() => import('@/components/ActiveElement.vue')
-)
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
 )
 
 const itemsToShow = ref(2)

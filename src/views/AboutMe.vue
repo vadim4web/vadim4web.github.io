@@ -1,19 +1,6 @@
 <template>
 	<main class="flex-col">
-		<div class="flex-col page-header padding-13">
-			<h2 class="h2">
-				<strong>
-					{{ $t('aboutH21') }}
-				</strong>
-				<high-light />
-			</h2>
-
-			<p class="t2">
-				<em>
-					{{ $t('aboutT1') }}
-				</em>
-			</p>
-		</div>
+		<PageHeader head-key="aboutH21" text-key="aboutT1" />
 
 		<div class="mission flex-col">
 			<div class="mission-header">
@@ -57,8 +44,8 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
+const PageHeader = defineAsyncComponent(
+	() => import('@/components/PageHeader.vue')
 )
 </script>
 

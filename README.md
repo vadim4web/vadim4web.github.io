@@ -71,7 +71,6 @@ vadim4web.github.io/
 - **Internationalization**: Supports multiple languages.
 - **SEO Friendly**: Metadata and optimized for search engines.
 
-
 ### 📫 Let’s Connect!
 
 - [Email](mailto:vadim4web@gmail.com)

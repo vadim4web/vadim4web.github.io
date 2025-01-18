@@ -26,7 +26,7 @@
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { state } from '@/store/'
 
-const { classes, three } = defineProps({
+defineProps({
 	classes: Object,
 	three: Boolean,
 })

@@ -28,6 +28,7 @@ let model = null
 let environmentMaps = {}
 let clock = new Clock()
 let animationFrameId = null
+let themeObserver = null
 let currentTheme = getCurrentTheme()
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
@@ -50,14 +51,6 @@ const { noRotate, noShadow, size } = defineProps({
 
 let GLTFLoader, DRACOLoader
 
-function preloadEnvironmentMaps() {
-	const loader = new CubeTextureLoader()
-	environmentMaps.light = loader.load(
-		'texture-silver.jpg '.repeat(6).split(' ')
-	)
-	environmentMaps.dark = loader.load('texture-gold.jpg '.repeat(6).split(' '))
-}
-
 function getCurrentTheme() {
 	return (
 			getComputedStyle(document.documentElement)
@@ -66,6 +59,14 @@ function getCurrentTheme() {
 		) ?
 			'dark'
 		:	'light'
+}
+
+function preloadEnvironmentMaps() {
+	const loader = new CubeTextureLoader()
+	environmentMaps.light = loader.load(
+		'texture-silver.jpg '.repeat(6).split(' ')
+	)
+	environmentMaps.dark = loader.load('texture-gold.jpg '.repeat(6).split(' '))
 }
 
 function initializeScene() {
@@ -108,6 +109,17 @@ async function loadModel() {
 	)
 }
 
+function setRendererSize() {
+	let vmin
+	if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
+	else {
+		vmin = size
+	}
+	renderer.setSize(vmin, vmin)
+	camera.aspect = 1
+	camera.updateProjectionMatrix()
+}
+
 function updateModelMaterial(theme) {
 	if (!model || !environmentMaps[theme]) return
 	model.traverse(child => {
@@ -134,17 +146,6 @@ function observeThemeChanges() {
 	return observer
 }
 
-function setRendererSize() {
-	let vmin
-	if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
-	else {
-		vmin = size
-	}
-	renderer.setSize(vmin, vmin)
-	camera.aspect = 1
-	camera.updateProjectionMatrix()
-}
-
 function animate() {
 	const delta = clock.getDelta()
 
@@ -163,18 +164,17 @@ onMounted(() => {
 	preloadEnvironmentMaps()
 	initializeScene()
 	loadModel()
-
-	const themeObserver = observeThemeChanges()
 	window.addEventListener('resize', setRendererSize)
+	themeObserver = observeThemeChanges()
 	clock.start()
 	animate()
+})
 
-	onUnmounted(() => {
-		window.removeEventListener('resize', setRendererSize)
-		themeObserver.disconnect()
-		cancelAnimationFrame(animationFrameId)
-		renderer.dispose()
-		scene.clear()
-	})
+onUnmounted(() => {
+	window.removeEventListener('resize', setRendererSize)
+	themeObserver?.disconnect()
+	cancelAnimationFrame(animationFrameId)
+	renderer.dispose()
+	scene.clear()
 })
 </script>

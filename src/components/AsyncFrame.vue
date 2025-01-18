@@ -23,7 +23,8 @@ import { ref, defineAsyncComponent } from 'vue'
 const LoaderSpinner = defineAsyncComponent(
 	() => import('@/components/LoaderSpinner.vue')
 )
-const { iframeSrc, iframeStyle, iframeClass, three, scrolling } = defineProps({
+
+defineProps({
 	iframeSrc: String,
 	iframeStyle: Object,
 	iframeClass: Object,

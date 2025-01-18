@@ -29,12 +29,12 @@
 				:bg="'var(--accent50)'"
 				:border-radius="'2.3125rem'"
 				:font-size="'1.75rem'"
-				:padding="'1.5rem 4rem'"
+				:padding="'1.5rem 3rem'"
 				path="projects"
 			>
 				{{ $t('homeB1') }}&nbsp;
 
-				<arrow-right height="2.5rem" />
+				<arrow-right height="1.75rem" />
 			</active-element>
 		</section>
 
@@ -81,11 +81,11 @@
 				:bg="'var(--accent50)'"
 				:border-radius="'2.166rem'"
 				:font-size="'1.33rem'"
-				:padding="'1.5rem 3rem'"
+				:padding="'1.5rem 2.5rem'"
 				path="projects"
 			>
 				{{ $t('homeB3') }}&nbsp;
-				<arrow-right height="2rem" />
+				<arrow-right height="1.33rem" />
 			</active-element>
 
 			<three-view />

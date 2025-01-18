@@ -1,19 +1,6 @@
 <template>
 	<main class="flex-col project-page">
-		<div class="flex-col page-header padding-13">
-			<h2 class="h2">
-				<strong>
-					{{ $t('projectH21') }}
-				</strong>
-				<high-light />
-			</h2>
-
-			<p class="t2">
-				<em>
-					{{ $t('projectT1') }}
-				</em>
-			</p>
-		</div>
+		<PageHeader head-key="projectH21" text-key="projectT1" />
 
 		<div class="project-details flex-col">
 			<async-frame
@@ -162,14 +149,14 @@ import getPath from '@/helpers/getPath.js'
 import getSrc from '@/helpers/getSrc.js'
 import getThreeRandom from '@/helpers/getThreeRandom'
 
+const PageHeader = defineAsyncComponent(
+	() => import('@/components/PageHeader.vue')
+)
 const AsyncFrame = defineAsyncComponent(
 	() => import('@/components/AsyncFrame.vue')
 )
 const ArrowNavigation = defineAsyncComponent(
 	() => import('@/components/ArrowNavigation.vue')
-)
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
 )
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
