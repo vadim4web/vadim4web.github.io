@@ -29,6 +29,7 @@ let environmentMaps = {}
 let clock = new Clock()
 let animationFrameId = null
 let themeObserver = null
+let GLTFLoader, DRACOLoader
 let currentTheme = getCurrentTheme()
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
@@ -49,8 +50,6 @@ const { noRotate, noShadow, size } = defineProps({
 	},
 })
 
-let GLTFLoader, DRACOLoader
-
 function getCurrentTheme() {
 	return (
 			getComputedStyle(document.documentElement)
@@ -70,13 +69,16 @@ function preloadEnvironmentMaps() {
 }
 
 function initializeScene() {
-	scene = new Scene()
-	camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
-	camera.position.set(0, 0, 5)
-	renderer = new WebGLRenderer({ antialias: true, alpha: true })
-	renderer.autoClear = false
-	canvasContainer.value.appendChild(renderer.domElement)
-	setRendererSize()
+    scene = new Scene()
+    camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
+    camera.position.set(0, 0, 5)
+    renderer = new WebGLRenderer({ antialias: true, alpha: true })
+    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.autoClear = false
+		renderer.shadowMap.enabled = false
+    renderer.physicallyCorrectLights = false
+    canvasContainer.value.appendChild(renderer.domElement)
+    setRendererSize()
 }
 
 async function loadModel() {
@@ -94,7 +96,7 @@ async function loadModel() {
 	const loader = new GLTFLoader()
 	const draco = new DRACOLoader()
 	draco.setDecoderPath(
-		'https://www.gstatic.com/draco/versioned/decoders/1.5.6/'
+		'https://www.gstatic.com/draco/versioned/decoders/1.5.7/'
 	)
 	loader.setDRACOLoader(draco)
 	loader.load(
