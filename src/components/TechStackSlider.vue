@@ -1,5 +1,5 @@
 <template>
-	<section class="flex-col-center tech-stack">
+	<section class="flex-col-center tech-stack-slider">
 		<h2 class="h2 text-center">
 			{{ $t('homeH23') }}
 		</h2>
@@ -55,7 +55,7 @@ onUpdated(() => setSlideContentGrid())
 </script>
 
 <style lang="scss">
-.tech-stack {
+.tech-stack-slider {
 	padding: 2rem auto 2rem auto;
 
 	@media (orientation: landscape) {

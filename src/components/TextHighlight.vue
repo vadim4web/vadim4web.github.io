@@ -1,6 +1,6 @@
 <template>
 	<svg
-		class="highlight abs"
+		class="text-highlight abs"
 		fill="none"
 		height="651"
 		viewBox="0 0 917 651"
@@ -41,7 +41,7 @@
 </template>
 
 <style lang="scss" scoped>
-.highlight {
+.text-highlight {
 	z-index: -1;
 	width: 60vmin;
 	height: 40vmin;

@@ -1,6 +1,6 @@
 <template>
 	<strong
-		class="arrow-right"
+		class="arrow-text"
 		:style="{ height, width: parseInt(height) * 1.5 + 'rem' }"
 	>
 		->
@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-.arrow-right {
+.arrow-text {
 	font-weight: 700;
 	text-wrap: nowrap;
 }

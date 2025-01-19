@@ -3,7 +3,7 @@
 		<PageHeader head-key="projectH21" text-key="projectT1" />
 
 		<div class="project-details flex-col">
-			<async-frame
+			<frame-loader
 				:iframe-class="{ white_bg: project.white_bg, preview: true }"
 				:iframe-src="demo"
 				:scrolling="'yes'"
@@ -83,7 +83,7 @@
 				class="nav-button prev"
 				:to="{ name: 'project', params: { projectName: prev.name } }"
 			>
-				<arrow-navigation />
+				<arrow-icon />
 				{{ $t('projectPrev') }}
 			</router-link>
 
@@ -92,7 +92,7 @@
 				:to="{ name: 'project', params: { projectName: next.name } }"
 			>
 				{{ $t('projectNext') }}
-				<arrow-navigation />
+				<arrow-icon />
 			</router-link>
 		</div>
 
@@ -108,7 +108,7 @@
 						:title="$t('worksDetails') + ' `' + p.title + '`'"
 						:to="{ name: 'project', params: { projectName: p.name } }"
 					>
-						<async-frame
+						<frame-loader
 							:iframe-class="{
 								white_bg: p.white_bg,
 								other: true,
@@ -152,11 +152,11 @@ import getThreeRandom from '@/helpers/getThreeRandom'
 const PageHeader = defineAsyncComponent(
 	() => import('@/components/PageHeader.vue')
 )
-const AsyncFrame = defineAsyncComponent(
-	() => import('@/components/AsyncFrame.vue')
+const FrameLoader = defineAsyncComponent(
+	() => import('@/components/FrameLoader.vue')
 )
-const ArrowNavigation = defineAsyncComponent(
-	() => import('@/components/ArrowNavigation.vue')
+const ArrowIcon = defineAsyncComponent(
+	() => import('@/components/ArrowIcon.vue')
 )
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')

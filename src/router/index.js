@@ -5,15 +5,15 @@ import { state } from '@/store/'
 const routes = [
 	{
 		path: '/',
-		component: () => import('@/views/HomeView.vue'),
+		component: () => import('@/views/HomePage.vue'),
 	},
 	{
 		path: '/about',
-		component: () => import('@/views/AboutMe.vue'),
+		component: () => import('@/views/AboutPage.vue'),
 	},
 	{
 		path: '/contact',
-		component: () => import('@/views/ContactMe.vue'),
+		component: () => import('@/views/ContactPage.vue'),
 	},
 	// {
 	// 	path: '/cover',
@@ -21,12 +21,12 @@ const routes = [
 	// },
 	{
 		path: '/projects',
-		component: () => import('@/views/MyProjects.vue'),
+		component: () => import('@/views/ProjectsPage.vue'),
 	},
 	{
 		path: '/project/:projectName',
 		name: 'project',
-		component: () => import('@/views/ProjectView.vue'),
+		component: () => import('@/views/ProjectDetails.vue'),
 		beforeEnter: to => {
 			const projectName = to.params.projectName
 			const isInProjects = projects.some(({ name }) => name === projectName)
@@ -43,7 +43,7 @@ const routes = [
 	{
 		path: '/:pathMatch(.*)*',
 		name: 'no-match',
-		component: () => import('@/views/NotFound.vue'),
+		component: () => import('@/views/Error404.vue'),
 	},
 ]
 

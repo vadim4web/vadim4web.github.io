@@ -4,7 +4,7 @@
 			<strong>
 				{{ $t(headKey) }}
 			</strong>
-			<high-light />
+			<text-highlight />
 		</h2>
 
 		<p class="t2">
@@ -18,8 +18,8 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
+const TextHighlight = defineAsyncComponent(
+	() => import('@/components/TextHighlight.vue')
 )
 
 defineProps({

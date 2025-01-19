@@ -15,7 +15,7 @@ b[content='→'] {
 	-o-transform: scale(1.5, 2.5) translate(0, -27%);
 }
 
-*:has(.arrow-right):hover > .arrow-right {
+*:has(.arrow-text):hover > .arrow-text {
 	animation: jump-right 6s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 	-webkit-animation: jump-right 6s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 }

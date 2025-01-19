@@ -2,7 +2,7 @@
 	<main class="flex-col-center not-found w100">
 		<h2 class="h2 flex-col-center text-center">
 			404
-			<high-light />
+			<text-highlight />
 
 			<div class="p1">
 				{{ $t('notFoundT11') }}<br />
@@ -13,7 +13,7 @@
 				<i>{{ $t('notFoundT15') }}</i>
 			</div>
 
-			<active-element
+			<interactive-button
 				:action="goBack"
 				:bg="'var(--bg50)'"
 				:border-radius="'4.25rem'"
@@ -22,7 +22,7 @@
 				:padding="'3rem 5rem'"
 			>
 				{{ $t('notFoundB') }}
-			</active-element>
+			</interactive-button>
 		</h2>
 	</main>
 </template>
@@ -31,11 +31,11 @@
 import { defineAsyncComponent } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-const ActiveElement = defineAsyncComponent(
-	() => import('@/components/ActiveElement.vue')
+const InteractiveButton = defineAsyncComponent(
+	() => import('@/components/InteractiveButton.vue')
 )
-const HighLight = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
+const TextHighlight = defineAsyncComponent(
+	() => import('@/components/TextHighlight.vue')
 )
 
 const router = useRouter()
@@ -49,7 +49,7 @@ h2 {
 	top: -7.5vh;
 	font-size: 20rem;
 
-	.highlight {
+	.text-highlight {
 		top: 2rem;
 	}
 

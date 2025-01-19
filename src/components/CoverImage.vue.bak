@@ -8,7 +8,7 @@
 			<span class="i">i</span>
 			<span class="m">m</span>
 		</span>
-		<logo-3-d
+		<rotating-logo
 			class="for-capture"
 			:no-rotate="true"
 			:no-shadow="true"
@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import Logo3D from '@/components/Logo3D.vue'
+import RotatingLogo from '@/components/RotatingLogo.vue'
 
 defineProps({
 	id: String,

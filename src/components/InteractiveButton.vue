@@ -2,7 +2,7 @@
 	<router-link
 		v-if="isRouterLink"
 		ref="target"
-		class="active-element flex-center hideO rel"
+		class="interactive-button flex-center hideO rel"
 		:style="{
 			background:
 				!isOutside ?
@@ -22,7 +22,7 @@
 	<button
 		v-else
 		ref="target"
-		class="active-element flex-center hideO rel"
+		class="interactive-button flex-center hideO rel"
 		:style="{
 			background:
 				!isOutside ?
@@ -66,9 +66,8 @@ const handleClick = () => {
 </script>
 
 <style lang="scss" scoped>
-.active-element {
+.interactive-button {
 	z-index: 1;
-	width: max-content;
 	line-height: 100%;
 	font-weight: bold;
 	color: var(--color0);

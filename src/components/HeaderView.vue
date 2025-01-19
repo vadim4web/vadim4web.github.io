@@ -27,7 +27,7 @@
 
 			<li class="menu-item w100 flex-col-center text-center global-view">
 				<theme-toggler />
-				<lang-toggler />
+				<language-switcher />
 			</li>
 		</menu>
 	</header>
@@ -36,7 +36,7 @@
 <script setup>
 import LogoView from '@/components/LogoView.vue'
 import ThemeToggler from '@/components/ThemeToggler.vue'
-import LangToggler from '@/components/LangToggler.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 </script>
 
 <style lang="scss">

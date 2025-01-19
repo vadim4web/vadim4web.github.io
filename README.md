@@ -22,13 +22,13 @@ vadim4web.github.io/
 │   │   ├── data/ # Data used in components
 │   │   └── img/ # Images used across the app
 │   ├── components/ # Vue components for the portfolio
-│   │   ├── ActiveElement.vue
-│   │   ├── ArrowNavigation.vue
+│   │   ├── InteractiveButton.vue
+│   │   ├── ArrowIcon.vue
 │   │   ├── FooterView.vue
 │   │   ├── HeaderView.vue
-│   │   ├── LangToggler.vue
+│   │   ├── LanguageSwitcher.vue
 │   │   ├── LoaderView.vue
-│   │   ├── TechStack.vue
+│   │   ├── TechStackSlider.vue
 │   │   └── ... # Other components
 │   ├── helpers/ # Helper functions
 │   ├── i18n/ # Internationalization setup

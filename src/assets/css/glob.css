@@ -148,7 +148,9 @@ body,
 	overflow: hidden;
 	position: fixed;
 	top: 0;
+	bottom: 0;
 	left: 0;
+	right: 0;
 }
 
 body::before,
@@ -255,28 +257,10 @@ button:active {
 
 main {
 	position: relative;
+	padding-top: 7.5vmin;
 }
 
-.section {
+section {
 	position: relative;
-}
-
-@media (orientation: portrait) {
-	section {
-		height: 50dvh;
-	}
-
-	main {
-		padding-top: 10vmin;
-	}
-}
-
-@media (orientation: landscape) {
-	section {
-		height: 100dvh;
-	}
-
-	main {
-		padding-top: 5vmin;
-	}
+	height: 100vmin;
 }

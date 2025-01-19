@@ -46,7 +46,7 @@
 					</div>
 
 					<div class="button-wrapper rel">
-						<active-element
+						<interactive-button
 							:bg="'var(--accent50)'"
 							:border-radius="'1.75rem'"
 							class="font-variant abs"
@@ -54,7 +54,7 @@
 							:padding="'0'"
 						>
 							{{ $t('send') }}
-						</active-element>
+						</interactive-button>
 					</div>
 				</form>
 			</div>
@@ -98,8 +98,8 @@ import emailjs from '@emailjs/browser'
 const PageHeader = defineAsyncComponent(
 	() => import('@/components/PageHeader.vue')
 )
-const ActiveElement = defineAsyncComponent(
-	() => import('@/components/HighLight.vue')
+const InteractiveButton = defineAsyncComponent(
+	() => import('@/components/InteractiveButton.vue')
 )
 
 const name = ref('')

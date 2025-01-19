@@ -6,7 +6,7 @@
 			class="card card-back br1 hideO"
 		>
 			<div class="frame w100 rel">
-				<async-frame
+				<frame-loader
 					:iframe-class="{
 						white_bg: white_bg,
 						iframe: true,
@@ -60,8 +60,8 @@ const isPortrait = useMediaQuery('(orientation: portrait)')
 const zoom = computed(() => (isLargeScreen && isPortrait ? '0.3' : '0.175'))
 const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 
-const AsyncFrame = defineAsyncComponent(
-	() => import('@/components/AsyncFrame.vue')
+const FrameLoader = defineAsyncComponent(
+	() => import('@/components/FrameLoader.vue')
 )
 const three = getThreeRandom(projects)
 </script>

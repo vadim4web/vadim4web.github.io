@@ -14,7 +14,7 @@
 					:key="i"
 					class="project card-back br1 text-center flex-col hideO"
 				>
-					<async-frame
+					<frame-loader
 						:iframe-class="{
 							vertical: p.orientation === '|',
 							horizontal: p.orientation === '-',
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 
-			<active-element
+			<interactive-button
 				v-if="!isLimitReached"
 				:action="handleLoadMore"
 				:bg="'var(--accent50)'"
@@ -54,7 +54,7 @@
 				:padding="'1.5rem 2.5rem'"
 			>
 				{{ $t('worksMore') }}
-			</active-element>
+			</interactive-button>
 		</div>
 	</main>
 </template>
@@ -67,11 +67,11 @@ import getPath from '@/helpers/getPath.js'
 const PageHeader = defineAsyncComponent(
 	() => import('@/components/PageHeader.vue')
 )
-const AsyncFrame = defineAsyncComponent(
-	() => import('@/components/AsyncFrame.vue')
+const FrameLoader = defineAsyncComponent(
+	() => import('@/components/FrameLoader.vue')
 )
-const ActiveElement = defineAsyncComponent(
-	() => import('@/components/ActiveElement.vue')
+const InteractiveButton = defineAsyncComponent(
+	() => import('@/components/InteractiveButton.vue')
 )
 
 const itemsToShow = ref(2)

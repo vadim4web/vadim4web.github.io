@@ -8,7 +8,7 @@
 					style="filter: drop-shadow(0 0 0.5rem var(--color-op))"
 				>
 					<strong>{{ $t('homeH11') }}</strong><br />
-					<high-light />
+					<text-highlight />
 				</h2>
 
 				<h2
@@ -23,9 +23,9 @@
 				</h2>
 			</div>
 
-			<logo3-d />
+			<rotating-logo />
 
-			<active-element
+			<interactive-button
 				:bg="'var(--accent50)'"
 				:border-radius="'2.3125rem'"
 				:font-size="'1.75rem'"
@@ -34,15 +34,15 @@
 			>
 				{{ $t('homeB1') }}&nbsp;
 
-				<arrow-right height="1.75rem" />
-			</active-element>
+				<arrow-text height="1.75rem" />
+			</interactive-button>
 		</section>
 
 		<section class="hero w100">
 			<div class="left content flex-col-center w100 rel">
 				<div class="text flex-col">
 					<h2 class="h2">
-						<high-light />
+						<text-highlight />
 
 						{{ $t('homeH211') }}<br />{{ $t('homeH212') }}<br />{{
 							$t('homeH213')
@@ -50,11 +50,11 @@
 					</h2>
 
 					<p class="t2">
-						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-calculator />.<br />{{ $t('homeP13') }}
+						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-counter />.<br />{{ $t('homeP13') }}
 					</p>
 				</div>
 
-				<active-element
+				<interactive-button
 					:bg="'var(--accent50)'"
 					:border-radius="'2.125rem'"
 					class="font-variant"
@@ -63,7 +63,7 @@
 					path="about"
 				>
 					{{ $t('homeB2') }}
-				</active-element>
+				</interactive-button>
 			</div>
 
 			<div class="right rel">
@@ -74,10 +74,10 @@
 		<section class="projects flex-col-center">
 			<h2 class="h2 text-center">
 				{{ $t('homeH22') }}
-				<high-light />
+				<text-highlight />
 			</h2>
 
-			<active-element
+			<interactive-button
 				:bg="'var(--accent50)'"
 				:border-radius="'2.166rem'"
 				:font-size="'1.33rem'"
@@ -85,29 +85,29 @@
 				path="projects"
 			>
 				{{ $t('homeB3') }}&nbsp;
-				<arrow-right height="1.33rem" />
-			</active-element>
+				<arrow-text height="1.33rem" />
+			</interactive-button>
 
-			<three-view />
+			<project-cards />
 		</section>
 
-		<tech-stack />
+		<tech-stack-slider />
 	</main>
 </template>
 
 <script setup>
-import Logo3D from '@/components/Logo3D.vue'
-import ActiveElement from '@/components/ActiveElement.vue'
-import ArrowRight from '@/components/ArrowRight.vue'
-import HighLight from '@/components/HighLight.vue'
-import AgeCalculator from '@/components/AgeCalculator.vue'
+import RotatingLogo from '@/components/RotatingLogo.vue'
+import InteractiveButton from '@/components/InteractiveButton.vue'
+import ArrowText from '@/components/ArrowText.vue'
+import TextHighlight from '@/components/TextHighlight.vue'
+import AgeCounter from '@/components/AgeCounter.vue'
 import { defineAsyncComponent } from 'vue'
 
-const ThreeView = defineAsyncComponent(
-	() => import('@/components/ThreeView.vue')
+const ProjectCards = defineAsyncComponent(
+	() => import('@/components/ProjectCards.vue')
 )
-const TechStack = defineAsyncComponent(
-	() => import('@/components/TechStack.vue')
+const TechStackSlider = defineAsyncComponent(
+	() => import('@/components/TechStackSlider.vue')
 )
 </script>
 
@@ -118,7 +118,7 @@ const TechStack = defineAsyncComponent(
 		z-index: 1;
 	}
 
-	& .highlight {
+	& .text-highlight {
 		top: -7.5rem;
 		right: 0;
 	}
@@ -134,7 +134,7 @@ const TechStack = defineAsyncComponent(
 		align-items: flex-start;
 		justify-content: flex-start;
 
-		.h2 .highlight {
+		.h2 .text-highlight {
 			top: -7.5rem;
 			left: -15rem;
 		}
@@ -199,7 +199,7 @@ const TechStack = defineAsyncComponent(
 	padding: 3rem 0;
 	gap: 2rem;
 
-	.h2 .highlight {
+	.h2 .text-highlight {
 		top: -10rem;
 		right: -12rem;
 	}

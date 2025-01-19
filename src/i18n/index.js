@@ -31,7 +31,7 @@ const messages = {
 			'I am a Full-stack developer and my expertise includes HTML, CSS, JavaScript, Vue, React, Node.js, various databases, cloud computing, and integrating with different APIs, helping me to deliver complex web development solutions.',
 
 		homeB2: 'Discover More About Me',
-		homeH22: 'My Projects Highlight',
+		homeH22: 'My Projects TextHighlight',
 		homeB3: 'EXPLORE MORE',
 		homeH23: 'Technologies I like to use and keep diving in deeper',
 
