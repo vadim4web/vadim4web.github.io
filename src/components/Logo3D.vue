@@ -1,18 +1,9 @@
 <template>
-	<div
-		ref="canvasContainer"
-		class="canvas-container abs"
-		:style="
-			!noShadow ?
-				`filter: drop-shadow(0 0 1rem var(--accent0));
-			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));`
-			:	''
-		"
-	/>
+	<div ref="canvasContainer" class="abs" :style="canvasStyle" />
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import {
 	Scene,
 	PerspectiveCamera,
@@ -23,13 +14,12 @@ import {
 } from 'three'
 
 const canvasContainer = ref(null)
-let scene, camera, renderer
+let GLTFLoader, DRACOLoader, scene, camera, renderer
 let model = null
+let themeObserver = null
+let animationFrameId = null
 let environmentMaps = {}
 let clock = new Clock()
-let animationFrameId = null
-let themeObserver = null
-let GLTFLoader, DRACOLoader
 let currentTheme = getCurrentTheme()
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
@@ -50,6 +40,13 @@ const { noRotate, noShadow, size } = defineProps({
 	},
 })
 
+const canvasStyle = computed(() =>
+	!noShadow
+		?	`filter: drop-shadow(0 0 1rem var(--accent0));
+			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));`
+		:	''
+)
+
 function getCurrentTheme() {
 	return (
 			getComputedStyle(document.documentElement)
@@ -69,16 +66,16 @@ function preloadEnvironmentMaps() {
 }
 
 function initializeScene() {
-    scene = new Scene()
-    camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
-    camera.position.set(0, 0, 5)
-    renderer = new WebGLRenderer({ antialias: true, alpha: true })
-    renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.autoClear = false
-		renderer.shadowMap.enabled = false
-    renderer.physicallyCorrectLights = false
-    canvasContainer.value.appendChild(renderer.domElement)
-    setRendererSize()
+	scene = new Scene()
+	camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
+	camera.position.set(0, 0, 5)
+	renderer = new WebGLRenderer({ antialias: true, alpha: true })
+	renderer.setPixelRatio(window.devicePixelRatio)
+	renderer.autoClear = false
+	renderer.shadowMap.enabled = false
+	renderer.physicallyCorrectLights = false
+	canvasContainer.value.appendChild(renderer.domElement)
+	setRendererSize()
 }
 
 async function loadModel() {
