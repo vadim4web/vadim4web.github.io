@@ -13,38 +13,29 @@ import {
 	Clock,
 } from 'three'
 
-const canvasContainer = ref(null)
-let GLTFLoader, DRACOLoader, scene, camera, renderer
 let model = null
 let themeObserver = null
 let animationFrameId = null
-let environmentMaps = {}
-let clock = new Clock()
 let currentTheme = getCurrentTheme()
+let GLTFLoader, DRACOLoader, scene, camera, renderer
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const MODEL_NAME = 'logo.glb'
+const canvasContainer = ref(null)
+const environmentMaps = {}
+const clock = new Clock()
 
 const { noRotate, noShadow, size } = defineProps({
-	noRotate: {
-		type: Boolean,
-		required: false,
-	},
-	noShadow: {
-		type: Boolean,
-		required: false,
-	},
-	size: {
-		type: Number,
-		required: false,
-	},
+	noRotate: Boolean,
+	noShadow: Boolean,
+	size: Number,
 })
 
 const canvasStyle = computed(() =>
-	!noShadow
-		?	`filter: drop-shadow(0 0 1rem var(--accent0));
+	!noShadow ?
+		`filter: drop-shadow(0 0 1rem var(--accent0));
 			-webkit-filter: drop-shadow(0 0 1rem var(--accent0));`
-		:	''
+	:	''
 )
 
 function getCurrentTheme() {
@@ -89,7 +80,6 @@ async function loadModel() {
 		GLTFLoader = Loader
 		DRACOLoader = DracoLoader
 	}
-
 	const loader = new GLTFLoader()
 	const draco = new DRACOLoader()
 	draco.setDecoderPath(
@@ -111,9 +101,7 @@ async function loadModel() {
 function setRendererSize() {
 	let vmin
 	if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
-	else {
-		vmin = size
-	}
+	else vmin = size
 	renderer.setSize(vmin, vmin)
 	camera.aspect = 1
 	camera.updateProjectionMatrix()
@@ -147,13 +135,10 @@ function observeThemeChanges() {
 
 function animate() {
 	const delta = clock.getDelta()
-
 	if (model) {
 		model.rotation.x = Math.PI / 2
-
 		if (!noRotate) model.rotation.z += delta * 0.5
 	}
-
 	renderer.clear()
 	renderer.render(scene, camera)
 	animationFrameId = requestAnimationFrame(animate)
