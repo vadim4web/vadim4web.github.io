@@ -50,7 +50,9 @@
 					</h2>
 
 					<p class="t2">
-						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-counter />.<br />{{ $t('homeP13') }}
+						{{ $t('homeP11') }}<em>{{ $t('homeP12') }}</em><age-counter />.<br />
+						{{ $t('homeP13') }}<br />
+						{{ $t('homeP14') }}
 					</p>
 				</div>
 
