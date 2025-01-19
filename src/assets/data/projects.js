@@ -1,6 +1,6 @@
 const vertical = [
 	{
-		title: 'Fire\'S\'Now - SCSS bg',
+		title: "Fire'S'Now - SCSS bg",
 		name: 'fireSnow',
 		stack: ['html', 'css', 'scss'],
 		tags: ['UI', 'FE', 'API'],

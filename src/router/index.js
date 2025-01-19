@@ -43,7 +43,7 @@ const routes = [
 	{
 		path: '/:pathMatch(.*)*',
 		name: 'no-match',
-		component: () => import('@/views/Error404.vue'),
+		component: () => import('@/views/ErrorPage.vue'),
 	},
 ]
 
