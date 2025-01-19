@@ -305,7 +305,7 @@ const horizontal = [
 		white_bg: true,
 	},
 	{
-		title: 'Nice gadgets store app',
+		title: 'Nice gadgets store',
 		name: 'product-catalog',
 		stack: ['js', 'react', 'node'],
 		tags: ['UI', 'FE', 'BE', 'DB', 'API'],
@@ -476,7 +476,7 @@ const horizontal = [
 		deps: [],
 	},
 	{
-		title: 'Vue local company Landing SPA',
+		title: 'Local company Landing SPA',
 		name: 'mediaoffice-com-ua',
 		stack: ['html', 'css', 'js', 'vue'],
 		tags: ['UI', 'FE', 'API'],
@@ -497,7 +497,7 @@ const horizontal = [
 		],
 	},
 	{
-		title: 'Mozgi - Full-Cycle Event Agency',
+		title: 'Mozgi - Event Agency',
 		name: 'mozgi-events',
 		stack: ['vue', 'css', 'i18n'],
 		tags: ['SPA', 'UI', 'i18n'],

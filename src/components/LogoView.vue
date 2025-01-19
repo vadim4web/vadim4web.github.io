@@ -1,90 +1,63 @@
 <template>
-	<span class="logo-span flex-center">
-		<span class="logo-letter v">V</span>
-		<span class="logo-letter a">A</span>
-		<span class="logo-letter d">D</span>
-		<span class="logo-letter i">I</span>
-		<span class="logo-letter m">M</span>
-		<svg
-			class="logo-image"
-			viewBox="0 0 100 100"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<defs>
-				<filter id="shadowActive" height="200%" width="200%" x="-50%" y="-50%">
-					<feDropShadow
-						dx="0"
-						dy="0"
-						flood-color="var(--color50)"
-						flood-opacity="0.75"
-						stdDeviation="1"
-					/>
-				</filter>
-			</defs>
-			<desc>4</desc>
-			<line x1="50" x2="50" y1="96" y2="4" />
-			<line x1="50" x2="4" y1="4" y2="50" />
-			<line x1="4" x2="50" y1="50" y2="50" />
-			<path d="M 50,4 A 23,23,0,1,1,50,50" fill="none" />
-			<circle cx="50" cy="50" fill="none" r="46" />
-		</svg>
-		<span class="logo-letter w">W</span>
-		<span class="logo-letter e">E</span>
-		<span class="logo-letter b">B</span>
-	</span>
+<svg
+	class="logo-svg flex-center"
+	viewBox="0 0 500 100"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<filter id="shadowActive" height="200%" width="200%" x="-50%" y="-50%">
+			<feDropShadow
+				dx="0"
+				dy="0"
+				flood-color="var(--color50)"
+				flood-opacity="0.75"
+				stdDeviation="2"
+			/>
+		</filter>
+	</defs>
+	<text class="logo-letter" x="0" y="90" :style="{ fontWeight: fontWeight }">V</text>
+	<text class="logo-letter" x="36" y="90" :style="{ fontWeight: fontWeight }">A</text>
+	<text class="logo-letter" x="90" y="90" :style="{ fontWeight: fontWeight }">D</text>
+	<text class="logo-letter" x="134" y="90" :style="{ fontWeight: fontWeight }">I</text>
+	<text class="logo-letter" x="185" y="90" :style="{ fontWeight: fontWeight }">M</text>
+	<g class="logo-image" transform="translate(243, 0)" :style="{ strokeWidth: strokeWidth }">
+		<line x1="50" y1="96" x2="50" y2="4" />
+		<line x1="50" y1="4" x2="4" y2="50" />
+		<line x1="4" y1="50" x2="50" y2="50" />
+		<path d="M 50,4 A 23,23,0,1,1,50,50" fill="none" />
+		<circle cx="50" cy="50" r="46" fill="none" />
+	</g>
+	<text class="logo-letter" x="339" y="90" :style="{ fontWeight: fontWeight }">W</text>
+	<text class="logo-letter" x="393" y="90" :style="{ fontWeight: fontWeight }">E</text>
+	<text class="logo-letter" x="443" y="90" :style="{ fontWeight: fontWeight }">B</text>
+</svg>
 </template>
 
-<style lang="scss" scoped>
-.logo-span {
-	font-size: 3vmin;
-	font-weight: 700;
+<script setup>
+import { computed } from 'vue'
 
-	.logo-letter {
-		&.v {
-			letter-spacing: -0.28ch;
-		}
+const {fontWeight} = defineProps({ fontWeight: String })
 
-		&.a {
-			letter-spacing: -0.05ch;
-		}
+const strokeWidth = computed(() => fontWeight === 'bold' ? 'max(0.9vmin, 9px)' : 'max(0.7vmin, 7px)')
+</script>
 
-		&.d {
-			letter-spacing: -0.22ch;
-		}
+<style lang="scss">
+.logo-svg {
+	height: 3vmin;
+	overflow: visible;
 
-		&.i {
-			letter-spacing: -0.075ch;
-		}
+  .logo-letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		font-size: 100px;
+		font-weight: bold;
+		fill: var(--color0);
+  }
 
-		&.m {
-			letter-spacing: 0.025ch;
-		}
-
-		&.w {
-			letter-spacing: -0.05ch;
-		}
-
-		&.e {
-			letter-spacing: -0.075ch;
-		}
-
-		&.b {
-			letter-spacing: 0;
-		}
-	}
-
-	.logo-image {
-		position: relative;
-		top: 0.12vmin;
-		width: 3vmin;
-		height: 3vmin;
-		stroke-width: max(0.25vmin, 10px);
-		stroke: var(--color0);
-		overflow: visible;
-	}
-
-	&::selection .logo-image {
-		stroke: var(--bg0);
-	}
+  .logo-image {
+    stroke-width: max(0.2vmin, 10px);
+    stroke: var(--color0);
+  }
 }
 </style>

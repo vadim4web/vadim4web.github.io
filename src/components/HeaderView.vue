@@ -3,7 +3,7 @@
 		<menu class="w100 rel">
 			<li class="menu-item w100 flex-center text-center">
 				<router-link class="link flex-center w100 logo-link" to="/">
-					<logo-view logo-class="logo-view" />
+					<logo-view font-weight="bold" />
 				</router-link>
 			</li>
 

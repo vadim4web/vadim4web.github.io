@@ -157,7 +157,7 @@ onUpdated(() => handleScroll())
 		}
 
 		.title-box {
-			padding: 0.5rem;
+			padding: 0.25rem;
 			justify-content: space-between;
 		}
 

@@ -25,7 +25,7 @@
 		</h2>
 
 		<div class="grid info w100">
-			<logo-view />
+			<logo-view font-weight="normal" />
 
 			<address class="text-center">
 				<h4 class="h4" :title="$t('location')">
@@ -84,51 +84,6 @@
 
 					<h4 class="h4">
 						<a
-							href="https://www.linkedin.com/in/vadim4web"
-							rel="noopener noreferrer"
-							target="_blank"
-							:title="$t('linkedin')"
-						>
-							<svg
-								fill="none"
-								height="24"
-								stroke-width="1.5"
-								viewBox="0 0 24 24"
-								width="24"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M7 17V13.5V10"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M7 7.01L7.01 6.99889"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-
-							&nbsp;
-						</a>
-					</h4>
-
-					<h4 class="h4">
-						<a
 							href="https://x.com/vadim4web"
 							rel="noopener noreferrer"
 							target="_blank"
@@ -167,45 +122,6 @@
 							l-58 1 -303 405 c-167 223 -306 412 -309 420 -4 11 6 14 50 14 l55 0 311 -415z"
 									/>
 								</g>
-							</svg>
-
-							&nbsp;
-						</a>
-					</h4>
-
-					<h4 class="h4">
-						<a
-							href="https://www.facebook.com/vadim4web"
-							rel="noopener noreferrer"
-							target="_blank"
-							:title="$t('facebook')"
-						>
-							<svg
-								fill="none"
-								height="24"
-								stroke-width="1.5"
-								viewBox="0 0 24 24"
-								width="24"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M11 21C11 18 11 15 11 12C11 9.8125 11.5 8 15 8"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M9 13H11H15"
-									stroke="var(--color0)"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
 							</svg>
 
 							&nbsp;
@@ -291,12 +207,12 @@ import LogoView from '@/components/LogoView.vue'
 
 	.h1 {
 		padding-top: 1rem;
-		padding-bottom: 12rem;
+		padding-bottom: 10rem;
 	}
 
 	.grid {
 		display: grid;
-		grid-template-columns: 23.5vw 33vw 23.5vw;
+		grid-template-columns: 22vw 36vw 22vw;
 		height: 8rem;
 		padding-bottom: 2.5rem;
 
@@ -321,18 +237,18 @@ import LogoView from '@/components/LogoView.vue'
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-end;
-	gap: 0.375rem;
-	padding: 1.5rem 0;
+	gap: 1.75rem;
+	padding: 1rem 0;
 
 	.h4 {
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 3.5rem;
+		height: 3.5rem;
 	}
 }
 
 .links svg {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	stroke: var(--color0);
 	overflow: visible;
 }

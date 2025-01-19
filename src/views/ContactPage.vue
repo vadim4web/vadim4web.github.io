@@ -70,6 +70,12 @@
 			</h4>
 
 			<h4 class="h4">
+				<a class="link" href="https://t.me/vadim4web" :title="$t('chatMe')">
+					@vadim4web
+				</a>
+			</h4>
+
+			<h4 class="h4">
 				<a
 					class="link"
 					:href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent(
@@ -79,12 +85,6 @@
 					:title="$t('emailMe')"
 				>
 					vadim4web@gmail.com
-				</a>
-			</h4>
-
-			<h4 class="h4">
-				<a class="link" href="https://t.me/vadim4web" :title="$t('chatMe')">
-					@vadim4web
 				</a>
 			</h4>
 		</div>
@@ -151,7 +151,7 @@ const submitForm = async () => {
 .grid-text-form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 7rem;
+	gap: 0rem;
 	padding: 9.5rem 0 7.25rem 0;
 }
 

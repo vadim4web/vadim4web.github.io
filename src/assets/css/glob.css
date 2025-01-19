@@ -1,5 +1,5 @@
 :root {
-	font-size: 1.4vmin;
+	font-size: 1.42857vmin;
 }
 
 * {
@@ -8,11 +8,8 @@
 	line-height: normal;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	/* Enables smooth scrolling */
 	-webkit-overflow-scrolling: touch;
-	/* Smooth scrolling on iOS */
 	-moz-overflow-scrolling: touch;
-	/* Mozilla-specific smooth scrolling */
 
 	transition:
 		background-color var(--tr-dur),

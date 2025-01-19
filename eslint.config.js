@@ -25,7 +25,7 @@ export default [
 						'EVENTS',
 						'CONTENT',
 					],
-					alphabetical: true,
+					alphabetical: false,
 				},
 			],
 		},

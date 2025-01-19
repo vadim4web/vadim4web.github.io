@@ -37,8 +37,8 @@ const messages = {
 
 		aboutH21: 'About Me',
 		aboutT1: 'Little Brief About Myself',
-		aboutH221: 'My mission is',
-		aboutH222: 'to make',
+		aboutH221: 'My mission',
+		aboutH222: 'is to make',
 		aboutH223: 'development',
 		aboutH224: 'easier.',
 		aboutT21:
@@ -69,9 +69,9 @@ const messages = {
 
 		contactH21: 'Contact Me',
 		contactT1: 'Hire Me For Your Awesome Project',
-		contactH221: 'Get in',
-		contactH222: 'Touch With',
-		contactH223: 'Me',
+		contactH221: 'Reach Out',
+		contactH222: 'To Me',
+		contactH223: 'Now',
 
 		name: 'NAME',
 		email: 'EMAIL',

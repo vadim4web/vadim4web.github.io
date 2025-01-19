@@ -210,7 +210,6 @@ watchEffect(() => {
 .project-page {
 	.preview {
 		aspect-ratio: 1 / 1;
-		zoom: 0.5;
 		border-radius: 2rem;
 
 		&:not(.white_bg) {
@@ -219,10 +218,12 @@ watchEffect(() => {
 
 		@media (orientation: portrait) {
 			width: 100%;
+			zoom: 0.33;
 		}
 
 		@media (orientation: landscape) {
 			width: 65%;
+			zoom: 0.5;
 		}
 	}
 
