@@ -33,7 +33,7 @@ const messages = {
 			'My experience spans both front-end and back-end technologies, api integrations, database management, and cloud services, enabling me to deliver complete and efficient web solutions.',
 
 		homeB2: 'Discover More About Me',
-		homeH22: 'My Projects TextHighlight',
+		homeH22: 'My Projects Highlight',
 		homeB3: 'EXPLORE MORE',
 		homeH23: 'Technologies I like to use and keep diving in deeper',
 
