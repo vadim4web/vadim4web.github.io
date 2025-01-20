@@ -71,6 +71,24 @@ vadim4web.github.io/
 - **Internationalization**: Supports multiple languages.
 - **SEO Friendly**: Metadata and optimized for search engines.
 
+```bash
+vadim4web@HP250g5 vadim4web.github.io $ npx cloc src
+      47 text files.
+      45 unique files.
+       6 files ignored.
+
+github.com/AlDanial/cloc v 2.02  T=0.20 s (229.5 files/s, 26418.1 lines/s)       
+-------------------------------------------------------------------------------  
+Language                     files          blank        comment           code  
+-------------------------------------------------------------------------------  
+Vuejs Component                 24            393             16           2854  
+JavaScript                      14             69              4           1133  
+CSS                              7             94              2            615  
+-------------------------------------------------------------------------------  
+SUM:                            45            556             22           4602  
+------------------------------------------------------------------------------- 
+```
+
 ### 📫 Let’s Connect!
 
 - [Portfolio](https://vadim4web.github.io)
