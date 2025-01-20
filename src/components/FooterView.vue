@@ -191,6 +191,10 @@ import LogoView from '@/components/LogoView.vue'
 	padding: 0 10dvw;
 	background: var(--bg2);
 
+	a:hover {
+		filter: drop-shadow(0 0 0.1rem var(--accent0));
+	}
+
 	.h4.hr-above {
 		padding: 2.25rem 0 5rem 0;
 		border-top: 0.125rem solid var(--color2);
