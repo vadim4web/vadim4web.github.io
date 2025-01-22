@@ -11,6 +11,7 @@
 			:bullets="false"
 			class="no-shadow w100 rel"
 			:fixed-height="true"
+			lazy
 		>
 			<vueper-slide
 				v-for="slide in slides"
