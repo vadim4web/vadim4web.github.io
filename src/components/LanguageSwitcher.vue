@@ -73,9 +73,8 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 .lang-swither-wrapper {
-	width: 5rem;
-	height: 5rem;
-	padding: 0.5rem 0 0 0;
+	width: 20vmin;
+	height: 10vmin;
 
 	* {
 		cursor: pointer !important;
@@ -83,7 +82,7 @@ onMounted(async () => {
 }
 
 .lang-switcher {
-	top: 0.5rem;
+	top: 1.25vmin;
 }
 
 .select {
@@ -93,31 +92,30 @@ onMounted(async () => {
 		content: '';
 		z-index: -1;
 		top: 0;
-		left: calc((100% - 3.75rem) / 2);
-		width: 3.75rem;
+		width: 7.5vmin;
 		background: #80808080;
-		border-radius: 1.875rem;
+		border-radius: 3.75vmin;
 	}
 
 	&-option {
-		width: 3.75rem;
-		height: 3.75rem;
+		width: 7.5vmin;
+		height: 7.5vmin;
 
 		&::after {
 			content: '';
 			z-index: 1;
 			top: 0;
 			left: 0;
-			width: 3.75rem;
-			height: 3.75rem;
-			border-radius: 1.875rem;
-			box-shadow: inset 0 0 1rem 0.33rem #80808080;
+			width: 7.5vmin;
+			height: 7.5vmin;
+			border-radius: 3.75vmin;
+			box-shadow: inset 0 0 0.5rem 0.166rem #80808080;
 			backdrop-filter: saturate(0.8);
 		}
 
 		&-img {
-			width: 3.75rem;
-			height: 3.75rem;
+			width: 7.5vmin;
+			height: 7.5vmin;
 			object-fit: cover;
 			-webkit-object-fit: cover;
 			-moz-object-fit: cover;
@@ -128,12 +126,12 @@ onMounted(async () => {
 
 	&.close,
 	&.close::after {
-		height: 3.75rem;
+		height: 7.5vmin;
 	}
 
 	&.open,
 	&.open::after {
-		height: 8.25rem;
+		height: 17vmin;
 	}
 }
 </style>

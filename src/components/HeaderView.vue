@@ -107,7 +107,6 @@ menu {
 }
 
 .global-view {
-	height: 10.5rem;
-	gap: 0.125rem;
+	height: 20vmin;
 }
 </style>

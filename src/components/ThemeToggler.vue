@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="theme-toggler flex-align"
+		class="theme-toggler flex-center"
 		:title="$t(`toggleTheme${'_' + theme}`)"
 		@click="toggleTheme"
 	>
@@ -150,15 +150,15 @@ watch(theme, setAll)
 <style lang="scss" scoped>
 .theme-toggler {
 	z-index: 1;
-	height: 5rem;
-	opacity: 0.75;
+	width: 20vmin;
+	height: 10vmin;
 	background: transparent;
 	transition: transform 0.5s;
 	cursor: pointer;
 
 	#spot {
-		width: 3.75rem;
-		height: 3.75rem;
+		width: 7.5vmin;
+		height: 7.5vmin;
 		border-radius: 50%;
 		color: var(--color0);
 		background: radial-gradient(
@@ -168,8 +168,8 @@ watch(theme, setAll)
 		);
 
 		svg {
-			width: 3rem;
-			height: 3rem;
+			width: 5vmin;
+			height: 5vmin;
 		}
 
 		&::after {
