@@ -23,6 +23,7 @@
 							w100: true,
 						}"
 						:iframe-src="getPath(p.path)"
+						:iframe-title="p.title"
 						:scrolling="'no'"
 					/>
 

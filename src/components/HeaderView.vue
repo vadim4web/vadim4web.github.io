@@ -1,35 +1,37 @@
 <template>
 	<header class="header w100 back-blur05">
-		<menu class="w100 rel">
-			<li class="menu-item w100 flex-center text-center">
-				<router-link class="link flex-center w100 logo-link" to="/">
-					<logo-view font-weight="bold" />
-				</router-link>
-			</li>
+		<nav>
+			<menu class="w100 rel">
+				<li class="menu-item w100 flex-center text-center">
+					<router-link class="link flex-center w100 logo-link" to="/">
+						<logo-view font-weight="bold" />
+					</router-link>
+				</li>
 
-			<li class="menu-item w100 flex-center text-center">
-				<router-link class="link flex-center w100" to="/about">
-					{{ $t('AboutMe') }}
-				</router-link>
-			</li>
+				<li class="menu-item w100 flex-center text-center">
+					<router-link class="link flex-center w100" to="/about">
+						{{ $t('AboutMe') }}
+					</router-link>
+				</li>
 
-			<li class="menu-item w100 flex-center text-center">
-				<router-link class="link flex-center w100" to="/projects">
-					{{ $t('MyWorks') }}
-				</router-link>
-			</li>
+				<li class="menu-item w100 flex-center text-center">
+					<router-link class="link flex-center w100" to="/projects">
+						{{ $t('MyWorks') }}
+					</router-link>
+				</li>
 
-			<li class="menu-item w100 flex-center text-center">
-				<router-link class="link flex-center w100" to="/contact">
-					{{ $t('MyContacts') }}
-				</router-link>
-			</li>
+				<li class="menu-item w100 flex-center text-center">
+					<router-link class="link flex-center w100" to="/contact">
+						{{ $t('MyContacts') }}
+					</router-link>
+				</li>
 
-			<li class="menu-item w100 flex-col-center text-center global-view">
-				<theme-toggler />
-				<language-switcher />
-			</li>
-		</menu>
+				<li class="menu-item w100 flex-col-center text-center global-view">
+					<theme-toggler />
+					<language-switcher />
+				</li>
+			</menu>
+		</nav>
 	</header>
 </template>
 

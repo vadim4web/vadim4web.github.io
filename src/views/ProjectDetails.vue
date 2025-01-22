@@ -6,6 +6,7 @@
 			<frame-loader
 				:iframe-class="{ white_bg: project.white_bg, preview: true }"
 				:iframe-src="demo"
+				:iframe-title="project.title"
 				:scrolling="'yes'"
 			/>
 
@@ -119,6 +120,7 @@
 							:iframe-src="getPath(p.path)"
 							:iframe-style="{ zoom: zoom, borderRadius: br }"
 							:scrolling="'no'"
+							:iframe-title="p.title"
 							:three="true"
 						/>
 

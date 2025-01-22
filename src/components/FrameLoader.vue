@@ -6,6 +6,8 @@
 		:scrolling="scrolling"
 		:src="iframeSrc"
 		:style="iframeStyle"
+		tabindex="-1"
+		:title="iframeTitle"
 		@load="setLoaded"
 	/>
 
@@ -25,6 +27,7 @@ const LoaderSpinner = defineAsyncComponent(
 )
 
 defineProps({
+	iframeTitle: String,
 	iframeSrc: String,
 	iframeStyle: Object,
 	iframeClass: Object,

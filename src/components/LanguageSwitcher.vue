@@ -1,10 +1,14 @@
 <template>
-	<div class="lang-swither-wrapper flex-center rel">
+	<div
+		class="lang-swither-wrapper flex-center rel"
+		role="button"
+		tabindex="0"
+		:title="$t('toggleLangTip')"
+	>
 		<menu
 			v-click-outside="closeMenu"
 			class="lang-switcher select flex-col-center hideO abs"
 			:class="{ open: showOptions, close: !showOptions }"
-			:title="$t('toggleLangTip')"
 		>
 			<li
 				v-for="({ value, image }, index) in sortedLanguageOptions"

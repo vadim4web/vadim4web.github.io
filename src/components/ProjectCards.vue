@@ -18,6 +18,7 @@
 					:iframe-src="getPath(path)"
 					:iframe-style="{ zoom: zoom, borderRadius: br }"
 					:scrolling="'no'"
+					:iframe-title="title"
 					:three="true"
 				/>
 			</div>

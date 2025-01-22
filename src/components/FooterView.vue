@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer flex-align flex-col rel">
-		<h4 class="h4 top text-center">
+		<h5 class="h4 top text-center">
 			<router-link
 				class="link not-to-show-active"
 				style="padding: 1rem; border-radius: 4rem"
@@ -8,9 +8,9 @@
 			>
 				{{ $t('footerGIT') }}
 			</router-link>
-		</h4>
+		</h5>
 
-		<h2 class="h1 mail">
+		<h5 class="h1 mail">
 			<a
 				class="link"
 				:href="`mailto:vadim4web@gmail.com?subject=${encodeURIComponent(
@@ -22,28 +22,28 @@
 			>
 				vadim4web@gmail.com
 			</a>
-		</h2>
+		</h5>
 
 		<div class="grid info w100">
 			<logo-view font-weight="normal" />
 
 			<address class="text-center">
-				<h4 class="h4" :title="$t('location')">
+				<h5 class="h4" :title="$t('location')">
 					{{ $t('footerA1') }}, 175/14,<br />
 					{{ $t('footerA2') }},<br />
 					08150
-				</h4>
+				</h5>
 			</address>
 
 			<div class="contacts">
-				<h4 class="h4 phone">
+				<h5 class="h4 phone">
 					<a href="tel:+380933789883" target="_self" :title="$t('callMe')">
 						+380-933-789-883
 					</a>
-				</h4>
+				</h5>
 
 				<div class="links">
-					<h4 class="h4">
+					<h5 class="h4">
 						<a
 							href="https://github.com/vadim4web"
 							rel="noopener noreferrer"
@@ -80,9 +80,9 @@
 
 							&nbsp;
 						</a>
-					</h4>
+					</h5>
 
-					<h4 class="h4">
+					<h5 class="h4">
 						<a
 							href="https://x.com/vadim4web"
 							rel="noopener noreferrer"
@@ -126,9 +126,9 @@
 
 							&nbsp;
 						</a>
-					</h4>
+					</h5>
 
-					<h4 class="h4">
+					<h5 class="h4">
 						<a
 							href="https://t.me/vadim4web"
 							rel="noopener noreferrer"
@@ -159,12 +159,12 @@
 
 							&nbsp;
 						</a>
-					</h4>
+					</h5>
 				</div>
 			</div>
 		</div>
 
-		<h4 class="h4 hr-above text-center w100">
+		<h5 class="h4 hr-above text-center w100">
 			&copy; 2021-{{ new Date().getFullYear() }}
 			<a
 				href="https://github.com/vadim4web"
@@ -175,7 +175,7 @@
 				VADIM4WEB.
 			</a>
 			<em> {{ $t('copyright') }}. </em>
-		</h4>
+		</h5>
 	</footer>
 </template>
 
