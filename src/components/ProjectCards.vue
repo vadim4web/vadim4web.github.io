@@ -25,7 +25,7 @@
 			<h4 class="h4 text-left rel">
 				<router-link
 					class="text-wrap hideO"
-					:title="'View more details about `' + title + '`'"
+					:title="$t('worksDetails') + ' «' + title + '»'"
 					:to="{ name: 'project', params: { projectName: name } }"
 				>
 					<em>{{ title }}</em>

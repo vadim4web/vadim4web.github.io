@@ -33,7 +33,7 @@
 
 						<router-link
 							class="t2"
-							:title="$t('worksDetails') + ' `' + p.title + '`'"
+							:title="$t('worksDetails') + ' «' + p.title + '»'"
 							:to="{ name: 'project', params: { projectName: p.name } }"
 						>
 							<em>

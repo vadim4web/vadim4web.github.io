@@ -105,7 +105,7 @@
 				<div v-for="(p, i) in others" :key="i" class="card card-back br1 rel">
 					<router-link
 						class="flex-col"
-						:title="$t('worksDetails') + ' `' + p.title + '`'"
+						:title="$t('worksDetails') + ' «' + p.title + '»'"
 						:to="{ name: 'project', params: { projectName: p.name } }"
 					>
 						<frame-loader

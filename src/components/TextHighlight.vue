@@ -3,6 +3,7 @@
 		class="text-highlight abs"
 		fill="none"
 		height="651"
+		style="z-index: -1;	width: 60vmin; height: 40vmin; transform: rotate(10deg);"
 		viewBox="0 0 917 651"
 		width="917"
 		xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +13,7 @@
 				class="path"
 				d="M485.187 449.805C580.282 443.548 642.347 408.446 702.715 326.776C825.011 161.329 110.485 108.772 209.995 290.534C272.738 405.139 363.72 457.796 485.187 449.805Z"
 				fill-opacity="0.18"
+				fill="var(--accent0)"
 			/>
 		</g>
 		<defs>
@@ -40,15 +42,3 @@
 	</svg>
 </template>
 
-<style lang="scss" scoped>
-.text-highlight {
-	z-index: -1;
-	width: 60vmin;
-	height: 40vmin;
-	transform: rotate(10deg);
-}
-
-.path {
-	fill: var(--accent0);
-}
-</style>
