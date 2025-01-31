@@ -9,6 +9,9 @@ export default [
 			'vue/html-indent': 'off',
 			'vue/html-self-closing': 'off',
 			'vue/require-default-prop': 'off',
+			"vue/no-unused-vars": ["error", {
+					"ignorePattern": "^_"
+			}],
 			'vue/attributes-order': [
 				'error',
 				{

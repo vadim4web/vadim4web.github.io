@@ -1,3 +1,7 @@
+<script setup>
+import CoverImage from '~/components/CoverImage.vue'
+</script>
+
 <template>
 	<main class="main capture-logo-view w100 flex-col-center">
 		<cover-image id="github" :logo-size="640" />
@@ -7,10 +11,6 @@
 		<cover-image id="x" :logo-size="500" />
 	</main>
 </template>
-
-<script setup>
-import CoverImage from '@/components/CoverImage.vue'
-</script>
 
 <style lang="scss" scoped>
 .capture-logo-view {

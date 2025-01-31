@@ -1,3 +1,22 @@
+<script setup>
+import { defineAsyncComponent, computed } from 'vue'
+import { projects } from '~/assets/data/projects.js'
+import getPath from '~/helpers/getPath.js'
+import getThreeRandom from '~/helpers/getThreeRandom'
+import { useMediaQuery } from '@vueuse/core'
+
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+const isPortrait = useMediaQuery('(orientation: portrait)')
+
+const zoom = computed(() => (isLargeScreen && isPortrait ? '0.3' : '0.175'))
+const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
+
+const FrameLoader = defineAsyncComponent(
+	() => import('~/components/FrameLoader.vue')
+)
+const three = getThreeRandom(projects)
+</script>
+
 <template>
 	<div class="three three-projects flex-center w100">
 		<div
@@ -47,25 +66,6 @@
 		</div>
 	</div>
 </template>
-
-<script setup>
-import { defineAsyncComponent, computed } from 'vue'
-import { projects } from '@/assets/data/projects.js'
-import getPath from '@/helpers/getPath.js'
-import getThreeRandom from '@/helpers/getThreeRandom'
-import { useMediaQuery } from '@vueuse/core'
-
-const isLargeScreen = useMediaQuery('(min-width: 1024px)')
-const isPortrait = useMediaQuery('(orientation: portrait)')
-
-const zoom = computed(() => (isLargeScreen && isPortrait ? '0.3' : '0.175'))
-const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
-
-const FrameLoader = defineAsyncComponent(
-	() => import('@/components/FrameLoader.vue')
-)
-const three = getThreeRandom(projects)
-</script>
 
 <style lang="scss">
 .text-wrap {

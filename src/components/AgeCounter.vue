@@ -1,7 +1,3 @@
-<template>
-	{{ result }}
-</template>
-
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -128,3 +124,7 @@ onBeforeUnmount(() => {
 
 watch(locale, updateResult)
 </script>
+
+<template>
+	{{ result }}
+</template>

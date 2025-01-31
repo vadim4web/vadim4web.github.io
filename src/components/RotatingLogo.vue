@@ -1,7 +1,3 @@
-<template>
-	<div ref="canvasContainer" class="abs" :style="canvasStyle" />
-</template>
-
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import {
@@ -19,7 +15,7 @@ let animationFrameId = null
 let currentTheme = getCurrentTheme()
 let GLTFLoader, DRACOLoader, scene, camera, renderer
 
-const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
+const ASSETS_DIR = '/model/'
 const MODEL_NAME = 'logo.glb'
 const canvasContainer = ref(null)
 const environmentMaps = {}
@@ -51,9 +47,11 @@ function getCurrentTheme() {
 function preloadEnvironmentMaps() {
 	const loader = new CubeTextureLoader()
 	environmentMaps.light = loader.load(
-		'texture-silver.jpg '.repeat(6).split(' ')
+		`${ASSETS_DIR}texture-silver.jpg `.repeat(6).split(' ')
 	)
-	environmentMaps.dark = loader.load('texture-gold.jpg '.repeat(6).split(' '))
+	environmentMaps.dark = loader.load(
+		`${ASSETS_DIR}texture-gold.jpg `.repeat(6).split(' ')
+	)
 }
 
 function initializeScene() {
@@ -162,3 +160,7 @@ onUnmounted(() => {
 	scene.clear()
 })
 </script>
+
+<template>
+	<div ref="canvasContainer" class="abs" :style="canvasStyle" />
+</template>

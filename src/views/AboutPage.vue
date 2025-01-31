@@ -1,3 +1,11 @@
+<script setup>
+import { defineAsyncComponent } from 'vue'
+
+const PageHeader = defineAsyncComponent(
+	() => import('~/components/PageHeader.vue')
+)
+</script>
+
 <template>
 	<main class="flex-col">
 		<PageHeader head-key="aboutH21" text-key="aboutT1" />
@@ -40,14 +48,6 @@
     </pre>
 	</main>
 </template>
-
-<script setup>
-import { defineAsyncComponent } from 'vue'
-
-const PageHeader = defineAsyncComponent(
-	() => import('@/components/PageHeader.vue')
-)
-</script>
 
 <style lang="scss" scoped>
 .mission-header {

@@ -1,3 +1,59 @@
+<script setup>
+import { ref, defineAsyncComponent } from 'vue'
+import emailjs from '@emailjs/browser'
+
+const PageHeader = defineAsyncComponent(
+	() => import('~/components/PageHeader.vue')
+)
+const InteractiveButton = defineAsyncComponent(
+	() => import('~/components/InteractiveButton.vue')
+)
+
+const name = ref('')
+const email = ref('')
+const subject = ref('')
+const message = ref('')
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const USER_KEY = import.meta.env.VITE_EMAILJS_USER_KEY
+
+const submitForm = async () => {
+	const text = `
+        Name: ${name.value}
+        Email: ${email.value}
+        Subject: ${subject.value}
+        Message: ${message.value}
+      `
+
+	try {
+		const templateParams = {
+			name: name.value,
+			email: email.value,
+			subject: subject.value,
+			message: text.trim(),
+		}
+
+		const response = await emailjs.send(
+			SERVICE_ID,
+			TEMPLATE_ID,
+			templateParams,
+			{
+				publicKey: USER_KEY,
+			}
+		)
+		console.log('Email sent successfully!', response)
+	} catch (error) {
+		console.error('Error sending email:', error)
+	}
+
+	name.value = ''
+	email.value = ''
+	subject.value = ''
+	message.value = ''
+}
+</script>
+
 <template>
 	<main class="flex-col">
 		<PageHeader head-key="contactH21" text-key="contactT1" />
@@ -90,62 +146,6 @@
 		</div>
 	</main>
 </template>
-
-<script setup>
-import { ref, defineAsyncComponent } from 'vue'
-import emailjs from '@emailjs/browser'
-
-const PageHeader = defineAsyncComponent(
-	() => import('@/components/PageHeader.vue')
-)
-const InteractiveButton = defineAsyncComponent(
-	() => import('@/components/InteractiveButton.vue')
-)
-
-const name = ref('')
-const email = ref('')
-const subject = ref('')
-const message = ref('')
-
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const USER_KEY = import.meta.env.VITE_EMAILJS_USER_KEY
-
-const submitForm = async () => {
-	const text = `
-        Name: ${name.value}
-        Email: ${email.value}
-        Subject: ${subject.value}
-        Message: ${message.value}
-      `
-
-	try {
-		const templateParams = {
-			name: name.value,
-			email: email.value,
-			subject: subject.value,
-			message: text.trim(),
-		}
-
-		const response = await emailjs.send(
-			SERVICE_ID,
-			TEMPLATE_ID,
-			templateParams,
-			{
-				publicKey: USER_KEY,
-			}
-		)
-		console.log('Email sent successfully!', response)
-	} catch (error) {
-		console.error('Error sending email:', error)
-	}
-
-	name.value = ''
-	email.value = ''
-	subject.value = ''
-	message.value = ''
-}
-</script>
 
 <style lang="scss" scoped>
 .grid-text-form {

@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
 	en: {
-		flag: 'Flag_of_the_UK.webp',
+		flag: 'flags/en.webp',
 		flagAlt_en: 'The Union Jack',
 		flagAlt_uk: 'The Ukrainian flag',
 
@@ -28,7 +28,7 @@ const messages = {
 			'Hello, my name is Vadim Chervoniak, I am from Ukraine and I’ve got ',
 		homeP12: 'approximately ~ ',
 		homeP13:
-			'I am a full-stack developer with expertise in vue, react, node.js, and modern web technologies.',
+			'I am a full-stack developer with expertise in vue, nuxt, node.js, and a polyglot in modern web technologies.',
 		homeP14:
 			'My experience spans both front-end and back-end technologies, api integrations, database management, and cloud services, enabling me to deliver complete and efficient web solutions.',
 
@@ -89,9 +89,7 @@ const messages = {
 		location: 'Location of my integrated home-office web development studio',
 
 		gitHub: 'My GitHub profile',
-		linkedin: 'My LinkedIn profile',
 		xtwitter: 'My X (formerly Twitter) profile',
-		facebook: 'My Facebook profile',
 
 		chatMe: 'Message me on Telegram',
 		emailMe: 'E-mail me',
@@ -108,7 +106,7 @@ const messages = {
 		notFoundB: 'go back',
 	},
 	uk: {
-		flag: 'Flag_of_Ukraine.webp',
+		flag: 'flags/uk.webp',
 		flagAlt_en: 'Прапор Великої Британії',
 		flagAlt_uk: 'Прапор України',
 
@@ -129,7 +127,7 @@ const messages = {
 		homeP11: 'Привіт, мене звати Вадім Червоняк, я з України і мені ',
 		homeP12: 'приблизно ~ ',
 		homeP13:
-			'Я — full-stack розробник з експертизою у vue, react, node.js та сучасних веб-технологіях.',
+			'Я — full-stack розробник з експертизою у vue, nuxt, node.js та поліглот у сучасних веб-технологіях.',
 		homeP14:
 			'Мій досвід охоплює фронтенд та бекенд технології, управління базами даних, хмарні сервіси та інтеграцію з api, що дозволяє реалізовувати комплексні та ефективні рішення.',
 
@@ -191,9 +189,7 @@ const messages = {
 		location: 'Розташування моєї інтегрованої домашньої студії веб-розробки',
 
 		gitHub: 'Мій GitHub профіль',
-		linkedin: 'Мій профіль LinkedIn',
 		xtwitter: 'Мій профіль на X (раніше Twitter)',
-		facebook: 'Мій профіль Facebook',
 
 		chatMe: 'Написати в Telegram',
 		emailMe: 'Написати e-mail',

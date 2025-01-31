@@ -1,3 +1,19 @@
+<script setup>
+import RotatingLogo from '~/components/RotatingLogo.vue'
+import InteractiveButton from '~/components/InteractiveButton.vue'
+import ArrowText from '~/components/ArrowText.vue'
+import TextHighlight from '~/components/TextHighlight.vue'
+import AgeCounter from '~/components/AgeCounter.vue'
+import { defineAsyncComponent } from 'vue'
+
+const ProjectCards = defineAsyncComponent(
+	() => import('~/components/ProjectCards.vue')
+)
+const TechStackSlider = defineAsyncComponent(
+	() => import('~/components/TechStackSlider.vue')
+)
+</script>
+
 <template>
 	<main class="home">
 		<section class="head content flex-col-center text-center">
@@ -96,22 +112,6 @@
 		<tech-stack-slider />
 	</main>
 </template>
-
-<script setup>
-import RotatingLogo from '@/components/RotatingLogo.vue'
-import InteractiveButton from '@/components/InteractiveButton.vue'
-import ArrowText from '@/components/ArrowText.vue'
-import TextHighlight from '@/components/TextHighlight.vue'
-import AgeCounter from '@/components/AgeCounter.vue'
-import { defineAsyncComponent } from 'vue'
-
-const ProjectCards = defineAsyncComponent(
-	() => import('@/components/ProjectCards.vue')
-)
-const TechStackSlider = defineAsyncComponent(
-	() => import('@/components/TechStackSlider.vue')
-)
-</script>
 
 <style lang="scss" scoped>
 .head {

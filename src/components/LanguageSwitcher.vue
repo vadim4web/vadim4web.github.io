@@ -1,36 +1,7 @@
-<template>
-	<div
-		class="lang-swither-wrapper flex-center rel"
-		role="button"
-		tabindex="0"
-		:title="$t('toggleLangTip')"
-	>
-		<menu
-			v-click-outside="closeMenu"
-			class="lang-switcher select flex-col-center hideO abs"
-			:class="{ open: showOptions, close: !showOptions }"
-		>
-			<li
-				v-for="({ value, image }, index) in sortedLanguageOptions"
-				:key="index"
-				class="select-option rel"
-				:class="{ selected: selectedLanguage === value }"
-				@click="handleClick(value)"
-			>
-				<img
-					:alt="$t(`flagAlt_${value}`)"
-					class="select-option-img"
-					:src="image"
-				/>
-			</li>
-		</menu>
-	</div>
-</template>
-
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import i18n from '@/i18n/'
-import getIPInfo from '@/helpers/ipInfoHelper'
+import i18n from '~/i18n/'
+import getIPInfo from '~/helpers/ipInfoHelper'
 
 const BASE_URL = import.meta.env.BASE_URL
 const selectedLanguage = ref(i18n.global.locale)
@@ -74,6 +45,35 @@ onMounted(async () => {
 	}
 })
 </script>
+
+<template>
+	<div
+		class="lang-swither-wrapper flex-center rel"
+		role="button"
+		tabindex="0"
+		:title="$t('toggleLangTip')"
+	>
+		<menu
+			v-click-outside="closeMenu"
+			class="lang-switcher select flex-col-center hideO abs"
+			:class="{ open: showOptions, close: !showOptions }"
+		>
+			<li
+				v-for="({ value, image }, index) in sortedLanguageOptions"
+				:key="index"
+				class="select-option rel"
+				:class="{ selected: selectedLanguage === value }"
+				@click="handleClick(value)"
+			>
+				<img
+					:alt="$t(`flagAlt_${value}`)"
+					class="select-option-img"
+					:src="image"
+				/>
+			</li>
+		</menu>
+	</div>
+</template>
 
 <style lang="scss" scoped>
 .lang-swither-wrapper {

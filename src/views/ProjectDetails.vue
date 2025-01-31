@@ -1,3 +1,69 @@
+<script setup>
+import { ref, watchEffect, computed, defineAsyncComponent } from 'vue'
+import { useMediaQuery } from '@vueuse/core'
+import { useRoute } from 'vue-router'
+import { projects } from '~/assets/data/projects.js'
+import getPath from '~/helpers/getPath.js'
+import getSrc from '~/helpers/getSrc.js'
+import getThreeRandom from '~/helpers/getThreeRandom'
+
+const PageHeader = defineAsyncComponent(
+	() => import('~/components/PageHeader.vue')
+)
+const FrameLoader = defineAsyncComponent(
+	() => import('~/components/FrameLoader.vue')
+)
+const ArrowIcon = defineAsyncComponent(
+	() => import('~/components/ArrowIcon.vue')
+)
+
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+const zoom = computed(() => (isLargeScreen ? '0.25' : '0.175'))
+const br = computed(() => (isLargeScreen ? '4rem' : '5.714285rem'))
+
+const route = useRoute()
+const projectName = ref(route.params.projectName)
+const project = ref(getProjectDetails(projectName.value))
+const curIdx = ref(getCurrentProjectIndex())
+const prev = ref(getPreviousProject())
+const next = ref(getNextProject())
+const others = ref(getThreeRandom(projects, curIdx.value))
+
+const source = computed(() => getSrc(projectName.value))
+const demo = computed(() => getPath(project.value.path))
+
+function getProjectDetails(projectName) {
+	return projects.find(project => project.name === projectName) || {}
+}
+
+function getCurrentProjectIndex() {
+	return projects.findIndex(
+		p =>
+			p.name === project.value.name &&
+			p.orientation === project.value.orientation
+	)
+}
+
+function getNextProject() {
+	const nextIndex = curIdx.value < projects.length - 1 ? curIdx.value + 1 : 0
+	return projects[nextIndex]
+}
+
+function getPreviousProject() {
+	const prevIndex = curIdx.value > 0 ? curIdx.value - 1 : projects.length - 1
+	return projects[prevIndex]
+}
+
+watchEffect(() => {
+	projectName.value = route.params.projectName
+	project.value = getProjectDetails(projectName.value)
+	curIdx.value = getCurrentProjectIndex()
+	prev.value = getPreviousProject()
+	next.value = getNextProject()
+	others.value = getThreeRandom(projects, curIdx.value)
+})
+</script>
+
 <template>
 	<main class="flex-col project-page">
 		<PageHeader head-key="projectH21" text-key="projectT1" />
@@ -141,72 +207,6 @@
 		</div>
 	</main>
 </template>
-
-<script setup>
-import { ref, watchEffect, computed, defineAsyncComponent } from 'vue'
-import { useMediaQuery } from '@vueuse/core'
-import { useRoute } from 'vue-router'
-import { projects } from '@/assets/data/projects.js'
-import getPath from '@/helpers/getPath.js'
-import getSrc from '@/helpers/getSrc.js'
-import getThreeRandom from '@/helpers/getThreeRandom'
-
-const PageHeader = defineAsyncComponent(
-	() => import('@/components/PageHeader.vue')
-)
-const FrameLoader = defineAsyncComponent(
-	() => import('@/components/FrameLoader.vue')
-)
-const ArrowIcon = defineAsyncComponent(
-	() => import('@/components/ArrowIcon.vue')
-)
-
-const isLargeScreen = useMediaQuery('(min-width: 1024px)')
-const zoom = computed(() => (isLargeScreen ? '0.25' : '0.175'))
-const br = computed(() => (isLargeScreen ? '4rem' : '5.714285rem'))
-
-const route = useRoute()
-const projectName = ref(route.params.projectName)
-const project = ref(getProjectDetails(projectName.value))
-const curIdx = ref(getCurrentProjectIndex())
-const prev = ref(getPreviousProject())
-const next = ref(getNextProject())
-const others = ref(getThreeRandom(projects, curIdx.value))
-
-const source = computed(() => getSrc(projectName.value))
-const demo = computed(() => getPath(project.value.path))
-
-function getProjectDetails(projectName) {
-	return projects.find(project => project.name === projectName) || {}
-}
-
-function getCurrentProjectIndex() {
-	return projects.findIndex(
-		p =>
-			p.name === project.value.name &&
-			p.orientation === project.value.orientation
-	)
-}
-
-function getNextProject() {
-	const nextIndex = curIdx.value < projects.length - 1 ? curIdx.value + 1 : 0
-	return projects[nextIndex]
-}
-
-function getPreviousProject() {
-	const prevIndex = curIdx.value > 0 ? curIdx.value - 1 : projects.length - 1
-	return projects[prevIndex]
-}
-
-watchEffect(() => {
-	projectName.value = route.params.projectName
-	project.value = getProjectDetails(projectName.value)
-	curIdx.value = getCurrentProjectIndex()
-	prev.value = getPreviousProject()
-	next.value = getNextProject()
-	others.value = getThreeRandom(projects, curIdx.value)
-})
-</script>
 
 <style lang="scss">
 .project-page {

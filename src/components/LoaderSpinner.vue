@@ -1,30 +1,6 @@
-<template>
-	<div
-		class="spinner-container flex-center w100"
-		:class="{
-			vertical: classes?.vertical,
-			horizontal: classes?.horizontal,
-			iframe: classes?.iframe,
-			preview: classes?.preview,
-			other: classes?.other,
-			'one-of-three': three,
-			null: classes?.white_bg,
-		}"
-	>
-		<canvas
-			id="spinnerCanvas"
-			ref="spinnerCanvas"
-			class="spinner-canvas icon"
-			height="100"
-			:stroke="state.themeColor"
-			width="100"
-		/>
-	</div>
-</template>
-
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
-import { state } from '@/store/'
+import { state } from '~/store/'
 
 defineProps({
 	classes: Object,
@@ -127,6 +103,30 @@ watch(
 	}
 )
 </script>
+
+<template>
+	<div
+		class="spinner-container flex-center w100"
+		:class="{
+			vertical: classes?.vertical,
+			horizontal: classes?.horizontal,
+			iframe: classes?.iframe,
+			preview: classes?.preview,
+			other: classes?.other,
+			'one-of-three': three,
+			null: classes?.white_bg,
+		}"
+	>
+		<canvas
+			id="spinnerCanvas"
+			ref="spinnerCanvas"
+			class="spinner-canvas icon"
+			height="100"
+			:stroke="state.themeColor"
+			width="100"
+		/>
+	</div>
+</template>
 
 <style lang="scss" scoped>
 .spinner-canvas {

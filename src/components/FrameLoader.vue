@@ -1,3 +1,23 @@
+<script setup>
+import { ref, defineAsyncComponent } from 'vue'
+
+const LoaderSpinner = defineAsyncComponent(
+	() => import('~/components/LoaderSpinner.vue')
+)
+
+defineProps({
+	iframeTitle: String,
+	iframeSrc: String,
+	iframeStyle: Object,
+	iframeClass: Object,
+	three: Boolean,
+	scrolling: String,
+})
+
+const isLoaded = ref(false)
+const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
+</script>
+
 <template>
 	<iframe
 		v-show="isLoaded"
@@ -18,23 +38,3 @@
 		:three="three"
 	/>
 </template>
-
-<script setup>
-import { ref, defineAsyncComponent } from 'vue'
-
-const LoaderSpinner = defineAsyncComponent(
-	() => import('@/components/LoaderSpinner.vue')
-)
-
-defineProps({
-	iframeTitle: String,
-	iframeSrc: String,
-	iframeStyle: Object,
-	iframeClass: Object,
-	three: Boolean,
-	scrolling: String,
-})
-
-const isLoaded = ref(false)
-const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
-</script>

@@ -1,3 +1,30 @@
+<script setup>
+import { ref, onMounted, onUpdated } from 'vue'
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+import slides from '~/assets/data/slides.js'
+
+const slider = ref()
+
+const setSlideContentGrid = () => {
+	const contentElements = document.querySelectorAll('.vueperslide__content')
+	contentElements.forEach(element => {
+		element.setAttribute(
+			'style',
+			`display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+          width: 100% !important; transition: none !important;`
+		)
+	})
+}
+
+onMounted(() => {
+	setSlideContentGrid()
+	slider.value.goToSlide(3)
+})
+onUpdated(() => setSlideContentGrid())
+</script>
+
 <template>
 	<section class="flex-col-center tech-stack-slider">
 		<h2 class="h2 text-center">
@@ -27,33 +54,6 @@
 		</vueper-slides>
 	</section>
 </template>
-
-<script setup>
-import { ref, onMounted, onUpdated } from 'vue'
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
-import slides from '@/assets/data/slides.js'
-
-const slider = ref()
-
-const setSlideContentGrid = () => {
-	const contentElements = document.querySelectorAll('.vueperslide__content')
-	contentElements.forEach(element => {
-		element.setAttribute(
-			'style',
-			`display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-          width: 100% !important; transition: none !important;`
-		)
-	})
-}
-
-onMounted(() => {
-	setSlideContentGrid()
-	slider.value.goToSlide(3)
-})
-onUpdated(() => setSlideContentGrid())
-</script>
 
 <style lang="scss">
 .tech-stack-slider {

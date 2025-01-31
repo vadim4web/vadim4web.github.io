@@ -1,41 +1,7 @@
-<template>
-	<div
-		id="logoOverlay"
-		ref="logoOverlay"
-		class="flex-col-center"
-		:class="{ fadeOut: fadeOutClass }"
-		:style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 4 : 0 }"
-		@animationend="handleAnimationEnd"
-	>
-		<div id="logo2dWrapper" class="rel">
-			<canvas
-				id="logo2dCanvas"
-				ref="logo2dCanvas"
-				class="rel"
-				height="400"
-				stroke="#808080"
-				width="400"
-			/>
-			<svg
-				id="svgPlaceholder"
-				class="abs"
-				viewBox="0 0 400 400"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<line x1="200" x2="200" y1="400" y2="0" />
-				<line x1="200" x2="0" y1="0" y2="200" />
-				<line x1="0" x2="200" y1="200" y2="200" />
-				<path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
-				<circle cx="200" cy="200" fill="none" r="186" />
-			</svg>
-		</div>
-	</div>
-</template>
-
 <script setup>
 import { onMounted, ref, watch } from 'vue'
-import { state } from '@/store/'
-import getThemeColor from '@/helpers/getThemeColor.js'
+import { state } from '~/store/'
+import getThemeColor from '~/helpers/getThemeColor.js'
 
 const totalDuration = ref(1755) // 2340ms for 30fps
 const isVisible = ref(true)
@@ -162,6 +128,40 @@ watch(
 	}
 )
 </script>
+
+<template>
+	<div
+		id="logoOverlay"
+		ref="logoOverlay"
+		class="flex-col-center"
+		:class="{ fadeOut: fadeOutClass }"
+		:style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 4 : 0 }"
+		@animationend="handleAnimationEnd"
+	>
+		<div id="logo2dWrapper" class="rel">
+			<canvas
+				id="logo2dCanvas"
+				ref="logo2dCanvas"
+				class="rel"
+				height="400"
+				stroke="#808080"
+				width="400"
+			/>
+			<svg
+				id="svgPlaceholder"
+				class="abs"
+				viewBox="0 0 400 400"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<line x1="200" x2="200" y1="400" y2="0" />
+				<line x1="200" x2="0" y1="0" y2="200" />
+				<line x1="0" x2="200" y1="200" y2="200" />
+				<path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+				<circle cx="200" cy="200" fill="none" r="186" />
+			</svg>
+		</div>
+	</div>
+</template>
 
 <style scoped>
 @keyframes fade-out {

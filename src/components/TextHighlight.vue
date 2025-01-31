@@ -3,7 +3,7 @@
 		class="text-highlight abs"
 		fill="none"
 		height="651"
-		style="z-index: -1;	width: 60vmin; height: 40vmin; transform: rotate(10deg);"
+		style="z-index: -1; width: 60vmin; height: 40vmin; transform: rotate(10deg)"
 		viewBox="0 0 917 651"
 		width="917"
 		xmlns="http://www.w3.org/2000/svg"
@@ -41,4 +41,3 @@
 		</defs>
 	</svg>
 </template>
-

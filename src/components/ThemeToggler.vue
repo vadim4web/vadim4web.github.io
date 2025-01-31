@@ -1,3 +1,47 @@
+<script setup>
+import { ref, onMounted, watch, onUpdated } from 'vue'
+import { useMouse, useWindowSize } from '@vueuse/core'
+import { state } from '~/store/'
+import getTheme from '~/helpers/getTheme'
+
+const { x, y } = useMouse()
+const { width, height } = useWindowSize()
+const offsetX = ref(50)
+const offsetY = ref(50)
+const theme = ref(getTheme())
+
+const toggleTheme = () => {
+	theme.value = theme.value === 'light' ? 'dark' : 'light'
+}
+
+const setFavIcon = theme => {
+	document.documentElement.setAttribute('data-theme', theme)
+	document.getElementById('favicon').href =
+		theme === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
+}
+
+const setTheme = theme => {
+	sessionStorage.setItem('theme', theme)
+	state.setThemeColor(theme === 'dark' ? '#ffffff' : '#000000')
+	document.documentElement.setAttribute('data-theme', theme)
+	document.getElementById('favicon').href =
+		theme === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
+}
+
+const setAll = theme => {
+	setTheme(theme)
+	setFavIcon(theme)
+}
+
+onMounted(() => setTheme(theme.value))
+onUpdated(() => {
+	offsetX.value = (x.value / width.value) * 100 || 50
+	offsetY.value = (y.value / height.value) * 100 || 50
+	setAll(theme.value)
+})
+watch(theme, setAll)
+</script>
+
 <template>
 	<button
 		class="theme-toggler flex-center"
@@ -102,50 +146,6 @@
 		</h2>
 	</button>
 </template>
-
-<script setup>
-import { ref, onMounted, watch, onUpdated } from 'vue'
-import { useMouse, useWindowSize } from '@vueuse/core'
-import { state } from '@/store/'
-import getTheme from '@/helpers/getTheme'
-
-const { x, y } = useMouse()
-const { width, height } = useWindowSize()
-const offsetX = ref(50)
-const offsetY = ref(50)
-const theme = ref(getTheme())
-
-const toggleTheme = () => {
-	theme.value = theme.value === 'light' ? 'dark' : 'light'
-}
-
-const setFavIcon = theme => {
-	document.documentElement.setAttribute('data-theme', theme)
-	document.getElementById('favicon').href =
-		theme === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
-}
-
-const setTheme = theme => {
-	sessionStorage.setItem('theme', theme)
-	state.setThemeColor(theme === 'dark' ? '#ffffff' : '#000000')
-	document.documentElement.setAttribute('data-theme', theme)
-	document.getElementById('favicon').href =
-		theme === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
-}
-
-const setAll = theme => {
-	setTheme(theme)
-	setFavIcon(theme)
-}
-
-onMounted(() => setTheme(theme.value))
-onUpdated(() => {
-	offsetX.value = (x.value / width.value) * 100 || 50
-	offsetY.value = (y.value / height.value) * 100 || 50
-	setAll(theme.value)
-})
-watch(theme, setAll)
-</script>
 
 <style lang="scss" scoped>
 .theme-toggler {

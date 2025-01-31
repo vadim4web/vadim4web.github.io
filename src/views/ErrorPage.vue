@@ -1,3 +1,20 @@
+<script setup>
+import { defineAsyncComponent } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const InteractiveButton = defineAsyncComponent(
+	() => import('~/components/InteractiveButton.vue')
+)
+const TextHighlight = defineAsyncComponent(
+	() => import('~/components/TextHighlight.vue')
+)
+
+const router = useRouter()
+const goBack = () => {
+	router.back()
+}
+</script>
+
 <template>
 	<main class="flex-col-center not-found w100">
 		<h2 class="h2 flex-col-center text-center">
@@ -26,23 +43,6 @@
 		</h2>
 	</main>
 </template>
-
-<script setup>
-import { defineAsyncComponent } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-
-const InteractiveButton = defineAsyncComponent(
-	() => import('@/components/InteractiveButton.vue')
-)
-const TextHighlight = defineAsyncComponent(
-	() => import('@/components/TextHighlight.vue')
-)
-
-const router = useRouter()
-const goBack = () => {
-	router.back()
-}
-</script>
 
 <style lang="scss" scoped>
 h2 {

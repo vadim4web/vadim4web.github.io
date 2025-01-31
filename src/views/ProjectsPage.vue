@@ -1,3 +1,45 @@
+<script setup>
+import { ref, onUpdated, defineAsyncComponent } from 'vue'
+import { chunkedProjects } from '~/assets/data/projects.js'
+import getPath from '~/helpers/getPath.js'
+
+const PageHeader = defineAsyncComponent(
+	() => import('~/components/PageHeader.vue')
+)
+const FrameLoader = defineAsyncComponent(
+	() => import('~/components/FrameLoader.vue')
+)
+const InteractiveButton = defineAsyncComponent(
+	() => import('~/components/InteractiveButton.vue')
+)
+
+const itemsToShow = ref(2)
+const projectsToShow = ref(chunkedProjects.slice(0, itemsToShow.value))
+const isLimitReached = ref(
+	projectsToShow.value.length === chunkedProjects.length
+)
+
+const handleLoadMore = () => {
+	if (chunkedProjects.length - 1 > itemsToShow.value) {
+		itemsToShow.value += 2
+		projectsToShow.value = chunkedProjects.slice(0, itemsToShow.value)
+	} else if (chunkedProjects.length - 1 === itemsToShow.value) {
+		projectsToShow.value = chunkedProjects.slice()
+	}
+	isLimitReached.value = projectsToShow.value.length === chunkedProjects.length
+}
+
+const handleScroll = () => {
+	const lastElementId = `three-${projectsToShow.value.length - 2}`
+	const lastElement = document.getElementById(lastElementId)
+
+	if (lastElement)
+		lastElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+onUpdated(() => handleScroll())
+</script>
+
 <template>
 	<main class="flex-col projects-page">
 		<PageHeader head-key="worksH2" text-key="worksT1" />
@@ -59,48 +101,6 @@
 		</div>
 	</main>
 </template>
-
-<script setup>
-import { ref, onUpdated, defineAsyncComponent } from 'vue'
-import { chunkedProjects } from '@/assets/data/projects.js'
-import getPath from '@/helpers/getPath.js'
-
-const PageHeader = defineAsyncComponent(
-	() => import('@/components/PageHeader.vue')
-)
-const FrameLoader = defineAsyncComponent(
-	() => import('@/components/FrameLoader.vue')
-)
-const InteractiveButton = defineAsyncComponent(
-	() => import('@/components/InteractiveButton.vue')
-)
-
-const itemsToShow = ref(2)
-const projectsToShow = ref(chunkedProjects.slice(0, itemsToShow.value))
-const isLimitReached = ref(
-	projectsToShow.value.length === chunkedProjects.length
-)
-
-const handleLoadMore = () => {
-	if (chunkedProjects.length - 1 > itemsToShow.value) {
-		itemsToShow.value += 2
-		projectsToShow.value = chunkedProjects.slice(0, itemsToShow.value)
-	} else if (chunkedProjects.length - 1 === itemsToShow.value) {
-		projectsToShow.value = chunkedProjects.slice()
-	}
-	isLimitReached.value = projectsToShow.value.length === chunkedProjects.length
-}
-
-const handleScroll = () => {
-	const lastElementId = `three-${projectsToShow.value.length - 2}`
-	const lastElement = document.getElementById(lastElementId)
-
-	if (lastElement)
-		lastElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
-
-onUpdated(() => handleScroll())
-</script>
 
 <style lang="scss">
 .projects-page {

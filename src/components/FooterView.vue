@@ -1,3 +1,7 @@
+<script setup>
+import LogoView from '~/components/LogoView.vue'
+</script>
+
 <template>
 	<footer class="footer flex-align flex-col rel">
 		<h5 class="h4 top text-center">
@@ -178,10 +182,6 @@
 		</h5>
 	</footer>
 </template>
-
-<script setup>
-import LogoView from '@/components/LogoView.vue'
-</script>
 
 <style lang="scss" scoped>
 .footer {

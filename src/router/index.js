@@ -1,39 +1,39 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { projects } from '@/assets/data/projects.js'
-import { state } from '@/store/'
+import { projects } from '~/assets/data/projects.js'
+import { state } from '~/store/'
 
 const routes = [
 	{
 		path: '/',
-		component: () => import('@/views/HomePage.vue'),
+		component: () => import('~/views/HomePage.vue'),
 	},
 	{
 		path: '/about',
-		component: () => import('@/views/AboutPage.vue'),
+		component: () => import('~/views/AboutPage.vue'),
 	},
 	{
 		path: '/contact',
-		component: () => import('@/views/ContactPage.vue'),
+		component: () => import('~/views/ContactPage.vue'),
 	},
 	// {
 	// 	path: '/cover',
-	// 	component: () => import('@/views/CoverImages.vue'),
+	// 	component: () => import('~/views/CoverImages.vue'),
 	// },
 	{
 		path: '/projects',
-		component: () => import('@/views/ProjectsPage.vue'),
+		component: () => import('~/views/ProjectsPage.vue'),
 	},
 	{
 		path: '/project/:projectName',
 		name: 'project',
-		component: () => import('@/views/ProjectDetails.vue'),
+		component: () => import('~/views/ProjectDetails.vue'),
 		beforeEnter: to => {
 			const projectName = to.params.projectName
 			const isInProjects = projects.some(({ name }) => name === projectName)
 
 			if (!isInProjects)
 				return {
-					name: 'no-match',
+					name: 'error-page',
 					params: { pathMatch: to.path.substring(1).split('/') },
 					query: to.query,
 					hash: to.hash,
@@ -42,8 +42,8 @@ const routes = [
 	},
 	{
 		path: '/:pathMatch(.*)*',
-		name: 'no-match',
-		component: () => import('@/views/ErrorPage.vue'),
+		name: 'error-page',
+		component: () => import('~/views/ErrorPage.vue'),
 	},
 ]
 

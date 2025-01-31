@@ -1,3 +1,27 @@
+<script setup>
+import { ref } from 'vue'
+import { useMouseInElement } from '@vueuse/core'
+
+const { path, action, fontSize, padding, borderRadius, bg } = defineProps({
+	path: String,
+	action: Function,
+	fontSize: String,
+	padding: String,
+	borderRadius: String,
+	bg: String,
+})
+
+const target = ref(null)
+const isRouterLink = !!path
+const { elementX, elementY, isOutside } = useMouseInElement(target)
+
+const handleClick = () => {
+	if (action) {
+		action()
+	}
+}
+</script>
+
 <template>
 	<router-link
 		v-if="isRouterLink"
@@ -41,30 +65,6 @@
 	</button>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import { useMouseInElement } from '@vueuse/core'
-
-const { path, action, fontSize, padding, borderRadius, bg } = defineProps({
-	path: String,
-	action: Function,
-	fontSize: String,
-	padding: String,
-	borderRadius: String,
-	bg: String,
-})
-
-const target = ref(null)
-const isRouterLink = !!path
-const { elementX, elementY, isOutside } = useMouseInElement(target)
-
-const handleClick = () => {
-	if (action) {
-		action()
-	}
-}
-</script>
-
 <style lang="scss" scoped>
 .interactive-button {
 	z-index: 1;
@@ -74,7 +74,8 @@ const handleClick = () => {
 	text-shadow: 0 0 0.5em var(--color-op);
 	mix-blend-mode: var(--mix-blend-mode1);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-shadow: 0 0 0.5em var(--accent0);
 		box-shadow: inset 1rem 1rem 1rem #0004;
 		mix-blend-mode: var(--mix-blend-mode2);

@@ -1,3 +1,9 @@
+<script setup>
+import LogoView from '~/components/LogoView.vue'
+import ThemeToggler from '~/components/ThemeToggler.vue'
+import LanguageSwitcher from '~/components/LanguageSwitcher.vue'
+</script>
+
 <template>
 	<header class="header w100 back-blur05">
 		<nav>
@@ -34,12 +40,6 @@
 		</nav>
 	</header>
 </template>
-
-<script setup>
-import LogoView from '@/components/LogoView.vue'
-import ThemeToggler from '@/components/ThemeToggler.vue'
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-</script>
 
 <style lang="scss">
 .header {
