@@ -1,8 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/PageHeader-BkEJHrJe.js","assets/index-MQynnI6n.js","assets/index-Ch8V6Ob2.css"])))=>i.map(i=>d[i]);
-import{f as d,d as l,h as r,k as i,g as a,j as o,t as s,m as p,b as u,l as v,_ as f}from"./index-MQynnI6n.js";const m={class:"flex-col"},c={class:"mission flex-col"},_={class:"mission-header"},b={class:"h2"},h={class:"t3 text1"},y={class:"t3 text2"},g={__name:"AboutPage",setup(w){const n=v(()=>f(()=>import("./PageHeader-BkEJHrJe.js"),__vite__mapDeps([0,1,2])));return(t,e)=>(u(),l("main",m,[r(i(n),{"head-key":"aboutH21","text-key":"aboutT1"}),a("div",c,[a("div",_,[a("h2",b,[o(s(t.$t("aboutH221"))+" ",1),e[0]||(e[0]=a("br",null,null,-1)),o(" "+s(t.$t("aboutH222"))+" ",1),e[1]||(e[1]=a("br",null,null,-1)),o(" "+s(t.$t("aboutH223"))+" ",1),e[2]||(e[2]=a("br",null,null,-1)),o(" "+s(t.$t("aboutH224")),1)]),a("p",h,s(t.$t("aboutT21")),1),a("p",y,s(t.$t("aboutT22")),1)]),e[3]||(e[3]=a("div",{class:"photos w100 rel"},[a("div",{class:"photo photo1 w100"}),a("div",{class:"photo photo2 w100"})],-1))]),e[4]||(e[4]=p(`<pre class="rhymes text-center" data-v-9fa5e698><span data-v-9fa5e698>I&#39;ve earned my own very first PC</span>
-<span data-v-9fa5e698>By working summer holidays in 2003</span>
-<span data-v-9fa5e698>I&#39;m a \`web dev <em lang="es" data-v-9fa5e698>loco</em>\` (if you will) code-addict</span>
-<span data-v-9fa5e698>Devoted to development with JavaScript</span>
-<span data-v-9fa5e698>I&#39;m experienced enough to exactly know</span>
-<span data-v-9fa5e698>Using DOCs, AI, Google and Stackoverflow</span>
-    </pre>`,1))]))}},x=d(g,[["__scopeId","data-v-9fa5e698"]]);export{x as default};
