@@ -21,14 +21,11 @@ const messages = {
 		homeH212: 'know me',
 		homeH213: 'closer',
 
-		homeP1:
-			'Hello, I am Vadim Chervoniak, a Full-stack developer based in Ukraine. My expertise includes HTML, CSS, JavaScript, Vue, React, Node.js, various databases, cloud computing, and integrating with different APIs, helping me to deliver complex web development solutions.',
-
 		homeP11:
 			'Hello, my name is Vadim Chervoniak, I am from Ukraine and I’ve got ',
 		homeP12: 'approximately ~ ',
 		homeP13:
-			'I am a full-stack developer with expertise in vue, nuxt, node.js, and a polyglot in modern web technologies.',
+			'I am a full-stack developer with expertise in vue, nuxt, react, node.js, and a polyglot in modern web technologies.',
 		homeP14:
 			'My experience spans both front-end and back-end technologies, api integrations, database management, and cloud services, enabling me to deliver complete and efficient web solutions.',
 
@@ -127,7 +124,7 @@ const messages = {
 		homeP11: 'Привіт, мене звати Вадім Червоняк, я з України і мені ',
 		homeP12: 'приблизно ~ ',
 		homeP13:
-			'Я — full-stack розробник з експертизою у vue, nuxt, node.js та поліглот у сучасних веб-технологіях.',
+			'Я — full-stack розробник з експертизою у vue, nuxt, react, node.js та поліглот у сучасних веб-технологіях.',
 		homeP14:
 			'Мій досвід охоплює фронтенд та бекенд технології, управління базами даних, хмарні сервіси та інтеграцію з api, що дозволяє реалізовувати комплексні та ефективні рішення.',
 
