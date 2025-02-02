@@ -21,8 +21,8 @@ const canvasContainer = ref(null)
 const environmentMaps = {}
 const clock = new Clock()
 
-const { noRotate, noShadow, size } = defineProps({
-	noRotate: Boolean,
+const { noRotation, noShadow, size } = defineProps({
+	noRotation: Boolean,
 	noShadow: Boolean,
 	size: Number,
 })
@@ -135,7 +135,7 @@ function animate() {
 	const delta = clock.getDelta()
 	if (model) {
 		model.rotation.x = Math.PI / 2
-		if (!noRotate) model.rotation.z += delta * 0.5
+		if (!noRotation) model.rotation.z += delta * 0.5
 	}
 	renderer.clear()
 	renderer.render(scene, camera)

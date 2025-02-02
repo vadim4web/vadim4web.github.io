@@ -19,7 +19,7 @@ defineProps({
 		</span>
 		<rotating-logo
 			class="for-capture"
-			:no-rotate="true"
+			:no-rotation="true"
 			:no-shadow="true"
 			:size="logoSize"
 		/>

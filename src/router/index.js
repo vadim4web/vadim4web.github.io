@@ -57,7 +57,7 @@ router.beforeEach((_to, _from, next) => {
 	next()
 })
 
-router.afterEach(to => {
+router.afterEach(() => {
 	if (!sessionStorage.getItem('once_loaded')) {
 		setTimeout(() => {
 			sessionStorage.setItem('once_loaded', true)

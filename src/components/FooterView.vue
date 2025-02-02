@@ -52,6 +52,7 @@ import LogoView from '~/components/LogoView.vue'
 							href="https://github.com/vadim4web"
 							rel="noopener noreferrer"
 							target="_blank"
+							:area-label="$t('gitHub')"
 							:title="$t('gitHub')"
 						>
 							<svg
@@ -81,8 +82,6 @@ import LogoView from '~/components/LogoView.vue'
 									stroke-linejoin="round"
 								/>
 							</svg>
-
-							&nbsp;
 						</a>
 					</h5>
 
@@ -91,6 +90,7 @@ import LogoView from '~/components/LogoView.vue'
 							href="https://x.com/vadim4web"
 							rel="noopener noreferrer"
 							target="_blank"
+							:area-label="$t('xtwitter')"
 							:title="$t('xtwitter')"
 						>
 							<svg
@@ -127,8 +127,6 @@ import LogoView from '~/components/LogoView.vue'
 									/>
 								</g>
 							</svg>
-
-							&nbsp;
 						</a>
 					</h5>
 
@@ -137,6 +135,7 @@ import LogoView from '~/components/LogoView.vue'
 							href="https://t.me/vadim4web"
 							rel="noopener noreferrer"
 							target="_blank"
+							:area-label="$t('chatMe')"
 							:title="$t('chatMe')"
 						>
 							<svg
@@ -160,8 +159,6 @@ import LogoView from '~/components/LogoView.vue'
 									stroke-linejoin="round"
 								/>
 							</svg>
-
-							&nbsp;
 						</a>
 					</h5>
 				</div>
@@ -169,15 +166,14 @@ import LogoView from '~/components/LogoView.vue'
 		</div>
 
 		<h5 class="h4 hr-above text-center w100">
-			&copy; 2021-{{ new Date().getFullYear() }}
+			&copy; 2020-{{ new Date().getFullYear() }}
 			<a
 				href="https://github.com/vadim4web"
 				rel="noopener noreferrer"
 				target="_blank"
 				:title="$t('gitHub')"
 			>
-				VADIM4WEB.
-			</a>
+				VADIM4WEB</a>.
 			<em> {{ $t('copyright') }}. </em>
 		</h5>
 	</footer>
