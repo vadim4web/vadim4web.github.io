@@ -17,8 +17,8 @@ const messages = {
 		homeH12: 'Excellence in Every Detail.',
 
 		homeB1: 'EXPLORE WORKS',
-		homeH211: 'Let’s get to',
-		homeH212: 'know me',
+		homeH211: 'Let’s get',
+		homeH212: 'to know me',
 		homeH213: 'closer',
 
 		homeP11:
