@@ -17,9 +17,9 @@ let GLTFLoader, DRACOLoader, scene, camera, renderer
 
 const ASSETS_DIR = '/model/'
 const MODEL_NAME = 'logo.glb'
-const canvasContainer = ref(null)
 const environmentMaps = {}
 const clock = new Clock()
+const canvasContainer = ref(null)
 
 const { noRotation, noShadow, size } = defineProps({
 	noRotation: Boolean,

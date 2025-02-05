@@ -2,10 +2,8 @@
 import { ref, watchEffect, computed, defineAsyncComponent } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { useRoute } from 'vue-router'
-import { projects } from '~/assets/data/projects.js'
-import getPath from '~/helpers/getPath.js'
-import getSrc from '~/helpers/getSrc.js'
-import getThreeRandom from '~/helpers/getThreeRandom'
+import { projects } from '~/assets/data'
+import { getPath, getSrc, getThreeRandom } from '~/helpers'
 
 const PageHeader = defineAsyncComponent(
 	() => import('~/components/PageHeader.vue')

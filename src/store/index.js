@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import getThemeColor from '~/helpers/getThemeColor.js'
+import { getThemeColor } from '~/helpers'
 
 export const state = reactive({
 	showLoader: true,

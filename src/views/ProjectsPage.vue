@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onUpdated, defineAsyncComponent } from 'vue'
-import { chunkedProjects } from '~/assets/data/projects.js'
-import getPath from '~/helpers/getPath.js'
+import { chunkedProjects } from '~/assets/data'
+import { getPath } from '~/helpers'
 
 const PageHeader = defineAsyncComponent(
 	() => import('~/components/PageHeader.vue')

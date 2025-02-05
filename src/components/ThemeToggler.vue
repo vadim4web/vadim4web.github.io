@@ -1,14 +1,15 @@
 <script setup>
 import { ref, onMounted, watch, onUpdated } from 'vue'
 import { useMouse, useWindowSize } from '@vueuse/core'
-import { state } from '~/store/'
-import getTheme from '~/helpers/getTheme'
+import { getTheme } from '~/helpers'
+import { state } from '~/store'
 
-const { x, y } = useMouse()
-const { width, height } = useWindowSize()
 const offsetX = ref(50)
 const offsetY = ref(50)
 const theme = ref(getTheme())
+
+const { x, y } = useMouse()
+const { width, height } = useWindowSize()
 
 const toggleTheme = () => {
 	theme.value = theme.value === 'light' ? 'dark' : 'light'
@@ -34,11 +35,13 @@ const setAll = theme => {
 }
 
 onMounted(() => setTheme(theme.value))
+
 onUpdated(() => {
 	offsetX.value = (x.value / width.value) * 100 || 50
 	offsetY.value = (y.value / height.value) * 100 || 50
 	setAll(theme.value)
 })
+
 watch(theme, setAll)
 </script>
 

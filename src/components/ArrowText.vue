@@ -1,6 +1,9 @@
 <script setup>
 defineProps({
-	height: String,
+	height: {
+		type: String,
+		required: true,
+	},
 })
 </script>
 

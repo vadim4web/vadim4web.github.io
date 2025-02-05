@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
-import { state } from '~/store/'
+import { state } from '~/store'
 
 defineProps({
 	classes: Object,
@@ -8,13 +8,13 @@ defineProps({
 })
 
 const spinnerCanvas = ref(null)
+
 let startTime = null
 const totalDuration = 1755
-
+const segmentMaxValues = [100, 50, 50, 180, 360]
 const segmentDurations = [0.15, 0.11, 0.08, 0.22, 0.44].map(
 	percentage => totalDuration * percentage
 )
-const segmentMaxValues = [100, 50, 50, 180, 360]
 
 const drawFunctions = [
 	progress => drawLine(50, 100, 50, 100 - progress),
@@ -79,7 +79,7 @@ async function animateSpinner(timestamp) {
 	}
 }
 
-const updateTheme = async () => {
+async function updateTheme() {
 	const ctx = await getCanvasContext()
 	ctx.strokeStyle = state.themeColor
 }
@@ -92,9 +92,11 @@ onMounted(async () => {
 	requestAnimationFrame(animateSpinner)
 	window.addEventListener('themechange', updateTheme)
 })
+
 onUnmounted(() => {
 	window.removeEventListener('themechange', updateTheme)
 })
+
 watch(
 	() => state.themeColor,
 	async newColor => {

@@ -3,7 +3,7 @@ const vertical = [
 		title: "Fire'S'Now - SCSS bg",
 		name: 'fireSnow',
 		stack: ['html', 'css', 'scss'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['CSS', 'UI', 'FX'],
 		desc_en:
 			'FIRESNOW® is a visually captivating web page designed to offer a unique visual experience.\n\nThe project showcases creative CSS techniques, featuring falling snowflakes against a dark background with animated text.\n\nWith a minimal HTML structure, the layout includes a <div> element for snowflakes, along with sections for header and footer text.\n\nThe project pays attention to detail, defining metadata such as title and favicon for a polished presentation.',
 		desc_uk:
@@ -16,7 +16,7 @@ const vertical = [
 		title: 'React restaurant landing',
 		name: 'restaurant-react',
 		stack: ['css', 'js', 'react'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['React', 'Landing', 'UX'],
 		desc_en:
 			'This demo serves as a testament to the simplicity and efficiency of the component-based approach in React.js.\n\nIt highlights the ease and speed with which one can create a compelling landing page suitable for various business representations.\n\nHarnessing the power of React.js components, this demonstration underscores the agility and versatility of modern web development.',
 		desc_uk:
@@ -29,7 +29,7 @@ const vertical = [
 		title: 'React BEM landing page',
 		name: 'gpt3-react',
 		stack: ['react', 'html', 'css'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['React', 'BEM', 'SPA'],
 		desc_en:
 			'This lightweight React Single Page Application (SPA) showcases the contemporary BEM (Block, Element, Modifier) approach for writing stylesheets.\n\nWith a responsive design, it replaces the traditional static interface with a dynamic and adaptable one.\n\nOne of the standout features of React is its seamless content management, where information is neatly organized into small, easily maintainable blocks.\n\nThis demo underscores how React has revolutionized the lives of developers with diverse backgrounds and expertise, making content management a breeze.',
 		desc_uk:
@@ -44,10 +44,24 @@ const vertical = [
 		],
 	},
 	{
+		title: 'Random User Generator',
+		name: 'random-user-vue',
+		stack: ['vue', 'html', 'css', 'js'],
+		tags: ['UX', 'Fetch', 'Vue3'],
+		desc_en:
+			'A Vue.js app that fetches and displays random user profiles using the RandomUser.me API. It provides an interactive way to explore dynamically generated user data.',
+		desc_uk:
+			'Vue.js-додаток, що отримує та відображає випадкові профілі користувачів за допомогою API RandomUser.me. Інтерактивний спосіб дослідження згенерованих даних.',
+		path: 'random-user-vue',
+		orientation: '|',
+		deps: ['vue ^3.0.0', 'axios ^0.27.0'],
+		white_bg: true,
+	},
+	{
 		title: 'Vue grocery store app',
 		name: 'food-cart-vue',
 		stack: ['css', 'vue', 'router'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vue', 'Cart', 'Orders'],
 		desc_en:
 			'The Vue.js Online Food Ordering App is a versatile application that facilitates online food ordering.\n\nUsers can effortlessly browse through a variety of food products, add items to their cart, and complete orders.\n\nKey features include the ability to explore a list of available food products, manage the shopping cart, and place orders.\n\nThe app ensures a seamless user experience with its responsive design, catering to various devices for easy accessibility.',
 		desc_uk:
@@ -69,7 +83,7 @@ const vertical = [
 		title: 'Vue weather forecast app',
 		name: 'weather-app',
 		stack: ['vue', 'js', 'css'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vue', 'Weather', 'API'],
 		desc_en:
 			'The Vue.js Weather App is a straightforward web application designed to provide users with real-time weather information for various cities.\n\nIt offers essential features such as viewing weather data for multiple cities, sorting the city list by different criteria, adding new cities, and removing cities.\n\nThe app boasts a responsive design for both landscape and portrait orientations, ensuring a user-friendly experience.\n\nPowered by Vue.js, the Progressive JavaScript Framework, it delivers a seamless and efficient weather viewing experience.',
 		desc_uk:
@@ -82,7 +96,7 @@ const vertical = [
 		title: 'Watch widget SCSS',
 		name: 'glowing-watch',
 		stack: ['html', 'scss', 'js'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Widget', 'FE', 'Time'],
 		desc_en:
 			'This is a straightforward watch widget enhanced by the SASS preprocessor.\n\nThe widget is designed to synchronize with worldwide time using JavaScript, passing this time as a data attribute through the layout to CSS.\n\nThe second-hand animation mimics the behavior of an old mechanical clock, providing a nostalgic touch to the design.',
 		desc_uk:
@@ -105,7 +119,7 @@ const vertical = [
 		title: 'JSON -> list transformer',
 		name: 'json-list',
 		stack: ['html', 'css', 'js'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['JSON', 'Render', 'HTML'],
 		desc_en:
 			'Explore the JSON List web application, a simple project that fetches data from the https://jsonplaceholder.typicode.com/ API and presents it in an organized list format.\n\nThis project highlights the utilization of HTML5, specifically the powerful innerHTML() method, commonly employed across various JavaScript frameworks.',
 		desc_uk:
@@ -118,7 +132,7 @@ const vertical = [
 		title: 'Bykes store landing page',
 		name: 'layout_miami',
 		stack: ['html', 'scss', 'js'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Shop', 'Landing', 'UI'],
 		desc_en:
 			'Introducing MyBIKE™, a modern web page dedicated to providing information about diverse bike models and their features.\n\nThis responsive web design exemplifies clean aesthetics and offers users an easy-to-navigate platform for exploring and comparing different bikes.\n\nThe project employs semantic HTML and CSS to enhance the overall user experience, with a special touch added through shadow-glow and motive animations.',
 		desc_uk:
@@ -138,7 +152,7 @@ const vertical = [
 		title: 'Weather app',
 		name: 'vue-weather-app',
 		stack: ['vue', 'axios', 'i18n', 'maps'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['i18n', 'UX', 'FE', 'API'],
 		desc_en:
 			'The Vue Weather App is an advanced weather application crafted with Vue.js, offering a feature-rich and intuitive user interface. The project adheres to a well-organized structure, separating components, helpers, and views.\n\nKey Functionalities:\n1. City Autocomplete Input: Incorporates the vue3-google-autocomplete package for a user-friendly city input field powered by the Google Maps API.\n2. API Requests: Utilizes Axios to make seamless API requests to Open-Meteo.com, a free and open-source weather API.\n3. Current Weather Card: Presents weather information for the current day in an organized card format.\n4. Hourly Temperature Graph: Displays an insightful hourly temperature graph using the Vue-chartjs plugin.\n5. Multiple Weather Blocks: Enables users to create up to 5 weather blocks for different cities, enhancing customization.\n6. Favorites Tab: Features a "Favorites" tab allowing users to effortlessly add or remove cities, with weather blocks dynamically updating.\n7. Responsiveness: The application prioritizes responsiveness, employing SCSS and CSS @media for optimal adaptability.\n8. Day/5 Days Toggle: Empowers users to toggle between displaying weather for the "Day" or "5 Days."\n9. Default User Location: Automatically showcases weather for the user’s location determined by IP address, leveraging the Geoapify.com platform.\n10. Preloaders: Implements CSS preloader animations, enhancing the user experience during API requests.\n11. Multilingual Support: Offers multilingual support for both the interface and API responses in English and Ukrainian.\n12. Day/Night Mode: Features a convenient toggle between "Day" and "Night" theme-view modes for enhanced user customization.',
 		desc_uk:
@@ -159,7 +173,7 @@ const vertical = [
 		title: 'Vue multi-calendar app',
 		name: 'e-time',
 		stack: ['vite', 'vue', 'scss'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vue', 'Calendar', 'Astro'],
 		desc_en:
 			'Being a devoted developer with a passion for astrological topics, I envisioned an app that consolidates all calendar-related information into a single, user-friendly interface.\n\nThe app includes features such as lunar phases, date, and time, providing a comprehensive overview that I can conveniently display on an additional screen for efficient time tracking.\n\nMy approach to styling reflects my deep respect and admiration for Time itself, which I consider essential in all aspects of my life.\n\nThrough this app, I aim to keep a mindful watch over Time, utilizing it effectively and fostering positive engagement in all my endeavors.',
 		desc_uk:
@@ -178,7 +192,7 @@ const vertical = [
 		title: 'Vue vuetify feedbacks',
 		name: 'vue3-feedback-widget',
 		stack: ['vue', 'vuetify', 'firebase'],
-		tags: ['UI', 'FE', 'BE', 'DB'],
+		tags: ['Ratings', 'Analytics', 'Firebase'],
 		desc_en:
 			"This app demonstrates the capabilities of Vue3 and uses Firebase as a cloud storage solution. It incorporates Vuetify, a user-friendly Vue component library.\n\nThe main page enables users to submit feedback with ratings while preventing duplicate votes from the same email or phone number.\n\nThe second page displays voting statistics, emphasizing the users' impact on a global scale.",
 		path: 'vue3-feedback-widget',
@@ -200,7 +214,7 @@ const vertical = [
 		title: 'Vue ABCDΞSIGN landing SPA',
 		name: 'abcd-sign',
 		stack: ['js', 'vue', 'i18n'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vue', '3D', 'i18n'],
 		desc_en:
 			'This project is a modern web application built with Vue 3 and Vite, featuring a dynamic user interface, 3D rendering, internationalization, and contact functionalities. It serves as the frontend for vadim4web and provides users with an interactive experience, showcasing various services and gallery items in a structured, multi-lingual format.',
 		desc_uk:
@@ -225,7 +239,7 @@ const vertical = [
 		title: 'NBU Currency Rates',
 		name: 'nbu-currency-rates',
 		stack: ['vue', 'vite', 'sass'],
-		tags: ['FE', 'API', 'SPA'],
+		tags: ['API', 'Currency', 'SPA'],
 		desc_en:
 			'SPA application for displaying exchange rates from the National Bank of Ukraine (NBU).\nBuilt using Vue 3 with Vite, this project supports local editing and searching of exchange rates, pagination, and theme adaptation based on the user’s color scheme preference.\n\nFeatures:\n- Display exchange rates for the current day fetched from the NBU API.\n- Local editing: Edit currency rates and save changes locally.\n- Pagination: Navigate through the list of currencies, 10 items per page.\n- Date search: Retrieve and display exchange rates for a specific date.\n- Modified rates: View a list of currencies with locally modified rates.\n- Responsive design: Optimized for both desktop and mobile devices.\n- Light/Dark mode: Adapts to the user’s system preferences for color schemes.',
 		desc_uk:
@@ -234,6 +248,52 @@ const vertical = [
 		orientation: '|',
 		deps: ['axios', 'vue', 'vue-router'],
 	},
+	{
+		title: 'Browser Python Interpreter',
+		name: 'python-browser',
+		stack: ['python', 'html', 'css', 'js'],
+		tags: ['Pyodide', 'FE', 'WebAssembly'],
+		desc_en:
+			"A web-based Python interpreter powered by Pyodide. Run Python code directly in your browser, install packages, and explore Pyodide's capabilities.",
+		desc_uk:
+			'Веб-інтерпретатор Python на основі Pyodide. Запускайте Python-код прямо у браузері, встановлюйте пакети та досліджуйте можливості Pyodide.',
+		path: 'python',
+		orientation: '|',
+		deps: ['pyodide ^0.24.0', 'codemirror ^5.65.14'],
+		white_bg: true,
+	},
+	{
+		title: 'this.nuxt.dev',
+		name: 'nuxt-dev',
+		stack: ['nuxt', 'vue', 'nodejs', 'css'],
+		tags: ['SSR', 'SPA', 'Animations'],
+		desc_en:
+			'Let’s be honest, “this” in JavaScript can be a bit tricky, right? But don’t worry, this.nuxt.dev is the exception! This project is my personal portfolio, created using Nuxt 3 and featuring modern web technologies like SSR (Server-Side Rendering). Whether you’re looking for speed, performance, or just a sleek design, this project delivers. With Cloudflare’s global edge servers ensuring fast loading times and smooth interaction, this website has everything a modern web app should have.\n\nDeployed on Cloudflare, this.nuxt.dev ensures that the website performs excellently, no matter where you are in the world. The use of edge caching means that content is delivered instantly, even during high traffic. This is the perfect demonstration of what Nuxt and modern server-side technologies can do to optimize both performance and the user experience. It’s fast, reliable, and built to scale!\n\nThe project takes full advantage of Nuxt’s features like automatic routing, powerful i18n support, and dynamic content rendering. Whether you’re checking out my latest work or browsing through various sections, the experience remains seamless. Plus, the app is fully optimized for mobile, making it responsive on all devices. The interface is intuitive, and animations are smooth, all thanks to Vue 3 and Nuxt working together like a well-oiled machine.\n\nIn terms of stack, this.nuxt.dev uses cutting-edge tools like TypeScript for type safety, Sass for efficient styling, and ESLint for clean and maintainable code. This project isn’t just about showcasing skills; it’s about demonstrating how modern web technologies can be combined to create a truly exceptional user experience. And, of course, it’s hosted and running smoothly thanks to the Nuxt 3 ecosystem, which ensures that every piece fits perfectly.',
+		desc_uk:
+			'Признаймося, "this" у JavaScript може бути складним, правда? Але не переживайте, цей this.nuxt.dev проект — це виняток! Це моє персональне портфоліо, створене за допомогою Nuxt 3 з використанням сучасних веб-технологій, таких як SSR (серверний рендеринг). Якщо вам важлива швидкість, продуктивність або просто стильний дизайн — цей проєкт саме те, що вам потрібно. З Cloudflare на борту, що гарантує швидке завантаження і плавні взаємодії, цей сайт є ідеальним прикладом того, що сучасні технології можуть зробити для оптимізації роботи сайту.\n\nРозгорнутий на Cloudflare, this.nuxt.dev забезпечує відмінну продуктивність, незалежно від того, де ви знаходитесь. Використання кешування на периферії означає, що контент доставляється миттєво, навіть під час високих навантажень. Це ідеальний приклад того, як Nuxt та сучасні серверні технології можуть оптимізувати продуктивність і користувацький досвід. Це швидко, надійно та готово до масштабування!\n\nПроєкт максимально використовує можливості Nuxt: автоматичне роутингування, потужну підтримку i18n та динамічний рендеринг контенту. Чи ви переглядаєте мої останні роботи, чи просто переміщаєтесь між секціями, досвід залишається безшовним. Крім того, аплікація повністю оптимізована для мобільних пристроїв, що робить її адаптивною на всіх екранах. Інтерфейс інтуїтивно зрозумілий, а анімації плавні — все завдяки Vue 3 та Nuxt, які працюють як злагоджена система.\n\nЩодо технологій, this.nuxt.dev використовує новітні інструменти, такі як TypeScript для безпеки типів, Sass для ефективного стилізування і ESLint для чистого і підтримуваного коду. Цей проєкт — не просто демонстрація навичок, а й показ того, як сучасні веб-технології можна комбінувати для створення дійсно виняткового досвіду користувача. І, звісно, він працює стабільно завдяки екосистемі Nuxt 3, де кожна частина гармонійно поєднується.',
+		path: 'https://vadim4web.nuxt.dev/',
+		orientation: '|',
+		deps: [
+			'@emailjs/browser ^4.4.1',
+			'@nuxt/eslint ^0.7.5',
+			'@nuxthub/core ^0.8.11',
+			'@nuxtjs/color-mode 3.5.2',
+			'@nuxtjs/i18n 9.1.3',
+			'@vueuse/nuxt 12.5.0',
+			'dayjs-nuxt 2.1.11',
+			'nuxt ^3.15.1',
+			'three ^0.172.0',
+			'vue ^3.5.13',
+			'vue-router ^4.5.0',
+			'vueperslides ^3.6.0',
+			'@nuxt/eslint-config ^0.7.5',
+			'eslint ^9.18.0',
+			'sass ^1.83.4',
+			'typescript ^5.7.3',
+			'vue-tsc ^2.2.0',
+			'wrangler ^3.101.0',
+		],
+	},
 ]
 
 const horizontal = [
@@ -241,7 +301,7 @@ const horizontal = [
 		title: 'A💞B',
 		name: 'AIB',
 		stack: ['html', 'css', 'js'],
-		tags: ['FE', 'JS'],
+		tags: ['FE', 'UI', 'Colors'],
 		desc_en:
 			'The AIB project is a web-based application that showcases a myriad of HTML, CSS, and JavaScript techniques, aiming to deliver an engaging and visually pleasing web experience.\n\nThe development journey began with a clear intent to implement an animated, shining logo.\n\nFor better interactiveness, - a single square element changes its color to white after the first click and to green after the second click, adding a dynamic touch for development purposes.',
 		desc_uk:
@@ -254,7 +314,7 @@ const horizontal = [
 		title: 'Clicker javascript app',
 		name: 'clicker-js',
 		stack: ['html', 'css', 'js'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Game', 'JS', 'Clicker'],
 		desc_en:
 			'Engage in a thrilling clicking adventure with clicker.js, a web application that invites users to play a clicking game and keep tabs on their scores.\n\nHere’s how to make the most of it:\n1. Open clicker.js in a web browser to kickstart the clicking excitement.\n2. Enter your nickname in the input field and click the "start" button to initiate the clicking game.\n3. Click the "click me!" button as rapidly as possible within the time limit.\n4. After the game concludes, receive your score and choose to view your all-time best result or clear your best result.\n5. Explore the leaderboard to see the best results from all users.\n6. Enjoy the clicking game and strive to surpass your own high score!\n\nTIP: Keep your mouse alive by not sticking around for too long with this game! :)\n\nHappy playing!',
 		desc_uk:
@@ -267,7 +327,7 @@ const horizontal = [
 		title: 'Wordle UA 7500+ words',
 		name: 'wordle-js',
 		stack: ['html', 'css', 'js'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Game', 'JS', 'Wordle'],
 		desc_en:
 			"Embark on a linguistic adventure with the WORDLE Game Project, a captivating web-based word-guessing game where players unravel the mysteries of a hidden word. This version features a Ukrainian dictionary containing over 7500+ 5-lettered words.\n\nHere's how to enjoy the game:\n1. Launch the app in your web browser to start playing WORDLE.\n2. Input your letter guesses in the designated fields for each round.\n3. Click the 'CHECK' button to validate your guess against the concealed word.\n4. Correctly guessed letters turn green, while misplaced letters appear in yellow, and incorrect ones remain in grey.\n5. Keep guessing until you either decipher the word or exhaust your attempts.\n6. Upon successful guessing, a victory message appears; if attempts run out, the game concludes.\n7. Reset the game at any time by clicking the 'RESET' button.\n8. For added hints, check the browser console for clues about the first letter of the hidden word.\n9. Enjoy the game and enhance your word-guessing skills!",
 		desc_uk:
@@ -281,7 +341,7 @@ const horizontal = [
 		title: 'Custom shaped loading',
 		name: 'my-server-io',
 		stack: ['html', 'css', 'js'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['FE', 'CSS', 'FX', 'Shapes'],
 		desc_en:
 			'Discover the myserver.io project, a web application offering a seamless interface for downloading and accessing client data.\n\nThe project, showcasing various use-cases of modern CSS features.\n\nWitness the magic of custom-shaped areas that appear as if cut out from a paper-sheet, achieved through the clever use of CSS clip-path.',
 		desc_uk:
@@ -294,7 +354,7 @@ const horizontal = [
 		title: 'Vue router travel app',
 		name: 'travel-app-vue',
 		stack: ['vue', 'js', 'router'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vue', 'Router', 'SPA'],
 		desc_en:
 			'This is implementation of course from:\nhttps://vueschool.io/courses/vue-router-for-everyone.\nUnlock the power of Vue.js Single Page Applications (SPA’s) with the Vue Router. This comprehensive course teaches you the ins and outs of creating dynamic and efficient SPAs, enhancing user experiences through impressive page load speed performance. Whether you’re aiming to build rapid prototypes or full-blown Vue.js SPAs, this course has you covered.\n\nKey-points:\n* Scaffold a new Vue.js project with Vue Router using Vue CLI GUI.\n* Create routes, including named routes, for seamless navigation. Implement lazy loading for optimized resource usage.\n* Work with Vue Router Params and pass them as props to components. Master the creation of dynamic and nested routes.\n* Understand and enable HTML5 History Mode for cleaner URLs.\n* Enhance user experience with impressive route transitions.\n* Handle 404 errors gracefully with custom Vue Router pages.\n* Explore navigation guards and create authentication middleware.\n* And much more to elevate your Vue.js skills.\n\nPrerequisites:\nBasic understanding of Vue.js is recommended. If you’re new to Vue.js and components, consider watching "Vue.js Fundamentals" and "Vue.js Components Fundamentals" before diving into this course.',
 		desc_uk:
@@ -308,7 +368,7 @@ const horizontal = [
 		title: 'Nice gadgets store',
 		name: 'product-catalog',
 		stack: ['js', 'react', 'node'],
-		tags: ['UI', 'FE', 'BE', 'DB', 'API'],
+		tags: ['FE', 'BE', 'Node', 'DB'],
 		desc_en:
 			'The Product Catalog is a comprehensive web application designed for users to explore a variety of products. It offers a user-friendly interface with features such as detailed product pages, category management, and a cart for convenient product handling.\n\nKey features include product details, adaptive design, favorites, cart management, and API integration for real-time data.\nTechnologies used include Node.js, Express.js, PostgreSQL, Sequelize, HTML/CSS.\n\nAPI endpoints:\nGET /products/phones/?page=number&limit=number&sort=string,\nGET /products/tablets/?page=number&limit=number&sort=string,\nGET /products/accessories/?page=number&limit=number&sort=string,\nGET /products/:productId,\nGET /products/new/?limit=number,\nGET /products/discount/?limit=number,\nGET /products/:productId/recommended,\nGET /products/amount.\n\nAPI parameters:\npage=1 (default), limit=16 (default), sort=name (default), available: newest, oldest, price-lowest.',
 		desc_uk:
@@ -353,7 +413,7 @@ const horizontal = [
 		title: 'Nuxt theme toggler',
 		name: 'nuxt-demo',
 		stack: ['nuxt', 'vue', 'js', 'css'],
-		tags: ['UI', 'FE', 'SSR', 'API'],
+		tags: ['UI', 'FE', 'API'],
 		desc_en:
 			'A demonstration of the simplicity and power of the Vue-Nuxt ecosystem toolkit, emphasizing intuitive clarity and an excellent Developer Experience (DX). Despite being less commonly practiced, the project is deployed on GitHub Pages, showcasing the achievement and pride in overcoming deployment challenges.',
 		desc_uk:
@@ -378,7 +438,7 @@ const horizontal = [
 		title: 'Your Cocktails',
 		name: 'your-cocktails',
 		stack: ['nuxt', 'vue', 'css'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vercel', 'Nuxt.js', 'API'],
 		desc_en:
 			'Your Cocktails is a web application that offers a curated experience for cocktail enthusiasts. The app fetches data from a PHP-based API, displaying cocktail information and recipes dynamically using Vue.js. The entire application logic is structured with Nuxt.js, ensuring smooth navigation and efficient state management. Deployed on Vercel, it guarantees reliable performance and accessibility. The app features a polished user interface, enriched with Bootstrap styles, and supports seamless usage across devices.',
 		desc_uk:
@@ -407,7 +467,7 @@ const horizontal = [
 		title: 'React web dev essentials',
 		name: 'react-web-dev-basics',
 		stack: ['html', 'css', 'js', 'react'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['UI', 'FE', 'REST'],
 		desc_en:
 			"This project encompasses a comprehensive set of tasks, covering various aspects of web development:\n\n1. Working with Mockups (HTML/CSS):\n  + Create a single page with a minimalist design, adhering to the Figma project mockup.\n\n2. Working with REST API (GET):\n  + Implement the 'Working with a GET request' block following the API documentation.\n  + Display six users on the API request result page, sorted by registration date (newest first).\n\n3. Working with REST API (POST) - Registration Form:\n  + Implement front-end validation and business logic based on mockups and API documentation.\n  + Upon successful registration, update the user list in the 'Working with a GET request' block.\n\n4. Website Optimization:\n  + Optimize CSS, JS, images, and other resources for improved performance.\n\nAdditionally, custom tooltip enhancements have been developed, providing a polished user interface comparable to popular UI libraries like MUI.",
 		desc_uk:
@@ -426,7 +486,7 @@ const horizontal = [
 		title: 'Layout, git, js, ts basics',
 		name: 'layout_git_js_ts_basics',
 		stack: ['html', 'css', 'js', 'ts'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Git', 'JS', 'TS'],
 		desc_en:
 			'This repository offers a diverse range of tasks spanning Git, HTML/CSS, JavaScript, and more.\n\nDive into individual subfolders for each task, complete with detailed descriptions and implementations.\n\nOne particularly intriguing section focuses on JavaScript/TypeScript, reflecting the passionate nature of programming and its various intricacies.',
 		desc_uk:
@@ -439,7 +499,7 @@ const horizontal = [
 		title: 'React router MUI app',
 		name: 'react-router-mui',
 		stack: ['react', 'router', 'MUI'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['React', 'Hash Router'],
 		desc_en:
 			"This project acts as a template for a React-based application featuring tabs without backend integration.\n\nIt highlights a range of components, including charts, lists, and tables, within a navigation layout and a router component.\n\nLeveraging modern web development tools and libraries like React, React Router, and Material-UI, this project explores the implementation of various UI elements.\n\nNotably, the challenge I found intriguing was configuring the hash-router to function as a conventional browser-router without the hash pre-appender '#'.",
 		desc_uk:
@@ -466,7 +526,7 @@ const horizontal = [
 		title: 'Three.js 3D cube example',
 		name: 'graphics-js',
 		stack: ['html', 'css', 'js', '3d'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Three.js', '3D', 'Graphics'],
 		desc_en:
 			'Immerse yourself in this engaging Three.js demo, featuring a 3D cube that responds to arrow keyboard buttons.\n\nThe Three.js library is seamlessly integrated via CDN at https://threejs.org/build/three.js.\n\nThis example beautifully illustrates the simplicity and convenience of modern technologies in the digital landscape.',
 		desc_uk:
@@ -479,9 +539,9 @@ const horizontal = [
 		title: 'Local company Landing SPA',
 		name: 'mediaoffice-com-ua',
 		stack: ['html', 'css', 'js', 'vue'],
-		tags: ['UI', 'FE', 'API'],
+		tags: ['Vue', 'SPA', 'Landing'],
 		desc_en:
-			"This project has been developed using Vite and Vue.js (to denote the frontend framework). Simple and efficient CSS animations make this page visually attractive.\n\nI've been trying to keep it as simple as possible, so I've decided to use only Vue, Vue Router, and Vueper Slider as external JavaScript libraries to enhance quality and maintain the lightweight nature of the single-page application (SPA).\n\nIt also features internal routing (with interesting and intelligent 404 handling, which could not be fully represented due to GitHub Pages restrictions) - simple and self-descriptive.\n\nIt took me around two weeks to complete this, just enjoying some tasty tasks along the way.",
+			'This project has been developed using Vite and Vue.js (to denote the frontend framework). Simple and efficient CSS animations make this page visually attractive.\n\nI’ve been trying to keep it as simple as possible, so I’ve decided to use only Vue, Vue Router, and Vueper Slider as external JavaScript libraries to enhance quality and maintain the lightweight nature of the single-page application (SPA).\n\nIt also features internal routing (with interesting and intelligent 404 handling, which could not be fully represented due to GitHub Pages restrictions) - simple and self-descriptive.\n\nIt took me around two weeks to complete this, just enjoying some tasty tasks along the way.',
 		desc_uk:
 			'Цей проект розроблений за допомогою Vite та Vue.js (як фронтенд-фреймворк). Простими та ефективними CSS-анімаціями сторінка виглядає візуально привабливо.\n\nЯ намагався зробити його якомога простішим, тому вирішив використовувати лише Vue, Vue Router та Vueper Slider як зовнішні JavaScript-бібліотеки, щоб підвищити якість і зберегти легкість односторінкової програми (SPA).\n\nТакож він має внутрішню маршрутизацію (з цікавим та інтелектуальним обробником 404, який не можна було повністю продемонструвати через обмеження GitHub Pages) — простий та самоописовий.\n\nМені знадобилося близько двох тижнів, щоб завершити це, насолоджуючись приємними завданнями на шляху.',
 		path: 'mediaoffice-com-ua',
@@ -500,9 +560,9 @@ const horizontal = [
 		title: 'Mozgi - Event Agency',
 		name: 'mozgi-events',
 		stack: ['vue', 'css', 'i18n'],
-		tags: ['SPA', 'UI', 'i18n'],
+		tags: ['SPA', 'UI', 'i18n', 'Landing'],
 		desc_en:
-			"Mozgi Events is a landing page built for a full-cycle event agency. This responsive single-page application (SPA) showcases the agency's services with smooth animations, interactive features, and multi-language support. Developed with Vue.js and Vite, the project emphasizes a seamless user experience across browsers and devices. Key highlights include animated logo fills, mouse interaction effects, and language selection with opacity animations.",
+			'Mozgi Events is a landing page built for a full-cycle event agency. This responsive single-page application (SPA) showcases the agency’s services with smooth animations, interactive features, and multi-language support. Developed with Vue.js and Vite, the project emphasizes a seamless user experience across browsers and devices. Key highlights include animated logo fills, mouse interaction effects, and language selection with opacity animations.',
 		desc_uk:
 			'Mozgi Events — це посадкова сторінка для агенції повного циклу організації заходів. Ця адаптивна односторінкова програма демонструє послуги агенції зі стильними анімаціями, інтерактивними елементами та підтримкою кількох мов. Розроблена з використанням Vue.js та Vite, сторінка забезпечує бездоганний користувацький досвід у різних браузерах і на пристроях. Основні особливості: анімоване заповнення логотипа, ефекти взаємодії з мишею та вибір мови з анімацією прозорості.',
 		path: 'mozgi-events',
@@ -520,40 +580,44 @@ horizontal.shuffle()
 
 const projects = [
 	vertical[0],
+	vertical[1],
+	vertical[2],
+
+	vertical[3],
 	horizontal[0],
 	horizontal[1],
 
-	vertical[1],
+	vertical[4],
 	horizontal[2],
 	horizontal[3],
 
 	horizontal[4],
 	horizontal[5],
-	vertical[2],
+	vertical[5],
 
 	horizontal[6],
 	horizontal[7],
-	vertical[3],
+	vertical[6],
 
-	vertical[4],
+	vertical[7],
 	horizontal[8],
 	horizontal[9],
 
-	vertical[5],
-	vertical[6],
-	vertical[7],
-
 	vertical[8],
+	vertical[9],
+	vertical[10],
+
+	vertical[11],
 	horizontal[10],
 	horizontal[11],
 
 	horizontal[12],
 	horizontal[13],
-	vertical[9],
-
-	vertical[10],
-	vertical[11],
 	vertical[12],
+
+	vertical[13],
+	vertical[14],
+	vertical[15],
 ]
 
 const chunkArray = (arr, chunkSize) => {

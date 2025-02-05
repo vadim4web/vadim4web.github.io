@@ -9,14 +9,14 @@ const InteractiveButton = defineAsyncComponent(
 	() => import('~/components/InteractiveButton.vue')
 )
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const USER_KEY = import.meta.env.VITE_EMAILJS_USER_KEY
+
 const name = ref('')
 const email = ref('')
 const subject = ref('')
 const message = ref('')
-
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const USER_KEY = import.meta.env.VITE_EMAILJS_USER_KEY
 
 const submitForm = async () => {
 	const text = `

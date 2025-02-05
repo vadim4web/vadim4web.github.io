@@ -1,4 +1,8 @@
-export default {
+import axios from 'axios'
+
+const GEO_API_KEY = import.meta.env.VITE_GEO_API_KEY
+
+const ipDefaultResponse = {
 	city: {
 		name: 'Boyarka',
 		names: {
@@ -73,4 +77,17 @@ export default {
 		},
 	],
 	ip: '178.158.203.59',
+}
+
+export default async () => {
+	try {
+		const response = await axios.get(
+			`https://api.geoapify.com/v1/ipinfo?apiKey=${GEO_API_KEY}`
+		)
+		const jsonResponse = response.data
+		return jsonResponse
+	} catch (error) {
+		console.error('Error fetching IP info:', error)
+		return ipDefaultResponse
+	}
 }

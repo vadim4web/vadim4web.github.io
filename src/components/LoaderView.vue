@@ -1,14 +1,15 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
 import { state } from '~/store/'
-import getThemeColor from '~/helpers/getThemeColor.js'
+import { getThemeColor } from '~/helpers'
 
-const totalDuration = ref(1755) // 2340ms for 30fps
-const isVisible = ref(true)
-const fadeOutClass = ref(false)
+let startTime = null
+
 const logoOverlay = ref(null)
 const logo2dCanvas = ref(null)
-let startTime = null
+const totalDuration = ref(1755) // 2340ms for 30fps
+const fadeOutClass = ref(false)
+const isVisible = ref(true)
 
 function startAnimation() {
 	document.body.classList.add('hideO')

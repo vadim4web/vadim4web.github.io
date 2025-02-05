@@ -6,10 +6,19 @@ import duration from 'dayjs/plugin/duration'
 
 dayjs.extend(duration)
 
+let intervalId = null
+const timeUnitsUk = {
+	y: ['рік', 'роки', 'років'],
+	m: ['місяць', 'місяці', 'місяців'],
+	d: ['день', 'дні', 'днів'],
+	h: ['година', 'години', 'годин'],
+	min: ['хвилина', 'хвилини', 'хвилин'],
+	s: ['секунда', 'секунди', 'секунд'],
+	ms: ['мілісекунда', 'мілісекунди', 'мілісекунд'],
+}
 const result = ref('')
 const { locale } = useI18n()
 const birthDate = dayjs('1988-06-17T09:40:00Z')
-let intervalId = null
 
 const calculateAge = () => {
 	const now = dayjs()
@@ -75,23 +84,13 @@ const pluralizeUk = (count, [one, few, many]) => {
 	return `${count} ${many}`
 }
 
-const timeUnitsUk = {
-	y: ['рік', 'роки', 'років'],
-	m: ['місяць', 'місяці', 'місяців'],
-	d: ['день', 'дні', 'днів'],
-	h: ['година', 'години', 'годин'],
-	min: ['хвилина', 'хвилини', 'хвилин'],
-	s: ['секунда', 'секунди', 'секунд'],
-	ms: ['мілісекунда', 'мілісекунди', 'мілісекунд'],
-}
+const pluralizeEn = (count, unit) => `${count} ${unit}${count === 1 ? '' : 's'}`
 
 const formatAgeUk = age =>
 	`${pluralizeUk(age.y, timeUnitsUk.y)} ${pluralizeUk(age.m, timeUnitsUk.m)}` +
 	` ${pluralizeUk(age.d, timeUnitsUk.d)} ${pluralizeUk(age.h, timeUnitsUk.h)}` +
 	` ${pluralizeUk(age.min, timeUnitsUk.min)} ${pluralizeUk(age.s, timeUnitsUk.s)}` +
 	` і ${pluralizeUk(age.ms, timeUnitsUk.ms)}`
-
-const pluralizeEn = (count, unit) => `${count} ${unit}${count === 1 ? '' : 's'}`
 
 const formatAgeEn = age =>
 	`${pluralizeEn(age.y, 'year')} ${pluralizeEn(age.m, 'month')}` +

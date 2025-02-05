@@ -1,9 +1,9 @@
 <script setup>
 import { defineAsyncComponent, computed } from 'vue'
-import { projects } from '~/assets/data/projects.js'
-import getPath from '~/helpers/getPath.js'
-import getThreeRandom from '~/helpers/getThreeRandom'
 import { useMediaQuery } from '@vueuse/core'
+
+import { getPath, getThreeRandom } from '~/helpers'
+import { projects } from '~/assets/data'
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 const isPortrait = useMediaQuery('(orientation: portrait)')
@@ -14,6 +14,7 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 const FrameLoader = defineAsyncComponent(
 	() => import('~/components/FrameLoader.vue')
 )
+
 const three = getThreeRandom(projects)
 </script>
 

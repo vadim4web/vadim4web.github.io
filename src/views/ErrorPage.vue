@@ -10,6 +10,7 @@ const TextHighlight = defineAsyncComponent(
 )
 
 const router = useRouter()
+
 const goBack = () => {
 	router.back()
 }

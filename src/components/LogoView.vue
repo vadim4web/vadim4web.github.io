@@ -1,7 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 
-const { fontWeight } = defineProps({ fontWeight: String })
+const { fontWeight } = defineProps({
+	fontWeight: { type: String, required: true },
+})
 
 const strokeWidth = computed(() =>
 	fontWeight === 'bold' ? 'max(0.9vmin, 9px)' : 'max(0.7vmin, 7px)'

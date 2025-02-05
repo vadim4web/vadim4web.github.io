@@ -1,20 +1,14 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 
+defineProps({
+	headKey: { type: String, required: true },
+	textKey: { type: String, required: true },
+})
+
 const TextHighlight = defineAsyncComponent(
 	() => import('~/components/TextHighlight.vue')
 )
-
-defineProps({
-	headKey: {
-		type: String,
-		required: true,
-	},
-	textKey: {
-		type: String,
-		required: true,
-	},
-})
 </script>
 
 <template>

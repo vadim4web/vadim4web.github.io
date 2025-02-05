@@ -1,10 +1,10 @@
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import RotatingLogo from '~/components/RotatingLogo.vue'
+import TextHighlight from '~/components/TextHighlight.vue'
 import InteractiveButton from '~/components/InteractiveButton.vue'
 import ArrowText from '~/components/ArrowText.vue'
-import TextHighlight from '~/components/TextHighlight.vue'
 import AgeCounter from '~/components/AgeCounter.vue'
-import { defineAsyncComponent } from 'vue'
 
 const ProjectCards = defineAsyncComponent(
 	() => import('~/components/ProjectCards.vue')

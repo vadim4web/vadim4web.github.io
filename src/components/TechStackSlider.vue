@@ -2,7 +2,7 @@
 import { ref, onMounted, onUpdated } from 'vue'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-import slides from '~/assets/data/slides.js'
+import { slides } from '~/assets/data'
 
 const slider = ref()
 

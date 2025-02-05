@@ -1,10 +1,6 @@
 <script setup>
 import { ref, defineAsyncComponent } from 'vue'
 
-const LoaderSpinner = defineAsyncComponent(
-	() => import('~/components/LoaderSpinner.vue')
-)
-
 defineProps({
 	iframeTitle: String,
 	iframeSrc: String,
@@ -15,6 +11,11 @@ defineProps({
 })
 
 const isLoaded = ref(false)
+
+const LoaderSpinner = defineAsyncComponent(
+	() => import('~/components/LoaderSpinner.vue')
+)
+
 const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 </script>
 

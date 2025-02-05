@@ -11,20 +11,16 @@ const { path, action, fontSize, padding, borderRadius, bg } = defineProps({
 	bg: String,
 })
 
+const isLink = !!path
 const target = ref(null)
-const isRouterLink = !!path
 const { elementX, elementY, isOutside } = useMouseInElement(target)
 
-const handleClick = () => {
-	if (action) {
-		action()
-	}
-}
+const handleClick = () => action?.()
 </script>
 
 <template>
 	<router-link
-		v-if="isRouterLink"
+		v-if="isLink"
 		ref="target"
 		class="interactive-button flex-center hideO rel"
 		:style="{
