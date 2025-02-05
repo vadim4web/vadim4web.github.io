@@ -6,7 +6,7 @@ const { fontWeight } = defineProps({
 })
 
 const strokeWidth = computed(() =>
-	fontWeight === 'bold' ? 'max(0.9vmin, 9px)' : 'max(0.7vmin, 7px)'
+	fontWeight === 'bold' ? '9px' : '7px'
 )
 </script>
 
@@ -21,9 +21,9 @@ const strokeWidth = computed(() =>
 				<feDropShadow
 					dx="0"
 					dy="0"
-					flood-color="var(--color50)"
-					flood-opacity="0.75"
-					stdDeviation="2"
+					flood-color="var(--color0)"
+					flood-opacity="0.66"
+					stdDeviation="4"
 				/>
 			</filter>
 		</defs>
@@ -105,7 +105,6 @@ const strokeWidth = computed(() =>
 	}
 
 	.logo-image {
-		stroke-width: max(0.2vmin, 10px);
 		stroke: var(--color0);
 	}
 }
