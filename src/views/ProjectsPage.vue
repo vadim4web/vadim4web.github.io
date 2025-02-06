@@ -137,11 +137,11 @@ onUpdated(() => handleScroll())
 
     &:has(.vertical) {
       @media (orientation: landscape) {
-        width: calc(((40dvw - 1.5rem) * 0.333 - 1rem) - 2px);
+        width: calc(((40dvw - 1.5rem) * 0.333 - 1rem) - 2px - 0.25rem);
         height: calc((40dvw * 0.666 * 1.2) - 2px);
       }
       @media (orientation: portrait) {
-        width: calc((80dvw * 0.333 - 1rem) - 2px);
+        width: calc((80dvw * 0.333 - 1rem) - 2px - 0.25rem);
         height: calc((80dvw * 0.666 * 1.2) - 2px);
       }
     }
@@ -181,7 +181,7 @@ onUpdated(() => handleScroll())
 		}
 
 		.iframe {
-			@media (orientation: portrait) and (max-width: 1023px) {
+			@media (max-width: 1023px) {
 				zoom: 0.175;
 				border-radius: 5.714285rem;
 			}
@@ -189,11 +189,6 @@ onUpdated(() => handleScroll())
 			@media (orientation: portrait) and (min-width: 1024px) {
 				zoom: 0.333;
 				border-radius: 3rem;
-			}
-
-			@media (orientation: landscape) and (max-width: 1023px) {
-				zoom: 0.175;
-				border-radius: 5.714285rem;
 			}
 
 			@media (orientation: landscape) and (min-width: 1024px) {
