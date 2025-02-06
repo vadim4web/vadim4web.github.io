@@ -129,6 +129,7 @@ onUpdated(() => handleScroll())
 	}
 
 	.project {
+		position: relative;
 		height: auto;
 		justify-content: space-between;
 		flex-shrink: 1;
@@ -137,23 +138,23 @@ onUpdated(() => handleScroll())
 
     &:has(.vertical) {
       @media (orientation: landscape) {
-        width: calc(((40dvw - 1.5rem) * 0.333 - 1rem) - 2px - 0.25rem);
+        width: calc(((40dvw - 1.5rem) * 0.333 - 1rem));
         height: calc((40dvw * 0.666 * 1.2) - 2px);
       }
       @media (orientation: portrait) {
-        width: calc((80dvw * 0.333 - 1rem) - 2px - 0.25rem);
+        width: calc((80dvw * 0.333 - 1rem) - 2px);
         height: calc((80dvw * 0.666 * 1.2) - 2px);
       }
     }
 
     &:has(.horizontal) {
       @media (orientation: landscape) {
-        width: calc(((((40dvw - 1.5rem) * 0.333 - 1rem) * 2) + 1.5rem) - 2px);
-        height: calc(((40dvw * 0.666 * 1.2 - 1.5rem) / 2) - 2px);
+        width: calc(((((40dvw - 1.5rem) * 0.333 - 1rem) * 2) + 1.5rem));
+        height: calc(((40dvw * 0.666 * 1.2 - 1.5rem) / 2));
       }
       @media (orientation: portrait) {
-        width: calc((80dvw - (80dvw * 0.333 - 1rem) - 1.5rem) - 2px);
-        height: calc((((80dvw * 0.666 * 1.2) - 1.5rem) / 2) - 2px);
+        width: calc((80dvw - (80dvw * 0.333 - 1rem) - 1.5rem));
+        height: calc((((80dvw * 0.666 * 1.2) - 1.5rem) / 2));
       }
     }
 
