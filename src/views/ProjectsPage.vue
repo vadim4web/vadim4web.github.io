@@ -135,27 +135,27 @@ onUpdated(() => handleScroll())
 		flex-grow: 0;
 		padding-bottom: 0.5rem;
 
-		&:has(.vertical) {
-			@media (orientation: landscape) {
-				width: calc((40dvw - 1.5rem) * 0.333 - 1rem);
-				height: calc(40dvw * 0.666 * 1.2);
-			}
-			@media (orientation: portrait) {
-				width: calc(80dvw * 0.333 - 1rem);
-				height: calc(80dvw * 0.666 * 1.2);
-			}
-		}
+    &:has(.vertical) {
+      @media (orientation: landscape) {
+        width: calc(((40dvw - 1.5rem) * 0.333 - 1rem) - 2px);
+        height: calc((40dvw * 0.666 * 1.2) - 2px);
+      }
+      @media (orientation: portrait) {
+        width: calc((80dvw * 0.333 - 1rem) - 2px);
+        height: calc((80dvw * 0.666 * 1.2) - 2px);
+      }
+    }
 
-		&:has(.horizontal) {
-			@media (orientation: landscape) {
-				width: calc((((40dvw - 1.5rem) * 0.333 - 1rem) * 2) + 1.5rem);
-				height: calc((40dvw * 0.666 * 1.2 - 1.5rem) / 2);
-			}
-			@media (orientation: portrait) {
-				width: calc(80dvw - (80dvw * 0.333 - 1rem) - 1.5rem);
-				height: calc(((80dvw * 0.666 * 1.2) - 1.5rem) / 2);
-			}
-		}
+    &:has(.horizontal) {
+      @media (orientation: landscape) {
+        width: calc(((((40dvw - 1.5rem) * 0.333 - 1rem) * 2) + 1.5rem) - 2px);
+        height: calc(((40dvw * 0.666 * 1.2 - 1.5rem) / 2) - 2px);
+      }
+      @media (orientation: portrait) {
+        width: calc((80dvw - (80dvw * 0.333 - 1rem) - 1.5rem) - 2px);
+        height: calc((((80dvw * 0.666 * 1.2) - 1.5rem) / 2) - 2px);
+      }
+    }
 
 		.title-box {
 			padding: 0.25rem;
