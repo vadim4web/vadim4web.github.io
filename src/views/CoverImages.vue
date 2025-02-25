@@ -9,6 +9,7 @@ import CoverImage from '~/components/CoverImage.vue'
 		<cover-image id="linkedin-company" :logo-size="191" />
 		<cover-image id="facebook" :logo-size="312" />
 		<cover-image id="x" :logo-size="500" />
+		<cover-image id="yt" :logo-size="1152" />
 	</main>
 </template>
 

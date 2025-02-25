@@ -55,6 +55,13 @@ onUpdated(() => handleScroll())
 					v-for="(p, i) in a"
 					:key="i"
 					class="project card-back br1 text-center flex-col hideO"
+					:class="{
+						vertical: p.orientation === '|',
+						horizontal: p.orientation === '-',
+						first: i % 3 === 0,
+						second: i % 3 === 1,
+						third: i % 3 === 2,
+					}"
 				>
 					<frame-loader
 						:iframe-class="{
@@ -109,15 +116,40 @@ onUpdated(() => handleScroll())
 		gap: 3rem;
 	}
 
-	.projects-container,
-	.three {
+	.projects-container {
 		display: flex;
 		flex-wrap: wrap;
 	}
 
 	.three {
+		display: grid;
 		margin: 0 auto;
 		gap: 1.5rem;
+		width: 100%;
+
+		& .first {
+			grid-area: first;
+		}
+		& .second {
+			grid-area: second;
+		}
+		& .third {
+			grid-area: third;
+		}
+
+		&-0 {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas: "first second third";
+		}
+
+		&-1 {
+			grid-template-columns: 1fr 2fr;
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas:
+				"first second"
+				"first third"
+				;
+		}
 
 		@media (orientation: landscape) {
 			width: calc(50% - 1.5rem);
@@ -129,14 +161,15 @@ onUpdated(() => handleScroll())
 	}
 
 	.project {
-		position: relative;
 		height: auto;
 		justify-content: space-between;
 		flex-shrink: 1;
 		flex-grow: 0;
 		padding-bottom: 0.5rem;
+		width: 100%;
+		height: 100%;
 
-    &:has(.vertical) {
+    /* &:has(.vertical) {
       @media (orientation: landscape) {
         width: calc(((40dvw - 1.5rem) * 0.333 - 1rem));
         height: calc((40dvw * 0.666 * 1.2) - 2px);
@@ -156,7 +189,7 @@ onUpdated(() => handleScroll())
         width: calc((80dvw - (80dvw * 0.333 - 1rem) - 1.5rem));
         height: calc((((80dvw * 0.666 * 1.2) - 1.5rem) / 2));
       }
-    }
+    } */
 
 		.title-box {
 			padding: 0.25rem;
@@ -199,7 +232,7 @@ onUpdated(() => handleScroll())
 		}
 	}
 
-	.project:nth-child(3n):has(.vertical) {
+	/* .project:nth-child(3n):has(.vertical) {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -209,15 +242,15 @@ onUpdated(() => handleScroll())
 		position: absolute;
 		top: calc(50% + 0.75rem);
 		right: 0;
-	}
+	} */
 
-	@media (orientation: landscape) {
+	/* @media (orientation: landscape) {
 		.three:last-child {
 			margin: 0 auto;
 			align-self: center;
 			justify-self: center;
 		}
-	}
+	} */
 
 	.load-more {
 		font-size: 0.8rem;

@@ -15,10 +15,10 @@ const routes = [
 		path: '/contact',
 		component: () => import('~/views/ContactPage.vue'),
 	},
-	// {
-	// 	path: '/cover',
-	// 	component: () => import('~/views/CoverImages.vue'),
-	// },
+	{
+		path: '/cover',
+		component: () => import('~/views/CoverImages.vue'),
+	},
 	{
 		path: '/projects',
 		component: () => import('~/views/ProjectsPage.vue'),

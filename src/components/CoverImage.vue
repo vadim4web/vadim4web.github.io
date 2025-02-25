@@ -10,23 +10,25 @@ defineProps({
 <template>
 	<div :id="id" class="node flex-center">
 		<span class="crafting"> Crafting Digital Solutions </span>
-		<span class="vadim">
-			<span class="v">v</span>
-			<span class="a">a</span>
-			<span class="d">d</span>
-			<span class="i">i</span>
-			<span class="m">m</span>
-		</span>
-		<rotating-logo
-			class="for-capture"
-			:no-rotation="true"
-			:no-shadow="true"
-			:size="logoSize"
-		/>
-		<span class="web">
-			<span class="w">w</span>
-			<span class="e">e</span>
-			<span class="b">b</span>
+		<span class="vadim4web">
+			<span class="vadim">
+				<span class="v">v</span>
+				<span class="a">a</span>
+				<span class="d">d</span>
+				<span class="i">i</span>
+				<span class="m">m</span>
+			</span>
+			<rotating-logo
+				class="for-capture"
+				:no-rotation="true"
+				:no-shadow="true"
+				:size="logoSize"
+			/>
+			<span class="web">
+				<span class="w">w</span>
+				<span class="e">e</span>
+				<span class="b">b</span>
+			</span>
 		</span>
 		<span class="excellence"> Excellence in Every Detail. </span>
 	</div>
@@ -43,13 +45,22 @@ defineProps({
 
 	& > span {
 		display: block;
-		padding: 0 0.1ch !important;
+
 		overflow: visible;
-		background: url('texture-silver.jpg');
+		background: url('/model/texture-silver.jpg');
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: transparent;
+	}
+
+	.vadim4web {
+		font-size: 10rem;
+		height: 22rem;
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+		transform: translateX(-8.25%);
 	}
 
 	.vadim {
@@ -60,7 +71,6 @@ defineProps({
 	.web,
 	.vadim {
 		letter-spacing: -0.1ch;
-		text-transform: uppercase;
 	}
 
 	.web {
@@ -87,10 +97,10 @@ defineProps({
 		letter-spacing: -0.2ch;
 		background: linear-gradient(180deg, #fff, #c0c0c0);
 	}
-
 	.excellence {
 		bottom: 0;
 		font-size: 0.263em;
+		letter-spacing: 0.2ch;
 		font-style: italic;
 		background: linear-gradient(0deg, #fff, #c0c0c0);
 	}
@@ -129,6 +139,8 @@ defineProps({
 .for-capture {
 	position: relative;
 	aspect-ratio: 1;
+	margin: 0 auto;
+	transform: translateX(-15%) scale(.33);
 }
 
 #github {
@@ -138,16 +150,20 @@ defineProps({
 	font-size: calc(640px / 2.8);
 
 	.crafting {
-		top: 0.55ch;
+		top: -.05ch;
 	}
 
 	.excellence {
-		bottom: 2.1ch;
+		bottom: 1.5ch;
 	}
 
 	.for-capture {
-		margin-left: -1.15ch;
-		margin-right: -1.275ch;
+		margin-left: -3.5ch;
+		margin-right: -7.8ch;
+	}
+
+	.vadim4web {
+		font-size: 5rem;
 	}
 
 	&::before {
@@ -166,16 +182,20 @@ defineProps({
 	font-size: calc(640px / 4.5);
 
 	.crafting {
-		top: 0.55ch;
+		top: -0.05ch;
 	}
 
 	.excellence {
-		bottom: 2.1ch;
+		bottom: 1.4ch;
 	}
 
 	.for-capture {
-		margin-left: -1.1375ch;
-		margin-right: -1.2625ch;
+		margin-left: -3.1ch;
+		margin-right: -6.9ch;
+	}
+
+	.vadim4web {
+		font-size: 3.5rem;
 	}
 
 	&::before {
@@ -194,16 +214,20 @@ defineProps({
 	font-size: calc(640px / 9);
 
 	.crafting {
-		top: 0.55ch;
+		top: -.2ch;
 	}
 
 	.excellence {
-		bottom: 2.1ch;
+		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -1.1ch;
-		margin-right: -1.2125ch;
+		margin-left: -2.55ch;
+		margin-right: -5.7ch;
+	}
+
+	.vadim4web {
+		font-size: 2rem;
 	}
 
 	&::before {
@@ -222,16 +246,20 @@ defineProps({
 	font-size: calc(640px / 5.5);
 
 	.crafting {
-		top: 0.55ch;
+		top: -0.1ch;
 	}
 
 	.excellence {
-		bottom: 2.1ch;
+		bottom: 1.3ch;
 	}
 
 	.for-capture {
-		margin-left: -1.1ch;
-		margin-right: -1.225ch;
+		margin-left: -2.8ch;
+		margin-right: -6.3ch;
+	}
+
+	.vadim4web {
+		font-size: 3rem;
 	}
 
 	&::before {
@@ -250,16 +278,22 @@ defineProps({
 	font-size: calc(500px / 2.8);
 
 	.crafting {
-		top: 0.55ch;
+		top: -0.1ch;
 	}
 
 	.excellence {
-		bottom: 2.1ch;
+		bottom: 1.45ch;
 	}
 
 	.for-capture {
-		margin-left: -1.155ch;
-		margin-right: -1.275ch;
+		margin-left: -2.75ch;
+		margin-right: -6.15ch;
+	}
+
+	.vadim4web {
+		font-size: 5rem;
+		position: relative;
+		left: -0.05ch;
 	}
 
 	&::before {
@@ -268,6 +302,34 @@ defineProps({
 
 	&::after {
 		background-size: calc(500px / 7);
+	}
+}
+
+#yt {
+	width: 2048px;
+	height: 1152px;
+
+	font-size: calc(1152px / 3.5);
+
+	.crafting {
+		top: 0.4ch;
+	}
+
+	.excellence {
+		bottom: 2.25ch;
+	}
+
+	.for-capture {
+		margin-left: -3.15ch;
+		margin-right: -7ch;
+	}
+
+	&::before {
+		background-size: calc(1152px / 2);
+	}
+
+	&::after {
+		background-size: calc(1152px / 7);
 	}
 }
 </style>
