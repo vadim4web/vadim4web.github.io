@@ -43,7 +43,7 @@ defineProps({
 	background: var(--gray);
 	border: none;
 
-	&:not(#yt, #patreon_1, #patreon_2) .vadim4web {
+	&:not(#yt, #patreon, #patreon_1, #patreon_2) .vadim4web {
 		transform: scale(2.9);
 	}
 
@@ -358,13 +358,15 @@ defineProps({
 	font-size: calc(400px / 2.5);
 
 	.crafting {
-		top: 0;
-		font-size: 0.5em;
+		top: 0.75ch;
+		font-size: 0.345em;
+		transform: translateX(-0.1ch);
 	}
 
 	.excellence {
-		font-size: 0.3em;
-		bottom: 1ch;
+		font-size: 0.225em;
+		bottom: 2ch;
+		transform: translateX(0.25ch);
 	}
 
 	.for-capture {
@@ -374,6 +376,7 @@ defineProps({
 
 	.vadim4web {
 		font-size: 3.5rem;
+		transform: scale(2.4);
 	}
 
 	&::before {
