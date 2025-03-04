@@ -43,6 +43,10 @@ defineProps({
 	background: var(--gray);
 	border: none;
 
+	&:not(#yt, #patreon_1, #patreon_2) .vadim4web {
+		transform: scale(2.9);
+	}
+
 	& > span {
 		display: block;
 
@@ -61,6 +65,8 @@ defineProps({
 		align-items: center;
 		text-transform: uppercase;
 		transform: translateX(-8.25%);
+		overflow: visible !important;
+		padding-inline: 0.2rem !important;
 	}
 
 	.vadim {
@@ -93,6 +99,7 @@ defineProps({
 
 	.crafting {
 		top: 0;
+		width: 110%;
 		font-size: 0.425em;
 		letter-spacing: -0.2ch;
 		background: linear-gradient(180deg, #fff, #c0c0c0);
@@ -150,20 +157,21 @@ defineProps({
 	font-size: calc(640px / 2.8);
 
 	.crafting {
-		top: -.05ch;
+		top: .25ch;
 	}
 
 	.excellence {
-		bottom: 1.5ch;
+		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -3.5ch;
-		margin-right: -7.8ch;
+		margin-left: -3.575ch;
+		margin-right: -7.85ch;
 	}
 
 	.vadim4web {
 		font-size: 5rem;
+		transform: scale(2.9);
 	}
 
 	&::before {
@@ -182,15 +190,17 @@ defineProps({
 	font-size: calc(640px / 4.5);
 
 	.crafting {
-		top: -0.05ch;
+		top: 0;
+		font-size: 0.5em;
 	}
 
 	.excellence {
-		bottom: 1.4ch;
+		font-size: 0.3em;
+		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -3.1ch;
+		margin-left: -3.16ch;
 		margin-right: -6.9ch;
 	}
 
@@ -214,16 +224,18 @@ defineProps({
 	font-size: calc(640px / 9);
 
 	.crafting {
-		top: -.2ch;
+		top: 0;
+		font-size: 0.5em;
 	}
 
 	.excellence {
+		font-size: 0.3em;
 		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -2.55ch;
-		margin-right: -5.7ch;
+		margin-left: -2.65ch;
+		margin-right: -5.9ch;
 	}
 
 	.vadim4web {
@@ -246,16 +258,18 @@ defineProps({
 	font-size: calc(640px / 5.5);
 
 	.crafting {
-		top: -0.1ch;
+		top: 0;
+		font-size: 0.5em;
 	}
 
 	.excellence {
-		bottom: 1.3ch;
+		font-size: 0.3em;
+		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -2.8ch;
-		margin-right: -6.3ch;
+		margin-left: -2.88ch;
+		margin-right: -6.425ch;
 	}
 
 	.vadim4web {
@@ -278,15 +292,17 @@ defineProps({
 	font-size: calc(500px / 2.8);
 
 	.crafting {
-		top: -0.1ch;
+		top: 0;
+		font-size: 0.5em;
 	}
 
 	.excellence {
-		bottom: 1.45ch;
+		font-size: 0.3em;
+		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -2.75ch;
+		margin-left: -2.8ch;
 		margin-right: -6.15ch;
 	}
 
@@ -312,16 +328,18 @@ defineProps({
 	font-size: calc(1152px / 3.5);
 
 	.crafting {
-		top: 0.4ch;
+		top: 0;
+		font-size: 0.45em;
 	}
 
 	.excellence {
-		bottom: 2.25ch;
+		font-size: 0.3em;
+		bottom: 1ch;
 	}
 
 	.for-capture {
-		margin-left: -3.15ch;
-		margin-right: -7ch;
+		margin-left: -3.2ch;
+		margin-right: -7.05ch;
 	}
 
 	&::before {
@@ -331,5 +349,98 @@ defineProps({
 	&::after {
 		background-size: calc(1152px / 7);
 	}
+}
+
+#patreon {
+	width: 1600px;
+	height: 400px;
+
+	font-size: calc(400px / 2.5);
+
+	.crafting {
+		top: 0;
+		font-size: 0.5em;
+	}
+
+	.excellence {
+		font-size: 0.3em;
+		bottom: 1ch;
+	}
+
+	.for-capture {
+		margin-left: -3.2ch;
+		margin-right: -7ch;
+	}
+
+	.vadim4web {
+		font-size: 3.5rem;
+	}
+
+	&::before {
+		background-size: calc(400px / 2);
+	}
+
+	&::after {
+		background-size: calc(400px / 7);
+	}
+}
+
+#patreon_1,
+#patreon_2 {
+	width: 460px;
+	height: 200px;
+
+	font-size: calc(200px / 2.5);
+
+	.crafting {
+		top: 0;
+		font-size: 0.4em;
+	}
+
+	.excellence {
+		font-size: 0.25em;
+		bottom: 1ch;
+	}
+
+	.for-capture {
+		margin-left: -1.85ch;
+		margin-right: -1.9ch;
+		transform: scale(0.75);
+	}
+
+	.vadim4web {
+		font-size: 3.5rem;
+		transform: scale(1.5);
+	}
+
+	&::before {
+		background-size: calc(200px / 2);
+	}
+
+	&::after {
+		background-size: calc(200px / 7);
+	}
+}
+
+#patreon_1 .vadim4web::after,
+#patreon_2 .vadim4web::after {
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5rem;
+  color: #000;
+	-webkit-text-fill-color: #000;
+  opacity: 1;
+  z-index: 1; /* Підняти рівень накладення */
+	text-shadow: 0 0 0.25ch #000;
+	transform: translate(-50%, 35%);
+}
+
+#patreon_1 .vadim4web::after {
+  content: 'Дякую за підтримку 🙏';
+}
+#patreon_2 .vadim4web::after {
+  content: 'Усе зможемо разом 💪';
 }
 </style>
