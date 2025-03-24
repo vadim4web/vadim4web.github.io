@@ -262,38 +262,32 @@ const vertical = [
 		deps: ['pyodide ^0.24.0', 'codemirror ^5.65.14'],
 		white_bg: true,
 	},
-	{
-		title: 'this.nuxt.dev',
-		name: 'nuxt-dev',
-		stack: ['nuxt', 'vue', 'nodejs', 'css'],
-		tags: ['SSR', 'SPA', 'Animations'],
-		desc_en:
-			'Let’s be honest, “this” in JavaScript can be a bit tricky, right? But don’t worry, this.nuxt.dev is the exception! This project is my personal portfolio, created using Nuxt 3 and featuring modern web technologies like SSR (Server-Side Rendering). Whether you’re looking for speed, performance, or just a sleek design, this project delivers. With Cloudflare’s global edge servers ensuring fast loading times and smooth interaction, this website has everything a modern web app should have.\n\nDeployed on Cloudflare, this.nuxt.dev ensures that the website performs excellently, no matter where you are in the world. The use of edge caching means that content is delivered instantly, even during high traffic. This is the perfect demonstration of what Nuxt and modern server-side technologies can do to optimize both performance and the user experience. It’s fast, reliable, and built to scale!\n\nThe project takes full advantage of Nuxt’s features like automatic routing, powerful i18n support, and dynamic content rendering. Whether you’re checking out my latest work or browsing through various sections, the experience remains seamless. Plus, the app is fully optimized for mobile, making it responsive on all devices. The interface is intuitive, and animations are smooth, all thanks to Vue 3 and Nuxt working together like a well-oiled machine.\n\nIn terms of stack, this.nuxt.dev uses cutting-edge tools like TypeScript for type safety, Sass for efficient styling, and ESLint for clean and maintainable code. This project isn’t just about showcasing skills; it’s about demonstrating how modern web technologies can be combined to create a truly exceptional user experience. And, of course, it’s hosted and running smoothly thanks to the Nuxt 3 ecosystem, which ensures that every piece fits perfectly.',
-		desc_uk:
-			'Признаймося, "this" у JavaScript може бути складним, правда? Але не переживайте, цей this.nuxt.dev проект — це виняток! Це моє персональне портфоліо, створене за допомогою Nuxt 3 з використанням сучасних веб-технологій, таких як SSR (серверний рендеринг). Якщо вам важлива швидкість, продуктивність або просто стильний дизайн — цей проєкт саме те, що вам потрібно. З Cloudflare на борту, що гарантує швидке завантаження і плавні взаємодії, цей сайт є ідеальним прикладом того, що сучасні технології можуть зробити для оптимізації роботи сайту.\n\nРозгорнутий на Cloudflare, this.nuxt.dev забезпечує відмінну продуктивність, незалежно від того, де ви знаходитесь. Використання кешування на периферії означає, що контент доставляється миттєво, навіть під час високих навантажень. Це ідеальний приклад того, як Nuxt та сучасні серверні технології можуть оптимізувати продуктивність і користувацький досвід. Це швидко, надійно та готово до масштабування!\n\nПроєкт максимально використовує можливості Nuxt: автоматичне роутингування, потужну підтримку i18n та динамічний рендеринг контенту. Чи ви переглядаєте мої останні роботи, чи просто переміщаєтесь між секціями, досвід залишається безшовним. Крім того, аплікація повністю оптимізована для мобільних пристроїв, що робить її адаптивною на всіх екранах. Інтерфейс інтуїтивно зрозумілий, а анімації плавні — все завдяки Vue 3 та Nuxt, які працюють як злагоджена система.\n\nЩодо технологій, this.nuxt.dev використовує новітні інструменти, такі як TypeScript для безпеки типів, Sass для ефективного стилізування і ESLint для чистого і підтримуваного коду. Цей проєкт — не просто демонстрація навичок, а й показ того, як сучасні веб-технології можна комбінувати для створення дійсно виняткового досвіду користувача. І, звісно, він працює стабільно завдяки екосистемі Nuxt 3, де кожна частина гармонійно поєднується.',
-		path: 'https://vadim4web.nuxt.dev/',
-		orientation: '|',
-		deps: [
-			'@emailjs/browser ^4.4.1',
-			'@nuxt/eslint ^0.7.5',
-			'@nuxthub/core ^0.8.11',
-			'@nuxtjs/color-mode 3.5.2',
-			'@nuxtjs/i18n 9.1.3',
-			'@vueuse/nuxt 12.5.0',
-			'dayjs-nuxt 2.1.11',
-			'nuxt ^3.15.1',
-			'three ^0.172.0',
-			'vue ^3.5.13',
-			'vue-router ^4.5.0',
-			'vueperslides ^3.6.0',
-			'@nuxt/eslint-config ^0.7.5',
-			'eslint ^9.18.0',
-			'sass ^1.83.4',
-			'typescript ^5.7.3',
-			'vue-tsc ^2.2.0',
-			'wrangler ^3.101.0',
-		],
-	},
+  {
+    title: 'Unipark',
+    name: 'unipark-com-ua',
+    stack: ['vue', 'i18n', 'tailwindcss'],
+    tags: ['SPA', 'Vue 3', 'Landing'],
+    desc_en: 'Unipark is a modern, multi-theme, and multilingual business website built with Vue 3. Initially created on Tilda, it was later rewritten in Vue within a few days to improve performance, flexibility, and scalability.\n\nKey features:\n\n- Multi-theme support – light and dark mode\n- Multilingual – full i18n integration\n- Optimized performance – built with Vite for speed\n- TailwindCSS – modern and responsive design\n- GSAP animations – smooth and engaging user experience\n\nThis project replaces the previous Tilda-based website, offering better maintainability and customization.',
+    desc_uk: 'Unipark – це сучасний бізнес-сайт з підтримкою мультитем та багатомовності, створений на основі Vue 3. Спочатку сайт був розроблений у Tilda, але згодом переписаний на Vue всього за кілька днів для покращення продуктивності та гнучкості.\n\nОсновні можливості:\n\n- Підтримка тем – світла і темна версії\n- Багатомовність – повна інтеграція i18n\n- Оптимізована продуктивність – збірка через Vite\n- TailwindCSS – сучасний та адаптивний дизайн\n- Анімації GSAP – плавні та приємні ефекти\n\nЦей проект замінює попередню версію сайту на Tilda, забезпечуючи кращу гнучкість і налаштування.',
+    path: 'unipark-com-ua',
+    orientation: '|',
+    deps: [
+      '@emailjs/browser ^4.4.1',
+      '@vueuse/core ^12.7.0',
+      'axios ^1.7.9',
+      'gsap ^3.12.7',
+      'postcss ^8.5.3',
+      'tailwindcss ^4.0.8',
+      'vue ^3.5.13',
+      'vue-i18n ^11.1.1',
+      'vue-router ^4.5.0',
+      'vueperslides ^3.6.0',
+      'eslint ^9.21.0',
+      'prettier ^3.5.2',
+      'sass ^1.85.0',
+      'vite ^6.1.0',
+    ],
+  },
 ]
 
 const horizontal = [
@@ -579,58 +573,86 @@ vertical.shuffle()
 horizontal.shuffle()
 
 const projects = [
-	vertical[0],
-	vertical[1],
-	vertical[2],
-
-	vertical[3],
-	horizontal[0],
-	horizontal[1],
-
-	vertical[4],
-	horizontal[2],
-	horizontal[3],
-
-	horizontal[4],
-	horizontal[5],
-	vertical[5],
-
-	horizontal[6],
-	horizontal[7],
-	vertical[6],
-
-	vertical[7],
-	horizontal[8],
-	horizontal[9],
-
-	vertical[8],
-	vertical[9],
-	vertical[10],
-
-	vertical[11],
-	horizontal[10],
-	horizontal[11],
-
-	horizontal[12],
-	horizontal[13],
-	vertical[12],
-
-	vertical[13],
-	vertical[14],
-	vertical[15],
+	{
+		view: '111',
+		projects: [
+			vertical[0],
+			vertical[1],
+			vertical[2],
+		],
+	},
+	{
+		view: '12',
+		projects: [
+			vertical[3],
+			horizontal[0],
+			horizontal[1],
+		],
+	},
+	{
+		view: '12',
+		projects: [
+			vertical[4],
+			horizontal[2],
+			horizontal[3],
+		],
+	},
+	{
+		view: '21',
+		projects: [
+			horizontal[4],
+			horizontal[5],
+			vertical[5],
+		],
+	},
+	{
+		view: '21',
+		projects: [
+			horizontal[6],
+			horizontal[7],
+			vertical[6],
+		],
+	},
+	{
+		view: '12',
+		projects: [
+			vertical[7],
+			horizontal[8],
+			horizontal[9],
+		],
+	},
+	{
+		view: '111',
+		projects: [
+			vertical[8],
+			vertical[9],
+			vertical[10],
+		],
+	},
+	{
+		view: '12',
+		projects: [
+			vertical[11],
+			horizontal[10],
+			horizontal[11],
+		],
+	},
+	{
+		view: '21',
+		projects: [
+			horizontal[12],
+			horizontal[13],
+			vertical[12],
+		],
+	},
+	{
+		view: '111',
+		projects: [
+			vertical[13],
+			vertical[14],
+			vertical[15],
+		],
+	},
 ]
 
-const chunkArray = (arr, chunkSize) => {
-	const chunkedArray = []
-
-	for (let i = 0; i < arr.length; i += chunkSize) {
-		const chunk = arr.slice(i, i + chunkSize)
-		chunkedArray.push(chunk)
-	}
-
-	return chunkedArray
-}
-
-const chunkedProjects = chunkArray(projects, 3)
-
-export { projects, chunkedProjects, vertical, horizontal }
+export { projects, vertical, horizontal }

@@ -85,10 +85,9 @@ const messages = {
 		emailSubject: 'Crafting Digital Solutions — Excellence in Every Detail',
 		location: 'Location of my integrated home-office web development studio',
 
-		gitHub: 'My GitHub profile',
-		xtwitter: 'My X (formerly Twitter) profile',
-
-		chatMe: 'Message me on Telegram',
+		gitHub: 'Open GitHub profile',
+		youtube: 'Watch YouTube channel',
+		chatMe: 'Message on Telegram',
 		emailMe: 'E-mail me',
 		callMe: 'Call me',
 
@@ -185,9 +184,8 @@ const messages = {
 		emailSubject: 'Розробка Цифрових Рішень — Досконалість у Кожній Деталі',
 		location: 'Розташування моєї інтегрованої домашньої студії веб-розробки',
 
-		gitHub: 'Мій GitHub профіль',
-		xtwitter: 'Мій профіль на X (раніше Twitter)',
-
+		gitHub: 'Відкрити GitHub профіль',
+		youtube: 'Дивитись YouTube канал',
 		chatMe: 'Написати в Telegram',
 		emailMe: 'Написати e-mail',
 		callMe: 'Зателефонувати мені',

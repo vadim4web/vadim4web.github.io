@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onUpdated, defineAsyncComponent } from 'vue'
-import { chunkedProjects } from '~/assets/data'
+import { projects } from '~/assets/data'
 import { getPath } from '~/helpers'
 
 const PageHeader = defineAsyncComponent(
@@ -14,19 +14,19 @@ const InteractiveButton = defineAsyncComponent(
 )
 
 const itemsToShow = ref(2)
-const projectsToShow = ref(chunkedProjects.slice(0, itemsToShow.value))
+const projectsToShow = ref(projects.slice(0, itemsToShow.value))
 const isLimitReached = ref(
-	projectsToShow.value.length === chunkedProjects.length
+	projectsToShow.value.length === projects.length
 )
 
 const handleLoadMore = () => {
-	if (chunkedProjects.length - 1 > itemsToShow.value) {
+	if (projects.length - 1 > itemsToShow.value) {
 		itemsToShow.value += 2
-		projectsToShow.value = chunkedProjects.slice(0, itemsToShow.value)
-	} else if (chunkedProjects.length - 1 === itemsToShow.value) {
-		projectsToShow.value = chunkedProjects.slice()
+		projectsToShow.value = projects.slice(0, itemsToShow.value)
+	} else if (projects.length - 1 === itemsToShow.value) {
+		projectsToShow.value = projects.slice()
 	}
-	isLimitReached.value = projectsToShow.value.length === chunkedProjects.length
+	isLimitReached.value = projectsToShow.value.length === projects.length
 }
 
 const handleScroll = () => {
@@ -50,9 +50,10 @@ onUpdated(() => handleScroll())
 				:id="'three-' + index"
 				:key="index"
 				class="three w100 rel"
+				:class="'view' + a.view"
 			>
 				<div
-					v-for="(p, i) in a"
+					v-for="(p, i) in a.projects"
 					:key="i"
 					class="project card-back br1 text-center flex-col hideO"
 					:class="{
@@ -123,9 +124,8 @@ onUpdated(() => handleScroll())
 
 	.three {
 		display: grid;
-		margin: 0 auto;
-		gap: 1.5rem;
 		width: 100%;
+		gap: 1.5rem;
 
 		& .first {
 			grid-area: first;
@@ -137,17 +137,26 @@ onUpdated(() => handleScroll())
 			grid-area: third;
 		}
 
-		&-0 {
+		&.view111 {
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-areas: "first second third";
 		}
 
-		&-1 {
+		&.view12 {
 			grid-template-columns: 1fr 2fr;
 			grid-template-rows: 1fr 1fr;
 			grid-template-areas:
-				"first second"
-				"first third"
+				"first second second"
+				"first third third"
+				;
+		}
+
+		&.view21 {
+			grid-template-columns: 1fr 2fr;
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas:
+				"first first third"
+				"second second third"
 				;
 		}
 
@@ -167,16 +176,16 @@ onUpdated(() => handleScroll())
 		flex-grow: 0;
 		padding-bottom: 0.5rem;
 		width: 100%;
-		height: 100%;
+		margin: -1px;
 
-    /* &:has(.vertical) {
+    &:has(.vertical) {
       @media (orientation: landscape) {
         width: calc(((40dvw - 1.5rem) * 0.333 - 1rem));
-        height: calc((40dvw * 0.666 * 1.2) - 2px);
+        height: calc((40dvw * 0.666 * 1.2));
       }
       @media (orientation: portrait) {
-        width: calc((80dvw * 0.333 - 1rem) - 2px);
-        height: calc((80dvw * 0.666 * 1.2) - 2px);
+        width: calc((80dvw * 0.333 - 1rem));
+        height: calc((80dvw * 0.666 * 1.2));
       }
     }
 
@@ -189,7 +198,7 @@ onUpdated(() => handleScroll())
         width: calc((80dvw - (80dvw * 0.333 - 1rem) - 1.5rem));
         height: calc((((80dvw * 0.666 * 1.2) - 1.5rem) / 2));
       }
-    } */
+    }
 
 		.title-box {
 			padding: 0.25rem;
@@ -232,25 +241,13 @@ onUpdated(() => handleScroll())
 		}
 	}
 
-	/* .project:nth-child(3n):has(.vertical) {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-
-	.project:nth-child(3n):has(.horizontal) {
-		position: absolute;
-		top: calc(50% + 0.75rem);
-		right: 0;
-	} */
-
-	/* @media (orientation: landscape) {
+	@media (orientation: landscape) {
 		.three:last-child {
 			margin: 0 auto;
 			align-self: center;
 			justify-self: center;
 		}
-	} */
+	}
 
 	.load-more {
 		font-size: 0.8rem;
