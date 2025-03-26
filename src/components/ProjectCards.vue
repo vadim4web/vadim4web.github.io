@@ -3,7 +3,7 @@ import { defineAsyncComponent, computed } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 
 import { getPath, getThreeRandom } from '~/helpers'
-import { projects } from '~/assets/data'
+import { projectsList as projects } from '~/assets/data'
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 const isPortrait = useMediaQuery('(orientation: portrait)')
