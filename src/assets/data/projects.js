@@ -655,4 +655,47 @@ const projects = [
 	},
 ]
 
-export { projects, vertical, horizontal }
+const projectsList = [
+
+		vertical[0],
+		vertical[1],
+		vertical[2],
+
+		vertical[3],
+		horizontal[0],
+		horizontal[1],
+
+		vertical[4],
+		horizontal[2],
+		horizontal[3],
+
+		horizontal[4],
+		horizontal[5],
+		vertical[5],
+
+		horizontal[6],
+		horizontal[7],
+		vertical[6],
+
+		vertical[7],
+		horizontal[8],
+		horizontal[9],
+
+		vertical[8],
+		vertical[9],
+		vertical[10],
+
+		vertical[11],
+		horizontal[10],
+		horizontal[11],
+
+		horizontal[12],
+		horizontal[13],
+		vertical[12],
+
+		vertical[13],
+		vertical[14],
+		vertical[15],
+]
+
+export { projects, projectsList, vertical, horizontal }

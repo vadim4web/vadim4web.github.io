@@ -2,7 +2,7 @@
 import { ref, watchEffect, computed, defineAsyncComponent } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { useRoute } from 'vue-router'
-import { projects } from '~/assets/data'
+import { projectsList as projects } from '~/assets/data'
 import { getPath, getSrc, getThreeRandom } from '~/helpers'
 
 const PageHeader = defineAsyncComponent(
@@ -211,6 +211,7 @@ watchEffect(() => {
 	.preview {
 		aspect-ratio: 1 / 1;
 		border-radius: 2rem;
+		zoom: 0.75;
 
 		&:not(.white_bg) {
 			background-color: var(--bg50);
@@ -218,12 +219,10 @@ watchEffect(() => {
 
 		@media (orientation: portrait) {
 			width: 100%;
-			zoom: 0.33;
 		}
 
 		@media (orientation: landscape) {
 			width: 65%;
-			zoom: 0.5;
 		}
 	}
 
