@@ -1,0 +1,4 @@
+packages.microsoft.gpg
+package-lock.json
+node_modules
+.env

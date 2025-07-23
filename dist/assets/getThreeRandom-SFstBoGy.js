@@ -1,0 +1,1 @@
+const s=(i,o=void 0)=>{const t=[],a=n=>n!==o&&i[n].orientation!==i[o].orientation;for(;t.length<3;){const n=Math.floor(Math.random()*i.length);(o&&a(n)&&!t.includes(n)||!o&&!t.includes(n))&&t.push(n)}return t.map(n=>i[n])};export{s as g};

@@ -87,6 +87,7 @@ const messages = {
 
 		gitHub: 'Open GitHub profile',
 		youtube: 'Watch YouTube channel',
+		whatsapp: 'Contact via WhatsApp',
 		chatMe: 'Message on Telegram',
 		emailMe: 'E-mail me',
 		callMe: 'Call me',
@@ -186,6 +187,7 @@ const messages = {
 
 		gitHub: 'Відкрити GitHub профіль',
 		youtube: 'Дивитись YouTube канал',
+		whatsapp: 'Зв’язатися через WhatsApp',
 		chatMe: 'Написати в Telegram',
 		emailMe: 'Написати e-mail',
 		callMe: 'Зателефонувати мені',
