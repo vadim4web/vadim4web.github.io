@@ -147,7 +147,7 @@ const submitForm = async () => {
 	</main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .grid-text-form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

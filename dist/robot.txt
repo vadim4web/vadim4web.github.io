@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://vadim4web.github.io/sitemap.xml
