@@ -1,0 +1,8 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/PageHeader-cRwviAtn.js","assets/index-CXDY-6CT.js","assets/index-BkLf8x9V.css"])))=>i.map(i=>d[i]);
+import{_ as d,c as l,e as i,d as e,k as r,h as p,i as u,g as o,t as s,j as b,o as v}from"./index-CXDY-6CT.js";const c={class:"flex-col"},m={class:"mission flex-col"},_={class:"mission-header"},f={class:"h2"},h={class:"t3 text1"},y={class:"t3 text2"},g={__name:"AboutPage",setup(w){const n=u(()=>b(()=>import("./PageHeader-cRwviAtn.js"),__vite__mapDeps([0,1,2])));return(a,t)=>(v(),l("main",c,[i(p(n),{"head-key":"aboutH21","text-key":"aboutT1"}),e("div",m,[e("div",_,[e("h2",f,[o(s(a.$t("aboutH221"))+" ",1),t[0]||(t[0]=e("br",null,null,-1)),o(" "+s(a.$t("aboutH222"))+" ",1),t[1]||(t[1]=e("br",null,null,-1)),o(" "+s(a.$t("aboutH223"))+" ",1),t[2]||(t[2]=e("br",null,null,-1)),o(" "+s(a.$t("aboutH224")),1)]),e("p",h,s(a.$t("aboutT21")),1),e("p",y,s(a.$t("aboutT22")),1)]),t[3]||(t[3]=e("div",{class:"photos w100 rel"},[e("div",{class:"photo photo1 w100"}),e("div",{class:"photo photo2 w100"})],-1))]),t[4]||(t[4]=r(`<pre class="rhymes text-center" data-v-22011e1b><span data-v-22011e1b>I&#39;ve earned my own very first PC</span>
+<span data-v-22011e1b>By working summer holidays in 2003</span>
+<span data-v-22011e1b>I&#39;m a \`web dev <em lang="es" data-v-22011e1b>loco</em>\` (if you will) code-addict</span>
+<span data-v-22011e1b>Devoted to development with JavaScript</span>
+<span data-v-22011e1b>I&#39;m experienced enough to exactly know</span>
+<span data-v-22011e1b>Using DOCs, AI, Google and Stackoverflow</span>
+    </pre>`,1))]))}},x=d(g,[["__scopeId","data-v-22011e1b"]]);export{x as default};
