@@ -62,11 +62,11 @@ router.afterEach(() => {
 		setTimeout(() => {
 			sessionStorage.setItem('once_loaded', true)
 			state.setShowLoader(false)
-		}, 3510)
+		}, 1755)
 	} else {
 		setTimeout(() => {
 			state.setShowLoader(false)
-		}, 1755)
+		}, 878)
 	}
 	window.scrollTo(0, 0)
 })

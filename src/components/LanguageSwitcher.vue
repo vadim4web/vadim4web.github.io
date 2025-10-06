@@ -3,7 +3,7 @@ import { ref, onMounted, computed } from 'vue'
 import i18n from '~/i18n'
 import { getIPInfo } from '~/helpers'
 
-const BASE_URL = import.meta.env.BASE_URL
+const BASE_URL = import.meta.env.BASE_URL || '/'
 
 const selectedLanguage = ref(i18n.global.locale)
 const showOptions = ref(false)
