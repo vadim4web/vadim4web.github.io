@@ -248,39 +248,43 @@ const vertical = [
 		orientation: '|',
 		deps: ['axios', 'vue', 'vue-router'],
 	},
-  {
-    title: 'Unipark',
-    name: 'unipark-com-ua',
-    stack: ['vue', 'i18n', 'tailwindcss'],
-    tags: ['SPA', 'Vue 3', 'Landing'],
-    desc_en: 'Unipark is a modern, multi-theme, and multilingual business website built with Vue 3. Initially created on Tilda, it was later rewritten in Vue within a few days to improve performance, flexibility, and scalability.\n\nKey features:\n\n- Multi-theme support – light and dark mode\n- Multilingual – full i18n integration\n- Optimized performance – built with Vite for speed\n- TailwindCSS – modern and responsive design\n- GSAP animations – smooth and engaging user experience\n\nThis project replaces the previous Tilda-based website, offering better maintainability and customization.',
-    desc_uk: 'Unipark – це сучасний бізнес-сайт з підтримкою мультитем та багатомовності, створений на основі Vue 3. Спочатку сайт був розроблений у Tilda, але згодом переписаний на Vue всього за кілька днів для покращення продуктивності та гнучкості.\n\nОсновні можливості:\n\n- Підтримка тем – світла і темна версії\n- Багатомовність – повна інтеграція i18n\n- Оптимізована продуктивність – збірка через Vite\n- TailwindCSS – сучасний та адаптивний дизайн\n- Анімації GSAP – плавні та приємні ефекти\n\nЦей проект замінює попередню версію сайту на Tilda, забезпечуючи кращу гнучкість і налаштування.',
-    path: 'unipark-com-ua',
-    orientation: '|',
-    deps: [
-      '@emailjs/browser ^4.4.1',
-      '@vueuse/core ^12.7.0',
-      'axios ^1.7.9',
-      'gsap ^3.12.7',
-      'postcss ^8.5.3',
-      'tailwindcss ^4.0.8',
-      'vue ^3.5.13',
-      'vue-i18n ^11.1.1',
-      'vue-router ^4.5.0',
-      'vueperslides ^3.6.0',
-      'eslint ^9.21.0',
-      'prettier ^3.5.2',
-      'sass ^1.85.0',
-      'vite ^6.1.0',
-    ],
-  },
+	{
+		title: 'Unipark',
+		name: 'unipark-com-ua',
+		stack: ['vue', 'i18n', 'tailwindcss'],
+		tags: ['SPA', 'Vue 3', 'Landing'],
+		desc_en:
+			'Unipark is a modern, multi-theme, and multilingual business website built with Vue 3. Initially created on Tilda, it was later rewritten in Vue within a few days to improve performance, flexibility, and scalability.\n\nKey features:\n\n- Multi-theme support – light and dark mode\n- Multilingual – full i18n integration\n- Optimized performance – built with Vite for speed\n- TailwindCSS – modern and responsive design\n- GSAP animations – smooth and engaging user experience\n\nThis project replaces the previous Tilda-based website, offering better maintainability and customization.',
+		desc_uk:
+			'Unipark – це сучасний бізнес-сайт з підтримкою мультитем та багатомовності, створений на основі Vue 3. Спочатку сайт був розроблений у Tilda, але згодом переписаний на Vue всього за кілька днів для покращення продуктивності та гнучкості.\n\nОсновні можливості:\n\n- Підтримка тем – світла і темна версії\n- Багатомовність – повна інтеграція i18n\n- Оптимізована продуктивність – збірка через Vite\n- TailwindCSS – сучасний та адаптивний дизайн\n- Анімації GSAP – плавні та приємні ефекти\n\nЦей проект замінює попередню версію сайту на Tilda, забезпечуючи кращу гнучкість і налаштування.',
+		path: 'unipark-com-ua',
+		orientation: '|',
+		deps: [
+			'@emailjs/browser ^4.4.1',
+			'@vueuse/core ^12.7.0',
+			'axios ^1.7.9',
+			'gsap ^3.12.7',
+			'postcss ^8.5.3',
+			'tailwindcss ^4.0.8',
+			'vue ^3.5.13',
+			'vue-i18n ^11.1.1',
+			'vue-router ^4.5.0',
+			'vueperslides ^3.6.0',
+			'eslint ^9.21.0',
+			'prettier ^3.5.2',
+			'sass ^1.85.0',
+			'vite ^6.1.0',
+		],
+	},
 	{
 		title: 'Gouri',
 		name: 'gouri',
 		stack: ['vue', 'i18n', 'vite'],
 		tags: ['SPA', 'Vue 3', 'Business'],
-		desc_en: 'Gouri is a professional legal service website built with Vue 3, targeting Ukrainian clients in Poland. It includes multilingual support, a contact form via EmailJS, and PageSpeed optimizations using critical CSS generation.\n\nKey features:\n\n- Vue 3 Composition API\n- Multilingual with Vue I18n\n- Critical CSS for faster FCP\n- EmailJS integration\n- Vite for fast builds\n\nThe project offers a polished and responsive UI with clear legal service offerings and contact information.',
-		desc_uk: 'Gouri — сайт юридичних послуг, розроблений для українців у Польщі на базі Vue 3. Містить багатомовність, контактну форму через EmailJS та оптимізацію швидкості завантаження за допомогою Critical CSS.\n\nОсновні можливості:\n\n- Vue 3 з Composition API\n- Багатомовність з Vue I18n\n- Оптимізація FCP через Critical CSS\n- EmailJS форма\n- Збірка через Vite\n\nСайт має сучасний інтерфейс і чітко презентує юридичні послуги.',
+		desc_en:
+			'Gouri is a professional legal service website built with Vue 3, targeting Ukrainian clients in Poland. It includes multilingual support, a contact form via EmailJS, and PageSpeed optimizations using critical CSS generation.\n\nKey features:\n\n- Vue 3 Composition API\n- Multilingual with Vue I18n\n- Critical CSS for faster FCP\n- EmailJS integration\n- Vite for fast builds\n\nThe project offers a polished and responsive UI with clear legal service offerings and contact information.',
+		desc_uk:
+			'Gouri — сайт юридичних послуг, розроблений для українців у Польщі на базі Vue 3. Містить багатомовність, контактну форму через EmailJS та оптимізацію швидкості завантаження за допомогою Critical CSS.\n\nОсновні можливості:\n\n- Vue 3 з Composition API\n- Багатомовність з Vue I18n\n- Оптимізація FCP через Critical CSS\n- EmailJS форма\n- Збірка через Vite\n\nСайт має сучасний інтерфейс і чітко презентує юридичні послуги.',
 		path: 'https://gouri.com.pl/',
 		orientation: '|',
 		deps: [
@@ -308,9 +312,9 @@ const vertical = [
 		stack: ['python', 'react', 'js', 'ts'],
 		tags: ['Python', 'React', 'Monaco'],
 		desc_en:
-				'An advanced browser-based Python IDE powered by Pyodide and Monaco Editor, now rewritten entirely in TypeScript. Run Python code directly in the browser, install packages dynamically, and benefit from syntax highlighting, autocompletion, and a modular architecture.\n\nNew features include:\n\n- Full TypeScript refactor for maintainability\n- Monaco Editor integration for rich code editing\n- Real-time Python execution using Pyodide\n- Dynamic package installation via micropip\n- Modular file and tab handling',
+			'An advanced browser-based Python IDE powered by Pyodide and Monaco Editor, now rewritten entirely in TypeScript. Run Python code directly in the browser, install packages dynamically, and benefit from syntax highlighting, autocompletion, and a modular architecture.\n\nNew features include:\n\n- Full TypeScript refactor for maintainability\n- Monaco Editor integration for rich code editing\n- Real-time Python execution using Pyodide\n- Dynamic package installation via micropip\n- Modular file and tab handling',
 		desc_uk:
-				'Розширений інтерпретатор Python у браузері, побудований на базі Pyodide та Monaco Editor. Повністю переписаний на TypeScript для кращої підтримки. Дозволяє запускати Python-код у браузері, встановлювати пакети на льоту та користуватися підсвіткою синтаксису і автодоповненням.\n\nНові можливості:\n\n- Повна міграція на TypeScript\n- Monaco Editor для зручного редагування коду\n- Виконання Python у реальному часі (Pyodide)\n- Динамічне встановлення пакетів через micropip\n- Модульна структура вкладок і файлів',
+			'Розширений інтерпретатор Python у браузері, побудований на базі Pyodide та Monaco Editor. Повністю переписаний на TypeScript для кращої підтримки. Дозволяє запускати Python-код у браузері, встановлювати пакети на льоту та користуватися підсвіткою синтаксису і автодоповненням.\n\nНові можливості:\n\n- Повна міграція на TypeScript\n- Monaco Editor для зручного редагування коду\n- Виконання Python у реальному часі (Pyodide)\n- Динамічне встановлення пакетів через micropip\n- Модульна структура вкладок і файлів',
 		path: 'pyodide-sandbox',
 		orientation: '|',
 		deps: [
@@ -319,9 +323,22 @@ const vertical = [
 			'monaco-editor-workers ^0.45.0',
 			'monaco-types ^0.1.0',
 			'react ^19.1.0',
-			'react-dom": "^19.1.0'
+			'react-dom": "^19.1.0',
 		],
 		white_bg: true,
+	},
+	{
+		title: 'Fake Spinner Illusion',
+		name: 'fake-spinner',
+		stack: ['html', 'css', 'js'],
+		tags: ['CSS', 'Animation', 'Illusion'],
+		desc_en:
+			'An interactive recreation of a visual illusion originally seen in a short online video. Although the composition appears to rotate like a spinner, none of its elements actually move in a circular path.\n\nThe illusion is created by eight white dots moving back and forth along fixed radial axes with carefully staggered animation delays. Together, these simple linear movements produce the perception of continuous rotation.\n\nAdditional controls were added to make the underlying mechanism easier to explore. The user can change the animation speed and reveal the hidden radial axes to compare the perceived circular motion with the actual movement of each dot.\n\nKey features include:\n\n- Pure CSS radial animation\n- Staggered animation delays\n- Adjustable animation speed\n- Optional visualization of movement axes\n- Responsive sizing with viewport units\n- Vanilla JavaScript controls\n- No external libraries or dependencies',
+		desc_uk:
+			'Інтерактивне відтворення візуальної ілюзії, побаченої в короткому відео в YouTube або Instagram. Композиція здається спінером, що обертається, хоча насправді жоден її елемент не рухається по колу.\n\nІлюзію створюють вісім білих точок, які рухаються вперед і назад уздовж нерухомих радіальних осей із точно розрахованими затримками анімації. У поєднанні ці прості лінійні рухи формують відчуття безперервного обертання.\n\nДо оригінальної ідеї додані елементи керування, які допомагають легко зрозуміти механіку ефекту. Користувач може змінювати швидкість анімації та показувати приховані осі, порівнюючи уявний круговий рух із фактичною траєкторією кожної точки.\n\nКлючові можливості:\n\n- Радіальна анімація, реалізована лише за допомогою CSS\n- Послідовно зміщені затримки анімації\n- Регулювання швидкості руху\n- Відображення прихованих осей\n- Адаптивні розміри на основі viewport-одиниць\n- Керування на чистому JavaScript\n- Відсутність зовнішніх бібліотек і залежностей',
+		path: 'fake-spinner',
+		orientation: '|',
+		deps: [],
 	},
 ]
 
@@ -603,8 +620,10 @@ const horizontal = [
 		name: 'gemini',
 		stack: ['react', 'tailwindcss'],
 		tags: ['SPA', 'React 19', 'Landing'],
-		desc_en: 'Gemini is a fast and lightweight single-page application built with React 19, TailwindCSS, and Vite. It offers a modern development stack and serves as a performant, maintainable, and scalable template for future frontend projects.\n\nKey features:\n\n- Built with React 19 – the latest React features\n- TailwindCSS – utility-first responsive styling\n- Vite – blazing fast development and builds\n- GitHub Pages – simple deployment\n\nThis project emphasizes simplicity, performance, and scalability for modern web interfaces.',
-		desc_uk: 'Gemini — це швидкий односторінковий застосунок, створений на основі React 19, TailwindCSS і Vite. Він забезпечує продуктивність, простоту в обслуговуванні та масштабованість для фронтенд-проєктів.\n\nОсновні можливості:\n\n- React 19 — сучасні можливості React\n- TailwindCSS — адаптивне стилювання\n- Vite — блискавична швидкість розробки та білду\n- GitHub Pages — легкий деплой\n\nПроєкт розроблений як шаблон для майбутніх інтерфейсів.',
+		desc_en:
+			'Gemini is a fast and lightweight single-page application built with React 19, TailwindCSS, and Vite. It offers a modern development stack and serves as a performant, maintainable, and scalable template for future frontend projects.\n\nKey features:\n\n- Built with React 19 – the latest React features\n- TailwindCSS – utility-first responsive styling\n- Vite – blazing fast development and builds\n- GitHub Pages – simple deployment\n\nThis project emphasizes simplicity, performance, and scalability for modern web interfaces.',
+		desc_uk:
+			'Gemini — це швидкий односторінковий застосунок, створений на основі React 19, TailwindCSS і Vite. Він забезпечує продуктивність, простоту в обслуговуванні та масштабованість для фронтенд-проєктів.\n\nОсновні можливості:\n\n- React 19 — сучасні можливості React\n- TailwindCSS — адаптивне стилювання\n- Vite — блискавична швидкість розробки та білду\n- GitHub Pages — легкий деплой\n\nПроєкт розроблений як шаблон для майбутніх інтерфейсів.',
 		path: 'gemini',
 		orientation: '-',
 		deps: [
@@ -632,9 +651,11 @@ const horizontal = [
 		name: 'addvision',
 		stack: ['vue', 'nuxt', 'i18n'],
 		tags: ['SPA', 'Nuxt 3', 'Multilingual'],
-		desc_en: 'AddVision is a sleek business landing page built with Nuxt 3, GSAP animations, and full multilingual support. It leverages modern Nuxt modules for fonts, images, and localization, providing an immersive user experience.\n\nKey features:\n\n- Nuxt 3 – hybrid static site generation\n- Vue 3 – modern frontend architecture\n- Vue I18n – multilingual ready\n- GSAP – fluid animations\n- GitHub Pages deployment\n\nA highly optimized and stylish SPA suitable for creative or business showcases.',
-		desc_uk: 'AddVision — це сучасний лендинг, створений за допомогою Nuxt 3 з підтримкою анімацій GSAP та багатомовності. Впроваджено модулі для шрифтів, зображень та локалізації, що забезпечує якісний UX.\n\nОсновні можливості:\n\n- Nuxt 3 — гібридна генерація сайтів\n- Vue 3 — сучасна архітектура фронтенду\n- Vue I18n — багатомовна підтримка\n- GSAP — плавна анімація\n- Деплой на GitHub Pages\n\nІдеально підходить для бізнес-презентацій або креативних портфоліо.',
-		path: 'https://addvision.dev/',
+		desc_en:
+			'AddVision is a sleek business landing page built with Nuxt 3, GSAP animations, and full multilingual support. It leverages modern Nuxt modules for fonts, images, and localization, providing an immersive user experience.\n\nKey features:\n\n- Nuxt 3 – hybrid static site generation\n- Vue 3 – modern frontend architecture\n- Vue I18n – multilingual ready\n- GSAP – fluid animations\n- GitHub Pages deployment\n\nA highly optimized and stylish SPA suitable for creative or business showcases.',
+		desc_uk:
+			'AddVision — це сучасний лендинг, створений за допомогою Nuxt 3 з підтримкою анімацій GSAP та багатомовності. Впроваджено модулі для шрифтів, зображень та локалізації, що забезпечує якісний UX.\n\nОсновні можливості:\n\n- Nuxt 3 — гібридна генерація сайтів\n- Vue 3 — сучасна архітектура фронтенду\n- Vue I18n — багатомовна підтримка\n- GSAP — плавна анімація\n- Деплой на GitHub Pages\n\nІдеально підходить для бізнес-презентацій або креативних портфоліо.',
+		path: 'https://vadim4web.github.io/addvision/',
 		orientation: '-',
 		deps: [
 			'@nuxt/eslint ^1.4.1',
@@ -654,7 +675,40 @@ const horizontal = [
 			'gh-pages ^6.3.0',
 			'sass-embedded ^1.89.0',
 		],
-	}
+	},
+	{
+		title: "BES Engineer's Day Promo",
+		name: 'bes-global-engineers-day',
+		stack: ['vue', 'js', 'three'],
+		tags: ['Vue', 'Three.js', 'Data'],
+		desc_en:
+			"A responsive promotional website created for BES, an electrical engineering and BIM/VDC services company. The application identifies the nearest upcoming Engineer's Day from a locally normalized international dataset and presents it as an animated country-focused celebration.\n\nThe project includes both wide-screen and portrait advertising layouts, date-based routing, interactive slides, national flags, and a Three.js radar-inspired background.\n\nEngineer's Day data is collected and normalized during development rather than fetched at runtime, allowing the deployed application to work quickly and independently from external sources.\n\nKey features include:\n\n- Automatic detection of the nearest Engineer's Day\n- Wide-screen and portrait promotional layouts\n- Animated Three.js radar visualization\n- Country slides powered by Vueper Slides\n- Date overrides through routes and query parameters\n- Build-time Wikipedia parsing with Cheerio\n- Cached fallback data for reliable synchronization",
+		desc_uk:
+			'Респонсивний промосайт, створений для BES — компанії у сфері електротехнічного проєктування та BIM/VDC-послуг. Застосунок визначає найближчий День інженера на основі локально нормалізованого міжнародного набору даних і презентує його у вигляді анімованого привітання, присвяченого конкретній країні.\n\nПроєкт містить широкоформатний і портретний рекламні режими, маршрутизацію за датою, інтерактивні слайди, прапори країн та радарний фон, реалізований за допомогою Three.js.\n\nДані про Дні інженера збираються й нормалізуються під час розробки, а не завантажуються під час роботи сайту. Завдяки цьому опублікований застосунок працює швидко та не залежить від зовнішніх джерел.\n\nКлючові можливості:\n\n- Автоматичне визначення найближчого Дня інженера\n- Широкоформатний і портретний проморежими\n- Анімована радарна візуалізація на Three.js\n- Слайди країн на базі Vueper Slides\n- Вибір дати через маршрут або query-параметр\n- Обробка даних Wikipedia під час збірки за допомогою Cheerio\n- Кешовані резервні дані для надійної синхронізації',
+		path: 'bes-global-engineers-day',
+		orientation: '-',
+		deps: [
+			'cheerio ^1.2.0',
+			'dayjs ^1.11.20',
+			'three ^0.184.0',
+			'vue ^3.5.33',
+			'vue-router ^4.6.4',
+			'vueperslides ^3.6.0',
+		],
+	},
+	{
+		title: 'Manifesto of a Free Ukraine',
+		name: 'manifesto-site',
+		stack: ['vue', 'js', 'firebase'],
+		tags: ['Vue', 'Firebase', 'i18n'],
+		desc_en:
+			'A multilingual civic platform presenting the Manifesto of a Free Ukraine in Ukrainian, Russian, and English. The project combines a structured reform program with an open public poll that allows visitors to select the reform they consider most important.\n\nVoting data is stored in Firebase Firestore and reflected in a live public ranking. Each browser receives a persistent voter identifier through localStorage, helping limit repeated voting while keeping participation simple and accessible.\n\nThe application is designed as both a public presentation of political and economic ideas and a foundation for further community collaboration.\n\nKey features include:\n\n- Ukrainian, Russian, and English content\n- Structured manifesto and reform table\n- Interactive public voting\n- Live Firestore vote statistics\n- Persistent browser-based voter identification\n- Firebase security rules\n- Automated deployment to GitHub Pages\n- Responsive Vue 3 interface',
+		desc_uk:
+			'Багатомовна громадська платформа, що презентує «Маніфест Вільної України» українською, російською та англійською мовами. Проєкт поєднує структуровану програму реформ із відкритим громадським голосуванням, у якому відвідувачі можуть обрати найважливіший, на їхню думку, напрям змін.\n\nРезультати голосування зберігаються у Firebase Firestore та відображаються у вигляді публічного рейтингу, що оновлюється в реальному часі. Кожен браузер отримує постійний ідентифікатор через localStorage, що допомагає обмежити повторні голоси, не ускладнюючи участь користувачів.\n\nЗастосунок створений одночасно як публічна презентація політичних та економічних ідей і як основа для подальшої спільної роботи над маніфестом.\n\nКлючові можливості:\n\n- Українська, російська та англійська версії\n- Структурована таблиця реформ і принципів\n- Інтерактивне громадське голосування\n- Жива статистика голосів із Firestore\n- Постійна ідентифікація браузера для контролю повторних голосів\n- Правила безпеки Firebase\n- Автоматичний деплой на GitHub Pages\n- Адаптивний інтерфейс на Vue 3',
+		path: 'manifesto-site',
+		orientation: '-',
+		deps: ['firebase ^11.10.0', 'vue ^3.5.13'],
+	},
 ]
 
 Array.prototype.shuffle = function () {
@@ -682,35 +736,35 @@ const projects = [
 		],
 	},
 	{
-		view: '12',
+		view: '21',
 		projects: [
-			vertical[4],
 			horizontal[2],
 			horizontal[3],
-		],
-	},
-	{
-		view: '21',
-		projects: [
-			horizontal[4],
-			horizontal[5],
-			vertical[5],
-		],
-	},
-	{
-		view: '21',
-		projects: [
-			horizontal[6],
-			horizontal[7],
-			vertical[6],
+			vertical[4],
 		],
 	},
 	{
 		view: '12',
 		projects: [
-			vertical[7],
+			vertical[5],
+			horizontal[4],
+			horizontal[5],
+		],
+	},
+	{
+		view: '12',
+		projects: [
+			vertical[6],
+			horizontal[6],
+			horizontal[7],
+		],
+	},
+	{
+		view: '21',
+		projects: [
 			horizontal[8],
 			horizontal[9],
+			vertical[7],
 		],
 	},
 	{
@@ -746,11 +800,19 @@ const projects = [
 		],
 	},
 	{
-		view: '111',
+		view: '12',
 		projects: [
 			vertical[14],
+			horizontal[16],
+			horizontal[17],
+		],
+	},
+	{
+		view: '111',
+		projects: [
 			vertical[15],
 			vertical[16],
+			vertical[17],
 		],
 	},
 ]
@@ -765,21 +827,21 @@ const projectsList = [
 		horizontal[0],
 		horizontal[1],
 
-		vertical[4],
 		horizontal[2],
 		horizontal[3],
+		vertical[4],
 
+		vertical[5],
 		horizontal[4],
 		horizontal[5],
-		vertical[5],
 
+		vertical[6],
 		horizontal[6],
 		horizontal[7],
-		vertical[6],
 
-		vertical[7],
 		horizontal[8],
 		horizontal[9],
+		vertical[7],
 
 		vertical[8],
 		vertical[9],
@@ -794,8 +856,16 @@ const projectsList = [
 		vertical[12],
 
 		vertical[13],
+		horizontal[14],
+		horizontal[15],
+
 		vertical[14],
+		horizontal[16],
+		horizontal[17],
+
 		vertical[15],
+		vertical[16],
+		vertical[17],
 ]
 
 export { projects, projectsList, vertical, horizontal }

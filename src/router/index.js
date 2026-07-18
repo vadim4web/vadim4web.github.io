@@ -27,18 +27,23 @@ const routes = [
 		path: '/project/:projectName',
 		name: 'project',
 		component: () => import('~/views/ProjectDetails.vue'),
-		beforeEnter: to => {
-			const projectName = to.params.projectName
-			const isInProjects = projects.some(({ name }) => name === projectName)
+			beforeEnter: to => {
+				const projectName = to.params.projectName
+				const isInProjects = projects.some(({ name }) => name === projectName)
 
-			if (!isInProjects)
-				return {
-					name: 'error-page',
-					params: { pathMatch: to.path.substring(1).split('/') },
-					query: to.query,
-					hash: to.hash,
-				}
+				if (!isInProjects)
+					return {
+				name: 'error-page',
+				params: { pathMatch: to.path.substring(1).split('/') },
+				query: to.query,
+				hash: to.hash,
+			}
 		},
+	},
+	{
+		path: '/loader',
+		component: () => import('~/components/LoaderView.vue'),
+		meta: { infiniteLoader: true },
 	},
 	{
 		path: '/:pathMatch(.*)*',
@@ -52,22 +57,24 @@ const router = createRouter({
 	routes,
 })
 
+let loaderTimeout
+
 router.beforeEach((_to, _from, next) => {
+	clearTimeout(loaderTimeout)
 	state.setShowLoader(true)
 	next()
 })
 
-router.afterEach(() => {
-	if (!sessionStorage.getItem('once_loaded')) {
-		setTimeout(() => {
-			sessionStorage.setItem('once_loaded', true)
-			state.setShowLoader(false)
-		}, 3510)
-	} else {
-		setTimeout(() => {
-			state.setShowLoader(false)
-		}, 1755)
-	}
+router.afterEach(to => {
+	if (to.meta.infiniteLoader) return
+
+	const delay = sessionStorage.getItem('once_loaded') ? 1755 : 3510
+
+	loaderTimeout = setTimeout(() => {
+		sessionStorage.setItem('once_loaded', 'true')
+		state.setShowLoader(false)
+	}, delay)
+
 	window.scrollTo(0, 0)
 })
 
